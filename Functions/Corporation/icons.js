@@ -10,7 +10,7 @@ async function icons(corpID) {
         return 'icons needs a corporation ID'
     }
 
-    await axios.get(`${link}/corporations/${corpID}/icons/?datasource=tranquility`)
+    await axios.get(`${link}corporations/${corpID}/icons/?datasource=tranquility`)
         .then(response => {
             if (response.statusText != 'OK') {
                 console.error(response.error)

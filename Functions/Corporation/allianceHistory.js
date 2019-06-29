@@ -6,11 +6,11 @@ let { link } = require('../../esi.json')
 async function allianceHistory(corpID) {
     let returningData;
     if (!corpID) {
-        console.error(`The function 'allianceHistory' needs a character ID!`)
+        console.error(`The function 'allianceHistory' needs a corp ID!`)
         return 'allianceHistory needs a corporation ID'
     }
 
-    await axios.get(`${link}/corporations/${corpID}/alliancehistory/?datasource=tranquility`)
+    await axios.get(`${link}corporations/${corpID}/alliancehistory/?datasource=tranquility`)
         .then(response => {
             if (response.statusText != 'OK') {
                 console.error(response.error)
