@@ -2,7 +2,7 @@ module.exports = corps
 
 let axios = require('axios')
 let { link } = require('../../esi.json')
-async function corps() {
+async function corps(ID) {
     let returningData;
 
     if (!ID) {

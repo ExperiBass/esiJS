@@ -23,4 +23,5 @@ async function info(ID) {
             // handle error
             console.log(error);
           })
+    return returningData
 }
