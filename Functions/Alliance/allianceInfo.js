@@ -8,7 +8,7 @@ async function info(ID) {
 
     if (!ID) {
         console.error(`the function 'info' requires a alliance ID!`)
-        return
+        return 'info requires alliance ID'
     }
 
     await axios.get(`${link}alliances/${ID}/?datasource=tranquility`)

@@ -13,5 +13,12 @@ module.exports = {
         corpHistory: require('./Functions/Character/corpHistory'),
         portrait: require('./Functions/Character/portrait'),
         publicInfo: require('./Functions/Character/publicInfo')
+    },
+    contracts: {
+        public: {
+            bids: require('./Functions/Contracts/Public/bids'),
+            contracts: require('./Functions/Contracts/Public/contracts'),
+            items: require('./Functions/Contracts/Public/items')
+        }
     }
 }

@@ -7,6 +7,7 @@ async function portrait(charID) {
     let returningData;
     if (!charID) {
         console.error(`The function 'portrait' needs a character ID!`)
+        return 'portrait needs a char ID'
     }
 
     await axios.get(`${link}characters/${charID}/portrait/?datasource=tranquility`)

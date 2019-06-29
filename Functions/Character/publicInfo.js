@@ -7,6 +7,7 @@ async function publicInfo(charID) {
     let returningData;
     if (!charID) {
         console.error(`The function 'publicInfo' needs a character ID!`)
+        return 'publicInfo needs char ID'
     }
 
     await axios.get(`${link}characters/${charID}/?datasource=tranquility`)

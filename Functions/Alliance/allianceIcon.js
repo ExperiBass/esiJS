@@ -7,7 +7,7 @@ async function icon(ID) {
 
     if (!ID) {
         console.error(`the function 'icon' requires a alliance ID!`)
-        return
+        return 'icon requires alliance ID'
     }
 
     await axios.get(`${link}alliances/${ID}/icons/?datasource=tranquility`)

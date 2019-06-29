@@ -7,7 +7,8 @@ async function affiliation(charID) {
     let data;
     if (typeof charID !== 'object') {
         console.error(`The function 'affiliation' requires a array!`)
-        return
+        data = 'affiliation requires array'
+        return data
     }
 
     try {

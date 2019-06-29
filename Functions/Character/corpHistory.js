@@ -7,6 +7,7 @@ async function corpHistory(charID) {
     let returningData;
     if (!charID) {
         console.error(`The function 'corpHistory' needs a character ID!`)
+        return 'corpHistory needs a char ID'
     }
 
     await axios.get(`${link}characters/${charID}/corporationhistory/?datasource=tranquility`)
