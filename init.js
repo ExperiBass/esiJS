@@ -28,7 +28,11 @@ module.exports = {
         npcCorps: require('./Functions/Corporation/npcCorps')
     },
     dogma: {
-        
+        attrs: require('./Functions/Dogma/attributes'),
+        attrInfo: require('./Functions/Dogma/attributeInfo'),
+        dynItemInfo: require('./Functions/Dogma/DynamicItemInfo'),
+        effectInfo: require('./Functions/Dogma/effectInfo'),
+        effects: require('./Functions/Dogma/effects')
     },
     factionWarfare: {
 
