@@ -8,10 +8,6 @@ async function npcCorps() {
 
     await axios.get(`${link}corporations/npccorps/?datasource=tranquility`)
         .then(response => {
-            if (response.statusText != 'OK') {
-                console.error(response.error)
-                return true
-            }
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {

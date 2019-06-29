@@ -12,11 +12,12 @@ async function attrInfo(attr) {
 
     await axios.get(`${link}dogma/attributes/${attr}/?datasource=tranquility`)
         .then(response => {
-            if (response.statusText != 'OK') {
-                console.error(response.error)
-                return true
-            }
             returningData = Promise.resolve(response.data)
         })
+        .catch(function(e) {
+            console.error(e.response.data.error)
+            return e.response.data.error
+        })
+        
     return returningData;
 }

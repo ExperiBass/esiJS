@@ -17,10 +17,6 @@ async function contracts(regionID, pageNum = 1) {
     
     await axios.get(`${link}contracts/public/${regionID}/?datasource=tranquility&page=${pageNum}`)
         .then(response => {
-            if (response.statusText != 'OK') {
-                console.error(response.error)
-                return true
-            }
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
