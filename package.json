@@ -1,0 +1,29 @@
+{
+  "name": "evejs",
+  "version": "0.1.0",
+  "description": "A Simple library for EVE Online.",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eve-online",
+    "esi",
+    "eve"
+  ],
+  "author": "ExperiBass",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "numeraljs": "^1.5.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GingkathFox/EveJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GingkathFox/EveJS/issues"
+  },
+  "homepage": "https://github.com/GingkathFox/EveJS#readme"
+}
