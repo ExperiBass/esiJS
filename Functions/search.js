@@ -2,7 +2,7 @@ module.exports = search
 
 function search(string, category, strict) {
     let axios = require('axios')
-    let link = require('../esi.json').link
+    let {link} = require('../esi.json')
     let settings = require('../settings.json')
    // let data;
     let returningData;
@@ -60,7 +60,7 @@ function search(string, category, strict) {
     } 
 
   let data = axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${string}&strict=${strict}`)
-        .then(response => {
+       /* .then(response => {
             if (response.statusText != 'OK') {
                 console.error('ERROR: Invalid search string')
                 return true
@@ -68,7 +68,7 @@ function search(string, category, strict) {
             data = response.data
             //console.log(returningData)
 
-        })
+        })*/
         
         returningData = Promise.resolve(data)
         console.log(data, 'line 73')
