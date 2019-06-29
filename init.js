@@ -1,7 +1,7 @@
 module.exports = {
 
     test: require('./Functions/Test'),
-    search: require('./Functions/Search/search'),
+    
     alliance: {
         corps: require('./Functions/Alliance/allianceCorps'),
         icon: require('./Functions/Alliance/allianceIcon'),
@@ -20,5 +20,59 @@ module.exports = {
             contracts: require('./Functions/Contracts/Public/contracts'),
             items: require('./Functions/Contracts/Public/items')
         }
+    },
+    corporation: {
+        allianceHistory: require('./Functions/Corporation/allianceHistory'),
+        icons: require('./Functions/Corporation/icons'),
+        info: require('./Functions/Corporation/info'),
+        npcCorps: require('./Functions/Corporation/npcCorps')
+    },
+    dogma: {
+        
+    },
+    factionWarfare: {
+
+    },
+    incursions: {
+
+    },
+    industry: {
+
+    },
+    insurance: {
+
+    },
+    killmails: {
+
+    },
+    loyalty: {
+
+    },
+    market: {
+
+    },
+    opportunities: {
+
+    },
+    planetaryInteraction: {
+
+    },
+    routes: {
+
+    },
+    search: {
+        search: require('./Functions/Search/search')
+    },
+    sovereignity: {
+
+    },
+    status: {
+
+    },
+    universe: {
+
+    },
+    wars: {
+        
     }
 }

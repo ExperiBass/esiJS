@@ -1,14 +1,14 @@
 module.exports = bids
 
 let axios = require('axios')
-let { link } = require('../../esi.json')
+let { link } = require('../../../esi.json')
 
 async function bids(contractID, pageNum = 1) {
     let returningData;
 
     if (!contractID || typeof contractID !== 'number') {
-        console.error(`The function 'bids' requires its first argument to be a number!`)
-        return 'function bids needs number as first arg'
+        console.error(`The function 'bids' requires its first argument to be a number and a contract ID!`)
+        return 'function bids needs contract ID as first arg'
     }
     if (typeof pageNum !== 'number') {
         console.error(`The function 'bids' requires its second argument to be a number!`)
