@@ -1,12 +1,12 @@
-module.exports = allianceCorps
+module.exports = corps
 
 let axios = require('axios')
 let { link } = require('../../esi.json')
-async function allianceCorps() {
+async function corps() {
     let returningData;
 
     if (!ID) {
-        console.error(`the function 'allianceCorps' requires a alliance ID!`)
+        console.error(`the function 'corps' requires a alliance ID!`)
         return
     }
 

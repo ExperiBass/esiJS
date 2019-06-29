@@ -12,12 +12,9 @@ async function affiliation(charID) {
 
     try {
         response = await axios.post(`${link}characters/affiliation/?datasource=tranquility`, charID)
-        if (response.statusText !== 'OK') {
-            console.error(response)
-            return
-        }
     } catch(e) {
         console.error(e.response.data.error)
         return false
     }
+    return response.data
 }

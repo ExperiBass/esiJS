@@ -1,13 +1,13 @@
-module.exports = allianceInfo
+module.exports = info
 
 let axios = require('axios')
 let { link } = require('../../esi.json')
 
-async function allianceInfo(ID) {
+async function info(ID) {
     let returningData;
 
     if (!ID) {
-        console.error(`the function 'allianceInfo' requires a alliance ID!`)
+        console.error(`the function 'info' requires a alliance ID!`)
         return
     }
 

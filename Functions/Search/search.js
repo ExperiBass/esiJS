@@ -2,7 +2,7 @@ module.exports = search
 
 async function search(string, category, strict) {
     let axios = require('axios')
-    let { link } = require('../esi.json')
+    let { link } = require('../../esi.json')
     let data;
     let returningData;
     let categories = [
@@ -18,7 +18,7 @@ async function search(string, category, strict) {
                 'station'
                 ]
   
-    if (typeof string === 'number') {
+    if (typeof string !== 'string') {
         console.error(`The first argument MUST be a string!`)
         return
     }
