@@ -1,7 +1,7 @@
 {
-  "name": "evejs",
+  "name": "esijs",
   "version": "0.1.0",
-  "description": "A Simple library for EVE Online.",
+  "description": "A simple library for EVE Online.",
   "main": "init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

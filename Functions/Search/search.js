@@ -1,12 +1,11 @@
 module.exports = search
 
-function search(string, category, strict) {
+async function search(string, category, strict) {
     let axios = require('axios')
-    let {link} = require('../esi.json')
-    let settings = require('../settings.json')
-   // let data;
+    let { link } = require('../esi.json')
+    let data;
     let returningData;
-    let types = [
+    let categories = [
                 'agent',
                 'alliance',
                 'character',
@@ -47,7 +46,7 @@ function search(string, category, strict) {
             case 'station':
                 break;
             default:
-                console.error(`The second argument must be of one of the following types: ${types}`)
+                console.error(`The second argument must be of one of the following categories: ${categories}`)
                 return;
         }
     }
@@ -59,26 +58,28 @@ function search(string, category, strict) {
         return;
     } 
 
-  let data = axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${string}&strict=${strict}`)
-       /* .then(response => {
+ await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${string}&strict=${strict}`)
+        .then(response => {
             if (response.statusText != 'OK') {
-                console.error('ERROR: Invalid search string')
+                console.error(response.error)
                 return true
             }
             data = response.data
-            //console.log(returningData)
-
-        })*/
+      //      console.log(data, 'line 68')
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+          })
         
         returningData = Promise.resolve(data)
-        console.log(data, 'line 73')
+      //  console.log(data, 'line 73')
     return returningData;
 }
 
-console.log(a())
-//console.log(search('tritanium', 'inventory_type', true))
-function a() {
-    let info = search('tritanium', 'inventory_type', true)
+// testing/debugging
+/*console.log(a())
+async function a() {
+    let info = await search('tritanium', 'inventory_type', true)
     console.log(info, 'line 80')
-    //console.log(info.inventory_type, 'line 81')
-}
+    console.log(info.inventory_type, 'line 81', info.inventory_type[0])
+}*/
