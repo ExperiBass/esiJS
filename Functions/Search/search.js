@@ -1,8 +1,8 @@
 module.exports = search
 
-async function search(string, category, strict) {
-    let axios = require('axios')
-    let { link } = require('../../esi.json')
+async function search(search, category, strict = false) {
+    const axios = require('axios')
+    const { link } = require('../../esi.json')
     let data;
     let returningData;
     let categories = [
@@ -18,7 +18,7 @@ async function search(string, category, strict) {
                 'station'
                 ]
   
-    if (typeof string !== 'string') {
+    if (typeof search !== 'string') {
         console.error(`The first argument MUST be a string!`)
         return
     }
@@ -58,7 +58,7 @@ async function search(string, category, strict) {
         return;
     } 
 
- await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${string}&strict=${strict}`)
+ await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
         .then(response => {
             if (response.statusText != 'OK') {
                 console.error(response.error)
@@ -77,9 +77,9 @@ async function search(string, category, strict) {
 }
 
 // testing/debugging
-/*console.log(a())
+console.log(a())
 async function a() {
     let info = await search('tritanium', 'inventory_type', true)
     console.log(info, 'line 80')
     console.log(info.inventory_type, 'line 81', info.inventory_type[0])
-}*/
+}
