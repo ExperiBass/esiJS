@@ -2,7 +2,7 @@
 
 esiJS is a updated library for EVE Online, that's updated and simple to use!
 It is still under development, 5 out of 20 categories are done!
-Since i haven't bought anything from CCP, i can't use the authenication (afaik).
+Since i haven't bought anything from CCP, i can't use the authenication feature (afaik).
 
 
 # USAGE:
