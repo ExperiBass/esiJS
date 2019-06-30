@@ -17,8 +17,8 @@ async function a() {
 // for single arg commands (usually have two word names, like `allianceIcon`)
 async function b() {
     let allianceIcon = await esiJS.alliance.allianceIcon(allianceID)
-    let itemID = await esiJS.search.search('string', 'inventory_item', true)
-    // the search function takes 3 params: the string to search on, a category to search in 
+    let itemID = await esiJS.search.search('query', 'inventory_item', true)
+    // the search function takes 3 params: a string to search on, a category to search in 
     // ('agent', 'alliance', 'character', 'constellation', 'corporation', 'faction', 
     // 'inventory_type', 'region', 'solar_system', 'station'),
     // and whether to have a strict or a loose search (boolean, true or false).
@@ -27,6 +27,8 @@ async function b() {
 // for multi-arg commands (example: `dynamicItemInfo`)
 async function c() {
     let dynItemInfo = await esiJS.dogma.dynItemInfo(itemID, typeID)
+    // dynItemInfo returns the info on a dynamic item
+    // (for example, a prop mod with a mutaplasmid).
 }
 ```
 # Example:
