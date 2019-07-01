@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Changed
 - Updated README.md
 - Improved error handling
+- Changed constants declared as `let`s to `const`s
 
 
 <!-- LINKS -->
