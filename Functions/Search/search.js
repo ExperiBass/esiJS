@@ -3,6 +3,7 @@ module.exports = search
 async function search(search, category, strict = false) {
     const axios = require('axios')
     const { link } = require('../../esi.json')
+
     let data;
     let returningData;
     let categories = [
@@ -31,16 +32,17 @@ async function search(search, category, strict = false) {
         return Error('Third argument must be a boolean value')
     } 
 
- await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
+    await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
         .then(response => {
             data = response.data
         })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
+        .catch(function (e) {
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
         
-        returningData = Promise.resolve(data)
+    returningData = Promise.resolve(data)
     return returningData;
 }
 
