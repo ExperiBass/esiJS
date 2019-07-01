@@ -1,7 +1,7 @@
 module.exports = affiliation
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 
 async function affiliation(charID) {
     let data;
@@ -14,11 +14,8 @@ async function affiliation(charID) {
         response = await axios.post(`${link}characters/affiliation/?datasource=tranquility`, charID)
     } catch(e) {
         let error = e.response.data.error
-            console.error(`From ESI:`,error)
-        if (error == 'No characters found!') {
-            return Error('No Characters Found')
-        }
-        return Error('Invalid Character ID')
+        console.error(`From ESI:`,error)
+        return Error(error)
     }
     return response.data
 }

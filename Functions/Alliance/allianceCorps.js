@@ -1,11 +1,11 @@
 module.exports = corps
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 async function corps(ID) {
     let returningData;
 
-    if (!ID) {
+    if (!ID || typeof ID !== 'number') {
         console.error(`the function 'corps' requires a alliance ID!`)
         return Error('corps requires a alliance ID')
     }

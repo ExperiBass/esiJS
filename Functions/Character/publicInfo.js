@@ -1,13 +1,13 @@
 module.exports = publicInfo
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 
 async function publicInfo(charID) {
     let returningData;
-    if (!charID) {
+    if (!charID || typeof charID !== 'number') {
         console.error(`The function 'publicInfo' needs a character ID!`)
-        return 'publicInfo needs char ID'
+        return Error('publicInfo needs char ID')
     }
 
     await axios.get(`${link}characters/${charID}/?datasource=tranquility`)
@@ -15,8 +15,9 @@ async function publicInfo(charID) {
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
-            console.error(e.response.data.error)
-            return e.response.data.error
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
     return returningData;
 }

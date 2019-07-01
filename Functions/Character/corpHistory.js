@@ -1,11 +1,11 @@
 module.exports = corpHistory
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 
 async function corpHistory(charID) {
     let returningData;
-    if (!charID) {
+    if (!charID || typeof charID !== 'number') {
         console.error(`The function 'corpHistory' needs a character ID!`)
         return Error('corpHistory needs a char ID')
     }

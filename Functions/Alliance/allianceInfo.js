@@ -1,12 +1,12 @@
 module.exports = info
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 
 async function info(ID) {
     let returningData;
 
-    if (!ID) {
+    if (!ID || typeof ID !== 'number') {
         console.error(`the function 'info' requires a alliance ID!`)
         return Error('info requires alliance ID')
     }

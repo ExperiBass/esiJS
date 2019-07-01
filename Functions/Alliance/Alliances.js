@@ -1,7 +1,7 @@
 module.exports = alliances
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 
 async function alliances() {
 let returningData;
@@ -11,8 +11,9 @@ let returningData;
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
-            console.error(e.response.data.error)
-            return e.response.data.error
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
 
         return returningData;

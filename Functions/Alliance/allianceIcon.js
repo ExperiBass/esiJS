@@ -1,11 +1,11 @@
 module.exports = icon
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link } = require('../../esi.json')
 async function icon(ID) {
     let returningData;
 
-    if (!ID) {
+    if (!ID || typeof ID !== 'number') {
         console.error(`the function 'icon' requires a alliance ID!`)
         return Error('icon requires alliance ID')
     }

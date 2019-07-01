@@ -33,10 +33,6 @@ async function search(search, category, strict = false) {
 
  await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
         .then(response => {
-            if (response.statusText != 'OK') {
-                console.error(response.error)
-                return true
-            }
             data = response.data
         })
         .catch(function (error) {
