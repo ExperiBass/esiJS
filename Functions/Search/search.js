@@ -24,36 +24,8 @@ async function search(search, category, strict = false) {
     }
     if (typeof category !== 'string' || !categories.includes(category)) {
         console.error(`The category must be a string and must be one of the following categories: ${categories}`)
-        return Error(`Second argument must be a string and contail one of these categories: ${categories}`)
+        return Error(`Second argument must be a string and one of these categories: ${categories}`)
     }
-   /* if (typeof category) {
-        let s = category.toString().toLowerCase()
-        switch(s) {
-            case 'agent':
-                break;
-            case 'alliance':
-                break;
-            case 'character':
-                break;
-            case 'constellation':
-                break;
-            case 'corporation':
-                break;
-            case 'faction':
-                break;
-            case 'inventory_type':
-                break;
-            case 'region':
-                break;
-            case 'solar_system':
-                break;
-            case 'station':
-                break;
-            default:
-                console.error(`The second argument must be of one of the following categories: ${categories}`)
-                return;
-        }
-    }*/
     if (typeof strict !== 'boolean') {
         console.error(`The third parameter must be a boolean value!`)
         return Error('Third argument must be a boolean value')
@@ -66,14 +38,13 @@ async function search(search, category, strict = false) {
                 return true
             }
             data = response.data
-      //      console.log(data, 'line 68')
-        }).catch(function (error) {
+        })
+        .catch(function (error) {
             // handle error
             console.log(error);
-          })
+        })
         
         returningData = Promise.resolve(data)
-      //  console.log(data, 'line 73')
     return returningData;
 }
 
