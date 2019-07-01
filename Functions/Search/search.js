@@ -22,7 +22,11 @@ async function search(search, category, strict = false) {
         console.error(`The first argument MUST be a string!`)
         return
     }
-    if (typeof category) {
+    if (typeof category !== 'string' || !categories.includes(category)) {
+        console.error(`The category must be a string and must be one of the following categories: ${categories}`)
+        return Error(`Second argument must be a string and contail one of these categories: ${categories}`)
+    }
+   /* if (typeof category) {
         let s = category.toString().toLowerCase()
         switch(s) {
             case 'agent':
@@ -49,13 +53,10 @@ async function search(search, category, strict = false) {
                 console.error(`The second argument must be of one of the following categories: ${categories}`)
                 return;
         }
-    }
-    if (strict == undefined) {
-        strict = false
-    }
+    }*/
     if (typeof strict !== 'boolean') {
         console.error(`The third parameter must be a boolean value!`)
-        return;
+        return Error('Third argument must be a boolean value')
     } 
 
  await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
@@ -77,9 +78,9 @@ async function search(search, category, strict = false) {
 }
 
 // testing/debugging
+
 console.log(a())
 async function a() {
     let info = await search('tritanium', 'inventory_type', true)
-    console.log(info, 'line 80')
-    console.log(info.inventory_type, 'line 81', info.inventory_type[0])
+    console.log(info)
 }

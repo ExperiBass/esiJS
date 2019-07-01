@@ -21,7 +21,7 @@ async function b() {
     // the search function takes 3 params: the string to search on, a category to search in 
     // ('agent', 'alliance', 'character', 'constellation', 'corporation', 'faction', 
     // 'inventory_type', 'region', 'solar_system', 'station'),
-    // and whether to have a strict or a loose search (boolean, true or false).
+    // and whether to have a strict search (boolean, defaults to false).
 }
 
 // for multi-arg commands (example: `dynamicItemInfo`)

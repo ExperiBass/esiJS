@@ -8,7 +8,7 @@ async function info(ID) {
 
     if (!ID) {
         console.error(`the function 'info' requires a alliance ID!`)
-        return 'info requires alliance ID'
+        return Error('info requires alliance ID')
     }
 
     await axios.get(`${link}alliances/${ID}/?datasource=tranquility`)
@@ -16,8 +16,9 @@ async function info(ID) {
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
-            console.error(e.response.data.error)
-            return e.response.data.error
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
     return returningData
 }
