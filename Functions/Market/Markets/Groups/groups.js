@@ -1,12 +1,12 @@
-module.exports = stats
+module.exports = groups
 
 const axios = require('axios')
-const { link, dataSource } = require('../../esi.json')
+const { link , dataSource} = require('../../../../esi.json')
 
-async function stats() {
+async function groups() {
 let returningData;
 
-    await axios.get(`${link}fw/stats/?datasource=${dataSource}`)
+    await axios.get(`${link}markets/groups/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

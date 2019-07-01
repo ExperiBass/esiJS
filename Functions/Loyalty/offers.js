@@ -1,7 +1,7 @@
 module.exports = offers
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource} = require('../../esi.json')
 
 async function offers(corpID) {
 let returningData;
@@ -11,7 +11,7 @@ let returningData;
         return Error('offers requires valid corporation ID')
     }
 
-    await axios.get(`${link}loyalty/stores/${corpID}/offers/?datasource=tranquility`)
+    await axios.get(`${link}loyalty/stores/${corpID}/offers/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

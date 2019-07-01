@@ -1,7 +1,7 @@
 module.exports = affiliation
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function affiliation(charID) {
     let data;
@@ -10,13 +10,12 @@ async function affiliation(charID) {
         return Error('affiliation requires array')
     }
 
-    try {
-        response = await axios.post(`${link}characters/affiliation/?datasource=tranquility`, charID)
-    } catch(e) {
-        let error = e.response.data.error
-        console.error(`From ESI:`,error)
-        return Error(error)
-    }
+        response = await axios.post(`${link}characters/affiliation/?datasource=${dataSource}`, charID)
+        .catch(function(e) {
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
+        })
     return response.data
 }
 

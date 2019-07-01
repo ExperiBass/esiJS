@@ -1,12 +1,12 @@
 module.exports = attrs
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function attrs() {
     let returningData;
 
-    await axios.get(`${link}dogma/attributes/?datasource=tranquility`)
+    await axios.get(`${link}dogma/attributes/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

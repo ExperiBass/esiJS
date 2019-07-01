@@ -1,7 +1,7 @@
 module.exports = info
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function info(ID) {
     let returningData;
@@ -11,7 +11,7 @@ async function info(ID) {
         return Error('info requires alliance ID')
     }
 
-    await axios.get(`${link}alliances/${ID}/?datasource=tranquility`)
+    await axios.get(`${link}alliances/${ID}/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

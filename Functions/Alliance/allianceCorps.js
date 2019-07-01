@@ -1,7 +1,8 @@
 module.exports = corps
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
+
 async function corps(ID) {
     let returningData;
 

@@ -1,7 +1,7 @@
 module.exports = dynamicItemInfo
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function dynamicItemInfo(itemID, typeID) {
     let returningData;
@@ -14,7 +14,7 @@ async function dynamicItemInfo(itemID, typeID) {
         return 'dynamicItemInfo needs type ID'
     }
 
-    await axios.get(`${link}dogma/dynamic/items/${typeID}/${itemID}/?datasource=tranquility`)
+    await axios.get(`${link}dogma/dynamic/items/${typeID}/${itemID}/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

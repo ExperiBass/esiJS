@@ -1,7 +1,7 @@
 module.exports = corpHistory
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function corpHistory(charID) {
     let returningData;
@@ -10,7 +10,7 @@ async function corpHistory(charID) {
         return Error('corpHistory needs a char ID')
     }
 
-    await axios.get(`${link}characters/${charID}/corporationhistory/?datasource=tranquility`)
+    await axios.get(`${link}characters/${charID}/corporationhistory/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

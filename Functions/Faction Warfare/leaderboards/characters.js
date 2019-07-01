@@ -1,12 +1,12 @@
 module.exports = characters
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../../esi.json')
 
 async function characters() {
 let returningData;
 
-    await axios.get(`${link}fw/leaderboards/characters/?datasource=tranquility`)
+    await axios.get(`${link}fw/leaderboards/characters/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

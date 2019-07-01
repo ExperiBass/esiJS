@@ -1,12 +1,12 @@
-module.exports = stats
+module.exports = prices
 
 const axios = require('axios')
-const { link, dataSource } = require('../../esi.json')
+const { link , dataSource} = require('../../../esi.json')
 
-async function stats() {
+async function prices() {
 let returningData;
 
-    await axios.get(`${link}fw/stats/?datasource=${dataSource}`)
+    await axios.get(`${link}markets/prices/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

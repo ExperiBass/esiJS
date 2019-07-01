@@ -1,7 +1,7 @@
 module.exports = items
 
 const axios = require('axios')
-const { link } = require('../../../esi.json')
+const { link, dataSource } = require('../../../esi.json')
 
 async function items(contractID, pageNum = 1) {
     let returningData;
@@ -15,7 +15,7 @@ async function items(contractID, pageNum = 1) {
         return 'items needs number as second arg'
     }
     
-    await axios.get(`${link}contracts/public/items/${contractID}/?datasource=tranquility&page=${pageNum}`)
+    await axios.get(`${link}contracts/public/items/${contractID}/?datasource=${dataSource}&page=${pageNum}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

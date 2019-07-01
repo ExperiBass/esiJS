@@ -1,12 +1,12 @@
 module.exports = systems
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function systems() {
 let returningData;
 
-    await axios.get(`${link}industry/systems/?datasource=tranquility`)
+    await axios.get(`${link}industry/systems/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

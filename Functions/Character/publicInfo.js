@@ -1,7 +1,7 @@
 module.exports = publicInfo
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function publicInfo(charID) {
     let returningData;
@@ -10,7 +10,7 @@ async function publicInfo(charID) {
         return Error('publicInfo needs char ID')
     }
 
-    await axios.get(`${link}characters/${charID}/?datasource=tranquility`)
+    await axios.get(`${link}characters/${charID}/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

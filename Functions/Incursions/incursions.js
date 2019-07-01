@@ -1,12 +1,12 @@
 module.exports = incursions
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function incursions() {
 let returningData;
 
-    await axios.get(`${link}incursions/?datasource=tranquility`)
+    await axios.get(`${link}incursions/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

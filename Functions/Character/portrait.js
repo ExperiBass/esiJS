@@ -1,7 +1,7 @@
 module.exports = portrait
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function portrait(charID) {
     let returningData;
@@ -10,7 +10,7 @@ async function portrait(charID) {
         return Error('portrait needs a char ID')
     }
 
-    await axios.get(`${link}characters/${charID}/portrait/?datasource=tranquility`)
+    await axios.get(`${link}characters/${charID}/portrait/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

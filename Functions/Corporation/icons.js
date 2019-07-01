@@ -1,7 +1,7 @@
 module.exports = icons
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function icons(corpID) {
     let returningData;
@@ -10,7 +10,7 @@ async function icons(corpID) {
         return 'icons needs a corporation ID'
     }
 
-    await axios.get(`${link}corporations/${corpID}/icons/?datasource=tranquility`)
+    await axios.get(`${link}corporations/${corpID}/icons/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

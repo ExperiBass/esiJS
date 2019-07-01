@@ -1,7 +1,7 @@
 module.exports = effectInfo
 
 const axios = require('axios')
-const { link } = require('../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function effectInfo(dogma) {
     let returningData;
@@ -10,7 +10,7 @@ async function effectInfo(dogma) {
         return 'effectInfo needs dogma effect'
     }
 
-    await axios.get(`${link}dogma/effects/${dogma}/?datasource=tranquility`)
+    await axios.get(`${link}dogma/effects/${dogma}/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })
