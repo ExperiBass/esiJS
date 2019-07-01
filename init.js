@@ -1,6 +1,9 @@
 module.exports = {
-
-    test: require('./Functions/Test'),
+    
+    settings: {
+        setSettings: require('./Functions/Settings/setSettings'),
+        getSettings: require('./FUnctions/Settings/getSettings')
+    },
     
     alliance: {
         corps: require('./Functions/Alliance/allianceCorps'),
