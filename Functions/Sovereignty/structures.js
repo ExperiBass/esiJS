@@ -1,17 +1,12 @@
-module.exports = icon
+module.exports = structures
 
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
-async function icon(ID) {
-    let returningData;
+async function structures() {
+let returningData;
 
-    if (!ID || typeof ID !== 'number') {
-        console.error(`the function 'icon' requires a alliance ID!`)
-        return Error('icon requires alliance ID')
-    }
-
-    await axios.get(`${link}alliances/${ID}/icons/?datasource=${dataSource}`)
+    await axios.get(`${link}sovereignty/structures/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })
@@ -21,5 +16,5 @@ async function icon(ID) {
             return Error(error)
         })
 
-    return returningData;
+        return returningData;
 }

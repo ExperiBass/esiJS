@@ -1,17 +1,17 @@
-module.exports = icon
+module.exports = groupInfo
 
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
-async function icon(ID) {
+async function groupInfo(ID) {
     let returningData;
 
     if (!ID || typeof ID !== 'number') {
-        console.error(`the function 'icon' requires a alliance ID!`)
-        return Error('icon requires alliance ID')
+        console.error(`the function 'groupInfo' requires a opportunity group ID!`)
+        return Error('groupInfo requires opportunity group ID')
     }
 
-    await axios.get(`${link}alliances/${ID}/icons/?datasource=${dataSource}`)
+    await axios.get(`${link}opportunity/groups/${ID}?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

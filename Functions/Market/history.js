@@ -1,7 +1,7 @@
 module.exports = history
 
 const axios = require('axios')
-const { link, dataSource } = require('../../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function history(regID, typeID) {
 let returningData;

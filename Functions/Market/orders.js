@@ -1,7 +1,7 @@
 module.exports = orders
 
 const axios = require('axios')
-const { link, dataSource } = require('../../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function orders(regID, pageNum = 1, bOs = all, typeID) {
 let returningData;

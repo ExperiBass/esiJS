@@ -1,17 +1,17 @@
-module.exports = icon
+module.exports = taskInfo
 
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
-async function icon(ID) {
+async function taskInfo(ID) {
     let returningData;
 
     if (!ID || typeof ID !== 'number') {
-        console.error(`the function 'icon' requires a alliance ID!`)
-        return Error('icon requires alliance ID')
+        console.error(`the function 'taskInfo' requires a task group ID!`)
+        return Error('taskInfo requires task group ID')
     }
 
-    await axios.get(`${link}alliances/${ID}/icons/?datasource=${dataSource}`)
+    await axios.get(`${link}opportunity/tasks/${ID}?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

@@ -1,17 +1,17 @@
-module.exports = icon
+module.exports = schematic
 
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
-async function icon(ID) {
+async function schematic(ID) {
     let returningData;
 
     if (!ID || typeof ID !== 'number') {
-        console.error(`the function 'icon' requires a alliance ID!`)
-        return Error('icon requires alliance ID')
+        console.error(`the function 'schematic' requires a schematic ID!`)
+        return Error('schematic requires schematic ID')
     }
 
-    await axios.get(`${link}alliances/${ID}/icons/?datasource=${dataSource}`)
+    await axios.get(`${link}universe/schematics/${ID}?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

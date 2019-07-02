@@ -1,7 +1,7 @@
 module.exports = types
 
 const axios = require('axios')
-const { link, dataSource } = require('../../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function types(regID) {
 let returningData;
