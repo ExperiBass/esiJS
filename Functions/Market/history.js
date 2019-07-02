@@ -27,9 +27,3 @@ let returningData;
 
         return returningData;
 }
-
-async function a() {
-    let data = await history(10000036, 34)
-    console.log(data)
-}
-console.log(a())

@@ -23,9 +23,3 @@ let returningData;
 
         return returningData;
 }
-
-async function a() {
-    let data = await types(10000036)
-    console.log(data)
-}
-console.log(a())

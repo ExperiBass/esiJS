@@ -22,9 +22,3 @@ async function corpHistory(charID) {
         
     return returningData;
 }
-
-async function a() {
-    let aff = corpHistory()
-    console.log(aff)
-}
-console.log(a())

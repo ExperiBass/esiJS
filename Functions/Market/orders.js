@@ -42,9 +42,3 @@ let bSA = 'buy sell all'
 
         return returningData;
 }
-
-async function a() {
-    let data = await orders(10000036, 1, 'all')
-    console.log(data)
-}
-console.log(a())

@@ -24,6 +24,10 @@ async function planRoute(orgin, desto, flag = 'secure', avoid) {
     } else {
         query = `${link}route/${orgin}/${desto}/?datasource=${dataSource}&flag=${flag}`
     }
+    if (typeof avoid !== 'object') {
+        console.error(`the fourth argument must be a array!`)
+        return Error(`fourth arg must be array`)
+    }
 
     await axios.get(query)
         .then(response => {

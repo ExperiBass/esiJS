@@ -13,5 +13,3 @@ function setSettings(link = 'latest', dataSource = 'tranquility') {
     })
     return link + '\n' + dataSource
 }
-
-console.log(setSettings())

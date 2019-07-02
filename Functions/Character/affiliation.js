@@ -18,9 +18,3 @@ async function affiliation(charID) {
         })
     return response.data
 }
-
-async function a() {
-    let aff = affiliation([1383,2])
-    console.log(aff)
-}
-console.log(a())

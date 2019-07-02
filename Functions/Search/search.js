@@ -45,11 +45,3 @@ async function search(search, category, strict = false) {
     returningData = Promise.resolve(data)
     return returningData;
 }
-
-// testing/debugging
-
-console.log(a())
-async function a() {
-    let info = await search('tritanium', 'inventory_type', true)
-    console.log(info)
-}
