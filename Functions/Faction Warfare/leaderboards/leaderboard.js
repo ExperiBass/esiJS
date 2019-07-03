@@ -1,12 +1,12 @@
-module.exports = leaderboards
+module.exports = leaderboard
 
 const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
-async function leaderboards() {
+async function leaderboard() {
 let returningData;
 
-    await axios.get(`${link}fw/leaderboards/?datasource=${dataSource}`)
+    await axios.get(`${link}fw/leaderboard/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

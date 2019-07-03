@@ -6,7 +6,7 @@ There's not much of a coding style here, this uses Microsoft CamelCase, for exam
 let thisIsACamelCaseVariable
 ```
 
-Brackets are used like this: 
+Braces are used like this: 
 ```js
 function myFunc() {
 

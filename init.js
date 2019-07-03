@@ -5,9 +5,9 @@ module.exports = {
         getSettings: require('./FUnctions/Settings/getSettings')
     }, 
     alliance: {
-        corps: require('./Functions/Alliance/allianceCorps'),
-        icon: require('./Functions/Alliance/allianceIcon'),
-        info: require('./Functions/Alliance/allianceInfo'),
+        corps: require('./Functions/Alliance/corps'),
+        icon: require('./Functions/Alliance/icon'),
+        info: require('./Functions/Alliance/info'),
         alliances: require('./Functions/Alliance/Alliances')
     },
     character: {
@@ -30,17 +30,17 @@ module.exports = {
         npcCorps: require('./Functions/Corporation/npcCorps')
     },
     dogma: {
-        attrs: require('./Functions/Dogma/attributes'),
-        attrInfo: require('./Functions/Dogma/attributeInfo'),
-        dynItemInfo: require('./Functions/Dogma/DynamicItemInfo'),
+        attrs: require('./Functions/Dogma/attrs'),
+        attrInfo: require('./Functions/Dogma/attrInfo'),
+        dynItemInfo: require('./Functions/Dogma/dynItemInfo'),
         effectInfo: require('./Functions/Dogma/effectInfo'),
         effects: require('./Functions/Dogma/effects')
     },
     fw: {
-       leaderboards: {
-           chars: require('./Functions/Faction Warfare/leaderboards/characters'),
-           corps: require('./Functions/Faction Warfare/leaderboards/corporations'),
-           leaderboards: require('./Functions/Faction Warfare/leaderboards/leaderboards')
+       lbs: {
+           chars: require('./Functions/Faction Warfare/leaderboards/chars'),
+           corps: require('./Functions/Faction Warfare/leaderboards/corps'),
+           leaderboard: require('./Functions/Faction Warfare/leaderboards/leaderboard')
        },
        stats: require('./Functions/Faction Warfare/stats'),
        systems: require('./Functions/Faction Warfare/systems'),
@@ -93,10 +93,60 @@ module.exports = {
         structures: require('./Functions/Sovereignty/structures')
     },
     status: {
-
+        status: require('./Functions/Status/status')
     },
     universe: {
+        ancestries: {
+            ancestries: require('./Functions/Universe/Ancestries/ancestries')
+        },
+        belts: {
 
+        },
+        bulk: {
+
+        },
+        categories: {
+
+        },
+        constellations: {
+
+        },
+        factions: {
+
+        },
+        graphics: {
+
+        },
+        groups: {
+
+        },
+        moons: {
+
+        },
+        planets: {
+
+        },
+        races: {
+
+        },
+        regions: {
+
+        },
+        stargates: {
+
+        },
+        stars: {
+
+        },
+        structures: {
+
+        },
+        systems: {
+
+        },
+        types: {
+
+        }
     },
     wars: {
         
