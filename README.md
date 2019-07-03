@@ -1,7 +1,7 @@
 # esiJS
 
 esiJS is a updated library for EVE Online, that's updated and simple to use!
-Since i haven't bought anything from CCP, i can't use the authenication (afaik).q
+Since i haven't bought anything from CCP, i can't use the authenication (afaik)
 
 # INSTALLING:
 ```bash
@@ -11,7 +11,7 @@ npm i --save esijs
 # USAGE:
 
 ```js
-let esiJS = require('esiJS)
+let esiJS = require('esiJS')
 // Use all functions like this:
 let a = await esiJS.group.function()
 // functions MUST be 'await'ed, otherwise they wont work properly
