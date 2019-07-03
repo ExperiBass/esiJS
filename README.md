@@ -1,6 +1,7 @@
 # esiJS
 
-esiJS is a updated library for EVE Online, that's updated and simple to use!
+esiJS is a updated module for EVE Online ESI. It makes getting data from the ESI much easier and results in cleaner code. 
+
 Since i haven't bought anything from CCP, i can't use the authenication (afaik)
 
 # INSTALLING:
