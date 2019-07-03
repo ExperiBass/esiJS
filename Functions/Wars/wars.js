@@ -1,7 +1,7 @@
 module.exports = wars
 
 const axios = require('axios')
-const { link, dataSource } = require('../../../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 async function wars() {
 let returningData;

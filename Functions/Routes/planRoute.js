@@ -3,7 +3,7 @@ module.exports = planRoute
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
-async function planRoute(orgin, desto, flag = 'secure', avoid) {
+async function planRoute(orgin, desto, flag = 'secure', avoid  = []) {
     let returningData;
     let query;
 

@@ -11,6 +11,7 @@ Since i haven't bought anything from CCP, i can't use the authenication (afaik).
 // Use all functions like this:
 let a = await esiJS.group.function()
 // functions MUST be 'await'ed, otherwise they wont work properly
+// except `getSettings` and `setSettings`, those are synchronous functions
 
 // ALLIANCE:
 esiJS.alliance.alliances() // returns a array of active alliances
@@ -186,8 +187,9 @@ esiJS.wars.wars() // returns a list of wars
 esiJS.wars.warInfo(warID) // returns info on a war
 esiJS.wars.warKills(warID) // returns all kills in a war
 
-// SETTINGS:
-esiJS.settings.getSettings() // returns the current settings
-esiJS.settings.setSettings(path, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
+// UTILITY:
+esiJS.util.getSettings() // returns the current settings
+esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
                                              // the server to get the data from ('tranqulity', 'singularity', defaults to the former)
+esiJS.util.sleep(mills) // pauses execution for the specified amount of time
 ```
