@@ -11,6 +11,7 @@ Since i haven't bought anything from CCP, i can't use the authenication (afaik).
 // Use all functions like this:
 let a = await esiJS.group.function()
 // functions MUST be 'await'ed, otherwise they wont work properly
+
 // ALLIANCE:
 esiJS.alliance.alliances() // returns a array of active alliances
 esiJS.alliance.corps(allianceID) // returns a array of corporationd within a alliance
@@ -61,6 +62,9 @@ esiJS.industry.systems() // returns cost indices for all systems
 // INSURANCE: 
 esiJS.insurance.prices() // returns available insurance levels for all ship types
 
+// KILLMAILS: 
+esiJS.killmails.getkillMail(killmailID, killmailHash) // returns info on a killmail
+
 // LOYALTY:
 esiJS.loyalty.offers(corporationID) // returns a list of offers from a corporations loyalty store
 
@@ -103,10 +107,84 @@ esiJS.sov.map() // returns sovereignty of all systems
 esiJS.sov.structures() // returns sovereignty of structures
 
 // STATUS:
-esiJS.status.status() // returns status of the server chosen in the settings
-// UNIVERSE:
+esiJS.status.status() // returns status of the server set using 'setSettings()'
+
+// UNIVERSE (ANCESTRIES):
+esiJS.universe.ancestries.ancestries() // returns all character ancestries
+
+// UNIVERSE (BELTS):
+esiJS.universe.belts.beltInfo(beltID) // returns info on a asteriod belt
+
+// UNIVERSE (BLOODLINES):
+esiJS.universe.bloodlines.bloodlines() // returns all character bloodlines
+
+// UNIVERSE (BULK):
+esiJS.universe.bulk.idsToNames(array) // returns names of all ids in the array passed. supported IDs fall into these categories:
+                                      // Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, 
+                                      // Regions, Types, and Factions 
+
+esiJS.universe.bulk.namesToIds(array) // returns ids of all names passed that are a exact match in these categories:
+                                      // agents, alliances, characters, constellations, corporations, factions, 
+                                      // inventory_types, regions, stations, and systems
+
+// UNIVERSE (CATEGORIES):
+esiJS.universe.categories.categories() // returns all categories
+esiJS.universe.categories.categoryInfo(categoryID) // returns info on a category
+
+// UNIVERSE (CONSTELLATIONS):
+esiJS.universe.constellations.constellations() // returns all constellations
+esiJS.universe.constellations.constellationInfo(constellationID) // returns info on a constellation
+
+// UNIVERSE (FACTIONS): 
+esiJS.universe.factions.factions() // returns all factions
+
+// UNIVERSE (GRAPHICS):
+esiJS.universe.graphics.graphics() // returns all graphics
+esiJS.universe.graphics.graphicInfo(graphicID) // returns info on a graphic
+
+// UNIVERSE (GROUPS):
+esiJS.universe.groups.groups() // returns all groups
+esiJS.universe.groups.groupInfo(groupID) // returns info on a group
+
+// UNIVERSE (MOONS):
+esiJS.universe.moons.moonInfo(moonID) // returns info on a moon
+
+// UNIVERSE (PLANETS):
+esiJS.universe.planets.planetInfo(planetID) // returns info on a planet
+
+// UNIVERSE (RACES):
+esiJS.universe.races.races() // returns all character races
+
+// UNIVERSE (REGIONS):
+esiJS.universe.regions.regions() // returns all regions
+esiJS.universe.regions.regionInfo(regionID) // returns info on a region
+
+// UNIVERSE (STARGATES):
+esiJS.universe.stargates.stargateInfo(stargateID) // returns info on a stargate
+
+// UNIVERSE (STARS):
+esiJS.universe.stars.starInfo(starID) // returns info on a star
+
+// UNIVERSE (STATIONS):
+esiJS.universe.stations.stationInfo(stationID) // returns info on a station
+
+// UNIVERSE (STRUCTURES):
+esiJS.universe.structures.structures() // returns all structures
+
+// UNIVERSE (SYSTEMS):
+esiJS.universe.systems.systems() // returns all systems
+esiJS.universe.systems.systemInfo(systemID) // returns info on a system
+esiJS.universe.systems.systemKills() // returns all system kills within the last hour, excluding wormhole space
+esiJS.universe.systems.systemJumps() // returns the jumps into a system within the last hour
+
+// UNIVERSE (TYPES):
+esiJS.universe.types.types() // returns all types
+esiJS.universe.types.typeInfo(typeID) // returns info on a type
 
 // WARS:
+esiJS.wars.wars() // returns a list of wars
+esiJS.wars.warInfo(warID) // returns info on a war
+esiJS.wars.warKills(warID) // returns all kills in a war
 
 // SETTINGS:
 esiJS.settings.getSettings() // returns the current settings

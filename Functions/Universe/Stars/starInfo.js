@@ -1,16 +1,16 @@
-module.exports = groupInfo
+module.exports = starInfo
 
 const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
-async function groupInfo(groupID) {
+async function starInfo(starID) {
     let returningData;
-    if (!groupID || typeof groupID !== 'number') {
-        console.error(`The function 'groupInfo' needs a group ID!`)
-        return Error('groupInfo needs a group ID')
+    if (!starID || typeof starID !== 'number') {
+        console.error(`The function 'starInfo' needs a star ID!`)
+        return Error('starInfo needs a star ID')
     }
 
-    await axios.get(`${link}universe/groups/${groupID}/?datasource=${dataSource}`)
+    await axios.get(`${link}universe/stars/${starID}/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

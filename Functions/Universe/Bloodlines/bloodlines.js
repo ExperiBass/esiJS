@@ -1,12 +1,12 @@
-module.exports = wars
+module.exports = bloodlines
 
 const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
-async function wars() {
+async function bloodlines() {
 let returningData;
 
-    await axios.get(`${link}wars/?datasource=${dataSource}`)
+    await axios.get(`${link}universe/bloodlines/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

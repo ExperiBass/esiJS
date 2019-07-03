@@ -1,16 +1,16 @@
-module.exports = groupInfo
+module.exports = stationInfo
 
 const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
-async function groupInfo(groupID) {
+async function stationInfo(stationID) {
     let returningData;
-    if (!groupID || typeof groupID !== 'number') {
-        console.error(`The function 'groupInfo' needs a group ID!`)
-        return Error('groupInfo needs a group ID')
+    if (!stationID || typeof stationID !== 'number') {
+        console.error(`The function 'stationInfo' needs a station ID!`)
+        return Error('stationInfo needs a station ID')
     }
 
-    await axios.get(`${link}universe/groups/${groupID}/?datasource=${dataSource}`)
+    await axios.get(`${link}universe/stations/${stationID}/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })

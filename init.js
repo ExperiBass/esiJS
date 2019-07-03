@@ -57,7 +57,7 @@ module.exports = {
         prices: require('./Functions/Insurance/prices')
     },
     killmails: {
-
+        killmailInfo: require('./Functions/Killmails/killmailInfo')
     },
     loyalty: {
         offers: require('./Functions/Loyalty/offers')
@@ -102,6 +102,9 @@ module.exports = {
         belts: {
             beltInfo: require('./Functions/Universe/Belts/beltInfo')
         },
+        bloodlines: {
+            bloodlines: require('./Functions/Universe/Bloodlines/bloodlines')
+        },
         bulk: {
             idsToNames: require('./Functions/Universe/Bulk/idsToNames'),
             namesToIds: require('./Functions/Universe/Bulk/namesToIds')
@@ -111,7 +114,7 @@ module.exports = {
            categoryInfo: require('./Functions/Universe/Categories/categoryInfo')
         },
         constellations: {
-            constellation: require('./Functions/Universe/Constellations/constellation'),
+            constellation: require('./Functions/Universe/Constellations/constellations'),
             constellationInfo: require('./Functions/Universe/Constellations/constellationInfo') 
         },
         factions: {
@@ -142,7 +145,10 @@ module.exports = {
             stargateInfo: require('./Functions/Universe/Stargates/stargateInfo')
         },
         stars: {
-            stars: require('./Functions/Universe/Stars/stars')
+            starInfo: require('./Functions/Universe/Stars/starInfo')
+        },
+        stations: {
+            stationInfo: require('./Functions/Universe/Stations/stationInfo')
         },
         structures: {
             structures: require('./Functions/Universe/Structures/structures')
