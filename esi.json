@@ -1,3 +1,4 @@
 {
-    "link": "https://esi.evetech.net/latest/"
+  "link": "https://esi.evetech.net/latest/",
+  "dataSource": "tranquility"
 }

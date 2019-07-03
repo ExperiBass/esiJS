@@ -1,8 +1,9 @@
 module.exports = search
 
-async function search(string, category, strict) {
-    let axios = require('axios')
-    let { link } = require('../../esi.json')
+async function search(search, category, strict = false) {
+    const axios = require('axios')
+    const { link } = require('../../esi.json')
+
     let data;
     let returningData;
     let categories = [
@@ -18,68 +19,29 @@ async function search(string, category, strict) {
                 'station'
                 ]
   
-    if (typeof string !== 'string') {
+    if (typeof search !== 'string') {
         console.error(`The first argument MUST be a string!`)
         return
     }
-    if (typeof category) {
-        let s = category.toString().toLowerCase()
-        switch(s) {
-            case 'agent':
-                break;
-            case 'alliance':
-                break;
-            case 'character':
-                break;
-            case 'constellation':
-                break;
-            case 'corporation':
-                break;
-            case 'faction':
-                break;
-            case 'inventory_type':
-                break;
-            case 'region':
-                break;
-            case 'solar_system':
-                break;
-            case 'station':
-                break;
-            default:
-                console.error(`The second argument must be of one of the following categories: ${categories}`)
-                return;
-        }
-    }
-    if (strict == undefined) {
-        strict = false
+    if (typeof category !== 'string' || !categories.includes(category)) {
+        console.error(`The category must be a string and must be one of the following categories: ${categories}`)
+        return Error(`Second argument must be a string and one of these categories: ${categories}`)
     }
     if (typeof strict !== 'boolean') {
         console.error(`The third parameter must be a boolean value!`)
-        return;
+        return Error('Third argument must be a boolean value')
     } 
 
- await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${string}&strict=${strict}`)
+    await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
         .then(response => {
-            if (response.statusText != 'OK') {
-                console.error(response.error)
-                return true
-            }
             data = response.data
-      //      console.log(data, 'line 68')
-        }).catch(function (error) {
-            // handle error
-            console.log(error);
-          })
+        })
+        .catch(function (e) {
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
+        })
         
-        returningData = Promise.resolve(data)
-      //  console.log(data, 'line 73')
+    returningData = Promise.resolve(data)
     return returningData;
 }
-
-// testing/debugging
-/*console.log(a())
-async function a() {
-    let info = await search('tritanium', 'inventory_type', true)
-    console.log(info, 'line 80')
-    console.log(info.inventory_type, 'line 81', info.inventory_type[0])
-}*/

@@ -21,6 +21,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Changed
 - Package.json to support Mocha tests
 
+### [v2.0.0] - 2019 07 03
+#### Added
+- All non-SSO ESI endpoints
+- Docs
+- `getSettings` and `setSettings`
+#### Changed
+- Updated README.md
+- Improved error handling
+- Changed constants declared as `let`s to `const`s
+- Datasource is now modifiable
 
 
 <!-- LINKS -->

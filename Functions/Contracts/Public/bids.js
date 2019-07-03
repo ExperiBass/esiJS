@@ -1,7 +1,7 @@
 module.exports = bids
 
-let axios = require('axios')
-let { link } = require('../../../esi.json')
+const axios = require('axios')
+const { link, dataSource } = require('../../../esi.json')
 
 async function bids(contractID, pageNum = 1) {
     let returningData;
@@ -15,13 +15,14 @@ async function bids(contractID, pageNum = 1) {
         return 'function bids needs number as second arg'
     }
     
-    await axios.get(`${link}contracts/public/bids/${contractID}/?datasource=tranquility&page=${pageNum}`)
+    await axios.get(`${link}contracts/public/bids/${contractID}/?datasource=${dataSource}&page=${pageNum}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
-            console.error(e.response.data.error)
-            return e.response.data.error
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
     return returningData
 }
