@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mocha/Chai testing
 #### Changed
 - Package.json to support Mocha tests
-### v0.2.0 - 2019 07 ??
+### v2.0.0 - 2019 07 ??
 #### Added
 - All ESI endpoints
 - Docs
