@@ -20,16 +20,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mocha/Chai testing
 #### Changed
 - Package.json to support Mocha tests
-### v0.2.0 - 2019 07 01
+### v0.2.0 - 2019 07 ??
 #### Added
-- Folders for all ESI groups with public endpoints
+- All ESI endpoints
+- Docs
+- `getSettings` and `setSettings`
 #### Changed
 - Updated README.md
 - Improved error handling
 - Changed constants declared as `let`s to `const`s
-- Added `getSettings` and `setSettings`
 - Datasource is now modifiable
-- Added ESI groups from Faction Warfare to Sovereignty
 
 
 <!-- LINKS -->
