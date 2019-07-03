@@ -100,55 +100,67 @@ module.exports = {
             ancestries: require('./Functions/Universe/Ancestries/ancestries')
         },
         belts: {
-
+            beltInfo: require('./Functions/Universe/Belts/beltInfo')
         },
         bulk: {
-
+            idsToNames: require('./Functions/Universe/Bulk/idsToNames'),
+            namesToIds: require('./Functions/Universe/Bulk/namesToIds')
         },
         categories: {
-
+           categories: require('./Functions/Universe/Categories/categories'),
+           categoryInfo: require('./Functions/Universe/Categories/categoryInfo')
         },
         constellations: {
-
+            constellation: require('./Functions/Universe/Constellations/constellation'),
+            constellationInfo: require('./Functions/Universe/Constellations/constellationInfo') 
         },
         factions: {
-
+            factions: require('./Functions/Universe/Factions/factions')
         },
         graphics: {
-
+           graphics: require('./Functions/Universe/Graphics/graphics'),
+           graphicINfo: require('./Functions/Universe/Graphics/graphicInfo') 
         },
         groups: {
-
+            groups: require('./Functions/Universe/Groups/groups'),
+            groupInfo: require('./Functions/Universe/Groups/groupInfo')
         },
         moons: {
-
+            moonInfo: require('./Functions/Universe/Moons/moonInfo')
         },
         planets: {
-
+            planetInfo: require('./Functions/Universe/Planets/planetInfo')
         },
         races: {
-
+            races: require('./Functions/Universe/Races/races')
         },
         regions: {
-
+           regions: require('./Functions/Universe/Regions/regions'),
+           regionInfo: require('./Functions/Universe/Regions/regionInfo')
         },
         stargates: {
-
+            stargateInfo: require('./Functions/Universe/Stargates/stargateInfo')
         },
         stars: {
-
+            stars: require('./Functions/Universe/Stars/stars')
         },
         structures: {
-
+            structures: require('./Functions/Universe/Structures/structures')
         },
         systems: {
-
+            systems: require('./Functions/Universe/Systems/systems'),
+            systemInfo: require('./Functions/Universe/Systems/systemInfo'),
+            systemJumps: require('./Functions/Universe/Systems/systemJumps'),
+            systemKills: require('./Functions/Universe/Systems/systemKills')
         },
         types: {
-
+            types: require('./Functions/Universe/Types/types'),
+            typeInfo: require('./Functions/Universe/Types/typeInfo')
         }
     },
     wars: {
-        
+        wars: require('./Functions/Wars/wars'),
+        warInfo: require('./Functions/Wars/warInfo'),
+        warKills: require('./Functions/Wars/warKills')
     }
 }
