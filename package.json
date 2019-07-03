@@ -1,6 +1,6 @@
 {
   "name": "esijs",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "description": "A simple library for EVE Online.",
   "main": "init.js",
   "scripts": {
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/GingkathFox/EveJS/issues"
   },
-  "homepage": "https://github.com/GingkathFox/EveJS#readme"
+  "homepage": "https://github.com/GingkathFox/EveJS#readme",
+  "directories": {
+    "test": "test"
+  }
 }
