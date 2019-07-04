@@ -80,3 +80,4 @@ typings/
 
 # other
 demo.js 
+.DS_Store

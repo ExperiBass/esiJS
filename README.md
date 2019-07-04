@@ -196,5 +196,17 @@ esiJS.wars.warKills(warID) // returns all kills in a war
 esiJS.util.getSettings() // returns the current settings
 esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
                                              // the server to get the data from ('tranqulity', 'singularity', defaults to the former)
-esiJS.util.sleep(mills) // pauses execution for the specified amount of time
+esiJS.util.sleep(mills) // pauses execution for the specified amount of time (in milliseconds)
+esiJS.util.addArrays(array1, array2) // merges two arrays into one, returns a array
+                                     // useful for using `esiJS.wars.warKills` on multiple wars, makes it easier to get 
+                                     // the killmail info
+                                     /* EXAMPLE:
+                                     let allKills = []
+                                     let wars = await esiJS.wars.wars()
+                                     for (let i = 0; i < wars.length; i++) {
+                                         let kills = await esiJS.wars.warKills(wars[i])
+                                         allKills = esiJS.util.addArrays(allKills, kills)
+
+                                     }
+                                     */
 ```
