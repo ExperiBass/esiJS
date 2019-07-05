@@ -22,6 +22,8 @@ function addArrays(a1, a2) {
 }
 
 /*function a() {
-    console.log(addArrays([1,2,3],[4,5,6]))
+    let array = [1,2,3]
+    array = addArrays(array,[4,5,6])
+    console.log(array)
 }
 console.log(a())*/
