@@ -2,14 +2,15 @@ let addArrays = require('./addArrays')
 
 let allKills = [ ]
 let war = require('../Wars/wars')
+let warKills = require('../Wars/warKills')
 
 async function myFunc() {
 
     let wars = await war()
-    let warKills = require('../Wars/warKills')
+    
     let arrayToBeAdded = []
 
-    for (let i = 0; i < wars.length; i++) {
+    for (let i = 0; i < 30; i++) {
         let kills = await warKills(wars[i])
         console.log(kills)
         arrayToBeAdded = addArrays(arrayToBeAdded, kills)
@@ -18,7 +19,7 @@ async function myFunc() {
 
     }  
     allKills = addArrays(allKills, arrayToBeAdded)
-    console.log(allKills)
+    console.log('\n\n\nallKills:\n',allKills)
 }
 
 console.log(myFunc())
