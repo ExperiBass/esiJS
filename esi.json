@@ -1,4 +1,7 @@
 {
   "link": "https://esi.evetech.net/latest/",
-  "dataSource": "tranquility"
+  "dataSource": "tranquility",
+  "base": "https://esi.evetech.net/",
+  "neoLink": "latest/",
+  "neoDataSource": "tranquility"
 }
