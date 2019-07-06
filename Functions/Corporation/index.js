@@ -1,13 +1,15 @@
 'use strict'
 
 const { doGet } = require('../../shared/utils.js')
+const category = 'corporations/'
+
 
 function icons(corpID) {
 	if (!corpID) {
 		console.error(`The function 'icons()' needs a corp ID!`)
 		throw new Error('icons() needs a corporation ID')
 	}
-	return doGet(`corporations/`, `${corpID}/icons/`)
+	return doGet(category, `${corpID}/icons/`)
 }
 
 function info(corpID) {
@@ -15,11 +17,11 @@ function info(corpID) {
 			console.error(`The function 'info()' needs a corp ID!`)
 			throw new Error('info() needs a corporation ID')
 	}
-	return doGet(`corporations/`, `${corpID}/`)
+	return doGet(category, `${corpID}/`)
 }
 
 function npcCorps() {
-	return doGet(`corporations/`, `npccorps/`)
+	return doGet(category, `npccorps/`)
 }
 
 function allianceHistory(corpID) {
@@ -27,7 +29,7 @@ function allianceHistory(corpID) {
 			console.error(`The function 'allianceHistory()' needs a corp ID!`)
 			throw new Error('allianceHistory() needs a corporation ID')
 	}
-	return doGet(`corporations/`, `${corpID}/alliancehistory/`)
+	return doGet(category, `${corpID}/alliancehistory/`)
 
 }
 
