@@ -1,1 +1,0 @@
-Nothing to see here, if you want you can implement killmails here

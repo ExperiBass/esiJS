@@ -77,3 +77,6 @@ typings/
 
 # VSCode stuff
 .vscode
+
+# other
+demo.js 

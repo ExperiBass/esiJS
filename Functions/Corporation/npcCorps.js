@@ -1,18 +1,19 @@
 module.exports = npcCorps
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link, dataSource } = require('../../esi.json')
 
 async function npcCorps() {
     let returningData;
 
-    await axios.get(`${link}corporations/npccorps/?datasource=tranquility`)
+    await axios.get(`${link}corporations/npccorps/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
-            console.error(e.response.data.error)
-            return e.response.data.error
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
     return returningData;
 }

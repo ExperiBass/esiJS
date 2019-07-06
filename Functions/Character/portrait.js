@@ -1,22 +1,23 @@
 module.exports = portrait
 
-let axios = require('axios')
-let { link } = require('../../esi.json')
+const axios = require('axios')
+const { link, dataSource } = require('../../esi.json')
 
 async function portrait(charID) {
     let returningData;
-    if (!charID) {
+    if (!charID || typeof charID !== 'number') {
         console.error(`The function 'portrait' needs a character ID!`)
-        return 'portrait needs a char ID'
+        return Error('portrait needs a char ID')
     }
 
-    await axios.get(`${link}characters/${charID}/portrait/?datasource=tranquility`)
+    await axios.get(`${link}characters/${charID}/portrait/?datasource=${dataSource}`)
         .then(response => {
             returningData = Promise.resolve(response.data)
         })
         .catch(function(e) {
-            console.error(e.response.data.error)
-            return e.response.data.error
+            let error = e.response.data.error
+            console.error(`From ESI:`,error)
+            return Error(error)
         })
     return returningData;
 }
