@@ -3,7 +3,8 @@ module.exports = {
     util: {
         setSettings: require('./Functions/Utility/setSettings'),
         getSettings: require('./Functions/Utility/getSettings'),
-        sleep: require('./Functions/Utility/sleep')
+        sleep: require('./Functions/Utility/sleep'),
+        addArrays: require('./Functions/Utility/addArrays')
     }, 
     alliance: {
         corps: require('./Functions/Alliance/corps'),
