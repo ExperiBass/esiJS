@@ -1,21 +1,7 @@
 'use strict'
 
 module.exports = {
-<<<<<<< HEAD
 
-    // test: require('./Functions/Test'),
-    
-    alliance: require('./Functions/Alliance'),
-    character: require('./Functions/Character'),
-    contracts: {
-				public: require('./Functions/Contracts/Public'),
-				private: {}
-    },
-    corporation: require('./Functions/Corporation'),
-    dogma: require('./Functions/Dogma'),
-    factionWarfare: {
-
-=======
     
     util: {
         setSettings: require('./Functions/Utility/setSettings'),
@@ -41,12 +27,7 @@ module.exports = {
             items: require('./Functions/Contracts/Public/items')
         }
     },
-    corporation: {
-        allianceHistory: require('./Functions/Corporation/allianceHistory'),
-        icons: require('./Functions/Corporation/icons'),
-        info: require('./Functions/Corporation/info'),
-        npcCorps: require('./Functions/Corporation/npcCorps')
-    },
+    corporation: require('./Functions/Corporation'),
     dogma: {
         attrs: require('./Functions/Dogma/attrs'),
         attrInfo: require('./Functions/Dogma/attrInfo'),
@@ -63,7 +44,6 @@ module.exports = {
        stats: require('./Functions/Faction Warfare/stats'),
        systems: require('./Functions/Faction Warfare/systems'),
        wars: require('./Functions/Faction Warfare/wars')
->>>>>>> dev
     },
     incursions: {
         incursions: require('./Functions/Incursions/incursions')
