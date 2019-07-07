@@ -1,6 +1,6 @@
 # esiJS
 
-esiJS is a updated library for EVE Online, that's made for 
+esiJS is a updated library for EVE Online, that's made for getting data from ESI much easier!
 
 # INSTALLING:
 ```bash
