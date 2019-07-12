@@ -13,9 +13,14 @@ npm i --save esijs
 let esiJS = require('esiJS')
 // Use all functions like this:
 let a = await esiJS.group.<subgroup>.function()
+            .catch(function(e) {
+                // whatever you want to do with errors
+            })
 // functions MUST be 'await'ed, otherwise they wont work properly
 // except `getSettings`, `setSettings` and `addArrays`, those are synchronous functions (but can be used as async, obviously)
+```
 
+```js
 // ALLIANCE:
 await esiJS.alliance.alliances() // returns a array of active alliances
 await esiJS.alliance.corps(allianceID) // returns a array of corporations within a alliance
