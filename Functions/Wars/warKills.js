@@ -7,7 +7,7 @@ async function warKills(warID) {
     let returningData;
     if (!warID || typeof warID !== 'number') {
         console.error(`The function 'warKills' needs a war ID!`)
-        return Error('warKills needs a war ID')
+        throw Error('warKills needs a war ID')
     }
 
     await axios.get(`${link}wars/${warID}/killmails/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function warKills(warID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

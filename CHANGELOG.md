@@ -32,6 +32,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed constants declared as `let`s to `const`s
 - Datasource is now modifiable
 
+### [v2.1.0] - 2019 07 12
+#### Added
+- `addArrays` and `sleep`
+#### Changed
+- Errors are now thrown instead of returned
+- Changed the name of `alliances.icons` to `alliances.icon`
 
 <!-- LINKS -->
 <!-- RELEASES -->

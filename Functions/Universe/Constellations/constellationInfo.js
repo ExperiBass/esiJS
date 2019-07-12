@@ -7,7 +7,7 @@ async function constellationInfo(constellationID) {
     let returningData;
     if (!constellationID || typeof constellationID !== 'number') {
         console.error(`The function 'constellationInfo' needs a constellation ID!`)
-        return Error('constellationInfo needs a constellation ID')
+        throw Error('constellationInfo needs a constellation ID')
     }
 
     await axios.get(`${link}universe/constellations/${constellationID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function constellationInfo(constellationID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

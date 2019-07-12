@@ -7,8 +7,8 @@ async function icon(ID) {
     let returningData;
 
     if (!ID || typeof ID !== 'number') {
-        console.error(`the function 'icon' requires a alliance ID!`)
-        return Error('icon requires alliance ID')
+        console.error(`The function 'icon' requires a alliance ID!`)
+        throw Error('icon requires alliance ID')
     }
 
     await axios.get(`${link}alliances/${ID}/icons/?datasource=${dataSource}`)
@@ -18,7 +18,7 @@ async function icon(ID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
     return returningData;

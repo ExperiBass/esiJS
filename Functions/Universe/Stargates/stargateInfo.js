@@ -7,7 +7,7 @@ async function stargateInfo(stargateID) {
     let returningData;
     if (!stargateID || typeof stargateID !== 'number') {
         console.error(`The function 'stargateInfo' needs a stargate ID!`)
-        return Error('stargateInfo needs a stargate ID')
+        throw Error('stargateInfo needs a stargate ID')
     }
 
     await axios.get(`${link}universe/stargates/${stargateID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function stargateInfo(stargateID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

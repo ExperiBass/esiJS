@@ -8,7 +8,7 @@ async function schematic(ID) {
 
     if (!ID || typeof ID !== 'number') {
         console.error(`the function 'schematic' requires a schematic ID!`)
-        return Error('schematic requires schematic ID')
+        throw Error('schematic requires schematic ID')
     }
 
     await axios.get(`${link}universe/schematics/${ID}?datasource=${dataSource}`)
@@ -18,7 +18,7 @@ async function schematic(ID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
     return returningData;

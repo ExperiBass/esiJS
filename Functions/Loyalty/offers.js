@@ -8,7 +8,7 @@ let returningData;
 
     if (!corpID || typeof corpID !== 'number') {
         console.error('offers requires a valid corporation ID!')
-        return Error('offers requires valid corporation ID')
+        throw Error('offers requires valid corporation ID')
     }
 
     await axios.get(`${link}loyalty/stores/${corpID}/offers/?datasource=${dataSource}`)
@@ -18,7 +18,7 @@ let returningData;
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
         return returningData;

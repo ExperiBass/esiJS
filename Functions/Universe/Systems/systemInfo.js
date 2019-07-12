@@ -7,7 +7,7 @@ async function systemInfo(systemID) {
     let returningData;
     if (!systemID || typeof systemID !== 'number') {
         console.error(`The function 'systemInfo' needs a system ID!`)
-        return Error('systemInfo needs a system ID')
+        throw Error('systemInfo needs a system ID')
     }
 
     await axios.get(`${link}universe/systems/${systemID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function systemInfo(systemID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

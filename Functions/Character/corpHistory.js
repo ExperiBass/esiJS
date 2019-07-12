@@ -7,7 +7,7 @@ async function corpHistory(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {
         console.error(`The function 'corpHistory' needs a character ID!`)
-        return Error('corpHistory needs a char ID')
+        throw Error('corpHistory needs a char ID')
     }
 
     await axios.get(`${link}characters/${charID}/corporationhistory/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function corpHistory(charID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

@@ -8,7 +8,7 @@ async function groupInfo(ID) {
 
     if (!ID || typeof ID !== 'number') {
         console.error(`the function 'groupInfo' requires a opportunity group ID!`)
-        return Error('groupInfo requires opportunity group ID')
+        throw Error('groupInfo requires opportunity group ID')
     }
 
     await axios.get(`${link}opportunity/groups/${ID}?datasource=${dataSource}`)
@@ -18,7 +18,7 @@ async function groupInfo(ID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
     return returningData;

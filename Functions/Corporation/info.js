@@ -7,7 +7,7 @@ async function info(corpID) {
     let returningData;
     if (!corpID) {
         console.error(`The function 'info' needs a corp ID!`)
-        return 'info needs a corporation ID'
+        throw Error('info needs a corporation ID')
     }
 
     await axios.get(`${link}corporations/${corpID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function info(corpID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
     return returningData;
 }

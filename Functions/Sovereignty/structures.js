@@ -13,7 +13,7 @@ let returningData;
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
         return returningData;

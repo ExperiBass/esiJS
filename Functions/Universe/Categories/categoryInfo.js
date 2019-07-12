@@ -7,7 +7,7 @@ async function categoryInfo(categoryID) {
     let returningData;
     if (!categoryID || typeof categoryID !== 'number') {
         console.error(`The function 'categoryInfo' needs a category ID!`)
-        return Error('categoryInfo needs a category ID')
+        throw Error('categoryInfo needs a category ID')
     }
 
     await axios.get(`${link}universe/categories/${categoryID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function categoryInfo(categoryID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

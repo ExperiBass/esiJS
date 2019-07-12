@@ -7,11 +7,11 @@ async function dynamicItemInfo(itemID, typeID) {
     let returningData;
     if (!itemID) {
         console.error(`The function 'dynamicItemInfo' needs a item ID as its first argument!`)
-        return 'dynamicItemInfo needs item ID'
+        throw Error('dynamicItemInfo needs item ID')
     }
     if (!typeID) {
         console.error(`The function 'dynamicItemInfo' needs a type ID as its first argument!`)
-        return 'dynamicItemInfo needs type ID'
+        throw Error('dynamicItemInfo needs type ID')
     }
 
     await axios.get(`${link}dogma/dynamic/items/${typeID}/${itemID}/?datasource=${dataSource}`)
@@ -21,7 +21,7 @@ async function dynamicItemInfo(itemID, typeID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
     return returningData;
 }

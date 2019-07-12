@@ -7,7 +7,7 @@ async function publicInfo(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {
         console.error(`The function 'publicInfo' needs a character ID!`)
-        return Error('publicInfo needs char ID')
+        throw Error('publicInfo needs char ID')
     }
 
     await axios.get(`${link}characters/${charID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function publicInfo(charID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
     return returningData;
 }

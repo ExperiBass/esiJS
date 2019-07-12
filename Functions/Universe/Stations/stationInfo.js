@@ -7,7 +7,7 @@ async function stationInfo(stationID) {
     let returningData;
     if (!stationID || typeof stationID !== 'number') {
         console.error(`The function 'stationInfo' needs a station ID!`)
-        return Error('stationInfo needs a station ID')
+        throw Error('stationInfo needs a station ID')
     }
 
     await axios.get(`${link}universe/stations/${stationID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function stationInfo(stationID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

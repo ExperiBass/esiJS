@@ -8,11 +8,11 @@ async function contracts(regionID, pageNum = 1) {
 
     if (!regionID || typeof regionID !== 'number') {
         console.error(`The function 'contracts' requires its first argument to be a number and a valid contract ID!`)
-        return 'contracts needs contract ID as first arg'
+        throw Error('contracts needs contract ID as first arg')
     }
     if (typeof pageNum !== 'number') {
         console.error(`The function 'contracts' requires its second argument to be a number!`)
-        return 'contracts needs number as second arg'
+        throw Error('contracts needs number as second arg')
     }
     
     await axios.get(`${link}contracts/public/${regionID}/?datasource=${dataSource}&page=${pageNum}`)
@@ -22,7 +22,7 @@ async function contracts(regionID, pageNum = 1) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
     return returningData
 }

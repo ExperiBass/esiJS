@@ -8,7 +8,7 @@ async function taskInfo(ID) {
 
     if (!ID || typeof ID !== 'number') {
         console.error(`the function 'taskInfo' requires a task group ID!`)
-        return Error('taskInfo requires task group ID')
+        throw Error('taskInfo requires task group ID')
     }
 
     await axios.get(`${link}opportunity/tasks/${ID}?datasource=${dataSource}`)
@@ -18,7 +18,7 @@ async function taskInfo(ID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
     return returningData;

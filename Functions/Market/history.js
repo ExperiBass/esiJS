@@ -8,11 +8,11 @@ let returningData;
 
     if (!regID || typeof regID !== 'number') {
         console.error('history requires a valid region ID!')
-        return Error('history requires valid region ID')
+        throw Error('history requires valid region ID')
     }
     if (!typeID || typeof typeID !== 'number') {
         console.error('history requires a valid type ID!')
-        return Error('history requires valid type ID')
+        throw Error('history requires valid type ID')
     }
 
     await axios.get(`${link}markets/${regID}/history/?datasource=${dataSource}&type_id=${typeID}`)
@@ -22,7 +22,7 @@ let returningData;
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
 
         return returningData;

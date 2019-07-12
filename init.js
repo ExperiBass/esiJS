@@ -27,7 +27,7 @@ module.exports = {
     },
     corporation: {
         allianceHistory: require('./Functions/Corporation/allianceHistory'),
-        icons: require('./Functions/Corporation/icons'),
+        icon: require('./Functions/Corporation/icon'),
         info: require('./Functions/Corporation/info'),
         npcCorps: require('./Functions/Corporation/npcCorps')
     },
