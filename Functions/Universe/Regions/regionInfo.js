@@ -7,7 +7,7 @@ async function regionInfo(regionID) {
     let returningData;
     if (!regionID || typeof regionID !== 'number') {
         console.error(`The function 'regionInfo' needs a region ID!`)
-        return Error('regionInfo needs a region ID')
+        throw Error('regionInfo needs a region ID')
     }
 
     await axios.get(`${link}universe/regions/${regionID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function regionInfo(regionID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

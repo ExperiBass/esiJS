@@ -25,11 +25,11 @@ async function search(search, category, strict = false) {
     }
     if (typeof category !== 'string' || !categories.includes(category)) {
         console.error(`The category must be a string and must be one of the following categories: ${categories}`)
-        return Error(`Second argument must be a string and one of these categories: ${categories}`)
+        throw Error(`Second argument must be a string and one of these categories: ${categories}`)
     }
     if (typeof strict !== 'boolean') {
         console.error(`The third parameter must be a boolean value!`)
-        return Error('Third argument must be a boolean value')
+        throw Error('Third argument must be a boolean value')
     } 
 
     await axios.get(`${link}search/?categories=${category}&datasource=tranquility&language=en-us&search=${search}&strict=${strict}`)
@@ -39,7 +39,7 @@ async function search(search, category, strict = false) {
         .catch(function (e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     returningData = Promise.resolve(data)

@@ -8,11 +8,11 @@ async function bids(contractID, pageNum = 1) {
 
     if (!contractID || typeof contractID !== 'number') {
         console.error(`The function 'bids' requires its first argument to be a number and a contract ID!`)
-        return 'function bids needs contract ID as first arg'
+        throw Error('bids needs contract ID as first arg')
     }
     if (typeof pageNum !== 'number') {
         console.error(`The function 'bids' requires its second argument to be a number!`)
-        return 'function bids needs number as second arg'
+        throw Error('bids needs number as second arg')
     }
     
     await axios.get(`${link}contracts/public/bids/${contractID}/?datasource=${dataSource}&page=${pageNum}`)
@@ -22,7 +22,7 @@ async function bids(contractID, pageNum = 1) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
     return returningData
 }

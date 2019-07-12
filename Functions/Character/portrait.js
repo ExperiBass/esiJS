@@ -7,7 +7,7 @@ async function portrait(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {
         console.error(`The function 'portrait' needs a character ID!`)
-        return Error('portrait needs a char ID')
+        throw Error('portrait needs a char ID')
     }
 
     await axios.get(`${link}characters/${charID}/portrait/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function portrait(charID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
     return returningData;
 }

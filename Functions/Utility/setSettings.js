@@ -10,7 +10,7 @@ function setSettings(link = 'latest', dataSource = 'tranquility') {
     let DS = 'tranquility singularity'.split(' ')
     if (!link || !path.includes(link) || !dataSource || !DS.includes(dataSource)) {
         console.error(`setSettings needs its first arg to be one of these: ${path}, and its second arg to be one of these: ${DS}`)
-        return Error(`setSettings needs first arg to be one of these: ${path}, and second arg to be one of these: ${DS}`)
+        throw Error(`setSettings needs first arg to be one of these: ${path}, and second arg to be one of these: ${DS}`)
     }
     link = `${server}${link}/`
     fs.writeFileSync(join, JSON.stringify( { link, dataSource }, null, 2) )

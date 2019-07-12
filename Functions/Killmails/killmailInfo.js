@@ -7,11 +7,11 @@ async function getKillmail(killID, killHash) {
     let returningData;
     if (!killID || typeof killID !== 'number') {
         console.error(`The function 'getKillmail' needs a killmail ID and a killmail hash!`)
-        return Error('getKillmail needs a killmail ID and hash')
+        throw Error('getKillmail needs a killmail ID and hash')
     }
     if (!killHash || typeof killHash !== 'string') {
         console.error(`The function 'getKillmail' needs a killmail ID and a killmail hash!`)
-        return Error('getKillmail needs a killmail ID and hash')
+        throw Error('getKillmail needs a killmail ID and hash')
     }
     await axios.get(`${link}killmails/${killID}/${killHash}/?datasource=${dataSource}`)
         .then(response => {
@@ -20,7 +20,7 @@ async function getKillmail(killID, killHash) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;

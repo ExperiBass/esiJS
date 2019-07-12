@@ -7,7 +7,7 @@ async function groupInfo(groupID) {
     let returningData;
     if (!groupID || typeof groupID !== 'number') {
         console.error(`The function 'groupInfo' needs a group ID!`)
-        return Error('groupInfo needs a group ID')
+        throw Error('groupInfo needs a group ID')
     }
 
     await axios.get(`${link}universe/groups/${groupID}/?datasource=${dataSource}`)
@@ -17,7 +17,7 @@ async function groupInfo(groupID) {
         .catch(function(e) {
             let error = e.response.data.error
             console.error(`From ESI:`,error)
-            return Error(error)
+            throw Error(error)
         })
         
     return returningData;
