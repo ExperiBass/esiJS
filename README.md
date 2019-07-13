@@ -1,6 +1,10 @@
 # esiJS
 
+<<<<<<< Updated upstream
 esiJS is a updated library for EVE Online, that's made for getting data from ESI much easier!
+=======
+esiJS is a updated module for EVE Online's ESI (EVE Swagger Interface). It makes getting data from the ESI much easier and results in cleaner code.
+>>>>>>> Stashed changes
 
 # INSTALLING:
 ```bash
@@ -12,13 +16,17 @@ npm i --save esijs
 ```js
 let esiJS = require('esiJS')
 // Use all functions like this:
-let a = await esiJS.group.<subgroup>.function()
+let a = await esiJS.group.<subgroup>.function() // `<subgroup>` is used in groups like `market` 
+                                                // (esiJS.market.groups.groups()) and `universe` 
+                                                // (esiJS.universe.ancestries.ancestries())
             .catch(function(e) {
                 // whatever you want to do with errors
             })
-// functions MUST be 'await'ed, otherwise they wont work properly
-// except `getSettings`, `setSettings` and `addArrays`, those are synchronous functions (but can be used as async, obviously)
+// functions MUST be 'await'ed, otherwise they wont work properly, except the `util` functions,
+// as those are synchronous functions (but can be used as async if you wish)
 ```
+
+Example usage is also in [EveShopper](https://github.com/GingkathFox/EveShopper).
 
 ```js
 // ALLIANCE:
@@ -198,7 +206,9 @@ await esiJS.wars.warKills(warID) // returns all kills in a war
 // UTILITY:
 esiJS.util.getSettings() // returns the current settings
 esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
-                                          // the server to get the data from ('tranqulity', 'singularity', defaults to the former)
+                                          // the server to get the data from ('tranquility', 'singularity', defaults to the former)
 await esiJS.util.sleep(mills) // pauses execution for the specified amount of time
 esiJS.util.addArrays(array1, array2) // adds 2 arrays together and returns a merged array
 ```
+
+esiJS uses [Axios](https://github.com/axios/axios) `v0.19.0`.
