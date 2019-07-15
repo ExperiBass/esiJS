@@ -1,5 +1,13 @@
 module.exports = icon
 
+/**
+ * Get the icon of a alliance.
+ * @exports icon
+ * @async
+ * @param ID {number} The alliance ID to get the icon of.
+ * @returns Links to the different sizes of the alliance icon.
+ */
+
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 

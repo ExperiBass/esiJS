@@ -3,6 +3,13 @@ module.exports = affiliation
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get the affiliations of characters.
+ * @exports affiliation
+ * @async
+ * @param charID {object} A array of player IDs.
+ * @returns Affiliation of characters.
+ */
 async function affiliation(charID) {
 
     if (!charID || typeof charID !== 'object') {

@@ -8,7 +8,8 @@ function setSettings(link = 'latest', dataSource = 'tranquility') {
     let server = 'https://esi.evetech.net/'
     let path = 'latest v1 legacy dev'.split(' ')
     let DS = 'tranquility singularity'.split(' ')
-    if (!link || !path.includes(link) || !dataSource || !DS.includes(dataSource)) {
+    if (!link || !path.includes(link) || typeof link !== 'string' 
+        || !dataSource || !DS.includes(dataSource) || typeof datasource !== 'string') {
         console.error(`setSettings needs its first arg to be one of these: ${path}, and its second arg to be one of these: ${DS}`)
         throw Error(`setSettings needs first arg to be one of these: ${path}, and second arg to be one of these: ${DS}`)
     }

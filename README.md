@@ -1,10 +1,6 @@
 # esiJS
 
-<<<<<<< Updated upstream
-esiJS is a updated library for EVE Online, that's made for getting data from ESI much easier!
-=======
 esiJS is a updated module for EVE Online's ESI (EVE Swagger Interface). It makes getting data from the ESI much easier and results in cleaner code.
->>>>>>> Stashed changes
 
 # INSTALLING:
 ```bash
@@ -207,7 +203,7 @@ await esiJS.wars.warKills(warID) // returns all kills in a war
 esiJS.util.getSettings() // returns the current settings
 esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
                                           // the server to get the data from ('tranquility', 'singularity', defaults to the former)
-await esiJS.util.sleep(mills) // pauses execution for the specified amount of time
+await esiJS.util.sleep(mills) // pauses execution for the specified amount of time (in miliseconds)
 esiJS.util.addArrays(array1, array2) // adds 2 arrays together and returns a merged array
 ```
 

@@ -3,6 +3,14 @@ module.exports = corpHistory
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get the corporation history of a character.
+ * @exports corpHistory
+ * @async
+ * @param charID {number} The character to get the history of.
+ * @returns The character's history.
+ */
+
 async function corpHistory(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {

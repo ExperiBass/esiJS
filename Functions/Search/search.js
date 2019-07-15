@@ -1,5 +1,14 @@
 module.exports = search
-
+/**
+ * Search entities in EVE.
+ * @exports search
+ * @async
+ * @param query {string} The string to search on.
+ * @param category {string} The category of the entity. Will be one of these: 'agent', 'alliance', 'character', 'constellation', 'corporation', 'faction', 'inventory_type', 
+                                'region', 'solar_system', 'station'
+ * @param strict {boolean} Whether to do a strict or loose search. Defaults to false.
+ * @returns The info on the searched entity.
+ */
 async function search(search, category, strict = false) {
     const axios = require('axios')
     const { link } = require('../../esi.json')

@@ -3,6 +3,14 @@ module.exports = portrait
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get the portrait of a character.
+ * @exports portrait
+ * @async
+ * @param charID {number} The character to get the portrait of.
+ * @returns The character portrait.
+ */
+
 async function portrait(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {

@@ -1,5 +1,10 @@
 module.exports = alliances
-
+/**
+ * Get active alliances.
+ * @exports alliances
+ * @async
+ * @returns A array of all active alliances.
+ */
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 

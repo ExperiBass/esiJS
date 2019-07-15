@@ -1,5 +1,13 @@
 module.exports = info
 
+/**
+ * Get info on a alliance.
+ * @exports info
+ * @async
+ * @param ID {number} The alliance ID to get info from.
+ * @returns Info on the alliance.
+ */
+
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 

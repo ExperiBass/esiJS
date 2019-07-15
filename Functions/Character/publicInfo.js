@@ -3,6 +3,14 @@ module.exports = publicInfo
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get the public info of a character.
+ * @exports publicInfo
+ * @async
+ * @param charID {number} The character to get the public info of.
+ * @returns public info on a character.
+ */
+
 async function publicInfo(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {
