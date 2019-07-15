@@ -3,6 +3,14 @@ module.exports = icons
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get the icon of a corporation.
+ * @exports items
+ * @async
+ * @param corpID {number} The corporation to get the icon of.
+ * @returns Links to the corporation icon.
+ */
+
 async function icons(corpID) {
     let returningData;
     if (!corpID) {

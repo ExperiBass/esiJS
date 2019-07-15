@@ -3,6 +3,15 @@ module.exports = contracts
 const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
+/**
+ * Get all public active contracts in a region.
+ * @exports contracts
+ * @async
+ * @param regionID {number} The region to get the contracts from.
+ * @param pageNum {number} The page of contracts to get. Defaults to `1`.
+ * @returns A array of contracts.
+ */
+
 async function contracts(regionID, pageNum = 1) {
     let returningData;
 

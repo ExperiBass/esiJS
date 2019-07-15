@@ -3,7 +3,7 @@ module.exports = corps
  * Get the corporations in a alliance.
  * @exports corps
  * @async
- * @param id {number} The alliance ID to get the corporations from.
+ * @param ID {number} The alliance ID to get the corporations from.
  * @returns The corporations in the alliance.
  */
 const axios = require('axios')

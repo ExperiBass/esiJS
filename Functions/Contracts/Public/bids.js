@@ -3,6 +3,15 @@ module.exports = bids
 const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
+/**
+ * Get the bids on a auction contract.
+ * @exports bids
+ * @async
+ * @param contractID {number} The auction contract to get the bids of.
+ * @param pageNum {number} The page of bids to get. Defaults to `1`.
+ * @returns The bids on the auction.
+ */
+
 async function bids(contractID, pageNum = 1) {
     let returningData;
 
