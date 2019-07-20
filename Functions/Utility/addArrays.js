@@ -8,22 +8,12 @@ function addArrays(a1, a2) {
     }
 
     let array = a1.slice(0)
-    
-   /* for (let i = 1; i < arguments.length; i++) {
-        arguments[i].forEach(add)
-    }*/
+
     function add(v) {
         array.push(v)
     }
-   // array.push(a2)
+
     a2.forEach(add)
 
     return array
 }
-
-/*function a() {
-    let array = [1,2,3]
-    array = addArrays(array,[4,5,6])
-    console.log(array)
-}
-console.log(a())*/
