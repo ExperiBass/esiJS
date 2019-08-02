@@ -13,7 +13,7 @@ const { link, dataSource } = require('../../esi.json')
 
 async function allianceHistory(corpID) {
     let returningData;
-    if (!corpID) {
+    if (!corpID || typeof corpID !== 'number') {
         console.error(`The function 'allianceHistory' needs a corp ID!`)
         throw Error('allianceHistory needs a corporation ID')
     }

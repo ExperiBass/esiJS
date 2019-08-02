@@ -3,6 +3,13 @@ module.exports = npcCorps
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get all NPC crporations.
+ * @exports npcCorps
+ * @async
+ * @returns A array of all NPC corporations.
+ */
+
 async function npcCorps() {
     let returningData;
 

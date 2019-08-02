@@ -5,10 +5,10 @@ const { link, dataSource } = require('../../esi.json')
 
 /**
  * Get the icon of a corporation.
- * @exports items
+ * @exports icon
  * @async
- * @param corpID {number} The corporation to get the icon of.
- * @returns Links to the corporation icon.
+ * @param corpID {number} The corporation ID to get the icon of. 
+ * @returns Links to the different sizes of the corporation icon.
  */
 
 async function icons(corpID) {

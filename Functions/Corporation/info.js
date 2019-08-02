@@ -3,6 +3,14 @@ module.exports = info
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get info on a corporation.
+ * @exports info
+ * @async
+ * @param corpID {number} The corporation ID to get info from.
+ * @returns Info on the corporation.
+ */
+
 async function info(corpID) {
     let returningData;
     if (!corpID) {
