@@ -3,6 +3,7 @@
   "version": "2.1.2",
   "description": "A simple library for EVE Online.",
   "main": "funcList.js",
+  "module": "funcList.js",
   "scripts": {
     "test": "mocha"
   },

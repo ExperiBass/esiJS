@@ -3,6 +3,14 @@ module.exports = attrInfo
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get the icon of a corporation.
+ * @exports attrInfo
+ * @async
+ * @param attr {number} The attribute ID to get the info on. 
+ * @returns Info on the attribute.
+ */
+
 async function attrInfo(attr) {
     let returningData;
     if (!attr) {
