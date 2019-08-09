@@ -4,11 +4,11 @@ const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get the affiliations of characters.
+ * Bulk lookup of character IDs to corporation, alliance and faction.
  * @exports affiliation
  * @async
- * @param charID {object} A array of player IDs.
- * @returns Affiliation of characters.
+ * @param charID {array} A array of player IDs.
+ * @returns {object} Affiliation of characters.
  */
 async function affiliation(charID) {
 

@@ -1,11 +1,11 @@
 module.exports = info
 
 /**
- * Get info on a alliance.
+ * Get public information about an alliance.
  * @exports info
  * @async
  * @param ID {number} The alliance ID to get info from.
- * @returns Info on the alliance.
+ * @returns {object} Public info on the alliance.
  */
 
 const axios = require('axios')

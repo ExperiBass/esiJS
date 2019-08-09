@@ -4,11 +4,11 @@ const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get the icon of a corporation.
+ * Get the icon urls for a corporation.
  * @exports icon
  * @async
  * @param corpID {number} The corporation ID to get the icon of. 
- * @returns Links to the different sizes of the corporation icon.
+ * @returns {object} Links to the different sizes of the corporation icon.
  */
 
 async function icons(corpID) {

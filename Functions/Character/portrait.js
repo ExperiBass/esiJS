@@ -4,11 +4,11 @@ const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get the portrait of a character.
+ * Get portrait urls for a character.
  * @exports portrait
  * @async
  * @param charID {number} The character to get the portrait of.
- * @returns The character portrait.
+ * @returns {object} Links to the different sizes of the character's portrait.
  */
 
 async function portrait(charID) {

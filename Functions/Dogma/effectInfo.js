@@ -3,6 +3,13 @@ module.exports = effectInfo
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get information on a dogma effect.
+ * @exports effectInfo
+ * @async
+ * @returns {object} Info on the effect.
+ */
+
 async function effectInfo(dogma) {
     let returningData;
     if (!dogma) {

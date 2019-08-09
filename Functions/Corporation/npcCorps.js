@@ -4,10 +4,10 @@ const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get all NPC crporations.
+ * Get a list of npc corporations.
  * @exports npcCorps
  * @async
- * @returns A array of all NPC corporations.
+ * @returns {array} A array of all NPC corporations.
  */
 
 async function npcCorps() {

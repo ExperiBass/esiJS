@@ -1,10 +1,10 @@
 module.exports = corps
 /**
- * Get the corporations in a alliance.
+ * Get all current member corporations of an alliance.
  * @exports corps
  * @async
  * @param ID {number} The alliance ID to get the corporations from.
- * @returns The corporations in the alliance.
+ * @returns {array} The corporations in the alliance.
  */
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')

@@ -4,11 +4,11 @@ const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get info on a corporation.
+ * Get public information about a corporation.
  * @exports info
  * @async
  * @param corpID {number} The corporation ID to get info from.
- * @returns Info on the corporation.
+ * @returns {object} Public info on the corporation.
  */
 
 async function info(corpID) {

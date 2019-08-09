@@ -3,6 +3,13 @@ module.exports = attrs
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Get a list of dogma attribute ids.
+ * @exports attrs
+ * @async
+ * @returns {array} A array of all attributes.
+ */
+
 async function attrs() {
     let returningData;
 

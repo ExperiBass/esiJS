@@ -4,11 +4,11 @@ const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get the corporation history of a character.
+ * GGet a list of all the corporations a character has been a member of.
  * @exports corpHistory
  * @async
  * @param charID {number} The character to get the history of.
- * @returns The character's history.
+ * @returns {object} The character's history.
  */
 
 async function corpHistory(charID) {

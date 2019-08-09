@@ -1,17 +1,17 @@
-module.exports = publicInfo
+module.exports = info
 
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
 /**
- * Get the public info of a character.
- * @exports publicInfo
+ * Get public information about a character.
+ * @exports info
  * @async
  * @param charID {number} The character to get the public info of.
- * @returns public info on a character.
+ * @returns {object} Public info on a character.
  */
 
-async function publicInfo(charID) {
+async function info(charID) {
     let returningData;
     if (!charID || typeof charID !== 'number') {
         console.error(`The function 'publicInfo' needs a character ID!`)

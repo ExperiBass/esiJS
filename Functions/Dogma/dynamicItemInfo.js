@@ -3,6 +3,13 @@ module.exports = dynamicItemInfo
 const axios = require('axios')
 const { link, dataSource } = require('../../esi.json')
 
+/**
+ * Returns info about a dynamic item resulting from mutation with a mutaplasmid..
+ * @exports dynamicItemInfo
+ * @async
+ * @returns {object} Info on the mutation.
+ */
+
 async function dynamicItemInfo(itemID, typeID) {
     let returningData;
     if (!itemID) {

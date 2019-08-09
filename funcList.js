@@ -34,7 +34,7 @@ module.exports = {
     dogma: {
         attrs: require('./Functions/Dogma/attrs'),
         attrInfo: require('./Functions/Dogma/attrInfo'),
-        dynItemInfo: require('./Functions/Dogma/dynItemInfo'),
+        dynamicItemInfo: require('./Functions/Dogma/dynamicItemInfo'),
         effectInfo: require('./Functions/Dogma/effectInfo'),
         effects: require('./Functions/Dogma/effects')
     },

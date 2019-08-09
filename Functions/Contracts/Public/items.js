@@ -4,12 +4,12 @@ const axios = require('axios')
 const { link, dataSource } = require('../../../esi.json')
 
 /**
- * Get all items in a Item Exchange or Auction contract.
+ * Lists items of a public contract.
  * @exports items
  * @async
  * @param contractID {number} The contract to get items from.
  * @param pageNum {number} The page of contracts to get. Defaults to `1`.
- * @returns A array of items.
+ * @returns {array} A array of items.
  */
 
 async function items(contractID, pageNum = 1) {
