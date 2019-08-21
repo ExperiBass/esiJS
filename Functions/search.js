@@ -21,7 +21,7 @@ module.exports = {
             input: category,
             type: 'string',
             options: categories,
-            message: `The function input category of 'search.search' must be one of the following: ${categories.joing(', ')}!`
+            message: `The function input category of 'search.search' must be one of the following: ${categories.join(', ')}!`
         })
         inputValidation({ input: strict, type: 'boolean', message: `The function input strict of 'search.search' must be false or true!` })
 
