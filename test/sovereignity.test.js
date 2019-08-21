@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Sovereignity = require('../init.js').sovereignity
+const Sovereignity = require('../init.js').sov

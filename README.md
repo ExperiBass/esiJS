@@ -1,6 +1,6 @@
 # esiJS
 
-esiJS is a updated module for EVE Online's ESI (EVE Swagger Interface). It makes getting data from the ESI much easier and results in cleaner code.
+esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier and results in cleaner code. 
 
 # INSTALLING:
 ```bash

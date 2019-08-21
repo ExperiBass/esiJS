@@ -12,7 +12,7 @@ function addArrays(a1, a2) {
     function add(v) {
         array.push(v)
     }
-    
+
     a2.forEach(add)
 
     return array

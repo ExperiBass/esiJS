@@ -6,5 +6,5 @@ module.exports = sleep
  * @param millis {number} The time to delay (in milliseconds)
  */
 async function sleep(millis) {
-    return new Promise(resolve => setTimeout(resolve, millis));
+  return new Promise(resolve => setTimeout(resolve, millis))
 }
