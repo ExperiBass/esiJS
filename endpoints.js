@@ -1,12 +1,7 @@
 module.exports = {
-    util: {
-        setSettings: require('./Functions/Utility/setSettings'),
-        getSettings: require('./Functions/Utility/getSettings'),
-        sleep: require('./Functions/Utility/sleep'),
-        addArrays: require('./Functions/Utility/addArrays')
-    }, 
+    util: require('./Functions/utility'),
     alliance: require('./Functions/alliances'),
-    character: require('./Functions/chacter'),
+    character: require('./Functions/character'),
     contracts: require('./Functions/contracts'),
     corporation: require('./Functions/corporation'),
     dogma: require('./Functions/dogma'),
@@ -14,7 +9,7 @@ module.exports = {
     incursions: require('./Functions/incursions'),
     industry: require('./Functions/industry'),
     insurance: require('./Functions/insurance'),
-    killmails: require('./Functions/killMails'),
+    killmails: require('./Functions/killmails'),
     loyalty: require('./Functions/loyalty'),
     market: require('./Functions/market'),
     opportunities: require('./Functions/opportunities'),

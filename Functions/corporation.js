@@ -1,5 +1,5 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
     /**
@@ -7,7 +7,7 @@ module.exports = {
      * @exports allianceHistory
      * @async
      * @param corpID {number} The corporation to get the alliance history of.
-     * @returns {array} A array of alliance IDs.
+     * @returns {[number]} A array of alliance IDs.
      */
     allianceHistory (corporationId) {
         inputValidation({ input: corporationId, type: 'number', message: `The function 'corporation.allianceHistory' requires a corporation ID!` })
@@ -42,7 +42,7 @@ module.exports = {
      * Get a list of npc corporations.
      * @exports npcCorps
      * @async
-     * @returns {array} A array of all NPC corporations.
+     * @returns {[number]} A array of all NPC corporations.
      */
     npcCorps () {
         return request({ subUrl: `corporations/npccorps` })
