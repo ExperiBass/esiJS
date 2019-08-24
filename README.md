@@ -12,17 +12,19 @@ npm i --save esijs
 ```js
 let esiJS = require('esiJS')
 // Use all functions like this:
-let a = await esiJS.group.<subgroup>.function() // `<subgroup>` is used in groups like `market` 
-                                                // (esiJS.market.groups.groups()) and `universe` 
-                                                // (esiJS.universe.ancestries.ancestries())
+let a = await esiJS.group.<subgroup>.function()
             .catch(function(e) {
                 // whatever you want to do with errors
             })
-// functions MUST be 'await'ed, otherwise they wont work properly, except the `util` functions,
-// as those are synchronous functions (but can be used as async if you wish)
+// Or like this:
+try {
+    let b = await esiJS.gruop.<subgroup>/function()
+} catch(e) {
+    // Error? What error?
+}
+// functions MUST be 'await'ed, otherwise they wont work properly,
+// except `getSettings`, `setSettings` and `addArrays`, those are synchronous functions (but can be used as async)
 ```
-
-Example usage is also in [EveShopper](https://github.com/GingkathFox/EveShopper).
 
 ```js
 // ALLIANCE:
@@ -202,9 +204,9 @@ await esiJS.wars.warKills(warID) // returns all kills in a war
 // UTILITY:
 esiJS.util.getSettings() // returns the current settings
 esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
-                                          // the server to get the data from ('tranquility', 'singularity', defaults to the former)
-await esiJS.util.sleep(mills) // pauses execution for the specified amount of time (in miliseconds)
+                                          // the server to get the data from ('tranqulity', 'singularity', defaults to the former)
+await esiJS.util.sleep(mills) // pauses execution for the specified amount of time
 esiJS.util.addArrays(array1, array2) // adds 2 arrays together and returns a merged array
 ```
 
-esiJS uses [Axios](https://github.com/axios/axios) `v0.19.0`.
+If you like what you see here, please consider donating to "Gingka Akiyama" so i can spend more time devving and less time mining!
