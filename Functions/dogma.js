@@ -10,7 +10,7 @@ module.exports = {
      * @returns {object} Info on the attribute.
      */
     attrInfo (attribute) {
-        inputValidation({ input: attribute, type: 'string', message: `The function 'dogma.attrInfo' requires an attribute!` })
+        inputValidation({ input: attribute, type: 'number', message: `The function 'dogma.attrInfo' requires an attribute!` })
 
         return request({ subUrl: `dogma/attributes/${attribute}` })
     },
@@ -32,9 +32,8 @@ module.exports = {
      * @returns {object} Info on the mutation.
      */
     dynamicItemInfo (itemID, typeID) {
-        inputValidation({ input: itemID, type: 'string', message: `The function 'dogma.attrs' requires an attribute!` })
-        // TODO: validate if TypeID is string or number.
-        inputValidation({ input: typeID, type: 'string', message: `The function 'dogma.attrs' requires an typeID!` })
+        inputValidation({ input: itemID, type: 'number', message: `The function 'dogma.attrs' requires an attribute!` })
+        inputValidation({ input: typeID, type: 'number', message: `The function 'dogma.attrs' requires an typeID!` })
 
         return request({ subUrl: `dogma/dynamic/items/${typeID}/${itemID}` })
     },
@@ -46,7 +45,7 @@ module.exports = {
      * @returns {object} Info on the effect.
      */
     effectInfo (effect) {
-        inputValidation({ input: effect, type: 'string', message: `The function 'dogma.effectInfo' requires a effect ID!` })
+        inputValidation({ input: effect, type: 'number', message: `The function 'dogma.effectInfo' requires a effect ID!` })
 
         return request({ subUrl: `dogma/effects/${effect}` })
     },

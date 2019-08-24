@@ -54,7 +54,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Nothing
 #### Changed
 - `Lodash` security fix
-
+### [v3.0.1] - 2019 08 24
+#### Changed
+- Fixed some bugs with the refactoring
 
 <!-- LINKS -->
 <!-- RELEASES -->

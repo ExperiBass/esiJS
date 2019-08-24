@@ -9,7 +9,7 @@ module.exports = {
      * @returns {[number]} A array of all active player alliances.
      */
     alliances () {      
-        request({ subUrl: 'alliances' })
+        return request({ subUrl: 'alliances' })
     },
     /**
      * Get all current member corporations of an alliance.

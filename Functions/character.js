@@ -12,7 +12,7 @@ module.exports = {
     affiliation (idArray) {
         inputValidation({ input: idArray, type: 'object', message: `The function 'character.affiliation' requires an array of ids!` })
 
-        request({ subUrl: 'characters/affiliation', post: true, body: idArray })
+        return request({ subUrl: 'characters/affiliation', post: true, body: idArray })
     },
     /**
      * GGet a list of all the corporations a character has been a member of.
@@ -24,7 +24,7 @@ module.exports = {
     corpHistory (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
 
-        request({ subUrl: `characters/${characterId}/corporationhistory` })
+        return request({ subUrl: `characters/${characterId}/corporationhistory` })
     },
     /**
      * Get portrait urls for a character.
@@ -36,7 +36,7 @@ module.exports = {
     portrait (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.portrait' needs a character ID!` })
 
-        request({ subUrl: `characters/${characterId}/portrait` })
+        return request({ subUrl: `characters/${characterId}/portrait` })
     },
     /**
      * Get public information about a character.
@@ -48,6 +48,6 @@ module.exports = {
     info (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
 
-        request({ subUrl: `characters/${characterId}/portrait` })
+        return request({ subUrl: `characters/${characterId}` })
     }
 }

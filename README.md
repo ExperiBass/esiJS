@@ -18,7 +18,7 @@ let a = await esiJS.group.<subgroup>.function()
             })
 // Or like this:
 try {
-    let b = await esiJS.gruop.<subgroup>/function()
+    let b = await esiJS.group.<subgroup>.function()
 } catch(e) {
     // Error? What error?
 }
@@ -27,6 +27,7 @@ try {
 ```
 
 ```js
+let esiJS = require('esijs')
 // ALLIANCE:
 await esiJS.alliance.alliances() // returns a array of active alliances
 await esiJS.alliance.corps(allianceID) // returns a array of corporations within a alliance
@@ -47,13 +48,13 @@ await esiJS.contracts.public.items(contractID) // returns all items in a Item Ex
 // CORPORATION:
 await esiJS.corporation.npcCorps() // returns all NPC corporations
 await esiJS.corporation.info(corporationID) // returns the info of a corporation
-await esiJS.corporation.icons(corporationID) // returns links to the corporation icon
+await esiJS.corporation.icon(corporationID) // returns links to the corporation icon
 await esiJS.corporation.allianceHistory(corporationID) // returns array of alliances this corporation has been in
 
 // DOGMA:
 await esiJS.dogma.attrs() // returns all attributes in game
 await esiJS.dogma.attrInfo(attributeID) // returns info on a attribute
-await esiJS.dogma.dynItemInfo(itemID, typeID) // returns info on a dynamic item (eg. a railgun with a mutaplasmid)
+await esiJS.dogma.dynamicItemInfo(itemID, typeID) // returns info on a dynamic item (eg. a railgun with a mutaplasmid)
 await esiJS.dogma.effects() // returns all effects in game
 await esiJS.dogma.effectInfo(effectID) // returns info on a effect
 
@@ -63,9 +64,9 @@ await esiJS.fw.systems() // returns systems claimed by faction warfare
 await esiJS.fw.wars() // returns data on which NPC factions are at war
 
 // FACTION WARFARE (LEADERBOARDS):
-await esiJS.fw.lbs.chars() // returns top pilots in faction warfare
-await esiJS.fw.lbs.corps() // returns top corps in faction warfare
-await esiJS.fw.lbs.leaderboard() // returns top 4 factions in faction warfare
+await esiJS.fw.leaderboards.chars() // returns top pilots in faction warfare
+await esiJS.fw.leaderboards.corps() // returns top corps in faction warfare
+await esiJS.fw.leaderboards.leaderboard() // returns top 4 factions in faction warfare
 
 // INCURSIONS:
 await esiJS.incursions.incursions() // returns all current incursions
@@ -78,15 +79,15 @@ await esiJS.industry.systems() // returns cost indices for all systems
 await esiJS.insurance.prices() // returns available insurance levels for all ship types
 
 // KILLMAILS: 
-await esiJS.killmails.getkillMail(killmailID, killmailHash) // returns info on a killmail
+await esiJS.killmails.killmailInfo(killmailID, killmailHash) // returns info on a killmail
 
 // LOYALTY:
 await esiJS.loyalty.offers(corporationID) // returns a list of offers from a corporations loyalty store
 
 // MARKET:
 await esiJS.market.history(regionID, typeID) // returns a history of prices for a item in a region
-await esiJS.market.orders(regionID, pageNumber, buyOrSellOrAll, typeID) // returns orders for a item in a region (typeID is optional)
-                                                                  // buyOrSellOrAll defaults to 'all', possible values are
+await esiJS.market.orders(regionID, typeID, bOs, pageNum) // returns orders for a item in a region (typeID is optional)
+                                                                  // bOs defaults to 'all', possible values are
                                                                   // 'buy', 'sell', or 'all'
 await esiJS.market.prices() // returns average price and adjusted price of items
 await esiJS.market.types(regionID) // returns all item types that have orders in a region
