@@ -1,9 +1,9 @@
 {
   "name": "esijs",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "description": "A simple library for EVE Online.",
-  "main": "funcList.js",
-  "module": "funcList.js",
+  "main": "endpoints.js",
+  "module": "endpoints.js",
   "scripts": {
     "test": "mocha"
   },
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GingkathFox/EveJS.git"
+    "url": "git+https://github.com/GingkathFox/esiJS.git"
   },
   "bugs": {
-    "url": "https://github.com/GingkathFox/EveJS/issues"
+    "url": "https://github.com/GingkathFox/esiJS/issues"
   },
-  "homepage": "https://github.com/GingkathFox/EveJS#readme",
+  "homepage": "https://github.com/GingkathFox/esiJS#readme",
   "directories": {
     "test": "test"
   }
