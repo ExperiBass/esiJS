@@ -2,7 +2,8 @@
   "name": "esijs",
   "version": "2.1.2",
   "description": "A simple library for EVE Online.",
-  "main": "init.js",
+  "main": "funcList.js",
+  "module": "funcList.js",
   "scripts": {
     "test": "mocha"
   },

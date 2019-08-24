@@ -1,6 +1,6 @@
 # esiJS
 
-esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier and results in cleaner code. 
+esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier, avoids cluttering your code with Axios calls, and is small and powerful. 
 
 # INSTALLING:
 ```bash
@@ -16,6 +16,12 @@ let a = await esiJS.group.<subgroup>.function()
             .catch(function(e) {
                 // whatever you want to do with errors
             })
+// Or like this:
+try {
+    let b = await esiJS.gruop.<subgroup>/function()
+} catch(e) {
+    // Error? What error?
+}
 // functions MUST be 'await'ed, otherwise they wont work properly,
 // except `getSettings`, `setSettings` and `addArrays`, those are synchronous functions (but can be used as async)
 ```
@@ -202,3 +208,5 @@ esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'lates
 await esiJS.util.sleep(mills) // pauses execution for the specified amount of time
 esiJS.util.addArrays(array1, array2) // adds 2 arrays together and returns a merged array
 ```
+
+If you like what you see here, please consider donating to "Gingka Akiyama" so i can spend more time devving and less time mining!

@@ -1,12 +1,21 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
-    planRoute (origin, destination, flag = 'secure', avoid  = []) {
+    /**
+     * Get the systems between the origin and the destination.
+     * @async
+     * @param {number} origin 
+     * @param {number} destination 
+     * @param {string} flag 
+     * @param {[number]} avoid 
+     * @returns {[number]}
+     */
+    planRoute (origin, destination, flag = 'secure', avoid = []) {
         const flagOptions = ['shortest', 'secure', 'insecure']
         inputValidation({ input: origin, type: 'number', message: `The function 'routes.planRoute' requires a origin!` })
         inputValidation({ input: destination, type: 'number', message: `The function 'routes.planRoute' requires a destination!` })
-        inputValidation({ input: destination, type: 'object', options: flagOptions, message: `The input flag for 'routes.planRoute' must be 'shortest', 'secure' or 'insecure'!` })
+        inputValidation({ input: flag, type: 'string', options: flagOptions, message: `The input flag for 'routes.planRoute' must be 'shortest', 'secure' or 'insecure'!` })
 
         return request({
             subUrl: `route/${origin}/${destination}`,

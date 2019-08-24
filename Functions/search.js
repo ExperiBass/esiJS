@@ -1,7 +1,15 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
+    /**
+     * Search for entities that match a given sub-string.
+     * @async
+     * @param {string} search 
+     * @param {string} category 
+     * @param {boolean} strict 
+     * @returns {object}
+     */
     search (search, category, strict = false) {
         let categories = [
             'agent',

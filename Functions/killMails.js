@@ -1,8 +1,15 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
-    killMailInfo (killID, killHash) {
+    /**
+     * Return a single killmail from its ID and hash.
+     * @async
+     * @param {number} killID 
+     * @param {string} killHash 
+     * @returns {object}
+     */
+    killmailInfo (killID, killHash) {
         inputValidation({ input: killID, type: 'number', message: `The function 'killMail.killMailInfo' requires a kill Id!` })
         inputValidation({ input: killHash, type: 'string', message: `The function 'killMail.killMailInfo' requires a kill hash!` })
 

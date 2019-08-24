@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { link, dataSource } = require('../esi.json')
+const { link, dataSource } = require('../../esi.json')
 
 /**
  *  subUrl -> remaining url part specific to the function call
@@ -17,7 +17,7 @@ function makeRequest ({ subUrl, post = false, body, query }) {
         // Because all request already have '?datasource' no need to manage the ? on the first query param
         Object.keys(query).forEach(queryKey => {
             // query params undefined or empty, or array of length 0
-            if (query[queryKey] === undefined || query[queryKey] === '') return
+            if (!query[queryKey] === undefined || query[queryKey] === '') return
             if (query[queryKey].length && query[queryKey].length === 0) return
             fullURL += `&${queryKey}=${query[queryKey]}`
         })

@@ -1,5 +1,5 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
     public: {
@@ -40,7 +40,7 @@ module.exports = {
          * @async
          * @param contractID {number} The contract to get items from.
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
-         * @returns {array} A array of items.
+         * @returns {[number]} A array of items.
          */
         items (contractID, pageNumber = 1) {
             inputValidation({ input: contractID, type: 'number', message: `The function 'contracts.public.items' requires a contract ID!` })

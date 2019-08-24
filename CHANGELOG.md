@@ -13,14 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### v0.1.0 - 2019 06 29
 - Initial Release
 
-## Minor Releases:
-### [v1.0.1] - 2019 06 29
-#### Added
-- CHANGELOG.md
-- Mocha/Chai testing
-#### Changed
-- Package.json to support Mocha tests
-
 ### [v2.0.0] - 2019 07 03
 #### Added
 - All non-SSO ESI endpoints
@@ -31,6 +23,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved error handling
 - Changed constants declared as `let`s to `const`s
 - Datasource is now modifiable
+
+### [v3.0.0] - 2019 08 24
+#### Added
+- JSDoc
+- `inputValidation` and `request` (#4, #5)
+#### Changed
+- Codebase Refactoring (@JFCodes, #4, @cppctamber, #5)
+- `endpoints.js`
+#### Removed
+- `addArrays`
+
+## Minor Releases:
+### [v1.0.1] - 2019 06 29
+#### Added
+- CHANGELOG.md
+- Mocha/Chai testing
+#### Changed
+- Package.json to support Mocha tests
 
 ### [v2.1.0] - 2019 07 12
 #### Added

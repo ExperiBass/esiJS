@@ -1,12 +1,12 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
     /**
      * List all active player alliances.
      * @exports alliances
      * @async
-     * @returns {array} A array of all active player alliances.
+     * @returns {[number]} A array of all active player alliances.
      */
     alliances () {      
         request({ subUrl: 'alliances' })
@@ -16,7 +16,7 @@ module.exports = {
      * @exports corps
      * @async
      * @param ID {number} The alliance ID to get the corporations from.
-     * @returns {array} The corporations in the alliance.
+     * @returns {[number]} The corporations in the alliance.
      */
     corps (allianceId) {
         inputValidation({ input: allianceId, type: 'number', message: `The function 'alliances.corps' requires an alliance ID!` })

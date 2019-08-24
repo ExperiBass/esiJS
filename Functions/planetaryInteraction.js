@@ -1,11 +1,16 @@
-const request = require('./Utility/request')
-const inputValidation = require('./Utility/inputValidation')
+const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
-    schematicInfo (schemaId) {
-        inputValidation({ input: regionID, type: 'number', message: `The function 'planetaryInteraction.schematicInfo' requires a schema Id!` })
-        inputValidation({ input: typeID, type: 'number', message: `The function 'market.history' requires a type Id!` })
+    /**
+     * Get information on a planetary factory schematic.
+     * @async
+     * @param {number} schematicID
+     * @returns {object}
+     */
+    schematicInfo (schematicID) {
+        inputValidation({ input: schematicID, type: 'number', message: `The function 'planetaryInteraction.schematicInfo' requires a schematic ID!` })
 
-        return request({ subUrl: `universe/schematics/${schemaId}` })
+        return request({ subUrl: `universe/schematics/${schematicID}` })
     }
 }
