@@ -49,7 +49,7 @@ module.exports = {
         inputValidation({ input: regionID, type: 'number', message: `The function 'market.orders' requires a region Id!` })
         inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'market.orders' needs to be a number` })
         inputValidation({ input: bOs, type: 'object', options: bOsOptions , message: `The function 'market.orders' bOs input must be 'all', 'sell', or 'buy'!` })
-        inputValidation({ input: typeID, type: 'number', optional: true, message: `The function 'market.orders' requires a region Id!`})
+        inputValidation({ input: typeID, type: 'number', optional: true, message: `The function 'market.orders' requires a type Id!`})
 
         return request({
             subUrl: `markets/${regionID}/orders`,
