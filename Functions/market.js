@@ -48,8 +48,13 @@ module.exports = {
         bOsOptions = ['all', 'sell', 'buy']
         inputValidation({ input: regionID, type: 'number', message: `The function 'market.orders' requires a region Id!` })
         inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'market.orders' needs to be a number` })
+<<<<<<< Updated upstream
         inputValidation({ input: bOs, type: 'string', message: `The input bOs for the function 'market.orders' must be 'all', 'sell', or 'buy'!` })
         inputValidation({ input: typeID, type: 'number', optional: true, message: `The function 'market.orders' requires a region Id!`})
+=======
+        inputValidation({ input: bOs, type: 'object', options: bOsOptions , message: `The function 'market.orders' bOs input must be 'all', 'sell', or 'buy'!` })
+        inputValidation({ input: typeID, type: 'number', optional: true, message: `The function 'market.orders' requires a type Id!`})
+>>>>>>> Stashed changes
 
         return request({
             subUrl: `markets/${regionID}/orders`,
