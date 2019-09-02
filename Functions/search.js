@@ -11,6 +11,7 @@ module.exports = {
      * @returns {object}
      */
     search (search, category, strict = false) {
+        
         let categories = [
             'agent',
             'alliance',
