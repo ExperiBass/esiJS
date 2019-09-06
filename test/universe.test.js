@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Universe = require('../init.js').universe
+const Universe = require('../endpoints.js').universe

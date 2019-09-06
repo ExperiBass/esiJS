@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Corporation = require('../init.js').corporation
+const Corporation = require('../endpoints.js').corporation

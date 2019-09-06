@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Wars = require('../init.js').wars
+const Wars = require('../endpoints.js').wars

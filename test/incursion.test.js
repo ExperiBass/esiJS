@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Incursions = require('../init.js').incursions
+const Incursions = require('../endpoints.js').incursions

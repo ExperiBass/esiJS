@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const FactionWarfare = require('../init.js').fw
+const FactionWarfare = require('../endpoints.js').fw

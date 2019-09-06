@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Contracts = require('../init.js').contracts
+const Contracts = require('../endpoints.js').contracts

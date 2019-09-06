@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Market = require('../init.js').market
+const Market = require('../endpoints.js').market

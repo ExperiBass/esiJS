@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Insurance = require('../init.js').insurance
+const Insurance = require('../endpoints.js').insurance
