@@ -13,13 +13,13 @@ npm i --save esijs
 let esiJS = require('esiJS')
 // Use all functions like this:
 let a = await esiJS.group.<subgroup>.function()
-            .catch(function(e) {
+            .catch(function(e) { // .catch() is used when you dont `await` a function
                 // whatever you want to do with errors
             })
 // Or like this:
 try {
     let b = await esiJS.group.<subgroup>.function()
-} catch(e) {
+} catch(e) { // try/catch is used when you do `await` a function
     // Error? What error?
 }
 // functions MUST be 'await'ed, otherwise they wont work properly,
