@@ -93,7 +93,7 @@ module.exports = {
          * @returns {object}
          */
         constellationInfo (constellationID) {
-            inputValidation({ input: categoryID, type: 'number', message: `The function 'universe.constellations.constellationInfo requires a constellation Id!` })
+            inputValidation({ input: constellationID, type: 'number', message: `The function 'universe.constellations.constellationInfo requires a constellation Id!` })
             
             return request({ subUrl: `universe/constellations/${constellationID}` })
         },
