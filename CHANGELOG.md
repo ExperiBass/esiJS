@@ -50,14 +50,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the name of `alliances.icons` to `alliances.icon`
 
 ### [v2.1.2] - 2019 07 12
-#### Added
-- Nothing
 #### Changed
 - `Lodash` security fix
 ### [v3.0.2] - 2019 08 24
 #### Changed
 - Fixed some bugs with the refactoring
-
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/GingkathFox/EveJS/compare/v0.1.1...dev

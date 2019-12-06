@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Opportunities = require('../init.js').opportunities
+const Opportunities = require('../endpoints.js').opportunities

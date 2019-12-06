@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Routes = require('../init.js').routes
+const Routes = require('../endpoints.js').routes

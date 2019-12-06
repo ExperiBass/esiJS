@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Character = require('../init.js').character
+const Character = require('../endpoints.js').character

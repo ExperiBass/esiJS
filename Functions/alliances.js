@@ -19,7 +19,7 @@ module.exports = {
      * @returns {[number]} The corporations in the alliance.
      */
     corps (allianceId) {
-        inputValidation({ input: allianceId, type: 'number', message: `The function 'alliances.corps' requires an alliance ID!` })
+        inputValidation({ input: allianceId, type: 'number', message: `The function 'alliance.corps' requires an alliance ID!` })
 
         return request({ subUrl: `alliances/${allianceId}/corporations` })
     },

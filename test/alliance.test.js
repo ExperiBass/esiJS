@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Alliance = require('../init.js').alliance
+const Alliance = require('../endpoints.js').alliance

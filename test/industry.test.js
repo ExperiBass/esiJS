@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Industry = require('../init.js').industry
+const Industry = require('../endpoints.js').industry

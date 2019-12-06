@@ -2,4 +2,4 @@
 
 const expect = require('chai').expect;
 
-const Dogma = require('../init.js').dogma
+const Dogma = require('../endpoints.js').dogma
