@@ -21,12 +21,11 @@ module.exports = {
         let path = require('path')
         let join = path.join(__dirname, '../../esi.json')
         let server = 'https://esi.evetech.net/'
-        let path = 'latest v1 legacy dev'.split(' ')
+        let paths = 'latest v1 legacy dev'.split(' ')
         let DS = 'tranquility singularity'.split(' ')
     
-        if (!link || !path.includes(link) || !dataSource || !DS.includes(dataSource)) {
-            console.error(`setSettings needs its first arg to be one of these: ${path}, and its second arg to be one of these: ${DS}`)
-            throw Error(`setSettings needs first arg to be one of these: ${path}, and second arg to be one of these: ${DS}`)
+        if (!link || !paths.includes(link) || !dataSource || !DS.includes(dataSource)) {
+            throw Error(`setSettings needs first arg to be one of these: ${paths}, and second arg to be one of these: ${DS}`)
         }
     
         link = `${server}${link}/`

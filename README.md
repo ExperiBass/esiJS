@@ -2,6 +2,17 @@
 
 esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier, avoids cluttering your code with Axios calls, and is small and powerful. 
 
+# WARNING:
+
+In the next version, all functions will return both the headers and the data, like so:
+
+```js
+let f = await esiJS.group.function()
+
+let data = f.data
+let headers = f.headers
+```
+
 # INSTALLING:
 ```bash
 npm i --save esijs

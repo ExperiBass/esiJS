@@ -40,11 +40,13 @@ function makeRequest ({ subUrl, post = false, body, query}) {
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
         .then(response => {
-            let data = {
-                header: response.header,
+           /*let data = {
+               
+                headers: response.headers,
                 data: response.data
-            }
-            return data
+            }*/
+            console.log(`WARNING:\n\nIn the next major version of esiJS (4.0.0), all functions will return both the headers and the actual data. Please see README.md for more info.\n\n`)
+            return response.data
         }).catch((error) => {
             const esiError = error.response.data.error
             console.error(`Call to '${subUrl}' failed with ESI error:`, esiError)
