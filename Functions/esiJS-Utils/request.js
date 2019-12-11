@@ -40,6 +40,7 @@ function makeRequest ({ subUrl, post = false, body, query}) {
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
         .then(response => {
+            // Dont forget to uncomment for 4.0.0
            /*let data = {
                
                 headers: response.headers,
