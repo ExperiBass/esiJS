@@ -55,9 +55,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [v3.0.2] - 2019 08 24
 #### Changed
 - Fixed some bugs with the refactoring
-### [v3.0.3] - 2019 12 11
+### [v3.0.4] - 2019 12 11
 - Added warning for next major release
-- Fixed some issues with routes endpoint
+- Fixed issues with some endpoints
 - Fixed a issue with a veriable already being declared
 <!-- LINKS -->
 <!-- RELEASES -->
