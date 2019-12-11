@@ -93,7 +93,7 @@ module.exports = {
          * @returns {object}
          */
         constellationInfo (constellationID) {
-            inputValidation({ input: categoryID, type: 'number', message: `The function 'universe.constellations.constellationInfo requires a constellation Id!` })
+            inputValidation({ input: constellationID, type: 'number', message: `The function 'universe.constellations.constellationInfo requires a constellation Id!` })
             
             return request({ subUrl: `universe/constellations/${constellationID}` })
         },
@@ -286,7 +286,7 @@ module.exports = {
          * @returns {object}
          */
         systemJumps () {
-            return request({ subUrl: `universe/systems/system_jumps` })
+            return request({ subUrl: `universe/system_jumps` })
         },
         /**
          * Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, 
@@ -295,7 +295,7 @@ module.exports = {
          * @returns {object}
          */
         systemKills () {
-            return request({ subUrl: `universe/systems/system_kills` })
+            return request({ subUrl: `universe/system_kills` })
         },
         /**
          * Get a list of solar systems.
