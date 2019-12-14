@@ -6,7 +6,7 @@ module.exports = {
         /**
          * Get information on an item group.
          * @async
-         * @param {number} groupID 
+         * @param {number} groupID
          * @returns {object}
          */
         groupInfo (groupID) {
@@ -26,8 +26,8 @@ module.exports = {
     /**
      * Return a list of historical market statistics for the specified type in a region.
      * @async
-     * @param {number} regionID 
-     * @param {number} typeID 
+     * @param {number} regionID
+     * @param {number} typeID
      * @returns {object}
      */
     history (regionID, typeID) {
@@ -40,15 +40,15 @@ module.exports = {
      * Return a list of orders in a region.
      * @async
      * @param {number} regionID
-     * @param {number} typeID 
-     * @param {string} bOs 
+     * @param {number} typeID
+     * @param {string} bOs
      * @param {number} pageNumber
      */
     orders (regionID, typeID, bOs = 'all', pageNumber = 1) {
         bOsOptions = ['all', 'sell', 'buy']
         inputValidation({ input: regionID, type: 'number', message: `The function 'market.orders' requires a region Id!` })
         inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'market.orders' needs to be a number` })
-        inputValidation({ input: bOs, type: 'object', options: bOsOptions , message: `The function 'market.orders' bOs input must be 'all', 'sell', or 'buy'!` })
+        inputValidation({ input: bOs, type: 'string', options: bOsOptions , message: `The function 'market.orders' bOs input must be 'all', 'sell', or 'buy'!` })
         inputValidation({ input: typeID, type: 'number', optional: true, message: `The function 'market.orders' requires a type Id!`})
 
         return request({
@@ -71,14 +71,14 @@ module.exports = {
     /**
      * Return a list of type IDs that have active orders in the region, for efficient market indexing.
      * @async
-     * @param {number} regionID 
-     * @param {number} pageNumber 
+     * @param {number} regionID
+     * @param {number} pageNumber
      * @returns {object}
      */
     types (regionID, pageNumber = 1) {
         inputValidation({ input: regionID, type: 'number', message: `The function 'market.types' requires a region Id!` })
         inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'market.types' needs to be a number` })
-        
+
         return request({ subUrl: `markets/${regionID}/types` })
     }
 }
