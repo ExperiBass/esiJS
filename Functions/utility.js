@@ -6,16 +6,31 @@ const config = '../../esi.json'
 function checkForConfig() {
     // Check for a ESI config file in the project directory
     try {
-        fs.existsSync(config)
-        try {
-           fs.accessSync(config, fs.constants.W_OK | fs.constants.R_OK) 
-        } catch(e) {
-            console.log(`Couldn't read/write to 'esi.json', reverting to default configuration`)
-            return false
+        // If the file exists...
+        if (fs.existsSync(config)) {
+
+            // ...see if we can read it...
+            try {
+                fs.accessSync(config, fs.constants.R_OK)
+
+                // ...then see if we can write into it
+                try {
+                    fs.accessSync(config, fs.constants.W_OK) 
+                } catch(e) {
+                    console.log(`Couldn't write to 'esi.json', reverting to default configuration`)
+                    return false
+                } 
+            } catch(e) {
+                console.log(`Couldn't read 'esi.json', reverting to default configuration`)
+                return false
+            }
+        } else {
+            console.log(`There was a error in checking if the config file exists! Reverting to default configuration`)
+            return false 
         }
         
     } catch(e) {
-        console.log(`Couldn't find 'esi.json', reverting to default configuration`)
+        
         return false
     }
     return true
