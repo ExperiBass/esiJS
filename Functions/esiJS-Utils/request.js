@@ -1,5 +1,6 @@
 const axios = require('axios')
-const { link, dataSource } = require('../../esi.json')
+const { getSettings } = require('../utility')
+let { link, dataSource } = getSettings()
 
 /**
  *  subUrl -> remaining url part specific to the function call
@@ -33,7 +34,17 @@ function makeRequest ({ subUrl, post = false, body, query }) {
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
         .then(response => {
+<<<<<<< Updated upstream
             return response.data
+=======
+           let data = {
+               
+                headers: response.headers,
+                data: response.data
+            }
+            // console.log(`WARNING:\n\nIn the next major version of esiJS (4.0.0), all functions will return both the headers and the actual data. Please see README.md for more info.\n\n`)
+            return data
+>>>>>>> Stashed changes
         }).catch((error) => {
             const esiError = error.response.data.error
             console.error(`Call to '${subUrl}' failed with ESI error:`, esiError)

@@ -34,6 +34,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Removed
 - `addArrays`
 
+### [v4.0.0] - ???? ?? ??
+#### Changed
+- Endpoints now return headers along with data
+- Fixed `setSettings`
+#### Removed
+- `CONTRIBUTING.md`
 ## Minor Releases:
 ### [v1.0.1] - 2019 06 29
 #### Added
@@ -54,8 +60,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Nothing
 #### Changed
 - `Lodash` security fix
+<<<<<<< Updated upstream
 
 
+=======
+### [v3.0.2] - 2019 08 24
+#### Changed
+- Fixed some bugs with the refactoring
+### [v3.0.4] - 2019 12 11
+- Added warning for next major release
+- Fixed issues with some endpoints
+- Fixed a issue with a variable already being declared
+>>>>>>> Stashed changes
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/GingkathFox/EveJS/compare/v0.1.1...dev
