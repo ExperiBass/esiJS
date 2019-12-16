@@ -10,7 +10,7 @@ module.exports = {
      * @returns {object}
      */
     killmailInfo (killID, killHash) {
-        inputValidation({ input: killID, type: 'number', message: `The function 'killMail.killMailInfo' requires a kill Id!` })
+        inputValidation({ input: killID, type: 'number', message: `The function 'killMail.killMailInfo' requires a kill ID!` })
         inputValidation({ input: killHash, type: 'string', message: `The function 'killMail.killMailInfo' requires a kill hash!` })
 
         return request({ subUrl: `killmails/${killID}/${killHash}` })

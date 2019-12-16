@@ -9,7 +9,7 @@ module.exports = {
      * @returns {object}
      */
     groupInfo (groupID) {
-        inputValidation({ input: groupID, type: 'number', message: `The function 'opportunities.groupInfo' requires a group Id!` })
+        inputValidation({ input: groupID, type: 'number', message: `The function 'opportunities.groupInfo' requires a group ID!` })
 
         return request({ subUrl: `opportunity/groups/${groupID}` })
     },
@@ -28,7 +28,7 @@ module.exports = {
      * @returns {object}
      */
     taskInfo (taskID) {
-        inputValidation({ input: taskID, type: 'number', message: `The function 'opportunities.taskInfo' requires a task Id!` })
+        inputValidation({ input: taskID, type: 'number', message: `The function 'opportunities.taskInfo' requires a task ID!` })
 
         return request({ subUrl: `opportunity/tasks/${groupID}` })
     },

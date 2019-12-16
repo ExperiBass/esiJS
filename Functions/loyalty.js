@@ -9,7 +9,7 @@ module.exports = {
      * @returns {object}
      */
     offers (corporationId) {
-        inputValidation({ input: corporationId, type: 'number', message: `The function 'loyalty.offers' requires a corporation Id!` })
+        inputValidation({ input: corporationId, type: 'number', message: `The function 'loyalty.offers' requires a corporation ID!` })
 
         return request({ subUrl: `loyalty/stores/${corporationId}/offers` })
     }

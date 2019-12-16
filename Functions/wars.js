@@ -8,7 +8,7 @@ module.exports = {
      * @returns {object}
      */
     warInfo (warID) {
-        inputValidation({ input: warID, type: 'number', message: `The function 'wars.warInfo' requires a war Id!` })
+        inputValidation({ input: warID, type: 'number', message: `The function 'wars.warInfo' requires a war ID!` })
          
         return request({ subUrl: `wars/${warID}` })
     },
@@ -18,7 +18,7 @@ module.exports = {
      * @returns {object}
      */
     warKills (warID) {
-        inputValidation({ input: warID, type: 'number', message: `The function 'wars.warkills' requires a war Id!` })
+        inputValidation({ input: warID, type: 'number', message: `The function 'wars.warkills' requires a war ID!` })
          
         return request({ subUrl: `wars/${warID}/killmails` })
     },
