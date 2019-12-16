@@ -9,7 +9,7 @@ module.exports = {
      * @returns {[number]} A array of all active player alliances.
      */
     alliances () {      
-        request({ subUrl: 'alliances' })
+        return request({ subUrl: 'alliances' })
     },
     /**
      * Get all current member corporations of an alliance.
@@ -19,7 +19,7 @@ module.exports = {
      * @returns {[number]} The corporations in the alliance.
      */
     corps (allianceId) {
-        inputValidation({ input: allianceId, type: 'number', message: `The function 'alliances.corps' requires an alliance ID!` })
+        inputValidation({ input: allianceId, type: 'number', message: `The function 'alliance.corps' requires an alliance ID!` })
 
         return request({ subUrl: `alliances/${allianceId}/corporations` })
     },

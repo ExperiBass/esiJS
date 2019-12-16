@@ -25,7 +25,7 @@ module.exports = {
             'station'
         ]
         
-        inputValidation({ input: search, type: 'number', message: `The function 'search.search' requires a search input!` })
+        inputValidation({ input: search, type: 'string', message: `The function 'search.search' requires a search input!` })
         inputValidation({
             input: category,
             type: 'string',

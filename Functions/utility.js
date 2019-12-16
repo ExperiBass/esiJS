@@ -41,19 +41,6 @@ module.exports = {
      * @param {string} dataSource Tranquilty or Singularity.
      * @returns {Boolean} True if it was able to sucessfully write, false otherwise.
      */
-<<<<<<< Updated upstream
-    setSettings(link = 'latest', dataSource = 'tranquility') {
-        const fs = require('fs')
-        let path = require('path')
-        let join = path.join(__dirname, '../../esi.json')
-        let server = 'https://esi.evetech.net/'
-        let path = 'latest v1 legacy dev'.split(' ')
-        let DS = 'tranquility singularity'.split(' ')
-    
-        if (!link || !path.includes(link) || !dataSource || !DS.includes(dataSource)) {
-            console.error(`setSettings needs its first arg to be one of these: ${path}, and its second arg to be one of these: ${DS}`)
-            throw Error(`setSettings needs first arg to be one of these: ${path}, and second arg to be one of these: ${DS}`)
-=======
     setSettings(route = 'latest', dataSource = 'tranquility') {
         if (checkForConfig()) {
             let server = 'esi.evetech.net'
@@ -65,10 +52,8 @@ module.exports = {
             }
             route = `https://${server}/${route}/`
             fs.writeFileSync(join, JSON.stringify( { route, dataSource }, null, 2) )
-            return true  
->>>>>>> Stashed changes
-        }
-        
+            return true
+        }      
     },
     /**
      * Pause execution of code for a specified amount of time.
@@ -77,7 +62,7 @@ module.exports = {
      * @param millis {number} The time to delay (in milliseconds)
      * @returns {void}
      */
-    sleep(millis) {
+    async sleep(millis) {
         return new Promise(resolve => setTimeout(resolve, millis))
     }
 }

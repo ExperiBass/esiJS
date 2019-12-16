@@ -56,22 +56,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the name of `alliances.icons` to `alliances.icon`
 
 ### [v2.1.2] - 2019 07 12
-#### Added
-- Nothing
 #### Changed
 - `Lodash` security fix
-<<<<<<< Updated upstream
 
-
-=======
 ### [v3.0.2] - 2019 08 24
 #### Changed
 - Fixed some bugs with the refactoring
+
 ### [v3.0.4] - 2019 12 11
 - Added warning for next major release
 - Fixed issues with some endpoints
 - Fixed a issue with a variable already being declared
->>>>>>> Stashed changes
+
+### [v3.0.5] - 2019 12 16
+- Fixed a issue with the market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/GingkathFox/esiJS/pull/11))
+- Typos
+
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/GingkathFox/EveJS/compare/v0.1.1...dev

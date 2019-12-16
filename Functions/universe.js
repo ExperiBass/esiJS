@@ -20,7 +20,7 @@ module.exports = {
          * @returns {object}
          */
         beltInfo (beltId) {
-            inputValidation({ input: beltId, type: 'number', message: `The function 'universe.belts.beltInfo requires a belt Id!` })
+            inputValidation({ input: beltId, type: 'number', message: `The function 'universe.belts.beltInfo requires a belt ID!` })
 
             return request({ subUrl: `universe/asteroid_belts/${beltID}` })
         }
@@ -79,7 +79,7 @@ module.exports = {
          * @returns {object}
          */
         categoryInfo (categoryID) {
-            inputValidation({ input: categoryID, type: 'number', message: `The function 'universe.categories.categoryInfo requires a category Id!` })
+            inputValidation({ input: categoryID, type: 'number', message: `The function 'universe.categories.categoryInfo requires a category ID!` })
             
             return request({ subUrl: `universe/categories/${categoryID}` })
         }
@@ -93,7 +93,7 @@ module.exports = {
          * @returns {object}
          */
         constellationInfo (constellationID) {
-            inputValidation({ input: categoryID, type: 'number', message: `The function 'universe.constellations.constellationInfo requires a constellation Id!` })
+            inputValidation({ input: constellationID, type: 'number', message: `The function 'universe.constellations.constellationInfo requires a constellation ID!` })
             
             return request({ subUrl: `universe/constellations/${constellationID}` })
         },
@@ -124,7 +124,7 @@ module.exports = {
          * @returns {object}
          */
         graphicInfo (graphicID) {
-            inputValidation({ input: graphicID, type: 'number', message: `The function 'universe.graphics.graphicInfo requires a graphic Id!` })
+            inputValidation({ input: graphicID, type: 'number', message: `The function 'universe.graphics.graphicInfo requires a graphic ID!` })
             
             return request({ subUrl: `universe/graphics/${graphicID}` })
         },
@@ -145,7 +145,7 @@ module.exports = {
          * @returns {object} 
          */
         groupInfo (groupID) {
-            inputValidation({ input: groupID, type: 'number', message: `The function 'universe.graphics.graphicInfo requires a group Id!` })
+            inputValidation({ input: groupID, type: 'number', message: `The function 'universe.graphics.graphicInfo requires a group ID!` })
             
             return request({ subUrl: `universe/groups/${groupID}` })
         },
@@ -167,7 +167,7 @@ module.exports = {
          * @returns {object}
          */
         moonsInfo (moonID) {
-            inputValidation({ input: moonID, type: 'number', message: `The function 'universe.moons.moonsInfo requires a moon Id!` })
+            inputValidation({ input: moonID, type: 'number', message: `The function 'universe.moons.moonsInfo requires a moon ID!` })
             
             return request({ subUrl: `universe/moons/${moonID}` })
         }
@@ -180,7 +180,7 @@ module.exports = {
          * @returns {object}
          */
         planetInfo (planetID) {
-            inputValidation({ input: planetID, type: 'number', message: `The function 'universe.planets.planetInfo requires a planet Id!` })
+            inputValidation({ input: planetID, type: 'number', message: `The function 'universe.planets.planetInfo requires a planet ID!` })
             
             return request({ subUrl: `universe/planets/${planetID}` })
         }
@@ -204,7 +204,7 @@ module.exports = {
          * @returns {objectt}
          */
         regionInfo (regionID) {
-            inputValidation({ input: regionID, type: 'number', message: `The function 'universe.regions.regionInfo requires a region Id!` })
+            inputValidation({ input: regionID, type: 'number', message: `The function 'universe.regions.regionInfo requires a region ID!` })
             
             return request({ subUrl: `universe/regions/${regionID}` })
         },
@@ -225,7 +225,7 @@ module.exports = {
          * @returns {object}
          */
         stargateInfo (stargateID) {
-            inputValidation({ input: stargateID, type: 'number', message: `The function 'universe.stargates.stargateInfo requires a stargate Id!` })
+            inputValidation({ input: stargateID, type: 'number', message: `The function 'universe.stargates.stargateInfo requires a stargate ID!` })
             
             return request({ subUrl: `universe/stargates/${stargateID}` })
         }
@@ -238,7 +238,7 @@ module.exports = {
          * @returns {object}
          */
         starInfo (starID) {
-            inputValidation({ input: starID, type: 'number', message: `The function 'universe.stars.starInfo requires a star Id!` })
+            inputValidation({ input: starID, type: 'number', message: `The function 'universe.stars.starInfo requires a star ID!` })
              
             return request({ subUrl: `universe/stars/${starID}` })
         }
@@ -252,7 +252,7 @@ module.exports = {
          * @returns {object}
          */
         stationInfo (stationID) {
-            inputValidation({ input: stationID, type: 'number', message: `The function 'universe.stations.stationInfo requires a station Id!` })
+            inputValidation({ input: stationID, type: 'number', message: `The function 'universe.stations.stationInfo requires a station ID!` })
              
             return request({ subUrl: `universe/stations/${stationID}` })
         }
@@ -275,7 +275,7 @@ module.exports = {
          * @returns {object}
          */
         systemInfo (systemID) {
-            inputValidation({ input: systemID, type: 'number', message: `The function 'universe.systems.systemInfo' requires a system Id!` })
+            inputValidation({ input: systemID, type: 'number', message: `The function 'universe.systems.systemInfo' requires a system ID!` })
              
             return request({ subUrl: `universe/systems/${systemID}` })
         },
@@ -286,7 +286,7 @@ module.exports = {
          * @returns {object}
          */
         systemJumps () {
-            return request({ subUrl: `universe/systems/system_jumps` })
+            return request({ subUrl: `universe/system_jumps` })
         },
         /**
          * Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, 
@@ -295,7 +295,7 @@ module.exports = {
          * @returns {object}
          */
         systemKills () {
-            return request({ subUrl: `universe/systems/system_kills` })
+            return request({ subUrl: `universe/system_kills` })
         },
         /**
          * Get a list of solar systems.
@@ -314,7 +314,7 @@ module.exports = {
          * @returns {object}
          */
         typeInfo (typeID) {
-            inputValidation({ input: typeID, type: 'number', message: `The function 'universe.types.typeInfo requires a type Id!` })
+            inputValidation({ input: typeID, type: 'number', message: `The function 'universe.types.typeInfo requires a type ID!` })
             
             return request({ subUrl: `universe/types/${typeID}` })
         },
