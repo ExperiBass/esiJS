@@ -58,7 +58,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [v3.0.4] - 2019 12 11
 - Added warning for next major release
 - Fixed issues with some endpoints
-- Fixed a issue with a veriable already being declared
+- Fixed a issue with a variable already being declared
+### [v3.0.5] - 2019 12 16
+- Fixed a issue with the market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/GingkathFox/esiJS/pull/11))
+- Typos
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/GingkathFox/EveJS/compare/v0.1.1...dev
