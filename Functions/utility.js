@@ -1,13 +1,16 @@
-let path = require('path')
-let join = path.join(__dirname, `../esi.json`)
+const path = require('path')
+const localConfig = path.join(__dirname, `../esi.json`)
 const fs = require('fs')
 const config = '../../esi.json'
 
 function checkForConfig() {
+
     // Check for a ESI config file in the project directory
     try {
+
         // If the file exists...
-        if (fs.existsSync(config)) {
+        let fileExists = fs.existsSync(config)
+        if (fileExists) {
 
             // ...see if we can read it...
             try {
@@ -25,7 +28,12 @@ function checkForConfig() {
                 return false
             }
         } else {
-            console.log(`There was a error in checking if the config file exists! Reverting to default configuration`)
+            console.log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${path.join(__dirname, config)}`)
+            try {
+                fs.writeFileSync(path.join(__dirname, config), JSON.stringify(require('../esi.json'), null, 2))
+            } catch(e) {
+                console.log(`There was a error while attempting to create the config file! Error: \n${e}`)
+            }
             return false 
         }
         
@@ -33,6 +41,7 @@ function checkForConfig() {
         
         return false
     }
+
     return true
 }
 module.exports = {
@@ -47,7 +56,7 @@ module.exports = {
             settings = fs.readFileSync(join, 'utf8')
             return JSON.parse(settings) 
         }
-        settings = fs.readFileSync(join, 'utf8')
+        settings = fs.readFileSync(localConfig, 'utf8')
         return JSON.parse(settings)
     },
     /**
@@ -66,7 +75,7 @@ module.exports = {
                 throw Error(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
             }
             route = `https://${server}/${route}/`
-            fs.writeFileSync(join, JSON.stringify( { route, dataSource }, null, 2) )
+            fs.writeFileSync(localConfig, JSON.stringify( { route, dataSource }, null, 2) )
             return true
         }      
     },
