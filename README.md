@@ -218,7 +218,6 @@ esiJS.util.getSettings() // returns the current settings
 esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
                                           // the server to get the data from ('tranqulity', 'singularity', defaults to the former)
 await esiJS.util.sleep(mills) // pauses execution for the specified amount of time
-esiJS.util.addArrays(array1, array2) // adds 2 arrays together and returns a merged array
 ```
 
 If you like what you see here, please consider donating to "Gingka Akiyama" so i can spend more time devving and less time mining!
