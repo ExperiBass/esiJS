@@ -1,7 +1,8 @@
 const path = require('path')
 const localConfig = path.join(__dirname, `../esi.json`)
 const fs = require('fs')
-const config = '../../esi.json'
+const projectConfig = path.join(__dirname, '../../esi.json')
+
 
 function checkForConfig() {
 
@@ -9,16 +10,16 @@ function checkForConfig() {
     try {
 
         // If the file exists...
-        let fileExists = fs.existsSync(config)
+        let fileExists = fs.existsSync(projectConfig)
         if (fileExists) {
 
             // ...see if we can read it...
             try {
-                fs.accessSync(config, fs.constants.R_OK)
+                fs.accessSync(projectConfig, fs.constants.R_OK)
 
                 // ...then see if we can write into it
                 try {
-                    fs.accessSync(config, fs.constants.W_OK) 
+                    fs.accessSync(projectConfig, fs.constants.W_OK) 
                 } catch(e) {
                     console.log(`Couldn't write to 'esi.json', reverting to default configuration`)
                     return false
@@ -28,22 +29,24 @@ function checkForConfig() {
                 return false
             }
         } else {
-            console.log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${path.join(__dirname, config)}`)
+            // If the file doesn't exist...
+            console.log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}`)
             try {
-                fs.writeFileSync(path.join(__dirname, config), JSON.stringify(require('../esi.json'), null, 2))
+                // ...attempt to create it
+                fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
             } catch(e) {
                 console.log(`There was a error while attempting to create the config file! Error: \n${e}`)
             }
             return false 
         }
         
-    } catch(e) {
-        
+    } catch(e) {     
         return false
     }
 
     return true
 }
+
 module.exports = {
     /**
      * Gets the settings for esiJS.
@@ -53,7 +56,7 @@ module.exports = {
         let settings;
 
         if (checkForConfig()) {
-            settings = fs.readFileSync(join, 'utf8')
+            settings = fs.readFileSync(projectConfig, 'utf8')
             return JSON.parse(settings) 
         }
         settings = fs.readFileSync(localConfig, 'utf8')
@@ -75,9 +78,15 @@ module.exports = {
                 throw Error(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
             }
             route = `https://${server}/${route}/`
-            fs.writeFileSync(localConfig, JSON.stringify( { route, dataSource }, null, 2) )
+            try {
+                fs.writeFileSync(localConfig, JSON.stringify({route, dataSource}, null, 2))
+            } catch(e) {
+                console.error(`Couldn't write config file! Error:\n${e}`)
+                return false
+            }
             return true
-        }      
+        }
+        return false
     },
     /**
      * Pause execution of code for a specified amount of time.

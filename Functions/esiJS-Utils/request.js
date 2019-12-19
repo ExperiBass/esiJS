@@ -45,7 +45,7 @@ function makeRequest ({ subUrl, post = false, body, query}) {
                 headers: response.headers,
                 data: response.data
             }
-            
+
             return data
         }).catch((error) => {
             const esiError = error.response.data.error
