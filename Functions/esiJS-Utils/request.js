@@ -18,7 +18,7 @@ function makeRequest ({ subUrl, post = false, body, query}) {
         'accept': 'application/json',
         'Accept-Language': `${language}`,
         'Content-Type': 'application/json',
-
+        'user-agent': 'esijs'
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=${dataSource}`
@@ -48,20 +48,21 @@ function makeRequest ({ subUrl, post = false, body, query}) {
         // Include both the headers and the query just in case one or the other fails
     }
 
-    
+    // Check the URL for extra forward slashes
+    fullURL = fullURL.replace(test, '')
+
     // If post, make it a post request, make it a get otherwise
     if (post) {
         request = axios.post(fullURL, body, {
             headers
-        }) 
+        })
     } else {
         request = axios.get(fullURL, {
             headers
-        }) 
+        })
     }
 
-    // Check the URL for extra forward slashes
-    fullURL = fullURL.replace(test, '')
+    
 
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
@@ -74,9 +75,8 @@ function makeRequest ({ subUrl, post = false, body, query}) {
             return data
         }).catch(error => {
             const esiError = error.response.data.error
-            // console.error(`Call to '${subUrl}' failed with ESI error:`, esiError)
-            console.error(`\n\nRequest URL: ${fullURL.split('&token')[0]}`)
-            throw throwError(esiError, `ESI_ERROR`)
+            const url = fullURL.split('&token')[0]
+            throw throwError(esiError, `ESI_ERROR`, url)
         })
 }
 

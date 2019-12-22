@@ -9,14 +9,14 @@ function inputValidation ({ input, type, message, options, optional = false }) {
 
     // Do not check for !input or you are making that you won't accepet falsy values such as empty '' or id = 0
     if (input === undefined) {
-        throwError(message, `INPUT_UNDEFINED`)
+       throw throwError(message, `INPUT_UNDEFINED`)
     }
     if (typeof input !== type) {
-        throwError(message, `INPUT_NOT_EQUAL_TO_REQUIRED_TYPE`)
+        throw throwError(message, `INPUT_NOT_EQUAL_TO_REQUIRED_TYPE`)
     }
     // If options is provided, check that input is included
     if (options && !options.includes(input)) {
-        throwError(message, `GIVEN_OPTION_NOT_VALID_OPTION`)
+        throw throwError(message, `GIVEN_OPTION_NOT_VALID_OPTION`)
     }
 }
 
