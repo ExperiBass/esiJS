@@ -68,7 +68,7 @@ module.exports = {
      * @param {string} dataSource Tranquilty or Singularity.
      * @returns {Boolean} True if it was able to sucessfully write, false otherwise.
      */
-    setSettings(route = 'latest', dataSource = 'tranquility') {
+    setSettings(route = 'latest', dataSource = 'tranquility', authToken = '') {
         if (checkForConfig()) {
             let server = 'esi.evetech.net'
             let routes = ['latest','v1','legacy','dev']
@@ -79,7 +79,7 @@ module.exports = {
             }
             route = `https://${server}/${route}/`
             try {
-                fs.writeFileSync(localConfig, JSON.stringify({route, dataSource}, null, 2))
+                fs.writeFileSync(localConfig, JSON.stringify({route, dataSource, authToken}, null, 2))
             } catch(e) {
                 console.error(`Couldn't write config file! Error:\n${e}`)
                 return false

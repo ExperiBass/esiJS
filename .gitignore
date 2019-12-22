@@ -79,5 +79,5 @@ typings/
 .vscode
 
 # other
-demo.js 
+test.js 
 .DS_Store

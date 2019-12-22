@@ -1,6 +1,6 @@
 const axios = require('axios')
 const { getSettings } = require('../utility')
-let { link, dataSource } = getSettings()
+let { link, dataSource, authToken } = getSettings()
 
 /**
  *  subUrl -> remaining url part specific to the function call
@@ -29,6 +29,10 @@ function makeRequest ({ subUrl, post = false, body, query}) {
             }
             fullURL += `&${queryKey}=${query[queryKey]}`
         })
+    }
+
+    if (authToken !== '') {
+        fullURL += `?token=${authToken}`
     }
 
     // If post, make it a post request, make it a get otherwise
