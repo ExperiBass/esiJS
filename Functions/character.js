@@ -7,7 +7,7 @@ module.exports = {
      * @exports info
      * @async
      * @param ID {number} The alliance ID to get info from.
-     * @returns {object} Public info on the alliance.
+     * @returns {JSON} Public info on the alliance.
      */
     affiliation (idArray) {
         inputValidation({ input: idArray, type: 'object', message: `The function 'character.affiliation' requires an array of ids!` })
@@ -19,7 +19,7 @@ module.exports = {
      * @exports corpHistory
      * @async
      * @param charID {number} The character to get the history of.
-     * @returns {object} The character's history.
+     * @returns {JSON} The character's history.
      */
     corpHistory (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
@@ -31,7 +31,7 @@ module.exports = {
      * @exports portrait
      * @async
      * @param charID {number} The character to get the portrait of.
-     * @returns {object} Links to the different sizes of the character's portrait.
+     * @returns {JSON} Links to the different sizes of the character's portrait.
      */
     portrait (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.portrait' needs a character ID!` })
@@ -43,13 +43,20 @@ module.exports = {
      * @exports info
      * @async
      * @param charID {number} The character to get the public info of.
-     * @returns {object} Public info on a character.
+     * @returns {JSON} Public info on a character.
      */
     info (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
 
         return request({ subUrl: `characters/${characterId}` })
     },
+    /**
+     * Gets the notifications of a character.
+     * @async
+     * @authenicated
+     * @param {number} characterID The character to get the notifications of.
+     * @returns {JSON} Character notifications.
+     */
     notifications (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
 
