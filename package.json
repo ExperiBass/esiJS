@@ -1,6 +1,6 @@
 {
   "name": "esijs",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "A simple library for EVE Online.",
   "main": "endpoints.js",
   "module": "endpoints.js",

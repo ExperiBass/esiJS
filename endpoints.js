@@ -9,7 +9,7 @@ module.exports = {
     incursions: require('./Functions/incursions'),
     industry: require('./Functions/industry'),
     insurance: require('./Functions/insurance'),
-    killmails: require('./Functions/killMails'),
+    killmails: require('./Functions/killmails'),
     loyalty: require('./Functions/loyalty'),
     market: require('./Functions/market'),
     opportunities: require('./Functions/opportunities'),
