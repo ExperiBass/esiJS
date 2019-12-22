@@ -1,7 +1,8 @@
 const axios = require('axios')
 const { getSettings } = require('../utility')
-let { link, dataSource, authToken } = getSettings()
-
+let { link, dataSource, authToken, language } = getSettings()
+let throwError = require('./throwError')
+let test = /\/(?=\/)(?<!https:\/)/g
 /**
  *  subUrl -> remaining url part specific to the function call
  * 
@@ -12,6 +13,12 @@ let { link, dataSource, authToken } = getSettings()
  *  query -> aditional query parameters
  */
 function makeRequest ({ subUrl, post = false, body, query}) {
+
+    let headers = {
+        'accept': 'application/json',
+        'Accept-Language': `${language}`,
+        'Content-Type': 'application/json'
+    }
     let request
     let fullURL = `${link}${subUrl}/?datasource=${dataSource}`
     
@@ -30,17 +37,34 @@ function makeRequest ({ subUrl, post = false, body, query}) {
             fullURL += `&${queryKey}=${query[queryKey]}`
         })
     }
-
+    // Add in the language
+    if (language !== '') {
+        fullURL += `&language=${language.split('/').join('-')}`
+    }
     if (authToken !== '') {
-        fullURL += `?token=${authToken}`
+        headers['authorization'] = `Bearer: ${authToken}`
+        fullURL += `&token=${authToken}`
+        // Include both the headers and the query just in case one or the other fails
     }
 
+    
     // If post, make it a post request, make it a get otherwise
     if (post) {
-        request = axios.post(fullURL, body) 
+        request = axios.post(fullURL, body, {
+            headers
+        }) 
     } else {
-        request = axios.get(fullURL) 
+        request = axios.get(fullURL, {
+            headers
+        }) 
     }
+
+
+    // Check the URL for extra forward slashes
+    console.error(fullURL.split('&token')[0])
+    fullURL = fullURL.replace(test, '')
+    console.error(fullURL.split('&token')[0])
+    
 
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
@@ -51,10 +75,11 @@ function makeRequest ({ subUrl, post = false, body, query}) {
             }
 
             return data
-        }).catch((error) => {
+        }).catch(error => {
             const esiError = error.response.data.error
-            console.error(`Call to '${subUrl}' failed with ESI error:`, esiError)
-            throw Error(esiError)
+            // console.error(`Call to '${subUrl}' failed with ESI error:`, esiError)
+            console.error(`\n\nRequest URL: ${fullURL.split('&token')[0]}`)
+            throw throwError(esiError, `ESI_ERROR`)
         })
 }
 

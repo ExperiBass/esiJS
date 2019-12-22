@@ -8,9 +8,9 @@ function checkForConfig() {
 
     // Check for a ESI config file in the project directory
     try {
-
-        // If the file exists...
         let fileExists = fs.existsSync(projectConfig)
+
+        // If the file exists...    
         if (fileExists) {
 
             // ...see if we can read it...
@@ -28,6 +28,7 @@ function checkForConfig() {
                 console.log(`Couldn't read 'esi.json', reverting to default configuration`)
                 return false
             }
+            
         } else {
             // If the file doesn't exist...
             console.log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}`)
@@ -43,7 +44,7 @@ function checkForConfig() {
     } catch(e) {     
         return false
     }
-
+    console.log(`Sucessfully read the config file at ${projectConfig}!`)
     return true
 }
 

@@ -1,5 +1,6 @@
 {
   "link": "https://esi.evetech.net/latest/",
   "dataSource": "tranquility",
-  "authToken": ""
+  "authToken": "",
+  "language": "en/us"
 }
