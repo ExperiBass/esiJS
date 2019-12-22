@@ -53,6 +53,6 @@ module.exports = {
     notifications (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
 
-        return request({ subUrl: `/characters/${characterId}/notifications`})
+        return request({ subUrl: `characters/${characterId}/notifications`})
     }
 }

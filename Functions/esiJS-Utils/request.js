@@ -1,8 +1,7 @@
 const axios = require('axios')
 const { getSettings } = require('../utility')
-let { link, dataSource, authToken, language } = getSettings()
-let throwError = require('./throwError')
-let test = /\/(?=\/)(?<!https:\/)/g
+const throwError = require('./throwError')
+
 /**
  *  subUrl -> remaining url part specific to the function call
  * 
@@ -13,11 +12,13 @@ let test = /\/(?=\/)(?<!https:\/)/g
  *  query -> aditional query parameters
  */
 function makeRequest ({ subUrl, post = false, body, query}) {
-
+    const { link, dataSource, authToken, language } = getSettings()
+    const test = /\/(?=\/)(?<!https:\/)/g
     let headers = {
         'accept': 'application/json',
         'Accept-Language': `${language}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=${dataSource}`
@@ -59,12 +60,8 @@ function makeRequest ({ subUrl, post = false, body, query}) {
         }) 
     }
 
-
     // Check the URL for extra forward slashes
-    console.error(fullURL.split('&token')[0])
     fullURL = fullURL.replace(test, '')
-    console.error(fullURL.split('&token')[0])
-    
 
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request

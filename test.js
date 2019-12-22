@@ -1,6 +1,6 @@
 let esiJS = require('./endpoints') 
 
-esiJS.character.notifications(2115455534)
+esiJS.character.notifications(2113784355)
 .then(r => {
     console.log(r)
 })
