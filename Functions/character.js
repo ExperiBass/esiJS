@@ -50,6 +50,52 @@ module.exports = {
 
         return request({ subUrl: `characters/${characterId}` })
     },
+    assets(characterID) {
+        inputValidation({input: characterID, type: 'number', message: `The function 'character.assets' requires a character ID!`})
+
+        return request({subUrl: `characters/${characterID}/assets`}, true)
+    },
+    assetLocations(characterID, itemIDs = []) {
+        inputValidation({input: characterID, type: 'number', message: `The function 'character.assetLocations' requires a character ID!`})
+        inputValidation({input: itemIDs, type: 'object', message: `The function 'character.assetLocations' requires a array of item IDs!`})
+
+        return request({
+            subUrl: `characters/${characterID}/assets/locations`,
+            post: true,
+            query: {
+                item_ids: itemIDs
+            }
+        }, true)
+    },
+    assetNames(characterID, itemIDs) {
+        inputValidation({input: characterID, type: 'number', message: `The function 'character.assetNames' requires a character ID!`})
+        inputValidation({input: itemIDs, type: 'object', message: `The function 'character.assetNames' requires a array of item IDs!`})
+
+        return request({
+            subUrl: `characters/${characterID}/assets/names`,
+            post: true,
+            query: {
+                item_ids: itemIDs
+            }
+        }, true)
+    },
+    agentsResearch(characterID) {
+        inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
+
+        return request({subUrl: `character/${characterID}/agents_research`}, true)
+    },
+    /**
+     * Gets a list of research agents from a character.
+     * @param {number} characterID The character to get the list of research agents of.
+     * @async
+     * @authenicated
+     * @returns {JSON} A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
+     */
+    blueprints(characterID) {
+        inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
+        
+        return request({subUrl: `characters/${characterID}/blueprints`}, true)
+    },
     /**
      * Gets the notifications of a character.
      * @async
@@ -60,6 +106,6 @@ module.exports = {
     notifications (characterId) {
         inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
 
-        return request({ subUrl: `characters/${characterId}/notifications`})
+        return request({ subUrl: `characters/${characterId}/notifications`}, true)
     }
 }

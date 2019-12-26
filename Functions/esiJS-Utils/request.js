@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { getSettings } = require('../utility')
 const throwError = require('./throwError')
+const path = require('path')
 
 /**
  *  subUrl -> remaining url part specific to the function call
@@ -11,7 +12,7 @@ const throwError = require('./throwError')
  * 
  *  query -> aditional query parameters
  */
-function makeRequest ({ subUrl, post = false, body, query}) {
+function makeRequest ({ subUrl, post = false, body, query}, needsAuth = false) {
     const { link, dataSource, authToken, language } = getSettings()
     const test = /\/(?=\/)(?<!https:\/)/g
     let headers = {
@@ -42,13 +43,16 @@ function makeRequest ({ subUrl, post = false, body, query}) {
     if (language !== '') {
         fullURL += `&language=${language.split('/').join('-')}`
     }
-    if (authToken !== '') {
-        headers['authorization'] = `Bearer: ${authToken}`
-        fullURL += `&token=${authToken}`
+    if (needsAuth && authToken !== '') {
         // Include both the headers and the query just in case one or the other fails
+        headers['authorization'] = `Bearer: ${authToken}`
+        fullURL += `&token=${authToken}`  
+    }
+    if (needsAuth && authToken === '') {
+        throw throwError(`You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../')}.`, `NO_AUTH_TOKEN`)
     }
 
-    // Check the URL for extra forward slashes
+    // Check the URL for extra forward slashes and delete them
     fullURL = fullURL.replace(test, '')
 
     // If post, make it a post request, make it a get otherwise
