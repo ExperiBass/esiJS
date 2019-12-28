@@ -163,7 +163,7 @@ module.exports = {
     fatigue(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.fatigue' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/fatigue`})
+        return request({subUrl: `character/${characterID}/fatigue`}, true)
     },
     /**
      * Get medals.
@@ -176,7 +176,7 @@ module.exports = {
     medals(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.medals' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/medals`})
+        return request({subUrl: `character/${characterID}/medals`}, true)
     },
     /**
      * Get character notifications.
@@ -202,7 +202,7 @@ module.exports = {
     notificationContacts(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.notificationContacts' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/notification/contacts`})
+        return request({subUrl: `character/${characterID}/notification/contacts`}, true)
     },
     /**
      * Get character corporation roles.
@@ -215,7 +215,7 @@ module.exports = {
     roles(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.roles' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/roles`})
+        return request({subUrl: `character/${characterID}/roles`}, true)
     },
     /**
      * Get standings.
@@ -228,7 +228,7 @@ module.exports = {
     standings(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.standings' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/standings`})
+        return request({subUrl: `character/${characterID}/standings`}, true)
     },
     /**
      * Yearly aggregate stats.
@@ -241,7 +241,7 @@ module.exports = {
     stats(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.stats' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/stats`})
+        return request({subUrl: `character/${characterID}/stats`}, true)
     },
     /**
      * Get character corporation titles.
@@ -254,6 +254,6 @@ module.exports = {
     titles(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.titles' requires a character ID!`})
 
-        return request({subUrl: `character/${characterID}/titles`})
+        return request({subUrl: `character/${characterID}/titles`}, true)
     }
 }

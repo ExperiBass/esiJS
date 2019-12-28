@@ -7,7 +7,7 @@ function inputValidation ({ input, type, message, options, optional = false }) {
         return
     }
 
-    // Do not check for !input or you are making that you won't accepet falsy values such as empty '' or id = 0
+    // Do not check for !input or you are making that you won't accept falsy values such as empty '' or id = 0
     if (input === undefined) {
        throw throwError(message, `INPUT_UNDEFINED`)
     }
