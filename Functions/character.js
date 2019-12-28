@@ -79,11 +79,6 @@ module.exports = {
             }
         }, true)
     },
-    agentsResearch(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
-
-        return request({subUrl: `character/${characterID}/agents_research`}, true)
-    },
     /**
      * Gets a list of research agents from a character.
      * @param {number} characterID The character to get the list of research agents of.
@@ -91,11 +86,18 @@ module.exports = {
      * @authenicated
      * @returns {JSON} A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
      */
+    agentsResearch(characterID) {
+        inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
+
+        return request({subUrl: `character/${characterID}/agents_research`}, true)
+    },
+    
     blueprints(characterID) {
         inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
         
         return request({subUrl: `characters/${characterID}/blueprints`}, true)
     },
+    
     /**
      * Gets the notifications of a character.
      * @async
