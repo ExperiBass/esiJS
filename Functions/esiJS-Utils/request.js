@@ -12,7 +12,7 @@ const path = require('path')
  * 
  *  query -> aditional query parameters
  */
-function makeRequest ({ subUrl, post = false, body, query}, needsAuth = false) {
+function makeRequest ({ subUrl, post = false, body, query, put = false}, needsAuth = false) {
     const { link, dataSource, authToken, language } = getSettings()
     const test = /\/(?=\/)(?<!https:\/)/g
     let headers = {
@@ -58,6 +58,10 @@ function makeRequest ({ subUrl, post = false, body, query}, needsAuth = false) {
     // If post, make it a post request, make it a get otherwise
     if (post) {
         request = axios.post(fullURL, body, {
+            headers
+        })
+    } else if (put) {
+        request = axios.put(fullURL, body, {
             headers
         })
     } else {

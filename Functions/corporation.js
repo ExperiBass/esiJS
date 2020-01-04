@@ -46,5 +46,91 @@ module.exports = {
      */
     npcCorps () {
         return request({ subUrl: `corporations/npccorps` })
+    },
+    assets: {
+        /**
+         * Get corporation assets.
+         * @requires esi-assets.read_corporation_assets.v1
+         * @param {number} corporationID
+         * @async
+
+        * @returns {JSON} A list of the corporations assets.
+        */
+        assets(corporationID) {
+            inputValidation({input: corporationID, type: 'number', message: `The function 'corporation.assets' requires a corporation ID!`})
+
+            return request({subUrl: `corporations/${corporationID}/assets`}, true)
+        },
+        /**
+         * Get corporation asset locations.
+         * @param {number} corporationID 
+         * @param {[number]} itemIDs 
+         * @requires esi-assets.read_corporation_assets.v1
+         * @async
+
+        * @returns {JSON} Locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
+        */
+        assetLocations(corporationID, itemIDs = []) {
+            inputValidation({input: corporationID, type: 'number', message: `The function 'corporation.assetLocations' requires a corporation ID!`})
+            inputValidation({input: itemIDs, type: 'object', message: `The function 'corporation.assetLocations' requires a array of item IDs!`})
+
+            return request({
+                subUrl: `corporations/${corporationID}/assets/locations`,
+                post: true,
+                body: {
+                    item_ids: itemIDs
+                }
+            }, true)
+        },
+        /**
+         * Get corporation asset names.
+         * @param {number} corporationID 
+         * @param {[number]} itemIDs
+         * @requires esi-assets.read_corporation_assets.v1
+         * @async
+
+        * @returns {JSON} Names for a set of item ids, which you can get from corporation assets endpoint. Typically used for items that can customize names, like containers or ships.
+        */
+        assetNames(corporationID, itemIDs) {
+            inputValidation({input: corporationID, type: 'number', message: `The function 'corporation.assetNames' requires a corporation ID!`})
+            inputValidation({input: itemIDs, type: 'object', message: `The function 'corporation.assetNames' requires a array of item IDs!`})
+
+            return request({
+                subUrl: `corporations/${corporationID}/assets/names`,
+                post: true,
+                query: {
+                    item_ids: itemIDs
+                }
+            }, true)
+        }
+    },
+    bookmarks: {
+        /**
+         * List corporation bookmarks
+         * @param {number} corporationID
+         * @requires esi-bookmarks.read_corporation_bookmarks.v1
+         * @async
+
+        * @returns {JSON} A list of your corporation’s personal bookmarks.
+        */
+        bookmarks(corporationID) {
+            inputValidation({input: corporationID, type: 'number', message: `The function 'corporation.bookmarks' requires a corporation ID!`})
+
+            return request({subUrl: `corporations/${corporationID}/bookmarks`}, true)
+        },
+        /**
+         * List corporation bookmark folders
+         * @param {number} corporationID
+         * @requires esi-bookmarks.read_corporation_bookmarks.v1
+         * @async
+
+        * @returns {JSON} A list of your corporation’s personal bookmark folders.
+        */
+        bookmarkFolders(corporationID) {
+            inputValidation({input: corporationID, type: 'number', message: `The function 'corporation.bookmarkFolders' requires a corporation ID!`})
+
+            return request({subUrl: `corporations/${corporationID}/bookmarks/folders`}, true)
+
+        }
     }
 }

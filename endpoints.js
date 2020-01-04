@@ -1,6 +1,6 @@
 module.exports = {
     util: require('./Functions/utility'),
-    alliance: require('./Functions/alliances'),
+    alliance: require('./Functions/alliance'),
     character: require('./Functions/character'),
     contracts: require('./Functions/contracts'),
     corporation: require('./Functions/corporation'),

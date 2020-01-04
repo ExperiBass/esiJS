@@ -1,6 +1,8 @@
 const path = require('path')
-const localConfig = path.join(__dirname, `../esi.json`)
 const fs = require('fs')
+const axios = require('axios')
+const throwError = require('./esiJS-Utils/throwError')
+const localConfig = path.join(__dirname, `../esi.json`)
 const projectConfig = path.join(__dirname, '../../esi.json')
 
 
@@ -36,7 +38,7 @@ function checkForConfig() {
                 // ...attempt to create it
                 fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
             } catch(e) {
-                console.log(`There was a error while attempting to create the config file! Error: \n${e}`)
+                throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
             }
             return false 
         }
@@ -98,5 +100,14 @@ module.exports = {
      */
     async sleep(millis) {
         return new Promise(resolve => setTimeout(resolve, millis))
+    },
+    async all(...requests) {
+        axios.all(requests)
+        .then(axios.spread(...returns => {
+            return returns
+        }))
+        .catch(e => {
+
+        })
     }
 }
