@@ -13,6 +13,8 @@ let data = f.data
 let headers = f.headers
 ```
 
+You can try it out by using `npm i esijs@dev`, cant guarantee it wont have bugs though!
+
 # INSTALLING:
 ```bash
 npm i --save esijs
