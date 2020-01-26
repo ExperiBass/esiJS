@@ -47,7 +47,7 @@ module.exports = {
         idsToNames (IDs) {
             inputValidation({ input: IDs, type: 'object', message: `The function 'universe.bulk.idsToNames requires IDs to be an array!` })
 
-            return request({ subUrl: `universe/names`, post: true, body: IDs })
+            return request({ subUrl: `universe/names`, requestType: 'post', body: IDs })
         },
         /**
          * Resolve a set of names to IDs in the following categories: 
@@ -60,7 +60,7 @@ module.exports = {
         namesToIds (names) {
             inputValidation({ input: names, type: 'object', message: `The function 'universe.bulk.namesToIds requires names to be an array!` })
 
-            return request({ subUrl: `universe/ids`, post: true, body: names })
+            return request({ subUrl: `universe/ids`, requestType: 'post', body: names })
         }
     },
     categories: {

@@ -9,10 +9,18 @@ module.exports = {
      * @param ID {number} The alliance ID to get info from.
      * @returns {JSON} Public info on the alliance.
      */
-    affiliation (idArray) {
-        inputValidation({ input: idArray, type: 'object', message: `The function 'character.affiliation' requires an array of ids!` })
+    affiliation(idArray) {
+        inputValidation({
+            input: idArray,
+            type: 'object',
+            message: `The function 'character.affiliation' requires an array of ids!`
+        })
 
-        return request({ subUrl: 'characters/affiliation', post: true, body: idArray })
+        return request({
+            subUrl: 'characters/affiliation',
+            requestType: 'post',
+            body: idArray
+        })
     },
     /**
      * GGet a list of all the corporations a character has been a member of.
@@ -21,10 +29,16 @@ module.exports = {
      * @param charID {number} The character to get the history of.
      * @returns {JSON} The character's history.
      */
-    corpHistory (characterId) {
-        inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
+    corpHistory(characterId) {
+        inputValidation({
+            input: characterId,
+            type: 'number',
+            message: `The function 'character.corpHistory' needs a character ID!`
+        })
 
-        return request({ subUrl: `characters/${characterId}/corporationhistory` })
+        return request({
+            subUrl: `characters/${characterId}/corporationhistory`
+        })
     },
     /**
      * Get portrait urls for a character.
@@ -33,10 +47,16 @@ module.exports = {
      * @param charID {number} The character to get the portrait of.
      * @returns {JSON} Links to the different sizes of the character's portrait.
      */
-    portrait (characterId) {
-        inputValidation({ input: characterId, type: 'number', message: `The function 'character.portrait' needs a character ID!` })
+    portrait(characterId) {
+        inputValidation({
+            input: characterId,
+            type: 'number',
+            message: `The function 'character.portrait' needs a character ID!`
+        })
 
-        return request({ subUrl: `characters/${characterId}/portrait` })
+        return request({
+            subUrl: `characters/${characterId}/portrait`
+        })
     },
     /**
      * Get public information about a character.
@@ -45,10 +65,16 @@ module.exports = {
      * @param charID {number} The character to get the public info of.
      * @returns {JSON} Public info on a character.
      */
-    info (characterId) {
-        inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
+    info(characterId) {
+        inputValidation({
+            input: characterId,
+            type: 'number',
+            message: `The function 'character.corpHistory' needs a character ID!`
+        })
 
-        return request({ subUrl: `characters/${characterId}` })
+        return request({
+            subUrl: `characters/${characterId}`
+        })
     },
     assets: {
         /**
@@ -60,26 +86,40 @@ module.exports = {
         * @returns {JSON} A list of the characters assets.
         */
         assets(characterID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.assets.assets' requires a character ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.assets.assets' requires a character ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/assets`}, true)
+            return request({
+                subUrl: `characters/${characterID}/assets`
+            }, true)
         },
         /**
          * Get character asset locations.
-         * @param {number} characterID 
-         * @param {[number]} itemIDs 
+         * @param {number} characterID
+         * @param {[number]} itemIDs
          * @requires esi-assets.read_assets.v1
          * @async
 
         * @returns {JSON} Locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
         */
         assetLocations(characterID, itemIDs = []) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.assets.assetLocations' requires a character ID!`})
-            inputValidation({input: itemIDs, type: 'object', message: `The function 'character.assets.assetLocations' requires a array of item IDs!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.assets.assetLocations' requires a character ID!`
+            })
+            inputValidation({
+                input: itemIDs,
+                type: 'object',
+                message: `The function 'character.assets.assetLocations' requires a array of item IDs!`
+            })
 
             return request({
                 subUrl: `characters/${characterID}/assets/locations`,
-                post: true,
+                requestType: 'post',
                 body: {
                     item_ids: itemIDs
                 }
@@ -87,20 +127,28 @@ module.exports = {
         },
         /**
          * Get character asset names.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @param {[number]} itemIDs
-         * @requires esi-assets.read_assets.v1 
+         * @requires esi-assets.read_assets.v1
          * @async
 
         * @returns {JSON} Names for a set of item ids, which you can get from character assets endpoint. Typically used for items that can customize names, like containers or ships.
         */
         assetNames(characterID, itemIDs) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.assets.assetNames' requires a character ID!`})
-            inputValidation({input: itemIDs, type: 'object', message: `The function 'character.assets.assetNames' requires a array of item IDs!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.assets.assetNames' requires a character ID!`
+            })
+            inputValidation({
+                input: itemIDs,
+                type: 'object',
+                message: `The function 'character.assets.assetNames' requires a array of item IDs!`
+            })
 
             return request({
                 subUrl: `characters/${characterID}/assets/names`,
-                post: true,
+                requestType: 'post',
                 query: {
                     item_ids: itemIDs
                 }
@@ -116,26 +164,38 @@ module.exports = {
      * @returns {JSON} A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
      */
     agentsResearch(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.agentsResearch' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/agents_research`}, true)
+        return request({
+            subUrl: `characters/${characterID}/agents_research`
+        }, true)
     },
     /**
      * Get blueprints.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @requires esi-characters.read_blueprints.v1
      * @async
 
      * @returns {JSON} A list of blueprints the character owns.
      */
     blueprints(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.agentsResearch' requires a character ID!`})
-        
-        return request({subUrl: `characters/${characterID}/blueprints`}, true)
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.agentsResearch' requires a character ID!`
+        })
+
+        return request({
+            subUrl: `characters/${characterID}/blueprints`
+        }, true)
     },
     /**
      * Calculate a CSPA (CONCORD Spam Prevention Act) cost.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @param {[numbers]} characters The target characters to calculate the charge for.
      * @requires esi-characters.read_contacts.v1
      * @async
@@ -143,12 +203,20 @@ module.exports = {
      * @returns {JSON} A CSPA charge cost.
      */
     cspa(characterID, characters = []) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.cspa' requires a character ID!`})
-        inputValidation({input: characters, type: 'object', message: `The function 'character.cspa' requires a array of character IDs!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.cspa' requires a character ID!`
+        })
+        inputValidation({
+            input: characters,
+            type: 'object',
+            message: `The function 'character.cspa' requires a array of character IDs!`
+        })
 
         return request({
             subUrl: `characters/${characterID}/cspa`,
-            post: true,
+            requestType: 'post',
             body: {
                 characters
             }
@@ -156,43 +224,61 @@ module.exports = {
     },
     /**
      * Get jump fatigue.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @requires esi-characters.read_fatigue.v1
      * @async
 
      * @returns {JSON} A character’s jump activation and fatigue information.
      */
     fatigue(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.fatigue' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.fatigue' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/fatigue`}, true)
+        return request({
+            subUrl: `characters/${characterID}/fatigue`
+        }, true)
     },
     /**
      * Get medals.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @requires esi-characters.read_medals.v1
      * @async
 
      * @returns {JSON} A list of medals the character has.
      */
     medals(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.medals' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.medals' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/medals`}, true)
+        return request({
+            subUrl: `characters/${characterID}/medals`
+        }, true)
     },
     notifications: {
-       /**
-         * Get character notifications.
-         * @param {number} characterID The character to get the notifications of.
-         * @requires esi-characters.read_notifications.v1
-         * @async
+        /**
+          * Get character notifications.
+          * @param {number} characterID The character to get the notifications of.
+          * @requires esi-characters.read_notifications.v1
+          * @async
 
-        * @returns {JSON} Character notifications.
-        */
-        notifications (characterId) {
-            inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
+         * @returns {JSON} Character notifications.
+         */
+        notifications(characterId) {
+            inputValidation({
+                input: characterId,
+                type: 'number',
+                message: `The function 'character.corpHistory' needs a character ID!`
+            })
 
-            return request({ subUrl: `characters/${characterId}/notifications`}, true)
+            return request({
+                subUrl: `characters/${characterId}/notifications`
+            }, true)
         },
         /**
          * Get new contact notifications.
@@ -203,49 +289,73 @@ module.exports = {
         * @returns {JSON} Notifications about having been added to someone’s contact list.
         */
         notificationContacts(characterID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.notificationContacts' requires a character ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.notificationContacts' requires a character ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/notification/contacts`}, true)
+            return request({
+                subUrl: `characters/${characterID}/notification/contacts`
+            }, true)
         }
     },
     /**
      * Get character corporation roles.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @requires esi-characters.read_corporation_roles.v1
      * @async
 
      * @returns {JSON} A character’s corporation roles.
      */
     roles(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.roles' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.roles' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/roles`}, true)
+        return request({
+            subUrl: `characters/${characterID}/roles`
+        }, true)
     },
     /**
      * Get standings.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @requires esi-characters.read_standings.v1
      * @async
 
      * @returns {JSON} Character standings from agents, NPC corporations, and factions.
      */
     standings(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.standings' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.standings' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/standings`}, true)
+        return request({
+            subUrl: `characters/${characterID}/standings`
+        }, true)
     },
     /**
      * Yearly aggregate stats.
-     * @param {number} characterID 
+     * @param {number} characterID
      * @requires esi-characterstats.read.v1
      * @async
 
      * @returns {JSON} Aggregate yearly stats for a character.
      */
     stats(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.stats' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.stats' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/stats`}, true)
+        return request({
+            subUrl: `characters/${characterID}/stats`
+        }, true)
     },
     /**
      * Get character corporation titles.
@@ -256,36 +366,54 @@ module.exports = {
      * @returns {JSON} A character’s titles.
      */
     titles(characterID) {
-        inputValidation({input: characterID, type: 'number', message: `The function 'character.titles' requires a character ID!`})
+        inputValidation({
+            input: characterID,
+            type: 'number',
+            message: `The function 'character.titles' requires a character ID!`
+        })
 
-        return request({subUrl: `characters/${characterID}/titles`}, true)
+        return request({
+            subUrl: `characters/${characterID}/titles`
+        }, true)
     },
     bookmarks: {
         /**
         * List bookmarks
-        * @param {number} characterID 
+        * @param {number} characterID
         * @requires esi-bookmarks.read_character_bookmarks.v1
         * @async
 
         * @returns {JSON} A list of your character’s personal bookmarks.
         */
         bookmarks(characterID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.bookmarks.bookmarks' requires a character ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.bookmarks.bookmarks' requires a character ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/bookmarks`}, true)
+            return request({
+                subUrl: `characters/${characterID}/bookmarks`
+            }, true)
         },
         /**
          * List bookmark folders
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-bookmarks.read_character_bookmarks.v1
          * @async
 
         * @returns {JSON} A list of your character’s personal bookmark folders.
         */
         bookmarkFolders(characterID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.bookmarks.bookmarkFolders' requires a character ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.bookmarks.bookmarkFolders' requires a character ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/bookmarks/folders`}, true)
+            return request({
+                subUrl: `characters/${characterID}/bookmarks/folders`
+            }, true)
 
         }
     },
@@ -299,8 +427,17 @@ module.exports = {
          * @returns {JSON} Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
          */
         calendar(characterID, fromEvent) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.calendar.calendar' requires a character ID!`})
-            inputValidation({input: fromEvent, type: 'number', message: `The parameter 'fromEvent'  in the function 'character.calendar.calendar' must be a valid event ID!`, optional: true})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.calendar.calendar' requires a character ID!`
+            })
+            inputValidation({
+                input: fromEvent,
+                type: 'number',
+                message: `The parameter 'fromEvent'  in the function 'character.calendar.calendar' must be a valid event ID!`,
+                optional: true
+            })
 
             return request({
                 subUrl: `characters/${characterID}/calendar`,
@@ -318,10 +455,20 @@ module.exports = {
          * @returns {JSON} Get all the information for a specific event
          */
         getCalendarEvent(characterID, eventID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.calendar.getCalendarEvent' requires a character ID!`})
-            inputValidation({input: eventID, type: 'number', message: `The function 'character.calendar.getCalendarEvent' requires a event ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.calendar.getCalendarEvent' requires a character ID!`
+            })
+            inputValidation({
+                input: eventID,
+                type: 'number',
+                message: `The function 'character.calendar.getCalendarEvent' requires a event ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/calendar/${eventID}`}, true)
+            return request({
+                subUrl: `characters/${characterID}/calendar/${eventID}`
+            }, true)
         },
         /**
          * Respond to a event.
@@ -331,12 +478,20 @@ module.exports = {
          * @returns {string} Set your response status to a event.
          */
         respondCalendarEvent(characterID, eventID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.calendar.respondCalendarEvent' requires a character ID!`})
-            inputValidation({input: eventID, type: 'number', message: `The function 'character.calendar.respondCalendarEvent' requires a event ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.calendar.respondCalendarEvent' requires a character ID!`
+            })
+            inputValidation({
+                input: eventID,
+                type: 'number',
+                message: `The function 'character.calendar.respondCalendarEvent' requires a event ID!`
+            })
 
             return request({
                 subUrl: `characters/${characterID}/calendar/${eventID}`,
-                put: true
+                requestType: 'post'
             }, true)
         },
         /**
@@ -347,36 +502,126 @@ module.exports = {
          * @returns {JSON} Get all invited attendees for a given event
          */
         getCalendarEventAttendees(characterID, eventID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.calendar.getCalendarEventAttendees' requires a character ID!`})
-            inputValidation({input: eventID, type: 'number', message: `The function 'character.calendar.getCalendarEventAttendees' requires a event ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.calendar.getCalendarEventAttendees' requires a character ID!`
+            })
+            inputValidation({
+                input: eventID,
+                type: 'number',
+                message: `The function 'character.calendar.getCalendarEventAttendees' requires a event ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/calendar/${eventID}/attendees`}, true)
+            return request({
+                subUrl: `characters/${characterID}/calendar/${eventID}/attendees`
+            }, true)
         }
     },
     clones: {
         /**
          * Get clones.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-clones.read_clones.v1
          * @async
          * @returns {JSON} A list of the character’s clones.
          */
         clones(characterID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.clones.clones' requires a character ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.clones.clones' requires a character ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/clones`}, true)
+            return request({
+                subUrl: `characters/${characterID}/clones`
+            }, true)
         },
         /**
          * Get active implants.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-clones.read_implants.v1
          * @async
          * @returns {JSON} Implants on the active clone of a character.
          */
         implants(characterID) {
-            inputValidation({input: characterID, type: 'number', message: `The function 'character.clones.implants' requires a character ID!`})
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.clones.implants' requires a character ID!`
+            })
 
-            return request({subUrl: `characters/${characterID}/implants`}, true)
+            return request({
+                subUrl: `characters/${characterID}/implants`
+            }, true)
+        }
+    },
+    contacts: {
+        contacts(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.contacts.contacts' requires a character ID!`
+            })
+
+            request({
+                subUrl: `characters/${characterID}/contacts`,
+                needsAuth: true
+            })
+        },
+        addContacts(characterID, contacts) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.contacts.addContacts' requires a character ID!`
+            })
+            inputValidation({
+                input: contacts,
+                type: 'object',
+                message: `The function 'character.contacts.addContacts' requires a array of one or more contact IDs!`
+            })
+
+            request({
+                subUrl: `characters/${characterID}/contacts`,
+                needsAuth: true,
+                requestType: 'post'
+            })
+        },
+        deleteContacts(characterID, contacts) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.contacts.deleteContacts' requires a character ID!`
+            })
+            inputValidation({
+                input: contacts,
+                type: 'object',
+                message: `The function 'character.contacts.deleteContacts' requires a array of one or more contact IDs!`
+            })
+
+            request({
+                subUrl: `characters/${characterID}/contacts`,
+                needsAuth: true,
+                requestType: 'delete'
+            })
+        },
+        editContacts(characterID, contacts) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.contacts.editContacts' requires a character ID!`
+            })
+            inputValidation({
+                input: contacts,
+                type: 'object',
+                message: `The function 'character.contacts.editContacts' requires a array of one or more contact IDs!`
+            })
+
+            request({
+                subUrl: `characters/${characterID}/contacts`,
+                needsAuth: true,
+                requestType: 'put'
+            })
         }
     }
 }

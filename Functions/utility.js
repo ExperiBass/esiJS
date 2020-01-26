@@ -1,9 +1,10 @@
 const path = require('path')
 const fs = require('fs')
-const axios = require('axios')
+//const axios = require('axios')
 const throwError = require('./esiJS-Utils/throwError')
+const log = require('./esiJS-Utils/log')
 const localConfig = path.join(__dirname, `../esi.json`)
-const projectConfig = path.join(__dirname, '../../esi.json')
+const projectConfig = path.join(__dirname, '../../../esi.json')
 
 
 function checkForConfig() {
@@ -21,32 +22,33 @@ function checkForConfig() {
 
                 // ...then see if we can write into it
                 try {
-                    fs.accessSync(projectConfig, fs.constants.W_OK) 
-                } catch(e) {
-                    console.log(`Couldn't write to 'esi.json', reverting to default configuration`)
+                    fs.accessSync(projectConfig, fs.constants.W_OK)
+                } catch (e) {
+                    log(`Couldn't write to 'esi.json', reverting to default configuration`, 'INFO')
                     return false
-                } 
-            } catch(e) {
-                console.log(`Couldn't read 'esi.json', reverting to default configuration`)
+                }
+            } catch (e) {
+                log(`Couldn't read 'esi.json', reverting to default configuration`, 'INFO')
                 return false
             }
-            
+
         } else {
             // If the file doesn't exist...
-            console.log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}`)
+            log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}`, 'INFO')
             try {
                 // ...attempt to create it
                 fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
-            } catch(e) {
+                log(`Sucessfully created config file!`, 'INFO')
+            } catch (e) {
                 throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
             }
-            return false 
+            return false
         }
-        
-    } catch(e) {     
+
+    } catch (e) {
         return false
     }
-    console.log(`Sucessfully read the config file at ${projectConfig}!`)
+    log(`Sucessfully read the config file at ${projectConfig}!`, 'INFO')
     return true
 }
 
@@ -60,7 +62,7 @@ module.exports = {
 
         if (checkForConfig()) {
             settings = fs.readFileSync(projectConfig, 'utf8')
-            return JSON.parse(settings) 
+            return JSON.parse(settings)
         }
         settings = fs.readFileSync(localConfig, 'utf8')
         return JSON.parse(settings)
@@ -71,24 +73,46 @@ module.exports = {
      * @param {string} dataSource Tranquilty or Singularity.
      * @returns {Boolean} True if it was able to sucessfully write, false otherwise.
      */
-    setSettings(route = 'latest', dataSource = 'tranquility', authToken = '', language = 'en/us') {
+    setSettings({
+        route,
+        dataSource,
+        authToken,
+        language,
+        programName
+    }) {
         if (checkForConfig()) {
             let server = 'esi.evetech.net'
-            let routes = ['latest','v1','legacy','dev']
-            let dataSources = ['tranquility','singularity']
-        
+            let routes = ['latest', 'v1', 'legacy', 'dev']
+            let dataSources = ['tranquility', 'singularity']
+            let currentSettings = this.getSettings()
+
+            // Check if settings are already set, and dont change if not neededx
+            route = route || currentSettings.route
+            dataSource = dataSource || currentSettings.dataSource
+            authToken = authToken || currentSettings.authToken
+            language = language || currentSettings.language
+            programName = programName || currentSettings.programName
+
+
             if (!route || !routes.includes(route) || !dataSource || !dataSources.includes(dataSource)) {
-                throw Error(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
+                throw throwError(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
             }
             route = `https://${server}/${route}/`
             try {
-                fs.writeFileSync(localConfig, JSON.stringify({route, dataSource, authToken, language}, null, 2))
-            } catch(e) {
-                console.error(`Couldn't write config file! Error:\n${e}`)
-                return false
+                fs.writeFileSync(projectConfig, JSON.stringify({
+                    programName,
+                    route,
+                    dataSource,
+                    authToken,
+                    language
+                }, null, 2))
+                log(`Sucessfully updated config!`, 'INFO')
+            } catch (e) {
+                throw throwError(`Couldn't write config file! Error:\n${e}`)
             }
             return true
         }
+        log(`There is no project config, calling 'getSettings()' to create config file...`, 'INFO')
         return false
     },
     /**
@@ -101,13 +125,20 @@ module.exports = {
     async sleep(millis) {
         return new Promise(resolve => setTimeout(resolve, millis))
     },
-    async all(...requests) {
-        axios.all(requests)
-        .then(axios.spread(...returns => {
-            return returns
-        }))
-        .catch(e => {
+    /*
+        /**
+         * Wrapper for Axios.all, resolves requests in bulk.
+         * @param  {...any} requests Requests to resolve.
+         * @async
+         * @returns Resolved requests.
+         *
+        async all(...requests) {
+            axios.all(requests)
+            .then(axios.spread(...returns => {
+                return returns
+            }))
+            .catch(e => {
 
-        })
-    }
+            })
+        }*/
 }
