@@ -6,15 +6,15 @@ const {version} = require('../../package.json')
 
 /**
  *  subUrl -> remaining url part specific to the function call
- * 
+ *
  *  post -> state if the request is of type post, will make a get request otherwise
- * 
+ *
  *  body -> data to pass to the request body for requests of type post
- * 
+ *
  *  query -> aditional query parameters
  */
 function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
-    const { link, dataSource, authToken, language } = getSettings()
+    const { link, dataSource, authToken, language, programName } = getSettings()
     const test = /\/(?=\/)(?<!https:\/)/g
     let headers = {
         'accept': 'application/json',
@@ -24,7 +24,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=${dataSource}`
-    
+
     // If query params are defined, add them to the end of the full url
     if (query) {
         // Cicle each query entry and add to the full url in the form '&key=value'
@@ -44,16 +44,16 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
     if (language !== '') {
         fullURL += `&language=${language.split('/').join('-')}`
     }
-    // Add in the project name if specified, else default to 'esiJS {version}'
-    if (projectName && projectName !== '') {
-        headers['application-name'] = projectName
+    // Add in the program name if specified, else default to 'esiJSv{version}'
+    if (programName && programName !== '') {
+        headers['application-name'] = programName
     } else {
         headers['application-name'] = `esiJSv${version}`
     }
     if (needsAuth && authToken !== '') {
         // Include both the headers and the query just in case one or the other fails
         headers['authorization'] = `Bearer: ${authToken}`
-        fullURL += `&token=${authToken}`  
+        fullURL += `&token=${authToken}`
     }
     if (needsAuth && authToken === '') {
         throw throwError(`You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../')}.`, `NO_AUTH_TOKEN`)
@@ -63,7 +63,6 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
     fullURL = fullURL.replace(test, '')
 
     // Check for request type
-
     switch(requestType) {
         case 'get': {
             request = axios.get(fullURL, {
@@ -97,7 +96,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
         .then(response => {
-           let data = {    
+           let data = {
                 headers: response.headers,
                 data: response.data
             }

@@ -557,6 +557,13 @@ module.exports = {
         }
     },
     contacts: {
+        /**
+         * Get contacts
+         * @param {number} characterID
+         * @async
+         * @requires esi-characters.read_contacts.v1
+         * @returns {JSON}
+         */
         contacts(characterID) {
             inputValidation({
                 input: characterID,
@@ -569,6 +576,13 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Add contacts
+         * @param {number} characterID
+         * @async
+         * @requires esi-characters.write_contacts.v1
+         * @returns {JSON}
+         */
         addContacts(characterID, contacts) {
             inputValidation({
                 input: characterID,
@@ -587,6 +601,13 @@ module.exports = {
                 requestType: 'post'
             })
         },
+        /**
+         * Delete contacts
+         * @param {number} characterID
+         * @async
+         * @requires esi-characters.write_contacts.v1
+         * @returns {JSON}
+         */
         deleteContacts(characterID, contacts) {
             inputValidation({
                 input: characterID,
@@ -605,6 +626,13 @@ module.exports = {
                 requestType: 'delete'
             })
         },
+        /**
+         * Edit contacts
+         * @param {number} characterID
+         * @async
+         * @requires esi-characters.write_contacts.v1
+         * @returns {JSON}
+         */
         editContacts(characterID, contacts) {
             inputValidation({
                 input: characterID,

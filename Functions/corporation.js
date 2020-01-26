@@ -208,7 +208,7 @@ module.exports = {
             })
         },
         /**
-         *
+         * Get corporation contact labels
          * @param {number} corporationID
          * @async
          * @returns esi-corporations.read_contacts.v1

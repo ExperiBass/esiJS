@@ -14,11 +14,11 @@ module.exports = {
         })
     },
     /**
-     * Get all current member corporations of an alliance.
+     * Get all current member alliances of an alliance.
      * @exports corps
      * @async
-     * @param ID {number} The alliance ID to get the corporations from.
-     * @returns {[number]} The corporations in the alliance.
+     * @param ID {number} The alliance ID to get the alliances from.
+     * @returns {[number]} The alliances in the alliance.
      */
     corps(allianceID) {
         inputValidation({
@@ -28,7 +28,7 @@ module.exports = {
         })
 
         return request({
-            subUrl: `alliances/${allianceID}/corporations`
+            subUrl: `alliances/${allianceID}/alliances`
         })
     },
     /**
@@ -68,6 +68,13 @@ module.exports = {
         })
     },
     contacts: {
+        /**
+         * Get alliance contacts.
+         * @param {number} allianceID
+         * @async
+         * @requires esi-alliances.read_contacts.v1
+         * @returns {JSON}
+         */
         contacts(allianceID) {
             inputValidation({
                 input: allianceID,
@@ -80,6 +87,13 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Get alliance contact labels
+         * @param {number} allianceID
+         * @async
+         * @requires esi-alliances.read_contacts.v1
+         * @returns {JSON}
+         */
         labels(allianceID) {
             inputValidation({
                 input: allianceID,
