@@ -9,7 +9,7 @@ module.exports = {
      * @param attr {number}
      * @returns {object} Info on the attribute.
      */
-    attrInfo (attribute) {
+    attrInfo(attribute) {
         inputValidation({ input: attribute, type: 'number', message: `The function 'dogma.attrInfo' requires an attribute!` })
 
         return request({ subUrl: `dogma/attributes/${attribute}` })
@@ -20,18 +20,18 @@ module.exports = {
      * @async
      * @returns {[number]} A array of all attributes.
      */
-    attrs () {
+    attrs() {
         return request({ subUrl: `dogma/attributes` })
     },
     /**
      * Returns info about a dynamic item resulting from mutation with a mutaplasmid.
      * @exports dynamicItemInfo
-     * @param itemID {number} 
+     * @param itemID {number}
      * @param typeID {number}
      * @async
      * @returns {object} Info on the mutation.
      */
-    dynamicItemInfo (itemID, typeID) {
+    dynamicItemInfo(itemID, typeID) {
         inputValidation({ input: itemID, type: 'number', message: `The function 'dogma.attrs' requires an attribute!` })
         inputValidation({ input: typeID, type: 'number', message: `The function 'dogma.attrs' requires an typeID!` })
 
@@ -44,7 +44,7 @@ module.exports = {
      * @async
      * @returns {object} Info on the effect.
      */
-    effectInfo (effect) {
+    effectInfo(effect) {
         inputValidation({ input: effect, type: 'number', message: `The function 'dogma.effectInfo' requires a effect ID!` })
 
         return request({ subUrl: `dogma/effects/${effect}` })
@@ -55,7 +55,7 @@ module.exports = {
      * @async
      * @returns {[number]} A array of dogma effects.
      */
-    effects () {
+    effects() {
         return request({ subUrl: `dogma/effects` })
     }
 }
