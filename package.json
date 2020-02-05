@@ -1,12 +1,11 @@
 {
   "name": "esijs",
-  "version": "4-rc1",
+  "version": "4.0.0-rc2",
   "description": "A simple library for EVE Online.",
   "main": "endpoints.js",
   "module": "endpoints.js",
   "scripts": {
-    "test": "mocha",
-    "test2": "node test.js"
+    "test": "node test.js"
   },
   "keywords": [
     "eve-online",
@@ -26,8 +25,5 @@
   "bugs": {
     "url": "https://github.com/GingkathFox/esiJS/issues"
   },
-  "homepage": "https://github.com/GingkathFox/esiJS#readme",
-  "directories": {
-    "test": "test"
-  }
+  "homepage": "https://github.com/GingkathFox/esiJS#readme"
 }
