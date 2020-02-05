@@ -19,8 +19,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
     let headers = {
         'accept': 'application/json',
         'Accept-Language': `${language}`,
-        'Content-Type': 'application/json',
-        'user-agent': `esiJSv${version}`
+        'Content-Type': 'application/json'
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=tranquility`
@@ -46,9 +45,9 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
     }
     // Add in the program name if specified, else default to 'esiJSv{version}'
     if (programName && programName !== '') {
-        headers['application-name'] = programName
+        headers['user-agent'] = programName
     } else {
-        headers['application-name'] = `esiJSv${version}`
+        headers['user-agent'] = `esiJSv${version}`
     }
     if (needsAuth && authToken !== '') {
         // Include both the headers and the query just in case one or the other fails
