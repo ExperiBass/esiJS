@@ -13,7 +13,7 @@ function checkForConfig() {
     try {
         let fileExists = fs.existsSync(projectConfig)
 
-        // If the file exists...    
+        // If the file exists...
         if (fileExists) {
 
             // ...see if we can read it...
@@ -75,7 +75,6 @@ module.exports = {
      */
     setSettings({
         route,
-        dataSource,
         authToken,
         language,
         programName
@@ -83,12 +82,10 @@ module.exports = {
         if (checkForConfig()) {
             let server = 'esi.evetech.net'
             let routes = ['latest', 'v1', 'legacy', 'dev']
-            let dataSources = ['tranquility', 'singularity']
             let currentSettings = this.getSettings()
 
             // Check if settings are already set, and dont change if not neededx
             route = route || currentSettings.route
-            dataSource = dataSource || currentSettings.dataSource
             authToken = authToken || currentSettings.authToken
             language = language || currentSettings.language
             programName = programName || currentSettings.programName
@@ -102,7 +99,6 @@ module.exports = {
                 fs.writeFileSync(projectConfig, JSON.stringify({
                     programName,
                     route,
-                    dataSource,
                     authToken,
                     language
                 }, null, 2))

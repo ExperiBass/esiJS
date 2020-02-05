@@ -106,5 +106,10 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    contracts: {
+        contracts(corporationID) {},
+        bids(corporationID) {},
+        items(corporationID) {}
     }
 }

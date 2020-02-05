@@ -93,8 +93,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/assets`
-            }, true)
+                subUrl: `characters/${characterID}/assets`,
+                needsAuth: true
+            })
         },
         /**
          * Get character asset locations.
@@ -122,8 +123,9 @@ module.exports = {
                 requestType: 'post',
                 body: {
                     item_ids: itemIDs
-                }
-            }, true)
+                },
+                needsAuth: true
+            })
         },
         /**
          * Get character asset names.
@@ -151,8 +153,9 @@ module.exports = {
                 requestType: 'post',
                 query: {
                     item_ids: itemIDs
-                }
-            }, true)
+                },
+                needsAuth: true
+            })
         }
     },
     /**
@@ -171,8 +174,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/agents_research`
-        }, true)
+            subUrl: `characters/${characterID}/agents_research`,
+            needsAuth: true
+        })
     },
     /**
      * Get blueprints.
@@ -190,8 +194,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/blueprints`
-        }, true)
+            subUrl: `characters/${characterID}/blueprints`,
+            needsAuth: true
+        })
     },
     /**
      * Calculate a CSPA (CONCORD Spam Prevention Act) cost.
@@ -219,8 +224,9 @@ module.exports = {
             requestType: 'post',
             body: {
                 characters
-            }
-        }, true)
+            },
+            needsAuth: true
+        })
     },
     /**
      * Get jump fatigue.
@@ -238,8 +244,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/fatigue`
-        }, true)
+            subUrl: `characters/${characterID}/fatigue`,
+            needsAuth: true
+        })
     },
     /**
      * Get medals.
@@ -257,8 +264,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/medals`
-        }, true)
+            subUrl: `characters/${characterID}/medals`,
+            needsAuth: true
+        })
     },
     notifications: {
         /**
@@ -277,8 +285,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterId}/notifications`
-            }, true)
+                subUrl: `characters/${characterId}/notifications`,
+                needsAuth: true
+            })
         },
         /**
          * Get new contact notifications.
@@ -296,8 +305,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/notification/contacts`
-            }, true)
+                subUrl: `characters/${characterID}/notification/contacts`,
+                needsAuth: true
+            })
         }
     },
     /**
@@ -316,8 +326,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/roles`
-        }, true)
+            subUrl: `characters/${characterID}/roles`,
+            needsAuth: true
+        })
     },
     /**
      * Get standings.
@@ -335,8 +346,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/standings`
-        }, true)
+            subUrl: `characters/${characterID}/standings`,
+            needsAuth: true
+        })
     },
     /**
      * Yearly aggregate stats.
@@ -354,8 +366,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/stats`
-        }, true)
+            subUrl: `characters/${characterID}/stats`,
+            needsAuth: true
+        })
     },
     /**
      * Get character corporation titles.
@@ -373,8 +386,9 @@ module.exports = {
         })
 
         return request({
-            subUrl: `characters/${characterID}/titles`
-        }, true)
+            subUrl: `characters/${characterID}/titles`,
+            needsAuth: true
+        })
     },
     bookmarks: {
         /**
@@ -393,8 +407,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/bookmarks`
-            }, true)
+                subUrl: `characters/${characterID}/bookmarks`,
+                needsAuth: true
+            })
         },
         /**
          * List bookmark folders
@@ -412,8 +427,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/bookmarks/folders`
-            }, true)
+                subUrl: `characters/${characterID}/bookmarks/folders`,
+                needsAuth: true
+            })
 
         }
     },
@@ -443,8 +459,9 @@ module.exports = {
                 subUrl: `characters/${characterID}/calendar`,
                 query: {
                     from_event: fromEvent
-                }
-            }, true)
+                },
+                needsAuth: true
+            })
         },
         /**
          * Get a event.
@@ -467,8 +484,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/calendar/${eventID}`
-            }, true)
+                subUrl: `characters/${characterID}/calendar/${eventID}`,
+                needsAuth: true
+            })
         },
         /**
          * Respond to a event.
@@ -491,8 +509,9 @@ module.exports = {
 
             return request({
                 subUrl: `characters/${characterID}/calendar/${eventID}`,
-                requestType: 'post'
-            }, true)
+                requestType: 'post',
+                needsAuth: true
+            })
         },
         /**
          * Get event attendees.
@@ -514,8 +533,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/calendar/${eventID}/attendees`
-            }, true)
+                subUrl: `characters/${characterID}/calendar/${eventID}/attendees`,
+                needsAuth: true
+            })
         }
     },
     clones: {
@@ -534,8 +554,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/clones`
-            }, true)
+                subUrl: `characters/${characterID}/clones`,
+                needsAuth: true
+            })
         },
         /**
          * Get active implants.
@@ -552,8 +573,9 @@ module.exports = {
             })
 
             return request({
-                subUrl: `characters/${characterID}/implants`
-            }, true)
+                subUrl: `characters/${characterID}/implants`,
+                needsAuth: true
+            })
         }
     },
     contacts: {
@@ -649,6 +671,30 @@ module.exports = {
                 subUrl: `characters/${characterID}/contacts`,
                 needsAuth: true,
                 requestType: 'put'
+            })
+        }
+    },
+    contracts: {
+
+    },
+    industry: {
+        /**
+         * List character industry jobs
+         * @param {number} characterID
+         * @requires esi-industry.read_character_jobs.v1
+         * @async
+         * @returns {JSON}
+         */
+        jobs(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.industry.jobs' requires a character ID!`
+            })
+
+            request({
+                subUrl: `characters/${characterID}/industry/jobs`,
+                needsAuth: true
             })
         }
     }

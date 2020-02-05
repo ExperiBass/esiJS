@@ -1,5 +1,5 @@
 function inputValidation ({ input, type, message, options, optional = false }) {
-    
+
     let throwError = require('./throwError')
 
     // If is optional and input is undefined, no need to validate

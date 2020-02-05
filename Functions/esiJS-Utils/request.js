@@ -23,7 +23,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
         'user-agent': `esiJSv${version}`
     }
     let request
-    let fullURL = `${link}${subUrl}/?datasource=${dataSource}`
+    let fullURL = `${link}${subUrl}/?datasource=tranquility`
 
     // If query params are defined, add them to the end of the full url
     if (query) {
