@@ -1,16 +1,20 @@
 const path = require('path')
 const fs = require('fs')
-//const axios = require('axios')
 const throwError = require('./esiJS-Utils/throwError')
-const log = require('./esiJS-Utils/log')
+let log = require('./esiJS-Utils/log')
 const localConfig = path.join(__dirname, `../esi.json`)
 const projectConfig = path.join(__dirname, '../../../esi.json')
-
-
-function checkForConfig() {
-
+const projectPath = path.join(__dirname, `../../../`)
+/**
+ * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
+ */
+function checkForConfig(logging) {
     // Check for a ESI config file in the project directory
+    if (logging = true) {
+        log = () => {}
+    }
     try {
+        log(`Checking for a config file in ${projectPath}...`, 'INFO')
         let fileExists = fs.existsSync(projectConfig)
 
         // If the file exists...
@@ -18,27 +22,29 @@ function checkForConfig() {
 
             // ...see if we can read it...
             try {
+                log(`Config file exists! Checking if I can read it...`, 'INFO')
                 fs.accessSync(projectConfig, fs.constants.R_OK)
 
                 // ...then see if we can write into it
                 try {
+                    log(`I can read it! Checking if I can write into it...`, 'INFO')
                     fs.accessSync(projectConfig, fs.constants.W_OK)
                 } catch (e) {
-                    log(`Couldn't write to 'esi.json', reverting to default configuration`, 'INFO')
+                    log(`Couldn't write to 'esi.json', reverting to default configuration`, 'WARNING')
                     return false
                 }
             } catch (e) {
-                log(`Couldn't read 'esi.json', reverting to default configuration`, 'INFO')
+                log(`Couldn't read config file, reverting to default configuration`, 'WARNING')
                 return false
             }
 
         } else {
             // If the file doesn't exist...
-            log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}`, 'INFO')
+            log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}...`, 'INFO')
             try {
                 // ...attempt to create it
                 fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
-                log(`Sucessfully created config file!`, 'INFO')
+                log(`Sucessfully created config file in ${projectPath}!`, 'INFO')
             } catch (e) {
                 throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
             }
@@ -48,10 +54,9 @@ function checkForConfig() {
     } catch (e) {
         return false
     }
-    log(`Sucessfully read the config file at ${projectConfig}!`, 'INFO')
+    log(`I can read the config file!`, 'INFO')
     return true
 }
-
 module.exports = {
     /**
      * Gets the settings for esiJS.
@@ -60,18 +65,23 @@ module.exports = {
     getSettings() {
         let settings;
 
-        if (checkForConfig()) {
+        if (checkForConfig(true)) {
+            log(`Reading project config file in ${projectPath}...`, 'INFO')
             settings = fs.readFileSync(projectConfig, 'utf8')
             return JSON.parse(settings)
+        } else {
+            log(`No project config file! Attempting to revert to default configuration...`, 'WARN')
+            settings = fs.readFileSync(localConfig, 'utf8')
         }
-        settings = fs.readFileSync(localConfig, 'utf8')
         return JSON.parse(settings)
     },
     /**
      * Sets the settings for esiJS.
      * @param {string} route Any of the valid routes through ESI.
-     * @param {string} dataSource Tranquilty or Singularity.
-     * @returns {Boolean} True if it was able to sucessfully write, false otherwise.
+     * @param {string} authToken A valid auth token.
+     * @param {string} language A valid language code.
+     * @param {string} programName The name of your project, used by esiJS to pass in as a header.
+     * @returns {Boolean} True if it was able to sucessfully write. Otherwise, a error.
      */
     setSettings({
         route,
@@ -91,7 +101,7 @@ module.exports = {
             programName = programName || currentSettings.programName
 
 
-            if (!route || !routes.includes(route) || !dataSource || !dataSources.includes(dataSource)) {
+            if (!route || !routes.includes(route)) {
                 throw throwError(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
             }
             route = `https://${server}/${route}/`
@@ -108,33 +118,15 @@ module.exports = {
             }
             return true
         }
-        log(`There is no project config, calling 'getSettings()' to create config file...`, 'INFO')
-        return false
+        throw throwError(`If you are seeing this error, 2 + 2 is not equal to 4 and your life is a lie.`, 'THIS_SHOULDNT_EVER_HAPPEN')
     },
     /**
      * Pause execution of code for a specified amount of time.
-     * @exports sleep
      * @async
-     * @param millis {number} The time to delay (in milliseconds)
-     * @returns {void}
+     * @param {number} millis The time to delay (in milliseconds)
+     * @returns {Promise<function>}
      */
     async sleep(millis) {
         return new Promise(resolve => setTimeout(resolve, millis))
-    },
-    /*
-        /**
-         * Wrapper for Axios.all, resolves requests in bulk.
-         * @param  {...any} requests Requests to resolve.
-         * @async
-         * @returns Resolved requests.
-         *
-        async all(...requests) {
-            axios.all(requests)
-            .then(axios.spread(...returns => {
-                return returns
-            }))
-            .catch(e => {
-
-            })
-        }*/
+    }
 }

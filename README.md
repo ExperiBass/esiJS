@@ -1,6 +1,6 @@
 # esiJS
 
-esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier, avoids cluttering your code with HTTP requests, and is small and powerful. 
+esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier, avoids cluttering your code with HTTP requests, and is small and powerful.
 
 # INSTALLING:
 ```bash
@@ -79,10 +79,10 @@ esiJS.incursions.incursions() // returns all current incursions
 esiJS.industry.facilities() // returns a array of industry facilities
 esiJS.industry.systems() // returns cost indices for all systems
 
-// INSURANCE: 
+// INSURANCE:
 esiJS.insurance.prices() // returns available insurance levels for all ship types
 
-// KILLMAILS: 
+// KILLMAILS:
 esiJS.killmails.killmailInfo(killmailID, killmailHash) // returns info on a killmail
 
 // LOYALTY:
@@ -117,7 +117,7 @@ esiJS.routes.planRoute(orginSystemID, destinationSystemID, flag, avoid) // retur
 
 // SEARCH:
 esiJS.search.search(query, category, strict) // searches on a string
-                                             // category can be one of the following: 
+                                             // category can be one of the following:
                                              // 'agent', 'alliance', 'character', 'constellation', 'corporation', 'faction',
                                              // 'inventory_type', 'region', 'solar_system', or 'station'
 
@@ -140,11 +140,11 @@ esiJS.universe.bloodlines.bloodlines() // returns all character bloodlines
 
 // UNIVERSE (BULK):
 esiJS.universe.bulk.idsToNames(array) // returns names of all ids in the array passed. supported IDs fall into these categories:
-                                      // Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, 
-                                      // Regions, Types, and Factions 
+                                      // Characters, Corporations, Alliances, Stations, Solar Systems, Constellations,
+                                      // Regions, Types, and Factions
 
 esiJS.universe.bulk.namesToIds(array) // returns ids of all names passed that are a exact match in these categories:
-                                      // agents, alliances, characters, constellations, corporations, factions, 
+                                      // agents, alliances, characters, constellations, corporations, factions,
                                       // inventory_types, regions, stations, and systems
 
 // UNIVERSE (CATEGORIES):
@@ -155,7 +155,7 @@ esiJS.universe.categories.categoryInfo(categoryID) // returns info on a category
 esiJS.universe.constellations.constellations() // returns all constellations
 esiJS.universe.constellations.constellationInfo(constellationID) // returns info on a constellation
 
-// UNIVERSE (FACTIONS): 
+// UNIVERSE (FACTIONS):
 esiJS.universe.factions.factions() // returns all factions
 
 // UNIVERSE (GRAPHICS):
@@ -208,8 +208,7 @@ esiJS.wars.warKills(warID) // returns all kills in a war
 
 // UTILITY:
 esiJS.util.getSettings() // returns the current settings
-esiJS.util.setSettings(route, dataSource) // sets the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest') and
-                                          // the server to get the data from ('tranqulity', 'singularity', defaults to the former)
+esiJS.util.setSettings({route, authToken, language, programName}) // sets: the route taken ('dev', 'latest', 'v1', or 'legacy', defaults to 'latest'),
 await esiJS.util.sleep(mills) // pauses execution for the specified amount of time
 ```
 

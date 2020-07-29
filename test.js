@@ -1,9 +1,11 @@
-let esiJS = require('./endpoints')
+let esiJS = require('./class')
 
-esiJS.character.info(r.data.character[0])
-    .then(r => {
-        console.log(r)
-    })
-    .catch(e => {
-        console.error(e)
-    })
+async function myFunc() {
+    let client = new esiJS()
+    let d = await client.status.status()
+    console.log(JSON.stringify(d.data, null, 2))
+    let UCSN = await client.search.search('United Caldari Navy', 'corporation', true)
+    console.log(UCSN.data)
+    let corp = await client.alliance.corps()
+}
+myFunc()

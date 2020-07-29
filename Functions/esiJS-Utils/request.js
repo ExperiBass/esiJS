@@ -13,7 +13,7 @@ const {version} = require('../../package.json')
  *
  *  query -> aditional query parameters
  */
-function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth}) {
+function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth = false}) {
     const { link, dataSource, authToken, language, programName } = getSettings()
     const test = /\/(?=\/)(?<!https:\/)/g
     let headers = {

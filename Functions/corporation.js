@@ -9,9 +9,9 @@ module.exports = {
      * @param corpID {number} The corporation to get the corporation history of.
      * @returns {[number]} A array of corporation IDs.
      */
-    corporationHistory(corporationId) {
+    corporationHistory(corporationID) {
         inputValidation({
-            input: corporationId,
+            input: corporationID,
             type: 'number',
             message: `The function 'corporation.corporationHistory' requires a corporation ID!`
         })
@@ -27,9 +27,9 @@ module.exports = {
      * @param corpID {number} The corporation ID to get the icon of.
      * @returns {object} Links to the different sizes of the corporation icon.
      */
-    icon(corporationId) {
+    icons(corporationID) {
         inputValidation({
-            input: corporationId,
+            input: corporationID,
             type: 'number',
             message: `The function 'corporation.icon' requires a corporation ID!`
         })
@@ -45,9 +45,9 @@ module.exports = {
      * @param corpID {number} The corporation ID to get info from.
      * @returns {object} Public info on the corporation.
      */
-    info(corporationId) {
+    info(corporationID) {
         inputValidation({
-            input: corporationId,
+            input: corporationID,
             type: 'number',
             message: `The function 'corporation.info' requires a corporation ID!`
         })
@@ -67,6 +67,106 @@ module.exports = {
             subUrl: `corporations/npccorps`
         })
     },
+    /**
+     * Get corporation blueprints
+     * @requires esi-corporations.read_blueprints.v1
+     * @requires one of the following EVE corporation role(s): Director
+     * @param {number} corporationID
+     * @param {number} page Which page of results to return. Defaults to 1
+     * @returns a list of blueprints the corporation owns.
+     */
+    blueprints(corporationID, page = 1) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.blueprints' requires a corporation ID!`
+        })
+        inputValidation({
+            input: page,
+            type: 'number',
+            message: `The function 'corporation.blueprints' requires a page number, not a ${typeof page}!`
+        })
+
+        return request({
+            subUrl: `corporations/${corporationID}/blueprints`,
+            needsAuth: true
+        })
+    },
+    /**
+     * Get all corporation ALSC logs
+     * @requires esi-corporations.read_container_logs.v1
+     * @requires one of the following EVE corporation role(s): Director
+     * @param {number} corporationID
+     * @param {number} page Which page of results to return. Defaults to 1
+     * @returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation.
+     */
+    secureContainerLogs(corporationID, page = 1) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.secureContainerLogs' requires a corporation ID!`
+        })
+        inputValidation({
+            input: page,
+            type: 'number',
+            message: `The function 'corporation.secureContainerLogs' requires a page number, not a ${typeof page}!`
+        })
+
+        return request({
+            subUrl: `corporations/${corporationID}/containers/logs`,
+            needsAuth: true
+        })
+    },
+    divisions(corporationID) {
+
+    },
+    facilities(corporationID) {
+
+    },
+    medals: {
+        medals(corporationID) {
+
+        },
+        issued(corporationID) {
+
+        },
+    },
+    members: {
+        members(corporationID) {
+
+        },
+        limit(corporationID) {
+
+        },
+        tracking(corporationID) {
+
+        },
+    },
+    roles: {
+        roles(corporationID) {
+
+        },
+        history(corporationID) {
+
+        },
+    },
+    shareholders(corporationID) {
+
+    },
+    standings(corporationID) {
+
+    },
+    starbases: {
+        starbases(corporationID) {
+
+        },
+        info(corporationID, starbaseID) {
+
+        },
+    },
+    titles(corporationID) {
+
+    },
     assets: {
         /**
          * Get corporation assets.
@@ -80,12 +180,13 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.assets' requires a corporation ID!`
+                message: `The function 'corporation.assets.assets' requires a corporation ID!`
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/assets`
-            }, true)
+                subUrl: `corporations/${corporationID}/assets`,
+                needsAuth: true
+            })
         },
         /**
          * Get corporation asset locations.
@@ -96,16 +197,16 @@ module.exports = {
 
         * @returns {JSON} Locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
         */
-        assetLocations(corporationID, itemIDs = []) {
+        locations(corporationID, itemIDs = []) {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.assetLocations' requires a corporation ID!`
+                message: `The function 'corporation.assets.locations' requires a corporation ID!`
             })
             inputValidation({
                 input: itemIDs,
                 type: 'object',
-                message: `The function 'corporation.assetLocations' requires a array of item IDs!`
+                message: `The function 'corporation.assets.locations' requires a array of item IDs!`
             })
 
             return request({
@@ -113,8 +214,9 @@ module.exports = {
                 requestType: 'post',
                 body: {
                     item_ids: itemIDs
-                }
-            }, true)
+                },
+                needsAuth: true
+            })
         },
         /**
          * Get corporation asset names.
@@ -125,16 +227,16 @@ module.exports = {
 
         * @returns {JSON} Names for a set of item ids, which you can get from corporation assets endpoint. Typically used for items that can customize names, like containers or ships.
         */
-        assetNames(corporationID, itemIDs) {
+        names(corporationID, itemIDs) {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.assetNames' requires a corporation ID!`
+                message: `The function 'corporation.assets.names' requires a corporation ID!`
             })
             inputValidation({
                 input: itemIDs,
                 type: 'object',
-                message: `The function 'corporation.assetNames' requires a array of item IDs!`
+                message: `The function 'corporation.assets.names' requires a array of item IDs!`
             })
 
             return request({
@@ -142,8 +244,9 @@ module.exports = {
                 requestType: 'post',
                 query: {
                     item_ids: itemIDs
-                }
-            }, true)
+                },
+                needsAuth: true
+            })
         }
     },
     bookmarks: {
@@ -174,7 +277,7 @@ module.exports = {
 
         * @returns {JSON} A list of your corporation’s personal bookmark folders.
         */
-        bookmarkFolders(corporationID) {
+        folders(corporationID) {
             inputValidation({
                 input: corporationID,
                 type: 'number',
@@ -225,5 +328,50 @@ module.exports = {
                 needsAuth: true
             })
         }
-    }
+    },
+    contracts: {
+        contracts(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'corporation.contracts.contracts' requires a corporation ID!`
+            })
+            request({
+                subUrl: `/corporations/${corporationID}/contracts/`,
+                needsAuth: true
+            })
+        },
+        bids(corporationID, contractID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.contracts.bids' requires a corporation ID!`
+            })
+            inputValidation({
+                input: contractID,
+                type: 'number',
+                message: `The function 'corporation.contracts.bids' requires a contract ID!`
+            })
+            request({
+                subUrl: `/corporations/${corporationID}/contracts/${contractID}/bids`,
+                needsAuth: true
+            })
+        },
+        items(corporationID, contractID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.contracts.items' requires a corporation ID!`
+            })
+            inputValidation({
+                input: contractID,
+                type: 'number',
+                message: `The function 'corporation.contracts.items' requires a contract ID!`
+            })
+            request({
+                subUrl: `/corporations/${corporationID}/contracts/${contractID}/items`,
+                needsAuth: true
+            })
+        }
+    },
 }
