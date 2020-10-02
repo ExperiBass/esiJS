@@ -17,7 +17,7 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationId}/corporationhistory`
+            subUrl: `corporations/${corporationID}/corporationhistory`
         })
     },
     /**
@@ -35,7 +35,7 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationId}/icons`
+            subUrl: `corporations/${corporationID}/icons`
         })
     },
     /**
@@ -53,7 +53,7 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationId}`
+            subUrl: `corporations/${corporationID}`
         })
     },
     /**
@@ -330,7 +330,13 @@ module.exports = {
         }
     },
     contracts: {
-        contracts(characterID) {
+        /**
+         * Get corporation contracts.
+         * @param {number} corporationID
+         * @requires esi-contracts.read_corporation_contracts.v1
+         * @returns contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
+         */
+        contracts(corporationID) {
             inputValidation({
                 input: characterID,
                 type: 'number',
@@ -341,6 +347,13 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Get corporation contract bids.
+         * @param {number} corporationID
+         * @param {number} contractID
+         * @requires esi-contracts.read_corporation_contracts.v1
+         * @returns bids on a particular auction contract.
+         */
         bids(corporationID, contractID) {
             inputValidation({
                 input: corporationID,
@@ -357,6 +370,13 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Get corporation contract items.
+         * @param {number} corporationID
+         * @param {number} contractID
+         * @requires esi-contracts.read_corporation_contracts.v1
+         * @returns items of a particular contract.
+         */
         items(corporationID, contractID) {
             inputValidation({
                 input: corporationID,

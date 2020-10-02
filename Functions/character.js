@@ -29,15 +29,15 @@ module.exports = {
      * @param charID {number} The character to get the history of.
      * @returns {JSON} The character's history.
      */
-    corpHistory(characterId) {
+    corpHistory(characterID) {
         inputValidation({
-            input: characterId,
+            input: characterID,
             type: 'number',
             message: `The function 'character.corpHistory' needs a character ID!`
         })
 
         return request({
-            subUrl: `characters/${characterId}/corporationhistory`
+            subUrl: `characters/${characterID}/corporationhistory`
         })
     },
     /**
@@ -47,15 +47,15 @@ module.exports = {
      * @param charID {number} The character to get the portrait of.
      * @returns {JSON} Links to the different sizes of the character's portrait.
      */
-    portrait(characterId) {
+    portrait(characterID) {
         inputValidation({
-            input: characterId,
+            input: characterID,
             type: 'number',
             message: `The function 'character.portrait' needs a character ID!`
         })
 
         return request({
-            subUrl: `characters/${characterId}/portrait`
+            subUrl: `characters/${characterID}/portrait`
         })
     },
     /**
@@ -65,15 +65,15 @@ module.exports = {
      * @param charID {number} The character to get the public info of.
      * @returns {JSON} Public info on a character.
      */
-    info(characterId) {
+    info(characterID) {
         inputValidation({
-            input: characterId,
+            input: characterID,
             type: 'number',
             message: `The function 'character.corpHistory' needs a character ID!`
         })
 
         return request({
-            subUrl: `characters/${characterId}`
+            subUrl: `characters/${characterID}`
         })
     },
     /**
@@ -730,15 +730,15 @@ module.exports = {
 
          * @returns {JSON} Character notifications.
          */
-        notifications(characterId) {
+        notifications(characterID) {
             inputValidation({
-                input: characterId,
+                input: characterID,
                 type: 'number',
                 message: `The function 'character.corpHistory' needs a character ID!`
             })
 
             return request({
-                subUrl: `characters/${characterId}/notifications`,
+                subUrl: `characters/${characterID}/notifications`,
                 needsAuth: true
             })
         },

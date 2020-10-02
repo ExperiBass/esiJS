@@ -1,30 +1,29 @@
 {
-  "name": "esijs",
-  "version": "4.0.0-rc3",
-  "description": "A simple module for ESI.",
-  "main": "endpoints.js",
-  "module": "endpoints.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "keywords": [
-    "eve-online",
-    "esi",
-    "eve"
-  ],
-  "author": "ExperiBass",
-  "license": "GPL-3.0",
-  "dependencies": {
-    "axios": "~0.19.0",
-    "chalk": "^3.0.0",
-    "lodash": "~4.17.15"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GingkathFox/esiJS.git"
-  },
-  "bugs": {
-    "url": "https://github.com/GingkathFox/esiJS/issues"
-  },
-  "homepage": "https://github.com/GingkathFox/esiJS#readme"
+    "name": "esijs",
+    "version": "4.0.0-rc4-2",
+    "description": "A simple module for ESI.",
+    "main": "class.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "keywords": [
+        "eve-online",
+        "esi",
+        "eve"
+    ],
+    "author": "ExperiBass",
+    "license": "GPL-3.0",
+    "dependencies": {
+        "axios": "~0.19.0",
+        "chalk": "^3.0.0",
+        "lodash": "~4.17.15"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GingkathFox/esiJS.git"
+    },
+    "bugs": {
+        "url": "https://github.com/GingkathFox/esiJS/issues"
+    },
+    "homepage": "https://github.com/GingkathFox/esiJS#readme"
 }

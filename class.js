@@ -1,11 +1,14 @@
 const path = require('path')
-const log = require('./Functions/esiJS-Utils/log')
+let log = require('./Functions/esiJS-Utils/log')
 const fs = require('fs')
 let esiJS = class {
-    constructor() {
+    constructor({logging = true}) {
         /**
          * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
          */
+        if (!logging) {
+            log = () => {}
+        }
         const projectConfig = path.join(__dirname, '../../esi.json')
         const projectPath = path.join(__dirname, `../../`)
         // Check for a ESI config file in the project directory
@@ -48,10 +51,9 @@ let esiJS = class {
             }
 
         } catch (e) {
-            return false
+            return
         }
-        log(`I can read the config file!`, 'INFO')
-        return true
+        log(`I can read and write to the config file!`, 'INFO')
     }
     util = require('./Functions/utility')
     alliance = require('./Functions/alliance')

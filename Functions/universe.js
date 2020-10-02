@@ -16,11 +16,11 @@ module.exports = {
         /**
          * Get information on an asteroid belt.
          * @async
-         * @param {number} beltId 
+         * @param {number} beltID 
          * @returns {object}
          */
-        beltInfo (beltId) {
-            inputValidation({ input: beltId, type: 'number', message: `The function 'universe.belts.beltInfo requires a belt ID!` })
+        beltInfo (beltID) {
+            inputValidation({ input: beltID, type: 'number', message: `The function 'universe.belts.beltInfo requires a belt ID!` })
 
             return request({ subUrl: `universe/asteroid_belts/${beltID}` })
         }
@@ -57,8 +57,8 @@ module.exports = {
          * @param {[string]} names 
          * @returns {array}
          */
-        namesToIds (names) {
-            inputValidation({ input: names, type: 'object', message: `The function 'universe.bulk.namesToIds requires names to be an array!` })
+        namesToIDs (names) {
+            inputValidation({ input: names, type: 'object', message: `The function 'universe.bulk.namesToIDs requires names to be an array!` })
 
             return request({ subUrl: `universe/ids`, requestType: 'post', body: names })
         }
