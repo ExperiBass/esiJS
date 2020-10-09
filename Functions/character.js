@@ -46,7 +46,7 @@ module.exports = {
      * @returns {object} Public info on a character.
      */
     info (characterId) {
-        inputValidation({ input: characterId, type: 'number', message: `The function 'character.corpHistory' needs a character ID!` })
+        inputValidation({ input: characterId, type: 'number', message: `The function 'character.info' needs a character ID!` })
 
         return request({ subUrl: `characters/${characterId}` })
     }
