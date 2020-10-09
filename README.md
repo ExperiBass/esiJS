@@ -51,7 +51,7 @@ await esiJS.alliance.info(allianceID) // returns info on a alliance
 await esiJS.character.affiliation(characterIDArray) // returns a array of corps and alliances a character has been in
 await esiJS.character.corpHistory(characterID) // returns a array of all the corporations the character has been in
 await esiJS.character.portrait(characterID) // returns links to the characters portrait
-await esiJS.character.publicInfo(characterID) // returns all public information about a character
+await esiJS.character.info(characterID) // returns all public information about a character
 
 // CONTRACTS (PUBLIC):
 await esiJS.contracts.public.contracts(regionID) // returns all active contracts in a region
