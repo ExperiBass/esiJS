@@ -6,7 +6,6 @@ module.exports = {
         /**
          * Lists bids on a public auction contract.
          * @exports bids
-
          * @param contractID {number} The auction contract to get the bids of.
          * @param pageNum {number} The page of bids to get. Defaults to `1`.
          * @returns {object} The bids on the auction.
@@ -20,7 +19,6 @@ module.exports = {
         /**
          * Returns a paginated list of all public contracts in the given region.
          * @exports contracts
-
          * @param regionID {number} The region to get the contracts from.
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
          * @returns {object} A paginated list of all public contracts in the given region.
@@ -37,7 +35,6 @@ module.exports = {
         /**
          * Lists items of a public contract.
          * @exports items
-
          * @param contractID {number} The contract to get items from.
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
          * @returns {[number]} A array of items.

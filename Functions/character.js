@@ -5,7 +5,6 @@ module.exports = {
     /**
      * Get public information about an alliance.
      * @exports info
-
      * @param characterID {number} The alliance ID to get info from.
      * @returns {JSON} Public info on the alliance.
      */
@@ -23,10 +22,9 @@ module.exports = {
         })
     },
     /**
-     * GGet a list of all the corporations a character has been a member of.
+     * Get a list of all the corporations a character has been a member of.
      * @exports corpHistory
-
-     * @param charID {number} The character to get the history of.
+     * @param characterID {number} The character to get the history of.
      * @returns {JSON} The character's history.
      */
     corpHistory(characterID) {
@@ -43,8 +41,7 @@ module.exports = {
     /**
      * Get portrait urls for a character.
      * @exports portrait
-
-     * @param charID {number} The character to get the portrait of.
+     * @param characterID {number} The character to get the portrait of.
      * @returns {JSON} Links to the different sizes of the character's portrait.
      */
     portrait(characterID) {
@@ -61,8 +58,7 @@ module.exports = {
     /**
      * Get public information about a character.
      * @exports info
-
-     * @param charID {number} The character to get the public info of.
+     * @param characterID {number} The character to get the public info of.
      * @returns {JSON} Public info on a character.
      */
     info(characterID) {
@@ -80,8 +76,6 @@ module.exports = {
      * Gets agents research.
      * @requires esi-characters.read_agents_research.v1
      * @param {number} characterID
-
-
      * @returns {JSON} A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
      */
     agentsResearch(characterID) {
@@ -100,8 +94,6 @@ module.exports = {
      * Get blueprints.
      * @param {number} characterID
      * @requires esi-characters.read_blueprints.v1
-
-
      * @returns {JSON} A list of blueprints the character owns.
      */
     blueprints(characterID) {
@@ -121,8 +113,6 @@ module.exports = {
      * @param {number} characterID
      * @param {[numbers]} characters The target characters to calculate the charge for.
      * @requires esi-characters.read_contacts.v1
-
-     * @authencated
      * @returns {JSON} A CSPA charge cost.
      */
     cspa(characterID, characters = []) {
@@ -150,8 +140,6 @@ module.exports = {
      * Get jump fatigue.
      * @param {number} characterID
      * @requires esi-characters.read_fatigue.v1
-
-
      * @returns {JSON} A character’s jump activation and fatigue information.
      */
     fatigue(characterID) {
@@ -170,8 +158,6 @@ module.exports = {
      * Get medals.
      * @param {number} characterID
      * @requires esi-characters.read_medals.v1
-
-
      * @returns {JSON} A list of medals the character has.
      */
     medals(characterID) {
@@ -190,8 +176,6 @@ module.exports = {
      * Get character corporation roles.
      * @param {number} characterID
      * @requires esi-characters.read_corporation_roles.v1
-
-
      * @returns {JSON} A character’s corporation roles.
      */
     roles(characterID) {
@@ -210,8 +194,6 @@ module.exports = {
      * Get standings.
      * @param {number} characterID
      * @requires esi-characters.read_standings.v1
-
-
      * @returns {JSON} Character standings from agents, NPC corporations, and factions.
      */
     standings(characterID) {
@@ -230,8 +212,6 @@ module.exports = {
      * Yearly aggregate stats.
      * @param {number} characterID
      * @requires esi-characterstats.read.v1
-
-
      * @returns {JSON} Aggregate yearly stats for a character.
      */
     stats(characterID) {
@@ -250,8 +230,6 @@ module.exports = {
      * Get character corporation titles.
      * @param {number} characterID
      * @requires esi-characters.read_titles.v1
-
-
      * @returns {JSON} A character’s titles.
      */
     titles(characterID) {
@@ -269,12 +247,10 @@ module.exports = {
     assets: {
         /**
          * Get character assets.
-         * @requires esi-assets.read_assets.v1
          * @param {number} characterID
-
-
-        * @returns {JSON} A list of the characters assets.
-        */
+         * @requires esi-assets.read_assets.v1
+         * @returns {JSON} A list of the characters assets.
+         */
         assets(characterID) {
             inputValidation({
                 input: characterID,
@@ -292,10 +268,8 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} itemIDs
          * @requires esi-assets.read_assets.v1
-
-
-        * @returns {JSON} Locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
-        */
+         * @returns {JSON} Locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
+         */
         locations(characterID, itemIDs = []) {
             inputValidation({
                 input: characterID,
@@ -322,10 +296,8 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} itemIDs
          * @requires esi-assets.read_assets.v1
-
-
-        * @returns {JSON} Names for a set of item ids, which you can get from character assets endpoint. Typically used for items that can customize names, like containers or ships.
-        */
+         * @returns {JSON} Names for a set of item ids, which you can get from character assets endpoint. Typically used for items that can customize names, like containers or ships.
+         */
         names(characterID, itemIDs) {
             inputValidation({
                 input: characterID,
@@ -350,13 +322,11 @@ module.exports = {
     },
     bookmarks: {
         /**
-        * List bookmarks
-        * @param {number} characterID
-        * @requires esi-bookmarks.read_character_bookmarks.v1
-
-
-        * @returns {JSON} A list of your character’s personal bookmarks.
-        */
+         * List bookmarks
+         * @param {number} characterID
+         * @requires esi-bookmarks.read_character_bookmarks.v1
+         * @returns {JSON} A list of your character’s personal bookmarks.
+         */
         bookmarks(characterID) {
             inputValidation({
                 input: characterID,
@@ -373,10 +343,8 @@ module.exports = {
          * List bookmark folders
          * @param {number} characterID
          * @requires esi-bookmarks.read_character_bookmarks.v1
-
-
-        * @returns {JSON} A list of your character’s personal bookmark folders.
-        */
+         * @returns {JSON} A list of your character’s personal bookmark folders.
+         */
         folders(characterID) {
             inputValidation({
                 input: characterID,
@@ -397,7 +365,6 @@ module.exports = {
          * @param {number} characterID
          * @param {number} fromEvent OPTIONAL - The event ID to start retrieving events from.
          * @requires esi-calendar.read_calendar_events.v1
-
          * @returns {JSON} Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
          */
         calendar(characterID, fromEvent) {
@@ -426,7 +393,6 @@ module.exports = {
          * @param {number} characterID
          * @param {number} eventID
          * @requires esi-calendar.read_calendar_events.v1
-
          * @returns {JSON} Get all the information for a specific event
          */
         getEvent(characterID, eventID) {
@@ -501,7 +467,6 @@ module.exports = {
          * Get clones.
          * @param {number} characterID
          * @requires esi-clones.read_clones.v1
-
          * @returns {JSON} A list of the character’s clones.
          */
         clones(characterID) {
@@ -520,7 +485,6 @@ module.exports = {
          * Get active implants.
          * @param {number} characterID
          * @requires esi-clones.read_implants.v1
-
          * @returns {JSON} Implants on the active clone of a character.
          */
         implants(characterID) {
@@ -540,7 +504,6 @@ module.exports = {
         /**
          * Get contacts
          * @param {number} characterID
-
          * @requires esi-characters.read_contacts.v1
          * @returns {JSON}
          */
@@ -560,7 +523,6 @@ module.exports = {
          * Bulk add contacts with same settings
          * @param {number} characterID
          * @param {number[]} contacts
-
          * @requires esi-characters.write_contacts.v1
          * @returns {JSON}
          */
@@ -586,7 +548,6 @@ module.exports = {
          * Bulk delete contacts
          * @param {number} characterID
          * @param {number[]} contacts
-
          * @requires esi-characters.write_contacts.v1
          * @returns {JSON}
          */
@@ -612,7 +573,6 @@ module.exports = {
          * Bulk edit contacts with same settings
          * @param {number} characterID
          * @param {number[]} contacts
-
          * @requires esi-characters.write_contacts.v1
          * @returns {JSON}
          */
@@ -638,8 +598,8 @@ module.exports = {
     contracts: {
         /**
          * Get contracts
-         * @requires esi-contracts.read_character_contracts.v1
          * @param {number} characterID
+         * @requires esi-contracts.read_character_contracts.v1
          * @returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
          */
         contracts(characterID) {
@@ -655,9 +615,9 @@ module.exports = {
         },
         /**
          * Get contract bids
-         * @requires esi-contracts.read_character_contracts.v1
          * @param {number} characterID
          * @param {number} contractID
+         * @requires esi-contracts.read_character_contracts.v1
          * @returns bids on a particular auction contract.
          */
         bids(characterID, contractID) {
@@ -678,10 +638,10 @@ module.exports = {
         },
         /**
          * Get contract items
-         * @requires esi-contracts.read_character_contracts.v1
          * @param {number} characterID
          * @param {number} contractID
-         * @returns items of a particular contract
+         * @requires esi-contracts.read_character_contracts.v1
+         * @returns items of a particular contract.
          */
         items(characterID, contractID) {
             inputValidation({
@@ -705,7 +665,6 @@ module.exports = {
          * List character industry jobs
          * @param {number} characterID
          * @requires esi-industry.read_character_jobs.v1
-
          * @returns {JSON}
          */
         jobs(characterID) {
@@ -723,11 +682,9 @@ module.exports = {
     },
     notifications: {
         /**
-          * Get character notifications.
-          * @param {number} characterID The character to get the notifications of.
-          * @requires esi-characters.read_notifications.v1
-
-
+         * Get character notifications.
+         * @param {number} characterID The character to get the notifications of.
+         * @requires esi-characters.read_notifications.v1
          * @returns {JSON} Character notifications.
          */
         notifications(characterID) {
@@ -746,10 +703,8 @@ module.exports = {
          * Get new contact notifications.
          * @param {number} characterID
          * @requires esi-characters.read_notifications.v1
-
-
-        * @returns {JSON} Notifications about having been added to someone’s contact list.
-        */
+         * @returns {JSON} Notifications about having been added to someone’s contact list.
+         */
         contacts(characterID) {
             inputValidation({
                 input: characterID,

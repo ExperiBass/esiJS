@@ -4,7 +4,6 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * List all active player alliances.
-
      * @returns {number[]} A array of all active player alliances.
      */
     alliances() {
@@ -14,7 +13,6 @@ module.exports = {
     },
     /**
      * Get all current member alliances of an alliance.
-
      * @param ID {number} The alliance ID to get the alliances from.
      * @returns {number[]} The alliances in the alliance.
      */
@@ -31,7 +29,6 @@ module.exports = {
     },
     /**
      * Get the icon urls for a alliance.
-
      * @param allianceID {number} The alliance ID to get the icon of.
      * @returns {object} Links to the different sizes of the alliance icon.
      */
@@ -48,7 +45,6 @@ module.exports = {
     },
     /**
      * Get public information about an alliance.
-
      * @param ID {number} The alliance ID to get info from.
      * @returns {object} Public info on the alliance.
      */
@@ -67,7 +63,6 @@ module.exports = {
         /**
          * Get alliance contacts.
          * @param {number} allianceID
-
          * @requires esi-alliances.read_contacts.v1
          * @returns {JSON}
          */
@@ -86,7 +81,6 @@ module.exports = {
         /**
          * Get alliance contact labels
          * @param {number} allianceID
-
          * @requires esi-alliances.read_contacts.v1
          * @returns {JSON}
          */

@@ -1,9 +1,9 @@
 const request = require('./esiJS-Utils/request')
+const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
     /**
      * Return a list of industry facilities.
-
      * @returns {object}
      */
     facilities() {
@@ -13,7 +13,6 @@ module.exports = {
     },
     /**
      * Return cost indices for solar systems.
-
      * @returns {object}
      */
     systems() {

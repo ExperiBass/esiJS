@@ -42,8 +42,8 @@ module.exports = {
         },
         /**
          * Overview of a character involved in faction warfare.
-         * @requires esi-characters.read_fw_stats.v1
          * @param {number} characterID
+         * @requires esi-characters.read_fw_stats.v1
          * @returns Statistical overview of a character involved in faction warfare.
          */
         characterStats(characterID) {
@@ -58,8 +58,8 @@ module.exports = {
         },
         /**
          * Overview of a corporation involved in faction warfare.
+         * @param {number} corporationID
          * @requires esi-corporations.read_fw_stats.v1
-         * @param {number} corporationID 
          * @returns Statistics about a corporation involved in faction warfare.
          */
         corporationStats(corporationID) {
