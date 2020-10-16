@@ -1061,5 +1061,25 @@ module.exports = {
                 needsAuth: true
             })
         },
+    },
+    opportunities: {
+        /**
+         * Get a character's completed tasks
+         * @param {number} characterID 
+         * @requires esi-characters.read_opportunities.v1
+         * @returns a list of tasks finished by a character.
+         */
+        completedTasks(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.opportunities.completedTasks' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/opportunities`,
+                needsAuth: true
+            })
+        }
     }
 }
