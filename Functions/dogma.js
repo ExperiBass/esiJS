@@ -30,7 +30,7 @@ module.exports = {
     /**
      * Returns info about a dynamic item resulting from mutation with a mutaplasmid.
      * @param {number} itemID
-     * @param {number} typeID 
+     * @param {number} typeID
      * @returns {object} Info on the mutation.
      */
     dynamicItemInfo(itemID, typeID) {

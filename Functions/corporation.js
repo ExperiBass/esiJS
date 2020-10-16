@@ -671,7 +671,7 @@ module.exports = {
     industry: {
         /**
          * Moon extraction timers
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @param {number} page The page of results to return.
          * @requires esi-industry.read_corporation_mining.v1
          * @requires one of the following EVE corporation role(s): Station_Manager
@@ -700,7 +700,7 @@ module.exports = {
         },
         /**
          * Corporation mining observers.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @param {number} page The page of results to return.
          * @requires esi-industry.read_corporation_mining.v1
          * @requires one of the following EVE corporation role(s): Accountant
@@ -729,8 +729,8 @@ module.exports = {
         },
         /**
          * Observed corporation mining
-         * @param {number} corporationID 
-         * @param {number} observerID 
+         * @param {number} corporationID
+         * @param {number} observerID
          * @param {number} page The page of results to return.
          * @requires esi-industry.read_corporation_mining.v1
          * @requires one of the following EVE corporation role(s): Accountant
@@ -764,7 +764,7 @@ module.exports = {
         },
         /**
          * List corporation industry jobs
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @param {number} page The page of results to return.
          * @requires esi-industry.read_corporation_jobs.v1
          * @requires one of the following EVE corporation role(s): Factory_Manager
@@ -795,7 +795,7 @@ module.exports = {
     killmails: {
         /**
          * Get a corporation's recent kills and losses.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @param {number} page The page of results to return.
          * @requires esi-killmails.read_corporation_killmails.v1
          * @requires one of the following EVE corporation role(s): Director
@@ -826,7 +826,7 @@ module.exports = {
     market: {
         /**
          * List open orders from a corporation.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @requires esi-markets.read_corporation_orders.v1
          */
         orders(corporationID) {
@@ -844,7 +844,7 @@ module.exports = {
         },
         /**
          * List historical orders by a corporation.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @requires esi-markets.read_corporation_orders.v1
          */
         orderHistory(corporationID) {
@@ -864,7 +864,7 @@ module.exports = {
     pi: {
         /**
          * List corporation customs offices.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @requires esi-planets.read_customs_offices.v1
          * @requires one of the following EVE corporation role(s): Director
          * @returns customs offices owned by a corporation.
@@ -885,7 +885,7 @@ module.exports = {
     wallets: {
         /**
          * Get a corporation's wallet balance.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @requires esi-wallet.read_corporation_wallets.v1
          * @requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
          * @returns a corporation’s wallets balance.
@@ -904,7 +904,7 @@ module.exports = {
         },
         /**
          * Get corporation wallet journal.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @requires esi-wallet.read_corporation_wallets.v1
          * @param {number} divisionID The division to get data from.
          * @requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
@@ -929,7 +929,7 @@ module.exports = {
         },
         /**
          * Get wallet transactions.
-         * @param {number} corporationID 
+         * @param {number} corporationID
          * @param {number} divisionID The division to get data from.
          * @requires esi-wallet.read_corporation_wallets.v1
          * @requires one of the following EVE corporation role(s): Accountant, Junior_Accountant

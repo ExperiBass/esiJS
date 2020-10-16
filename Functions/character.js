@@ -1187,7 +1187,7 @@ module.exports = {
     wallet: {
         /**
          * Get a character's wallet balance.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-wallet.read_character_wallet.v1
          * @returns a character’s wallet balance.
          */
@@ -1205,7 +1205,7 @@ module.exports = {
         },
         /**
          * Get character wallet journal.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-wallet.read_character_wallet.v1
          * @returns the given character’s wallet journal going 30 days back.
          */
@@ -1223,7 +1223,7 @@ module.exports = {
         },
         /**
          * Get wallet transactions.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-wallet.read_character_wallet.v1
          * @returns wallet transactions of a character.
          */
