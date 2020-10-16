@@ -6,6 +6,10 @@ const localConfig = path.join(__dirname, `../esi.json`)
 const projectConfig = path.join(__dirname, '../../../esi.json')
 const projectPath = path.join(__dirname, `../../../`)
 
+/**
+ * @private
+ * @param {boolean} logging
+ */
 function checkForConfig(logging) {
     // Check for a ESI config file in the project directory
     if (logging = true) {
@@ -120,7 +124,7 @@ module.exports = {
     },
     /**
      * Pause execution of code for a specified amount of time.
-     * @async
+
      * @param {number} millis The time to delay (in milliseconds)
      * @returns {Promise<function>}
      */

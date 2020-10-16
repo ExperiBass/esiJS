@@ -4,13 +4,19 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * Return a list of offers from a specific corporation’s loyalty store.
-     * @async
-     * @param {number} corporationID 
+
+     * @param {number} corporationID
      * @returns {object}
      */
-    offers (corporationID) {
-        inputValidation({ input: corporationID, type: 'number', message: `The function 'loyalty.offers' requires a corporation ID!` })
+    offers(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'loyalty.offers' requires a corporation ID!`
+        })
 
-        return request({ subUrl: `loyalty/stores/${corporationID}/offers` })
+        return request({
+            subUrl: `loyalty/stores/${corporationID}/offers`
+        })
     }
 }

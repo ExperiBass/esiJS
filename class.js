@@ -1,8 +1,12 @@
 const path = require('path')
 let log = require('./Functions/esiJS-Utils/log')
 const fs = require('fs')
+/**
+ * 
+ * @param {object} - The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
+ */
 let esiJS = class {
-    constructor({logging = true}) {
+    constructor({logging = true, token = ''}) {
         /**
          * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
          */
@@ -42,7 +46,7 @@ let esiJS = class {
                 log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}...`, 'INFO')
                 try {
                     // ...attempt to create it
-                    fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
+                    fs.writeFileSync(projectConfig, JSON.stringify(require('./esi.json'), null, 2))
                     log(`Sucessfully created config file in ${projectPath}!`, 'INFO')
                 } catch (e) {
                     throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
@@ -54,6 +58,9 @@ let esiJS = class {
             return
         }
         log(`I can read and write to the config file!`, 'INFO')
+        if (token) {
+            this.util.setSettings({authToken: token})
+        }
     }
     util = require('./Functions/utility')
     alliance = require('./Functions/alliance')

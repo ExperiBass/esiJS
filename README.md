@@ -11,9 +11,10 @@ npm i --save esijs
 # USAGE:
 
 ```js
-let esiJS = require('esiJS')
+const esiJS = require('esiJS')
+const esiClient = new esiJS()
 // Use all functions like this:
-esiJS.group.<subgroup>.function()
+esiClient.group.<subgroup>.function()
     .then(r => {
         let headers = r.headers
         let data = r.data
@@ -25,8 +26,8 @@ esiJS.group.<subgroup>.function()
     })
 // Or like this:
 try {
-    let b = await esiJS.group.<subgroup>.function()
-} catch(e) { // try/catch is used when you do `await` a function
+    let data = await esiClient.group.<subgroup>.function()
+} catch(e) { // try/catch is used when you await a function
     // Error? What error?
 }
 ```

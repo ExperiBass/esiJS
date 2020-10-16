@@ -40,6 +40,5 @@ typings/
 .vscode
 
 # other
-test.js
+test*
 .DS_Store
-/out

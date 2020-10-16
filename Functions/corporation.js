@@ -4,10 +4,9 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * Get a list of all the corporations a corporation has been a member of
-     * @exports corporationHistory
-     * @async
+
      * @param corpID {number} The corporation to get the corporation history of.
-     * @returns {[number]} A array of corporation IDs.
+     * @returns {number[]} A array of corporation IDs.
      */
     corporationHistory(corporationID) {
         inputValidation({
@@ -22,8 +21,7 @@ module.exports = {
     },
     /**
      * Get the icon urls for a corporation.
-     * @exports icon
-     * @async
+
      * @param corpID {number} The corporation ID to get the icon of.
      * @returns {object} Links to the different sizes of the corporation icon.
      */
@@ -40,8 +38,7 @@ module.exports = {
     },
     /**
      * Get public information about a corporation.
-     * @exports info
-     * @async
+
      * @param corpID {number} The corporation ID to get info from.
      * @returns {object} Public info on the corporation.
      */
@@ -57,10 +54,9 @@ module.exports = {
         })
     },
     /**
-     * Get a list of npc corporations.
-     * @exports npcCorps
-     * @async
-     * @returns {[number]} A array of all NPC corporations.
+     * Get a list of NPC corporations.
+
+     * @returns {number[]} A array of all NPC corporations.
      */
     npcCorps() {
         return request({
@@ -68,7 +64,7 @@ module.exports = {
         })
     },
     /**
-     * Get corporation blueprints
+     * Get corporation blueprints.
      * @requires esi-corporations.read_blueprints.v1
      * @requires one of the following EVE corporation role(s): Director
      * @param {number} corporationID
@@ -93,7 +89,7 @@ module.exports = {
         })
     },
     /**
-     * Get all corporation ALSC logs
+     * Get all corporation ALSC logs.
      * @requires esi-corporations.read_container_logs.v1
      * @requires one of the following EVE corporation role(s): Director
      * @param {number} corporationID
@@ -117,62 +113,313 @@ module.exports = {
             needsAuth: true
         })
     },
+    /**
+     * Get corporation divisions.
+     * @requires esi-corporations.read_divisions.v1
+     * @requires one of the following EVE corporation role(s): Director
+     * @param {number} corporationID
+     * @returns corporation hangar and wallet division names, only show if a division is not using the default name
+     */
     divisions(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.divisions' requires a corporation ID!`
+        })
 
+        return request({
+            subUrl: `corporations/${corporationID}/divisions`
+        })
     },
+    /**
+     * Get corporation facilities.
+     * @requires esi-corporations.read_facilities.v1
+     * @requires one of the following EVE corporation role(s): Factory_Manager
+     * @param {number} corporationID
+     * @returns a corporation’s facilities.
+     */
     facilities(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.facilities' requires a corporation ID!`
+        })
 
+        return request({
+            subUrl: `corporations/${corporationID}/facilities`
+        })
     },
     medals: {
+        /**
+         * Get corporation medals.
+         * @requires esi-corporations.read_medals.v1
+         * @param {number} corporationID
+         * @returns a corporation’s medals.
+         */
         medals(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.medals.medals' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/medals`
+            })
         },
+        /**
+         * Get corporation issued medals.
+         * @requires esi-corporations.read_medals.v1
+         * @param {number} corporationID
+         * @returns medals issued by a corporation
+         */
         issued(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.medals.issued' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/medals/issued`
+            })
         },
     },
     members: {
+        /**
+         * Get corporation members.
+         * @requires esi-corporations.read_corporation_membership.v1
+         * @param {number} corporationID
+         * @returns the current member list of a corporation, the token’s character need to be a member of the corporation.
+         */
         members(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.members.members' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/members`
+            })
         },
+        /**
+         * Get corporation member limit.
+         * @requires esi-corporations.track_members.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @param {number} corporationID
+         * @returns a corporation’s member limit, not including CEO himself
+         */
         limit(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.members.limit' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/members/limit`
+            })
         },
-        tracking(corporationID) {
+        /**
+         * Get corporation's members' titles.
+         * @requires esi-corporations.read_titles.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @param {number} corporationID
+         * @returns a corporation’s members’ titles.
+         */
+        titles(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.members.titles' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/members/titles`
+            })
+        },
+        /**
+         * Track corporation members.
+         * @requires esi-corporations.track_members.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @param {number} corporationID
+         * @returns additional information about a corporation’s members which helps tracking their activities
+         */
+        tracking(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.members.tracking' requires a corporation ID!`
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/membertracking`
+            })
         },
     },
     roles: {
+        /**
+         * Get corporation member roles.
+         * @requires esi-corporations.read_corporation_membership.v1
+         * @param {number} corporationID
+         * @returns the roles of all members if the character has the personnel manager role or any grantable role.
+         */
         roles(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.roles.roles' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/roles`
+            })
         },
+        /**
+         * Get corporation member roles history.
+         * @requires esi-corporations.read_corporation_membership.v1
+         * @param {number} corporationID
+         * @returns how roles have changed for a coporation’s members, up to a month
+         */
         history(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.roles.history' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/roles/history`
+            })
         },
     },
+    /**
+     * Get corporation shareholders.
+     * @requires esi-wallet.read_corporation_wallets.v1
+     * @requires one of the following EVE corporation role(s): Director
+     * @param {number} corporationID
+     * @returns the current shareholders of a corporation.
+     */
     shareholders(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.shareholders' requires a corporation ID!`
+        })
 
+        return request({
+            subUrl: `corporations/${corporationID}/shareholders`
+        })
     },
+    /**
+     * Get corporation standings.
+     * @requires esi-corporations.read_standings.v1
+     * @param {number} corporationID
+     * @returns corporation standings from agents, NPC corporations, and factions.
+     */
     standings(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.standings' requires a corporation ID!`
+        })
 
+        return request({
+            subUrl: `corporations/${corporationID}/standings`
+        })
     },
     starbases: {
+        /**
+         * Get corporation starbases (POSes).
+         * @requires esi-corporations.read_starbases.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @param {number} corporationID
+         * @returns list of corporation starbases (POSes).
+         */
         starbases(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.starbases.starbases' requires a corporation ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/starbases`
+            })
         },
-        info(corporationID, starbaseID) {
+        /**
+         * Get starbase (POS) detail.
+         * @requires esi-corporations.read_starbases.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @param {number} corporationID
+         * @param {number} starbaseID
+         * @param {number} systemID The solar system this starbase (POS) is located in
+         */
+        info(corporationID, starbaseID, systemID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.starbases.info' requires a corporation ID!`
+            })
+            inputValidation({
+                input: starbaseID,
+                type: 'number',
+                message: `The function 'corporation.starbases.info' requires a starbase ID!`
+            })
+            inputValidation({
+                input: systemID,
+                type: 'number',
+                message: `The function 'corporation.starbases.info' requires a system ID!`
+            })
 
+            return request({
+                subUrl: `corporations/${corporationID}/starbases/${starbaseID}`
+            })
         },
     },
+    /**
+     * Get corporation titles.
+     * @requires esi-corporations.read_titles.v1
+     * @requires one of the following EVE corporation role(s): Director
+     * @param {number} corporationID
+     * @returns a corporation’s titles.
+     */
     titles(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.titles' requires a corporation ID!`
+        })
 
+        return request({
+            subUrl: `corporations/${corporationID}/titles`
+        })
+    },
+    /**
+     * Get corporation structures.
+     * @requires esi-corporations.read_structures.v1
+     * @requires one of the following EVE corporation role(s): Station_Manager
+     * @param {number} corporationID
+     * @returns a list of corporation structures. This route’s version includes the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th
+     */
+    structures(corporationID) {
+        inputValidation({
+            input: corporationID,
+            type: 'number',
+            message: `The function 'corporation.structures' requires a corporation ID!`
+        })
+
+        return request({
+            subUrl: `corporations/${corporationID}/structures`
+        })
     },
     assets: {
         /**
          * Get corporation assets.
          * @requires esi-assets.read_corporation_assets.v1
          * @param {number} corporationID
-         * @async
+
 
         * @returns {JSON} A list of the corporations assets.
         */
@@ -191,9 +438,9 @@ module.exports = {
         /**
          * Get corporation asset locations.
          * @param {number} corporationID
-         * @param {[number]} itemIDs
+         * @param {number[]} itemIDs
          * @requires esi-assets.read_corporation_assets.v1
-         * @async
+
 
         * @returns {JSON} Locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
         */
@@ -221,9 +468,9 @@ module.exports = {
         /**
          * Get corporation asset names.
          * @param {number} corporationID
-         * @param {[number]} itemIDs
+         * @param {number[]} itemIDs
          * @requires esi-assets.read_corporation_assets.v1
-         * @async
+
 
         * @returns {JSON} Names for a set of item ids, which you can get from corporation assets endpoint. Typically used for items that can customize names, like containers or ships.
         */
@@ -254,7 +501,7 @@ module.exports = {
          * List corporation bookmarks
          * @param {number} corporationID
          * @requires esi-bookmarks.read_corporation_bookmarks.v1
-         * @async
+
 
         * @returns {JSON} A list of your corporation’s personal bookmarks.
         */
@@ -273,7 +520,7 @@ module.exports = {
          * List corporation bookmark folders
          * @param {number} corporationID
          * @requires esi-bookmarks.read_corporation_bookmarks.v1
-         * @async
+
 
         * @returns {JSON} A list of your corporation’s personal bookmark folders.
         */
@@ -294,7 +541,7 @@ module.exports = {
         /**
          * Get corporation contacts.
          * @param {number} corporationID
-         * @async
+
          * @requires esi-corporations.read_contacts.v1
          * @returns {JSON}
          */
@@ -313,7 +560,7 @@ module.exports = {
         /**
          * Get corporation contact labels
          * @param {number} corporationID
-         * @async
+
          * @returns esi-corporations.read_contacts.v1
          */
         labels(corporationID) {

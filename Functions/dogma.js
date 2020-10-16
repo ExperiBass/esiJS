@@ -5,7 +5,7 @@ module.exports = {
     /**
      * Get information on a dogma attribute.
      * @exports attrInfo
-     * @async
+
      * @param attr {number}
      * @returns {object} Info on the attribute.
      */
@@ -17,7 +17,7 @@ module.exports = {
     /**
      * Get a list of dogma attribute ids.
      * @exports attrs
-     * @async
+
      * @returns {[number]} A array of all attributes.
      */
     attrs() {
@@ -28,7 +28,7 @@ module.exports = {
      * @exports dynamicItemInfo
      * @param itemID {number}
      * @param typeID {number}
-     * @async
+
      * @returns {object} Info on the mutation.
      */
     dynamicItemInfo(itemID, typeID) {
@@ -41,7 +41,7 @@ module.exports = {
      * Get information on a dogma effect.
      * @exports effectInfo
      * @param effect {number}
-     * @async
+
      * @returns {object} Info on the effect.
      */
     effectInfo(effect) {
@@ -52,7 +52,7 @@ module.exports = {
     /**
      * Get a list of dogma effect ids.
      * @exports effects
-     * @async
+
      * @returns {[number]} A array of dogma effects.
      */
     effects() {

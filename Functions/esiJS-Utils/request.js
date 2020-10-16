@@ -48,7 +48,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth = fa
     if (programName && programName !== '') {
         headers['user-agent'] = programName
     } else {
-        headers['user-agent'] = `esiJSv${version}`
+        headers['user-agent'] = `esiJS-v${version}`
     }
     if (needsAuth && authToken !== '') {
         // Include both the headers and the query just in case one or the other fails
@@ -56,7 +56,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth = fa
         fullURL += `&token=${authToken}`
     }
     if (needsAuth && authToken === '') {
-        throw throwError(`You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../')}.`, `NO_AUTH_TOKEN`)
+        throw throwError(`You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../../../')}.`, `NO_AUTH_TOKEN`)
     }
 
     // Check the URL for extra forward slashes and delete them
