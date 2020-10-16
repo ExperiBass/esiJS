@@ -1183,5 +1183,61 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    wallet: {
+        /**
+         * Get a character's wallet balance.
+         * @param {number} characterID 
+         * @requires esi-wallet.read_character_wallet.v1
+         * @returns a character’s wallet balance.
+         */
+        balance(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.wallet.balance' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/wallet`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get character wallet journal.
+         * @param {number} characterID 
+         * @requires esi-wallet.read_character_wallet.v1
+         * @returns the given character’s wallet journal going 30 days back.
+         */
+        journal(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.wallet.journal' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/wallet/journal`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get wallet transactions.
+         * @param {number} characterID 
+         * @requires esi-wallet.read_character_wallet.v1
+         * @returns wallet transactions of a character.
+         */
+        transactions(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.wallet.transactions' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/wallet/transactions`,
+                needsAuth: true
+            })
+        }
     }
 }

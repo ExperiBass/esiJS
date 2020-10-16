@@ -881,5 +881,76 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    wallets: {
+        /**
+         * Get a corporation's wallet balance.
+         * @param {number} corporationID 
+         * @requires esi-wallet.read_corporation_wallets.v1
+         * @requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+         * @returns a corporation’s wallets balance.
+         */
+        balance(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.wallets.balance' needs a corporation ID!`
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/wallets`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get corporation wallet journal.
+         * @param {number} corporationID 
+         * @requires esi-wallet.read_corporation_wallets.v1
+         * @param {number} divisionID The division to get data from.
+         * @requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+         * @returns the given corporation’s wallet journal going 30 days back.
+         */
+        journal(corporationID, divisionID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.wallets.journal' needs a corporation ID!`
+            })
+            inputValidation({
+                input: divisionID,
+                type: 'number',
+                message: `The function 'corporation.wallets.journal' needs a division ID!`
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/wallets/${divisionID}/journal`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get wallet transactions.
+         * @param {number} corporationID 
+         * @param {number} divisionID The division to get data from.
+         * @requires esi-wallet.read_corporation_wallets.v1
+         * @requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+         * @returns wallet transactions of a corporation.
+         */
+        transactions(corporationID, divisionID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.wallets.transactions' needs a corporation ID!`
+            })
+            inputValidation({
+                input: divisionID,
+                type: 'number',
+                message: `The function 'corporation.wallets.journal' needs a division ID!`
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/wallets/${divisionID}/transactions`,
+                needsAuth: true
+            })
+        }
     }
 }
