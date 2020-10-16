@@ -741,4 +741,34 @@ module.exports = {
             })
         }
     },
+    killmails: {
+        /**
+         * Get a character's recent kills and losses.
+         * @param {number} characterID 
+         * @param {number} page The page of results to return.
+         * @requires esi-killmails.read_killmails.v1
+         * @returns a list of a character’s kills and losses going back 90 days.
+         */
+        recent(characterID, page = 1) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.killmails.recent' requires a corporation ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'character.killmails.recent' requires a page number!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/killmails/recent`,
+                query: {
+                    page: page
+                },
+                needsAuth: true
+            })
+        }
+    }
 }

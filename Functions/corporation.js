@@ -791,5 +791,36 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    killmails: {
+        /**
+         * Get a corporation's recent kills and losses.
+         * @param {number} corporationID 
+         * @param {number} page The page of results to return.
+         * @requires esi-killmails.read_corporation_killmails.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @returns a list of a corporation’s kills and losses going back 90 days.
+         */
+        recent(corporationID, page = 1) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.killmails.recent' requires a corporation ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'corporation.killmails.recent' requires a page number!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/killmails/recent`,
+                query: {
+                    page: page
+                },
+                needsAuth: true
+            })
+        }
     }
 }
