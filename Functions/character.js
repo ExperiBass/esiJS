@@ -1127,5 +1127,61 @@ module.exports = {
                 needsAuth: true
             })
         },
+    },
+    skills: {
+        /**
+         * Get character attributes.
+         * @param {number} characterID 
+         * @requires esi-skills.read_skills.v1
+         * @returns attributes of a character.
+         */
+        attributes(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.skills.attributes' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/attributes`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get character's skill queue.
+         * @param {number} characterID 
+         * @requires esi-skills.read_skillqueue.v1
+         * @returns the configured skill queue for the given character
+         */
+        queue(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.skills.queue' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/skillqueue`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get character skills.
+         * @param {number} characterID 
+         * @requires esi-skills.read_skills.v1
+         * @returns all trained skills for the given character.
+         */
+        skills(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.skills.skills' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/skills`,
+                needsAuth: true
+            })
+        }
     }
 }
