@@ -10,7 +10,8 @@ async function build() {
         let doc = await documentation.build([`${path.join(__dirname, `./Functions/${file}`)}`], {
             extension: 'js'
         })
-        doc = await documentation.formats.md(doc)
+        doc = await documentation.formats.md(doc, {markdownToc: true})
+
         await fs.writeFileSync(`./docs/${file.replace('.js', '')}.md`, doc)
         console.log(Chalk.green(`Docs for ${file} built.`))
     }
