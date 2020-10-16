@@ -662,7 +662,7 @@ module.exports = {
     },
     industry: {
         /**
-         * List character industry jobs
+         * List character industry jobs.
          * @param {number} characterID
          * @requires esi-industry.read_character_jobs.v1
          * @returns {JSON}
@@ -676,6 +676,29 @@ module.exports = {
 
             request({
                 subUrl: `characters/${characterID}/industry/jobs`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Character mining ledger.
+         * @param {number} characterID
+         * @requires esi-industry.read_character_mining.v1
+         * @returns Paginated record of all mining done by a character for the past 30 days
+         */
+        ledger(characterID, page = 1) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.industry.ledger' requires a character ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'character.industry.ledger' requires a character ID!`
+            })
+
+            request({
+                subUrl: `characters/${characterID}/mining`,
                 needsAuth: true
             })
         }

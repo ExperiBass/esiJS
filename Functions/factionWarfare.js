@@ -53,7 +53,8 @@ module.exports = {
                 message: `The function 'fw.stats.characterStats' requires a character ID!`
             })
             return request({
-                subUrl: `characters/${characterID}/fw/stats`
+                subUrl: `characters/${characterID}/fw/stats`,
+                needsAuth: true
             })
         },
         /**
@@ -69,7 +70,8 @@ module.exports = {
                 message: `The function 'fw.stats.corporationStats' requires a corporation ID!`
             })
             return request({
-                subUrl: `corporations/${corporationID}/fw/stats`
+                subUrl: `corporations/${corporationID}/fw/stats`,
+                needsAuth: true
             })
         }
     },

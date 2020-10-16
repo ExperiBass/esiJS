@@ -81,6 +81,9 @@ module.exports = {
 
         return request({
             subUrl: `corporations/${corporationID}/blueprints`,
+            query: {
+                page: page
+            },
             needsAuth: true
         })
     },
@@ -106,6 +109,9 @@ module.exports = {
 
         return request({
             subUrl: `corporations/${corporationID}/containers/logs`,
+            query: {
+                page: page
+            },
             needsAuth: true
         })
     },
@@ -124,7 +130,8 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/divisions`
+            subUrl: `corporations/${corporationID}/divisions`,
+            needsAuth: true
         })
     },
     /**
@@ -142,7 +149,8 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/facilities`
+            subUrl: `corporations/${corporationID}/facilities`,
+            needsAuth: true
         })
     },
     medals: {
@@ -160,7 +168,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/medals`
+                subUrl: `corporations/${corporationID}/medals`,
+                needsAuth: true
             })
         },
         /**
@@ -177,7 +186,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/medals/issued`
+                subUrl: `corporations/${corporationID}/medals/issued`,
+                needsAuth: true
             })
         },
     },
@@ -196,7 +206,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/members`
+                subUrl: `corporations/${corporationID}/members`,
+                needsAuth: true
             })
         },
         /**
@@ -214,7 +225,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/members/limit`
+                subUrl: `corporations/${corporationID}/members/limit`,
+                needsAuth: true
             })
         },
         /**
@@ -232,7 +244,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/members/titles`
+                subUrl: `corporations/${corporationID}/members/titles`,
+                needsAuth: true
             })
         },
         /**
@@ -250,7 +263,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/membertracking`
+                subUrl: `corporations/${corporationID}/membertracking`,
+                needsAuth: true
             })
         },
     },
@@ -269,7 +283,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/roles`
+                subUrl: `corporations/${corporationID}/roles`,
+                needsAuth: true
             })
         },
         /**
@@ -286,7 +301,8 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/roles/history`
+                subUrl: `corporations/${corporationID}/roles/history`,
+                needsAuth: true
             })
         },
     },
@@ -305,7 +321,8 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/shareholders`
+            subUrl: `corporations/${corporationID}/shareholders`,
+            needsAuth: true
         })
     },
     /**
@@ -322,7 +339,8 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/standings`
+            subUrl: `corporations/${corporationID}/standings`,
+            needsAuth: true
         })
     },
     starbases: {
@@ -350,7 +368,8 @@ module.exports = {
                 subUrl: `corporations/${corporationID}/starbases`,
                 query: {
                     page: page
-                }
+                },
+                needsAuth: true
             })
         },
         /**
@@ -382,7 +401,8 @@ module.exports = {
                 subUrl: `corporations/${corporationID}/starbases/${starbaseID}`,
                 query: {
                     system_id: systemID
-                }
+                },
+                needsAuth: trueq
             })
         },
     },
@@ -401,7 +421,8 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/titles`
+            subUrl: `corporations/${corporationID}/titles`,
+            needsAuth: true
         })
     },
     /**
@@ -426,7 +447,8 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/structures`
+            subUrl: `corporations/${corporationID}/structures`,
+            needsAuth: true
         })
     },
     assets: {
