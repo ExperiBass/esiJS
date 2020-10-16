@@ -1081,5 +1081,51 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    pi: {
+        /**
+         * Get colonies.
+         * @param {number} characterID 
+         * @requires esi-planets.manage_planets.v1
+         * @returns a list of all planetary colonies owned by a character.
+         */
+        colonies(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.pi.colonies' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/planets`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Get colony layout.
+         * @param {number} characterID 
+         * @param {number} planetID 
+         * @requires esi-planets.manage_planets.v1
+         * @returns full details on the layout of a single planetary colony, including links, pins and routes.
+         * Note: Planetary information is only recalculated when the colony is viewed through the client.
+         * Information will not update until this criteria is met.
+         */
+        colonyInfo(characterID, planetID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.pi.colonyInfo' needs a character ID!`
+            })
+            inputValidation({
+                input: planetID,
+                type: 'number',
+                message: `The function 'character.pi.colonyInfo' needs a planet ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/planets/${planetID}`,
+                needsAuth: true
+            })
+        },
     }
 }

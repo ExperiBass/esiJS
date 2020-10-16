@@ -837,7 +837,7 @@ module.exports = {
             })
 
             return request({
-                subUrl: `ccorporation/${corporationID}/orders`,
+                subUrl: `corporation/${corporationID}/orders`,
                 requestType: 'GET',
                 needsAuth: true
             })
@@ -855,10 +855,31 @@ module.exports = {
             })
 
             return request({
-                subUrl: `ccorporation/${corporationID}/orders/history`,
+                subUrl: `corporation/${corporationID}/orders/history`,
                 requestType: 'GET',
                 needsAuth: true
             })
         },
+    },
+    pi: {
+        /**
+         * List corporation customs offices.
+         * @param {number} corporationID 
+         * @requires esi-planets.read_customs_offices.v1
+         * @requires one of the following EVE corporation role(s): Director
+         * @returns customs offices owned by a corporation.
+         */
+        customsOffices(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.pi.customsOffices' needs a corporation ID!`
+            })
+
+            return request({
+                subUrl: `corporation/${corporationID}/customs_offices`,
+                needsAuth: true
+            })
+        }
     }
 }
