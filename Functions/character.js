@@ -1022,5 +1022,44 @@ module.exports = {
                 needsAuth: true
             })
         },
+
+    },
+    market: {
+        /**
+         * List open orders from a character.
+         * @param {number} characterID 
+         * @requires esi-markets.read_character_orders.v1
+         */
+        orders(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.market.orders' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/orders`,
+                requestType: 'GET',
+                needsAuth: true
+            })
+        },
+        /**
+         * List historical orders by a character.
+         * @param {number} characterID 
+         * @requires esi-markets.read_character_orders.v1
+         */
+        orderHistory(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.market.orderHistory' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/orders/history`,
+                requestType: 'GET',
+                needsAuth: true
+            })
+        },
     }
 }

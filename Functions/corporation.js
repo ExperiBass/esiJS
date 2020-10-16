@@ -822,5 +822,43 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    market: {
+        /**
+         * List open orders from a corporation.
+         * @param {number} corporationID 
+         * @requires esi-markets.read_corporation_orders.v1
+         */
+        orders(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.market.orders' needs a corporation ID!`
+            })
+
+            return request({
+                subUrl: `ccorporation/${corporationID}/orders`,
+                requestType: 'GET',
+                needsAuth: true
+            })
+        },
+        /**
+         * List historical orders by a corporation.
+         * @param {number} corporationID 
+         * @requires esi-markets.read_corporation_orders.v1
+         */
+        orderHistory(corporationID) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.market.orderHistory' needs a corporation ID!`
+            })
+
+            return request({
+                subUrl: `ccorporation/${corporationID}/orders/history`,
+                requestType: 'GET',
+                needsAuth: true
+            })
+        },
     }
 }
