@@ -67,7 +67,6 @@ let esiJS = class {
             })
         }
     }
-    util = require('./Functions/utility')
     alliance = require('./Functions/alliance')
     character = require('./Functions/character')
     contracts = require('./Functions/contracts')
@@ -87,6 +86,8 @@ let esiJS = class {
     sov = require('./Functions/sovereignty')
     status = require('./Functions/status')
     universe = require('./Functions/universe')
+    ui = require('./Functions/userinterface')
+    util = require('./Functions/utility')
     wars = require('./Functions/wars')
 }
 module.exports = esiJS
