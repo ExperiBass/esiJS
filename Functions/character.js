@@ -770,5 +770,217 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    mail: {
+        getAll(characterID, labels = [], lastMailID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.getAll' needs a character ID!`
+            })
+            inputValidation({
+                input: labels,
+                type: 'object',
+                message: `The parameter "labels" in the function 'character.mail.getAll' must be a array!`
+            })
+            inputValidation({
+                input: lastMailID,
+                type: 'number',
+                message: `The parameter "lastMailID" in the function 'character.mail.getAll' must be a mail ID!`,
+                optional: true
+            })
+            let query = {
+                labels: labels
+            }
+            if (lastMailID) {
+                query.last_mail_id = lastMailID
+            }
+
+            return request({
+                subUrl: `characters/${characterID}/mail/`,
+                query: query,
+                needsAuth: true
+            })
+        },
+        get(characterID, mailID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.get' needs a character ID!`
+            })
+            inputValidation({
+                input: mailID,
+                type: 'number',
+                message: `The function 'character.mail.get' needs a mail ID!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/${mailID}`,
+                needsAuth: true
+            })
+        },
+        /**
+         * Send a new mail.
+         * @param {number} characterID 
+         * @param {object} mail The mail to send. Mail structure is below.
+         * @example  {
+                    "approved_cost": 0,
+                    "body": "This is a Mail!",
+                    "recipients": [
+                        {
+                        "recipient_id": 0,
+                        "recipient_type": "alliance"
+                        }
+                    ],
+                    "subject": "Your hentai addiction"
+                }
+         */
+        send(characterID, mail) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.send' needs a character ID!`
+            })
+            inputValidation({
+                input: mail,
+                type: 'object',
+                message: `The function 'character.mail.send' needs a mail!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/`,
+                requestType: 'POST',
+                body: mail,
+                needsAuth: true
+            })
+        },
+        /**
+         * 
+         * @param {number} characterID 
+         * @param {number} mailID 
+         * @param {object} contents Structure below.
+         * @example {
+                      "labels": [
+                          0
+                      ],
+                      "read": true
+                    }
+         */
+        update(characterID, mailID, contents) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.delete' needs a character ID!`
+            })
+            inputValidation({
+                input: mailID,
+                type: 'number',
+                message: `The function 'character.mail.delete' needs a mail ID!`,
+            })
+            inputValidation({
+                input: contents,
+                type: 'object',
+                message: `The function 'character.mail.delete' needs the contents!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/${mailID}`,
+                requestType: 'PUT',
+                body: contents,
+                needsAuth: true
+            })
+        },
+        delete(characterID, mailID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.delete' needs a character ID!`
+            })
+            inputValidation({
+                input: mailID,
+                type: 'number',
+                message: `The function 'character.mail.delete' needs a mail ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/${mailID}`,
+                requestType: 'DELETE',
+                needsAuth: true
+            })
+        },
+        labels(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.labels' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/labels/`,
+                requestType: 'GET',
+                needsAuth: true
+            })
+        },
+        /**
+         * Create a mail label.
+         * @param {number} characterID 
+         * @param {object} label Label example below.
+         * @example 
+         * {
+                "color": "#ffffff",
+                "name": "capt morgans spiced cum"
+            }
+         */
+        createLabel(characterID, label) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.createLabel' needs a character ID!`
+            })
+            inputValidation({
+                input: label,
+                type: 'object',
+                message: `The function 'character.mail.createLabel' needs a label object!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/labels/`,
+                requestType: 'POST',
+                body: label,
+                needsAuth: true
+            })
+        },
+        deleteLabel(characterID, labelID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.deleteLabel' needs a character ID!`
+            })
+            inputValidation({
+                input: labelID,
+                type: 'number',
+                message: `The function 'character.mail.deleteLabel' needs a label ID!`,
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/labels/${labelID}`,
+                requestType: 'DELETE',
+                needsAuth: true
+            })
+        },
+        mailingLists(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.mail.mailingLists' needs a character ID!`
+            })
+
+            return request({
+                subUrl: `characters/${characterID}/mail/lists`,
+                requestType: 'GET',
+                needsAuth: true
+            })
+        },
     }
 }

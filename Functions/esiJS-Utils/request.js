@@ -8,14 +8,16 @@ const {version} = require('../../package.json')
  * @private
  *  subUrl -> remaining url part specific to the function call
  *
- *  post -> state if the request is of type post, will make a get request otherwise
+ *  requestType -> state the request type, defaults to GET
  *
  *  body -> data to pass to the request body for requests of type post
  *
  *  query -> aditional query parameters
+ * 
+ * needsAuth -> flag a endpoint as authed
  */
-function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth = false}) {
-    const { link, dataSource, authToken, language, programName } = getSettings()
+function makeRequest ({ subUrl, body, query, requestType = 'GET', needsAuth = false}) {
+    const { link, authToken, language, programName } = getSettings()
     const test = /\/(?=\/)(?<!https:\/)/g
     let headers = {
         'accept': 'application/json',
@@ -44,7 +46,7 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth = fa
     if (language !== '') {
         fullURL += `&language=${language.split('/').join('-')}`
     }
-    // Add in the program name if specified, else default to 'esiJSv{version}'
+    // Add in the program name if specified, else default to 'esiJS-v{version}'
     if (programName && programName !== '') {
         headers['user-agent'] = programName
     } else {
@@ -63,33 +65,33 @@ function makeRequest ({ subUrl, body, query, requestType = 'get', needsAuth = fa
     fullURL = fullURL.replace(test, '')
 
     // Check for request type
-    switch(requestType) {
-        case 'get': {
+    switch(requestType.toUpperCase()) {
+        case 'GET': {
             request = axios.get(fullURL, {
                 headers
             })
             break;
         }
-        case 'post': {
+        case 'POST': {
             request = axios.post(fullURL, body, {
                 headers
             })
             break;
         }
-        case 'put': {
+        case 'PUT': {
             request = axios.put(fullURL, body, {
                 headers
             })
             break;
         }
-        case 'delete': {
+        case 'DELETE': {
             request = axios.delete(fullURL, body, {
                 headers
             })
             break;
         }
         default: {
-            throw throwError(`ESIJS ERROR: Endpoint function not configured properly. Please report this error on the GitHub repository. Error:\n${e}`)
+            throw throwError(`ESIJS ERROR: Endpoint function not configured properly. Please report this error on the GitHub repository. Error:\n${e.stack}`)
         }
     }
 
