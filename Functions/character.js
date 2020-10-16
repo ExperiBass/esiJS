@@ -772,6 +772,15 @@ module.exports = {
         }
     },
     mail: {
+        /**
+         * Return mail headers.
+         * @param {number} characterID 
+         * @param {Array} labels Get mails only with one or more of these labels.
+         * @param {number} lastMailID Get mails after this mail.
+         * @requires esi-mail.read_mail.v1
+         * @returns  the 50 most recent mail headers belonging to the character that match the query criteria.
+         * Queries can be filtered by label, and lastMailID can be used to paginate backwards.
+         */
         getAll(characterID, labels = [], lastMailID) {
             inputValidation({
                 input: characterID,
@@ -802,6 +811,13 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Return a mail.
+         * @param {number} characterID 
+         * @param {number} mailID 
+         * @requires esi-mail.read_mail.v1
+         * @returns the contents of an EVE mail.
+         */
         get(characterID, mailID) {
             inputValidation({
                 input: characterID,
@@ -856,7 +872,7 @@ module.exports = {
             })
         },
         /**
-         * 
+         * Update metadata about a mail.
          * @param {number} characterID 
          * @param {number} mailID 
          * @param {object} contents Structure below.
@@ -891,6 +907,12 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Delete a mail.
+         * @param {number} characterID 
+         * @param {number} mailID 
+         * @requires esi-mail.organize_mail.v1
+         */
         delete(characterID, mailID) {
             inputValidation({
                 input: characterID,
@@ -909,6 +931,12 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Get mail labels and unread counts.
+         * @param {number} characterID 
+         * @requires esi-mail.read_mail.v1
+         * @returns a list of the users mail labels, unread counts for each label and a total unread count.
+         */
         labels(characterID) {
             inputValidation({
                 input: characterID,
@@ -951,6 +979,12 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Delete a mail label.
+         * @param {number} characterID 
+         * @param {number} labelID 
+         * @requires esi-mail.organize_mail.v1
+         */
         deleteLabel(characterID, labelID) {
             inputValidation({
                 input: characterID,
@@ -969,6 +1003,12 @@ module.exports = {
                 needsAuth: true
             })
         },
+        /**
+         * Get mailing list subscriptions.
+         * @param {number} characterID 
+         * @requires esi-mail.read_mail.v1
+         * @returns all mailing lists that the character is subscribed to.
+         */
         mailingLists(characterID) {
             inputValidation({
                 input: characterID,
