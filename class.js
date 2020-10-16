@@ -6,7 +6,10 @@ const fs = require('fs')
  * @param {object} - The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
  */
 let esiJS = class {
-    constructor({logging = true, token = ''}) {
+    constructor({
+        logging = true,
+        token = ''
+    }) {
         /**
          * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
          */
@@ -59,7 +62,9 @@ let esiJS = class {
         }
         log(`I can read and write to the config file!`, 'INFO')
         if (token) {
-            this.util.setSettings({authToken: token})
+            this.util.setSettings({
+                authToken: token
+            })
         }
     }
     util = require('./Functions/utility')
