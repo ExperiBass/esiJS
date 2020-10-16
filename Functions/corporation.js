@@ -668,4 +668,125 @@ module.exports = {
             })
         }
     },
+    industry: {
+        /**
+         * Moon extraction timers
+         * @param {number} corporationID 
+         * @param {number} page The page of results to return.
+         * @requires esi-industry.read_corporation_mining.v1
+         * @requires one of the following EVE corporation role(s): Station_Manager
+         * @returns Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.
+         */
+        extractions(corporationID, page = 1) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.industry.extractions' requires a corporation ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'corporation.industry.extractions' requires a page number!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/mining/extractions`,
+                query: {
+                    page: page
+                },
+                needsAuth: true
+            })
+        },
+        /**
+         * Corporation mining observers.
+         * @param {number} corporationID 
+         * @param {number} page The page of results to return.
+         * @requires esi-industry.read_corporation_mining.v1
+         * @requires one of the following EVE corporation role(s): Accountant
+         * @returns Paginated list of all entities capable of observing and recording mining for a corporation
+         */
+        observers(corporationID, page = 1) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.industry.observers' requires a corporation ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'corporation.industry.observers' requires a page number!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/mining/observers`,
+                query: {
+                    page: page
+                },
+                needsAuth: true
+            })
+        },
+        /**
+         * Observed corporation mining
+         * @param {number} corporationID 
+         * @param {number} observerID 
+         * @param {number} page The page of results to return.
+         * @requires esi-industry.read_corporation_mining.v1
+         * @requires one of the following EVE corporation role(s): Accountant
+         * @returns Paginated record of all mining seen by an observer.
+         */
+        observerInfo(corporationID, observerID, page = 1) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.industry.observerInfo' requires a corporation ID!`
+            })
+            inputValidation({
+                input: observerID,
+                type: 'number',
+                message: `The function 'corporation.industry.observerInfo' requires a observer ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'corporation.industry.observerInfo' requires a page number!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/mining/observers/${observerID}`,
+                query: {
+                    page: page
+                },
+                needsAuth: true
+            })
+        },
+        /**
+         * 
+         * @param {number} corporationID 
+         * @param {number} page 
+         */
+        jobs(corporationID, page = 1) {
+            inputValidation({
+                input: corporationID,
+                type: 'number',
+                message: `The function 'corporation.industry.jobs' requires a corporation ID!`
+            })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'corporation.industry.jobs' requires a page number!`,
+                optional: true
+            })
+
+            return request({
+                subUrl: `corporations/${corporationID}/industry/jobs`,
+                query: {
+                    page: page
+                },
+                needsAuth: true
+            })
+        }
+    }
 }
