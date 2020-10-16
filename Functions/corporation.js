@@ -337,15 +337,24 @@ module.exports = {
          * @param {number} corporationID
          * @returns list of corporation starbases (POSes).
          */
-        starbases(corporationID) {
+        starbases(corporationID, page = 1) {
             inputValidation({
                 input: corporationID,
                 type: 'number',
                 message: `The function 'corporation.starbases.starbases' requires a corporation ID!`
             })
+            inputValidation({
+                input: page,
+                type: 'number',
+                message: `The function 'corporation.starbases.starbases' requires a page number!`,
+                optional: true
+            })
 
             return request({
-                subUrl: `corporations/${corporationID}/starbases`
+                subUrl: `corporations/${corporationID}/starbases`,
+                query: {
+                    page: page
+                }
             })
         },
         /**
@@ -374,7 +383,10 @@ module.exports = {
             })
 
             return request({
-                subUrl: `corporations/${corporationID}/starbases/${starbaseID}`
+                subUrl: `corporations/${corporationID}/starbases/${starbaseID}`,
+                query: {
+                    system_id: systemID
+                }
             })
         },
     },
@@ -401,13 +413,20 @@ module.exports = {
      * @requires esi-corporations.read_structures.v1
      * @requires one of the following EVE corporation role(s): Station_Manager
      * @param {number} corporationID
+     * @param {number} page
      * @returns a list of corporation structures. This route’s version includes the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th
      */
-    structures(corporationID) {
+    structures(corporationID, page = 1) {
         inputValidation({
             input: corporationID,
             type: 'number',
             message: `The function 'corporation.structures' requires a corporation ID!`
+        })
+        inputValidation({
+            input: page,
+            type: 'number',
+            message: `The function 'corporation.structures' requires a page number!`,
+            optional: true
         })
 
         return request({
