@@ -744,7 +744,7 @@ module.exports = {
     killmails: {
         /**
          * Get a character's recent kills and losses.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @param {number} page The page of results to return.
          * @requires esi-killmails.read_killmails.v1
          * @returns a list of a character’s kills and losses going back 90 days.
@@ -774,7 +774,7 @@ module.exports = {
     mail: {
         /**
          * Return mail headers.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @param {Array} labels Get mails only with one or more of these labels.
          * @param {number} lastMailID Get mails after this mail.
          * @requires esi-mail.read_mail.v1
@@ -813,8 +813,8 @@ module.exports = {
         },
         /**
          * Return a mail.
-         * @param {number} characterID 
-         * @param {number} mailID 
+         * @param {number} characterID
+         * @param {number} mailID
          * @requires esi-mail.read_mail.v1
          * @returns the contents of an EVE mail.
          */
@@ -838,7 +838,7 @@ module.exports = {
         },
         /**
          * Send a new mail.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @param {object} mail The mail to send. Mail structure is below.
          * @example  {
                     "approved_cost": 0,
@@ -873,8 +873,8 @@ module.exports = {
         },
         /**
          * Update metadata about a mail.
-         * @param {number} characterID 
-         * @param {number} mailID 
+         * @param {number} characterID
+         * @param {number} mailID
          * @param {object} contents Structure below.
          * @example {
                       "labels": [
@@ -909,8 +909,8 @@ module.exports = {
         },
         /**
          * Delete a mail.
-         * @param {number} characterID 
-         * @param {number} mailID 
+         * @param {number} characterID
+         * @param {number} mailID
          * @requires esi-mail.organize_mail.v1
          */
         delete(characterID, mailID) {
@@ -933,7 +933,7 @@ module.exports = {
         },
         /**
          * Get mail labels and unread counts.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-mail.read_mail.v1
          * @returns a list of the users mail labels, unread counts for each label and a total unread count.
          */
@@ -952,9 +952,9 @@ module.exports = {
         },
         /**
          * Create a mail label.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @param {object} label Label example below.
-         * @example 
+         * @example
          * {
                 "color": "#ffffff",
                 "name": "capt morgans spiced cum"
@@ -981,8 +981,8 @@ module.exports = {
         },
         /**
          * Delete a mail label.
-         * @param {number} characterID 
-         * @param {number} labelID 
+         * @param {number} characterID
+         * @param {number} labelID
          * @requires esi-mail.organize_mail.v1
          */
         deleteLabel(characterID, labelID) {
@@ -1005,7 +1005,7 @@ module.exports = {
         },
         /**
          * Get mailing list subscriptions.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-mail.read_mail.v1
          * @returns all mailing lists that the character is subscribed to.
          */
@@ -1027,7 +1027,7 @@ module.exports = {
     market: {
         /**
          * List open orders from a character.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-markets.read_character_orders.v1
          */
         orders(characterID) {
@@ -1045,7 +1045,7 @@ module.exports = {
         },
         /**
          * List historical orders by a character.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-markets.read_character_orders.v1
          */
         orderHistory(characterID) {
@@ -1065,7 +1065,7 @@ module.exports = {
     opportunities: {
         /**
          * Get a character's completed tasks
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-characters.read_opportunities.v1
          * @returns a list of tasks finished by a character.
          */
@@ -1085,7 +1085,7 @@ module.exports = {
     pi: {
         /**
          * Get colonies.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-planets.manage_planets.v1
          * @returns a list of all planetary colonies owned by a character.
          */
@@ -1103,8 +1103,8 @@ module.exports = {
         },
         /**
          * Get colony layout.
-         * @param {number} characterID 
-         * @param {number} planetID 
+         * @param {number} characterID
+         * @param {number} planetID
          * @requires esi-planets.manage_planets.v1
          * @returns full details on the layout of a single planetary colony, including links, pins and routes.
          * Note: Planetary information is only recalculated when the colony is viewed through the client.
@@ -1131,7 +1131,7 @@ module.exports = {
     skills: {
         /**
          * Get character attributes.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-skills.read_skills.v1
          * @returns attributes of a character.
          */
@@ -1149,7 +1149,7 @@ module.exports = {
         },
         /**
          * Get character's skill queue.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-skills.read_skillqueue.v1
          * @returns the configured skill queue for the given character
          */
@@ -1167,7 +1167,7 @@ module.exports = {
         },
         /**
          * Get character skills.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-skills.read_skills.v1
          * @returns all trained skills for the given character.
          */

@@ -367,6 +367,24 @@ module.exports = {
             return request({
                 subUrl: `universe/structures`
             })
+        },
+        /**
+         * Get structure information.
+         * @param {number} structureID
+         * @requires esi-universe.read_structures.v1
+         * @returns information on requested structure if you are on the ACL. Otherwise, returns “Forbidden” for all inputs.
+         */
+        structureInfo(structureID) {
+            inputValidation({
+                input: structureID,
+                type: 'number',
+                message: `The function 'universe.structures.structureInfo' needs a structure ID!`
+            })
+
+            return request({
+                subUrl: `universe/structures/${structureID}`,
+                needsAuth: true
+            })
         }
     },
     systems: {
