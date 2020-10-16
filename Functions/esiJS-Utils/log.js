@@ -3,7 +3,7 @@ module.exports = log
 let chalk = require('chalk')
 
 /**
- * 
+ * @private
  * @param {string} message The log message.
  * @param {string} type Either 'INFO', 'WARN', or 'WARNING'.
  */

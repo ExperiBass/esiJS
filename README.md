@@ -30,7 +30,3 @@ try {
     // Error? What error?
 }
 ```
-
-# API
-
-## Table of contents

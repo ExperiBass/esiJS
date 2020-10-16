@@ -6,14 +6,14 @@ module.exports = {
      * Get public information about an alliance.
      * @exports info
      * @async
-     * @param ID {number} The alliance ID to get info from.
+     * @param characterID {number} The alliance ID to get info from.
      * @returns {JSON} Public info on the alliance.
      */
-    affiliation(idArray) {
+    affiliation(characterID) {
         inputValidation({
-            input: idArray,
+            input: characterID,
             type: 'object',
-            message: `The function 'character.affiliation' requires an array of ids!`
+            message: `The function 'character.affiliation' requires a character id!`
         })
 
         return request({
@@ -290,7 +290,7 @@ module.exports = {
         /**
          * Get character asset locations.
          * @param {number} characterID
-         * @param {[number]} itemIDs
+         * @param {number[]} itemIDs
          * @requires esi-assets.read_assets.v1
          * @async
 
@@ -320,7 +320,7 @@ module.exports = {
         /**
          * Get character asset names.
          * @param {number} characterID
-         * @param {[number]} itemIDs
+         * @param {number[]} itemIDs
          * @requires esi-assets.read_assets.v1
          * @async
 
@@ -559,7 +559,7 @@ module.exports = {
         /**
          * Bulk add contacts with same settings
          * @param {number} characterID
-         * @param {[number]} contacts
+         * @param {number[]} contacts
          * @async
          * @requires esi-characters.write_contacts.v1
          * @returns {JSON}
@@ -585,7 +585,7 @@ module.exports = {
         /**
          * Bulk delete contacts
          * @param {number} characterID
-         * @param {[number]} contacts
+         * @param {number[]} contacts
          * @async
          * @requires esi-characters.write_contacts.v1
          * @returns {JSON}
@@ -611,7 +611,7 @@ module.exports = {
         /**
          * Bulk edit contacts with same settings
          * @param {number} characterID
-         * @param {[number]} contacts
+         * @param {number[]} contacts
          * @async
          * @requires esi-characters.write_contacts.v1
          * @returns {JSON}

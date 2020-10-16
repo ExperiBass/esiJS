@@ -5,9 +5,7 @@ let log = require('./esiJS-Utils/log')
 const localConfig = path.join(__dirname, `../esi.json`)
 const projectConfig = path.join(__dirname, '../../../esi.json')
 const projectPath = path.join(__dirname, `../../../`)
-/**
- * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
- */
+
 function checkForConfig(logging) {
     // Check for a ESI config file in the project directory
     if (logging = true) {

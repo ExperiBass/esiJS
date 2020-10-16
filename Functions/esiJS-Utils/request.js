@@ -5,6 +5,7 @@ const path = require('path')
 const {version} = require('../../package.json')
 
 /**
+ * @private
  *  subUrl -> remaining url part specific to the function call
  *
  *  post -> state if the request is of type post, will make a get request otherwise
