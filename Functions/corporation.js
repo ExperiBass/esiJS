@@ -763,9 +763,12 @@ module.exports = {
             })
         },
         /**
-         * 
+         * List corporation industry jobs
          * @param {number} corporationID 
-         * @param {number} page 
+         * @param {number} page The page of results to return.
+         * @requires esi-industry.read_corporation_jobs.v1
+         * @requires one of the following EVE corporation role(s): Factory_Manager
+         * @returns industry jobs run by a corporation
          */
         jobs(corporationID, page = 1) {
             inputValidation({
