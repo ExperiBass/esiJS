@@ -27,6 +27,7 @@
     },
     "homepage": "https://github.com/GingkathFox/esiJS#readme",
     "devDependencies": {
+        "documentation": "^13.0.2",
         "jsdoc-to-markdown": "^6.0.1"
     }
 }
