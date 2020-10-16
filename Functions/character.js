@@ -69,7 +69,7 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.corpHistory' needs a character ID!`
+            message: `The function 'character.info' needs a character ID!`
         })
 
         return request({
