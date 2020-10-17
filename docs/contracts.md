@@ -2,61 +2,66 @@
 
 ### Table of Contents
 
--   [bids][1]
-    -   [Parameters][2]
--   [contracts][3]
-    -   [Parameters][4]
--   [items][5]
-    -   [Parameters][6]
+-   [public][1]
+    -   [bids][2]
+        -   [Parameters][3]
+    -   [contracts][4]
+        -   [Parameters][5]
+    -   [items][6]
+        -   [Parameters][7]
 
-## bids
+## public
+
+### bids
 
 Lists bids on a public auction contract.
 
-### Parameters
+#### Parameters
 
 -   `contractID`  {number} The auction contract to get the bids of.
 -   `pageNumber`   (optional, default `1`)
 -   `pageNum`  {number} The page of bids to get. Defaults to `1`.
 
-Returns **[object][7]** The bids on the auction.
+Returns **[object][8]** The bids on the auction.
 
-## contracts
+### contracts
 
 Returns a paginated list of all public contracts in the given region.
 
-### Parameters
+#### Parameters
 
 -   `regionID`  {number} The region to get the contracts from.
 -   `pageNumber`   (optional, default `1`)
 -   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
 
-Returns **[object][7]** A paginated list of all public contracts in the given region.
+Returns **[object][8]** A paginated list of all public contracts in the given region.
 
-## items
+### items
 
 Lists items of a public contract.
 
-### Parameters
+#### Parameters
 
 -   `contractID`  {number} The contract to get items from.
 -   `pageNumber`   (optional, default `1`)
 -   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
 
-Returns **\[[number][8]]** A array of items.
+Returns **\[[number][9]]** A array of items.
 
-[1]: #bids
+[1]: #public
 
-[2]: #parameters
+[2]: #bids
 
-[3]: #contracts
+[3]: #parameters
 
-[4]: #parameters-1
+[4]: #contracts
 
-[5]: #items
+[5]: #parameters-1
 
-[6]: #parameters-2
+[6]: #items
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[7]: #parameters-2
 
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

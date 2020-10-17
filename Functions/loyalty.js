@@ -4,7 +4,6 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * Return a list of offers from a specific corporation’s loyalty store.
-
      * @param {number} corporationID
      * @returns {object}
      */

@@ -4,7 +4,6 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * Get information on a planetary factory schematic.
-
      * @param {number} schematicID
      * @returns {object}
      */

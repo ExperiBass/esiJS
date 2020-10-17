@@ -153,6 +153,9 @@ module.exports = {
             needsAuth: true
         })
     },
+    /**
+     *
+     */
     medals: {
         /**
          * Get corporation medals.
@@ -191,6 +194,9 @@ module.exports = {
             })
         },
     },
+    /**
+     *
+     */
     members: {
         /**
          * Get corporation members.
@@ -268,6 +274,9 @@ module.exports = {
             })
         },
     },
+    /**
+     *
+     */
     roles: {
         /**
          * Get corporation member roles.
@@ -343,6 +352,9 @@ module.exports = {
             needsAuth: true
         })
     },
+    /**
+     *
+     */
     starbases: {
         /**
          * Get corporation starbases (POSes).
@@ -451,6 +463,9 @@ module.exports = {
             needsAuth: true
         })
     },
+    /**
+     *
+     */
     assets: {
         /**
          * Get corporation assets.
@@ -527,6 +542,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     bookmarks: {
         /**
          * List corporation bookmarks
@@ -566,6 +584,9 @@ module.exports = {
 
         }
     },
+    /**
+     *
+     */
     contacts: {
         /**
          * Get corporation contacts.
@@ -603,6 +624,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     contracts: {
         /**
          * Get corporation contracts.
@@ -668,6 +692,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     industry: {
         /**
          * Moon extraction timers
@@ -792,6 +819,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     killmails: {
         /**
          * Get a corporation's recent kills and losses.
@@ -823,6 +853,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     market: {
         /**
          * List open orders from a corporation.
@@ -861,6 +894,9 @@ module.exports = {
             })
         },
     },
+    /**
+     *
+     */
     pi: {
         /**
          * List corporation customs offices.
@@ -882,6 +918,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     wallets: {
         /**
          * Get a corporation's wallet balance.

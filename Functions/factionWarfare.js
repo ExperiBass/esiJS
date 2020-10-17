@@ -1,6 +1,9 @@
 const request = require('./esiJS-Utils/request')
 const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
+    /**
+     *
+     */
     leaderboards: {
         /**
          * Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday
@@ -30,6 +33,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     stats: {
         /**
          * Statistical overviews of factions involved in faction warfare

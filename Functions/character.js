@@ -244,6 +244,9 @@ module.exports = {
             needsAuth: true
         })
     },
+    /**
+     *
+     */
     assets: {
         /**
          * Get character assets.
@@ -320,6 +323,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     bookmarks: {
         /**
          * List bookmarks
@@ -359,6 +365,9 @@ module.exports = {
 
         }
     },
+    /**
+     *
+     */
     calendar: {
         /**
          * List calendar event summaries.
@@ -462,6 +471,12 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
     clones: {
         /**
          * Get clones.
@@ -500,6 +515,12 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
     contacts: {
         /**
          * Get contacts
@@ -595,6 +616,15 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
+    /**
+     *
+     */
     contracts: {
         /**
          * Get contracts
@@ -660,6 +690,15 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
+    /**
+     *
+     */
     industry: {
         /**
          * List character industry jobs.
@@ -703,6 +742,15 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
+    /**
+     *
+     */
     notifications: {
         /**
          * Get character notifications.
@@ -741,6 +789,15 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
+    /**
+     *
+     */
     killmails: {
         /**
          * Get a character's recent kills and losses.
@@ -771,6 +828,15 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
+    /**
+     *
+     */
     mail: {
         /**
          * Return mail headers.
@@ -1024,6 +1090,15 @@ module.exports = {
         },
 
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
+    /**
+     *
+     */
     market: {
         /**
          * List open orders from a character.
@@ -1062,6 +1137,12 @@ module.exports = {
             })
         },
     },
+    /**
+     *
+     */
+    /**
+     *
+     */
     opportunities: {
         /**
          * Get a character's completed tasks
@@ -1082,6 +1163,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     pi: {
         /**
          * Get colonies.
@@ -1128,6 +1212,9 @@ module.exports = {
             })
         },
     },
+    /**
+     *
+     */
     skills: {
         /**
          * Get character attributes.
@@ -1184,6 +1271,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     wallet: {
         /**
          * Get a character's wallet balance.

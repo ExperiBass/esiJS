@@ -2,6 +2,9 @@ const request = require('./esiJS-Utils/request')
 const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
+    /**
+     *
+     */
     ancestries: {
         /**
          * Get all character ancestries.
@@ -14,6 +17,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     belts: {
         /**
          * Get information on an asteroid belt.
@@ -33,6 +39,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     bloodlines: {
         /**
          * Get a list of bloodlines.
@@ -45,6 +54,9 @@ module.exports = {
             })
         },
     },
+    /**
+     *
+     */
     bulk: {
         /**
          * Resolve a set of IDs to names and categories.
@@ -89,6 +101,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     categories: {
         /**
          * Get a list of item categories.
@@ -118,6 +133,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     constellations: {
         /**
          * Get information on a constellation.
@@ -148,6 +166,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     factions: {
         /**
          * Get a list of factions.
@@ -160,6 +181,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     graphics: {
         /**
          * Get information on a graphic.
@@ -189,6 +213,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     groups: {
         /**
          * Get information on an item group.
@@ -218,6 +245,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     moons: {
         /**
          * Get information on a moon.
@@ -238,6 +268,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     planets: {
         /**
          * Get information on a planet.
@@ -257,6 +290,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     races: {
         /**
          * Get a list of character races.
@@ -269,6 +305,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     regions: {
         /**
          * Get information on a region.
@@ -299,6 +338,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     stargates: {
         /**
          * Get information on a stargate.
@@ -318,6 +360,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     stars: {
         /**
          * Get information on a star.
@@ -337,6 +382,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     stations: {
         /**
          * Get information on a station.
@@ -357,6 +405,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     structures: {
         /**
          * List all public structures.
@@ -387,6 +438,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     systems: {
         /**
          * Get information on a solar system.
@@ -438,6 +492,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     types: {
         /**
          * Get information on a type.

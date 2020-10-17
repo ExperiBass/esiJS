@@ -2,6 +2,9 @@ const request = require('./esiJS-Utils/request')
 const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
+    /**
+     *
+     */
     autopilot: {
         /**
          * Set Autopilot Waypoint.
@@ -39,6 +42,9 @@ module.exports = {
             })
         }
     },
+    /**
+     *
+     */
     openWindow: {
         /**
          * Open Contract Window.

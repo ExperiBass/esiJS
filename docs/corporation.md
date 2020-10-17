@@ -18,73 +18,81 @@
 -   [facilities][14]
     -   [Parameters][15]
 -   [medals][16]
-    -   [Parameters][17]
--   [issued][18]
-    -   [Parameters][19]
--   [members][20]
-    -   [Parameters][21]
--   [limit][22]
-    -   [Parameters][23]
--   [titles][24]
-    -   [Parameters][25]
--   [tracking][26]
-    -   [Parameters][27]
--   [roles][28]
-    -   [Parameters][29]
--   [history][30]
-    -   [Parameters][31]
--   [shareholders][32]
-    -   [Parameters][33]
--   [standings][34]
-    -   [Parameters][35]
--   [starbases][36]
-    -   [Parameters][37]
--   [info][38]
-    -   [Parameters][39]
--   [titles][40]
-    -   [Parameters][41]
--   [structures][42]
-    -   [Parameters][43]
--   [locations][44]
+    -   [medals][17]
+        -   [Parameters][18]
+    -   [issued][19]
+        -   [Parameters][20]
+-   [members][21]
+    -   [members][22]
+        -   [Parameters][23]
+    -   [limit][24]
+        -   [Parameters][25]
+    -   [titles][26]
+        -   [Parameters][27]
+    -   [tracking][28]
+        -   [Parameters][29]
+-   [roles][30]
+    -   [roles][31]
+        -   [Parameters][32]
+    -   [history][33]
+        -   [Parameters][34]
+-   [shareholders][35]
+    -   [Parameters][36]
+-   [standings][37]
+    -   [Parameters][38]
+-   [starbases][39]
+    -   [starbases][40]
+        -   [Parameters][41]
+    -   [info][42]
+        -   [Parameters][43]
+-   [titles][44]
     -   [Parameters][45]
--   [names][46]
+-   [structures][46]
     -   [Parameters][47]
 -   [bookmarks][48]
-    -   [Parameters][49]
--   [folders][50]
-    -   [Parameters][51]
--   [contacts][52]
-    -   [Parameters][53]
--   [labels][54]
-    -   [Parameters][55]
--   [contracts][56]
-    -   [Parameters][57]
--   [bids][58]
-    -   [Parameters][59]
--   [items][60]
-    -   [Parameters][61]
--   [extractions][62]
-    -   [Parameters][63]
--   [observers][64]
-    -   [Parameters][65]
--   [observerInfo][66]
-    -   [Parameters][67]
--   [jobs][68]
-    -   [Parameters][69]
--   [recent][70]
-    -   [Parameters][71]
--   [orders][72]
-    -   [Parameters][73]
--   [orderHistory][74]
-    -   [Parameters][75]
--   [customsOffices][76]
-    -   [Parameters][77]
--   [balance][78]
-    -   [Parameters][79]
--   [journal][80]
-    -   [Parameters][81]
--   [transactions][82]
-    -   [Parameters][83]
+    -   [bookmarks][49]
+        -   [Parameters][50]
+    -   [folders][51]
+        -   [Parameters][52]
+-   [contacts][53]
+    -   [contacts][54]
+        -   [Parameters][55]
+    -   [labels][56]
+        -   [Parameters][57]
+-   [contracts][58]
+    -   [contracts][59]
+        -   [Parameters][60]
+    -   [bids][61]
+        -   [Parameters][62]
+    -   [items][63]
+        -   [Parameters][64]
+-   [industry][65]
+    -   [extractions][66]
+        -   [Parameters][67]
+    -   [observers][68]
+        -   [Parameters][69]
+    -   [observerInfo][70]
+        -   [Parameters][71]
+    -   [jobs][72]
+        -   [Parameters][73]
+-   [killmails][74]
+    -   [recent][75]
+        -   [Parameters][76]
+-   [market][77]
+    -   [orders][78]
+        -   [Parameters][79]
+    -   [orderHistory][80]
+        -   [Parameters][81]
+-   [pi][82]
+    -   [customsOffices][83]
+        -   [Parameters][84]
+-   [wallets][85]
+    -   [balance][86]
+        -   [Parameters][87]
+    -   [journal][88]
+        -   [Parameters][89]
+    -   [transactions][90]
+        -   [Parameters][91]
 
 ## corporationHistory
 
@@ -94,7 +102,7 @@ Get a list of all the aliances a corporation has been a member of.
 
 -   `corporationID`  {number} The corporation to get the corporation history of.
 
-Returns **[Array][84]&lt;[number][85]>** A array of corporation IDs.
+Returns **[Array][92]&lt;[number][93]>** A array of corporation IDs.
 
 ## icons
 
@@ -104,7 +112,7 @@ Get the icon urls for a corporation.
 
 -   `corporationID`  {number} The corporation ID to get the icon of.
 
-Returns **[object][86]** Links to the different sizes of the corporation icon.
+Returns **[object][94]** Links to the different sizes of the corporation icon.
 
 ## info
 
@@ -114,13 +122,13 @@ Get public information about a corporation.
 
 -   `corporationID`  {number} The corporation ID to get info from.
 
-Returns **[object][86]** Public info on the corporation.
+Returns **[object][94]** Public info on the corporation.
 
 ## npcCorps
 
 Get a list of NPC corporations.
 
-Returns **[Array][84]&lt;[number][85]>** A array of all NPC corporations.
+Returns **[Array][92]&lt;[number][93]>** A array of all NPC corporations.
 
 ## blueprints
 
@@ -128,8 +136,8 @@ Get corporation blueprints.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]** Which page of results to return. Defaults to 1 (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]** Which page of results to return. Defaults to 1 (optional, default `1`)
 
 Returns **any** a list of blueprints the corporation owns.
 
@@ -139,8 +147,8 @@ Get all corporation ALSC logs.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]** Which page of results to return. Defaults to 1 (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]** Which page of results to return. Defaults to 1 (optional, default `1`)
 
 Returns **any** logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation.
 
@@ -150,7 +158,7 @@ Get corporation divisions.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** corporation hangar and wallet division names, only show if a division is not using the default name
 
@@ -160,87 +168,93 @@ Get corporation facilities.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** a corporation’s facilities.
 
 ## medals
 
+### medals
+
 Get corporation medals.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** a corporation’s medals.
 
-## issued
+### issued
 
 Get corporation issued medals.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** medals issued by a corporation.
 
 ## members
 
+### members
+
 Get corporation members.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** the current member list of a corporation, the token’s character need to be a member of the corporation.
 
-## limit
+### limit
 
 Get corporation member limit.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** a corporation’s member limit, not including CEO himself
 
-## titles
+### titles
 
 Get corporation's members' titles.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** a corporation’s members’ titles.
 
-## tracking
+### tracking
 
 Track corporation members.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** additional information about a corporation’s members which helps tracking their activities
 
 ## roles
 
+### roles
+
 Get corporation member roles.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** the roles of all members if the character has the personnel manager role or any grantable role.
 
-## history
+### history
 
 Get corporation member roles history.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** how roles have changed for a coporation’s members, up to a month
 
@@ -250,7 +264,7 @@ Get corporation shareholders.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** the current shareholders of a corporation.
 
@@ -260,30 +274,32 @@ Get corporation standings.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** corporation standings from agents, NPC corporations, and factions.
 
 ## starbases
 
+### starbases
+
 Get corporation starbases (POSes).
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 -   `page`   (optional, default `1`)
 
 Returns **any** list of corporation starbases (POSes).
 
-## info
+### info
 
 Get starbase (POS) detail.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `starbaseID` **[number][85]** 
--   `systemID` **[number][85]** The solar system this starbase (POS) is located in.
+-   `corporationID` **[number][93]** 
+-   `starbaseID` **[number][93]** 
+-   `systemID` **[number][93]** The solar system this starbase (POS) is located in.
 
 ## titles
 
@@ -291,7 +307,7 @@ Get corporation titles.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** a corporation’s titles.
 
@@ -301,216 +317,210 @@ Get corporation structures.
 
 ### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]**  (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]**  (optional, default `1`)
 
-Returns **any** a list of corporation structures. This route’s version includes the changes to structures detailed in this blog: [https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th][87]
-
-## locations
-
-Get corporation asset locations.
-
-### Parameters
-
--   `corporationID` **[number][85]** 
--   `itemIDs` **[Array][84]&lt;[number][85]>**  (optional, default `[]`)
-
-Returns **[JSON][88]** Locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
-
-## names
-
-Get corporation asset names.
-
-### Parameters
-
--   `corporationID` **[number][85]** 
--   `itemIDs` **[Array][84]&lt;[number][85]>** 
-
-Returns **[JSON][88]** Names for a set of item ids, which you can get from corporation assets endpoint. Typically used for items that can customize names, like containers or ships.
+Returns **any** a list of corporation structures. This route’s version includes the changes to structures detailed in this blog: [https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th][95]
 
 ## bookmarks
 
+### bookmarks
+
 List corporation bookmarks
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
-Returns **[JSON][88]** A list of your corporation’s personal bookmarks.
+Returns **[JSON][96]** A list of your corporation’s personal bookmarks.
 
-## folders
+### folders
 
 List corporation bookmark folders
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
-Returns **[JSON][88]** A list of your corporation’s personal bookmark folders.
+Returns **[JSON][96]** A list of your corporation’s personal bookmark folders.
 
 ## contacts
 
+### contacts
+
 Get corporation contacts.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
-Returns **[JSON][88]** 
+Returns **[JSON][96]** 
 
-## labels
+### labels
 
 Get corporation contact labels
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** esi-corporations.read_contacts.v1
 
 ## contracts
 
+### contracts
+
 Get corporation contracts.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
-## bids
+### bids
 
 Get corporation contract bids.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `contractID` **[number][85]** 
+-   `corporationID` **[number][93]** 
+-   `contractID` **[number][93]** 
 
 Returns **any** bids on a particular auction contract.
 
-## items
+### items
 
 Get corporation contract items.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `contractID` **[number][85]** 
+-   `corporationID` **[number][93]** 
+-   `contractID` **[number][93]** 
 
 Returns **any** items of a particular contract.
 
-## extractions
+## industry
+
+### extractions
 
 Moon extraction timers
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]** The page of results to return. (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]** The page of results to return. (optional, default `1`)
 
 Returns **any** Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.
 
-## observers
+### observers
 
 Corporation mining observers.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]** The page of results to return. (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]** The page of results to return. (optional, default `1`)
 
 Returns **any** Paginated list of all entities capable of observing and recording mining for a corporation
 
-## observerInfo
+### observerInfo
 
 Observed corporation mining
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `observerID` **[number][85]** 
--   `page` **[number][85]** The page of results to return. (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `observerID` **[number][93]** 
+-   `page` **[number][93]** The page of results to return. (optional, default `1`)
 
 Returns **any** Paginated record of all mining seen by an observer.
 
-## jobs
+### jobs
 
 List corporation industry jobs
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]** The page of results to return. (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]** The page of results to return. (optional, default `1`)
 
 Returns **any** industry jobs run by a corporation
 
-## recent
+## killmails
+
+### recent
 
 Get a corporation's recent kills and losses.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `page` **[number][85]** The page of results to return. (optional, default `1`)
+-   `corporationID` **[number][93]** 
+-   `page` **[number][93]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a corporation’s kills and losses going back 90 days.
 
-## orders
+## market
+
+### orders
 
 List open orders from a corporation.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
-## orderHistory
+### orderHistory
 
 List historical orders by a corporation.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
-## customsOffices
+## pi
+
+### customsOffices
 
 List corporation customs offices.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** customs offices owned by a corporation.
 
-## balance
+## wallets
+
+### balance
 
 Get a corporation's wallet balance.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
+-   `corporationID` **[number][93]** 
 
 Returns **any** a corporation’s wallets balance.
 
-## journal
+### journal
 
 Get corporation wallet journal.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `divisionID` **[number][85]** The division to get data from.
+-   `corporationID` **[number][93]** 
+-   `divisionID` **[number][93]** The division to get data from.
 
 Returns **any** the given corporation’s wallet journal going 30 days back.
 
-## transactions
+### transactions
 
 Get wallet transactions.
 
-### Parameters
+#### Parameters
 
--   `corporationID` **[number][85]** 
--   `divisionID` **[number][85]** The division to get data from.
+-   `corporationID` **[number][93]** 
+-   `divisionID` **[number][93]** The division to get data from.
 
 Returns **any** wallet transactions of a corporation.
 
@@ -546,146 +556,162 @@ Returns **any** wallet transactions of a corporation.
 
 [16]: #medals
 
-[17]: #parameters-7
+[17]: #medals-1
 
-[18]: #issued
+[18]: #parameters-7
 
-[19]: #parameters-8
+[19]: #issued
 
-[20]: #members
+[20]: #parameters-8
 
-[21]: #parameters-9
+[21]: #members
 
-[22]: #limit
+[22]: #members-1
 
-[23]: #parameters-10
+[23]: #parameters-9
 
-[24]: #titles
+[24]: #limit
 
-[25]: #parameters-11
+[25]: #parameters-10
 
-[26]: #tracking
+[26]: #titles
 
-[27]: #parameters-12
+[27]: #parameters-11
 
-[28]: #roles
+[28]: #tracking
 
-[29]: #parameters-13
+[29]: #parameters-12
 
-[30]: #history
+[30]: #roles
 
-[31]: #parameters-14
+[31]: #roles-1
 
-[32]: #shareholders
+[32]: #parameters-13
 
-[33]: #parameters-15
+[33]: #history
 
-[34]: #standings
+[34]: #parameters-14
 
-[35]: #parameters-16
+[35]: #shareholders
 
-[36]: #starbases
+[36]: #parameters-15
 
-[37]: #parameters-17
+[37]: #standings
 
-[38]: #info-1
+[38]: #parameters-16
 
-[39]: #parameters-18
+[39]: #starbases
 
-[40]: #titles-1
+[40]: #starbases-1
 
-[41]: #parameters-19
+[41]: #parameters-17
 
-[42]: #structures
+[42]: #info-1
 
-[43]: #parameters-20
+[43]: #parameters-18
 
-[44]: #locations
+[44]: #titles-1
 
-[45]: #parameters-21
+[45]: #parameters-19
 
-[46]: #names
+[46]: #structures
 
-[47]: #parameters-22
+[47]: #parameters-20
 
 [48]: #bookmarks
 
-[49]: #parameters-23
+[49]: #bookmarks-1
 
-[50]: #folders
+[50]: #parameters-21
 
-[51]: #parameters-24
+[51]: #folders
 
-[52]: #contacts
+[52]: #parameters-22
 
-[53]: #parameters-25
+[53]: #contacts
 
-[54]: #labels
+[54]: #contacts-1
 
-[55]: #parameters-26
+[55]: #parameters-23
 
-[56]: #contracts
+[56]: #labels
 
-[57]: #parameters-27
+[57]: #parameters-24
 
-[58]: #bids
+[58]: #contracts
 
-[59]: #parameters-28
+[59]: #contracts-1
 
-[60]: #items
+[60]: #parameters-25
 
-[61]: #parameters-29
+[61]: #bids
 
-[62]: #extractions
+[62]: #parameters-26
 
-[63]: #parameters-30
+[63]: #items
 
-[64]: #observers
+[64]: #parameters-27
 
-[65]: #parameters-31
+[65]: #industry
 
-[66]: #observerinfo
+[66]: #extractions
 
-[67]: #parameters-32
+[67]: #parameters-28
 
-[68]: #jobs
+[68]: #observers
 
-[69]: #parameters-33
+[69]: #parameters-29
 
-[70]: #recent
+[70]: #observerinfo
 
-[71]: #parameters-34
+[71]: #parameters-30
 
-[72]: #orders
+[72]: #jobs
 
-[73]: #parameters-35
+[73]: #parameters-31
 
-[74]: #orderhistory
+[74]: #killmails
 
-[75]: #parameters-36
+[75]: #recent
 
-[76]: #customsoffices
+[76]: #parameters-32
 
-[77]: #parameters-37
+[77]: #market
 
-[78]: #balance
+[78]: #orders
 
-[79]: #parameters-38
+[79]: #parameters-33
 
-[80]: #journal
+[80]: #orderhistory
 
-[81]: #parameters-39
+[81]: #parameters-34
 
-[82]: #transactions
+[82]: #pi
 
-[83]: #parameters-40
+[83]: #customsoffices
 
-[84]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[84]: #parameters-35
 
-[85]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[85]: #wallets
 
-[86]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[86]: #balance
 
-[87]: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th
+[87]: #parameters-36
 
-[88]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON
+[88]: #journal
+
+[89]: #parameters-37
+
+[90]: #transactions
+
+[91]: #parameters-38
+
+[92]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[93]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[94]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[95]: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th
+
+[96]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON

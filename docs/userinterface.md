@@ -2,61 +2,67 @@
 
 ### Table of Contents
 
--   [waypoint][1]
-    -   [Parameters][2]
--   [contract][3]
-    -   [Parameters][4]
--   [information][5]
-    -   [Parameters][6]
--   [marketDetails][7]
-    -   [Parameters][8]
--   [newMail][9]
-    -   [Parameters][10]
-    -   [Examples][11]
+-   [autopilot][1]
+    -   [waypoint][2]
+        -   [Parameters][3]
+-   [openWindow][4]
+    -   [contract][5]
+        -   [Parameters][6]
+    -   [information][7]
+        -   [Parameters][8]
+    -   [marketDetails][9]
+        -   [Parameters][10]
+    -   [newMail][11]
+        -   [Parameters][12]
+        -   [Examples][13]
 
-## waypoint
+## autopilot
+
+### waypoint
 
 Set Autopilot Waypoint.
 
-### Parameters
+#### Parameters
 
--   `destinationID` **[number][12]** The destination. Can be Station, Structure, or System.
+-   `destinationID` **[number][14]** The destination. Can be Station, Structure, or System.
 -   `addToBeginning` **any** Whether to add the destination to the beginning of the route. Defaults to false. (optional, default `false`)
 -   `clearOtherWaypoints` **any** Whether to clear all other waypoints before adding the destination. Defaults to false. (optional, default `false`)
 
-## contract
+## openWindow
+
+### contract
 
 Open Contract Window.
 
-### Parameters
+#### Parameters
 
--   `contractID` **[number][12]** The contract to open.
+-   `contractID` **[number][14]** The contract to open.
 
-## information
+### information
 
 Open Information Window
 
-### Parameters
+#### Parameters
 
--   `targetID` **[number][12]** The target to get the information of. Can be a character, corporation or alliance.
+-   `targetID` **[number][14]** The target to get the information of. Can be a character, corporation or alliance.
 
-## marketDetails
+### marketDetails
 
 Open Market Details.
 
-### Parameters
+#### Parameters
 
--   `itemID` **[number][12]** The item type to open in market window.
+-   `itemID` **[number][14]** The item type to open in market window.
 
-## newMail
+### newMail
 
 Open New Mail Window.
 
-### Parameters
+#### Parameters
 
--   `mail` **[object][13]** The details of mail to create. Example below.
+-   `mail` **[object][15]** The details of mail to create. Example below.
 
-### Examples
+#### Examples
 
 ```javascript
 {
@@ -70,28 +76,32 @@ Open New Mail Window.
 }
 ```
 
-[1]: #waypoint
+[1]: #autopilot
 
-[2]: #parameters
+[2]: #waypoint
 
-[3]: #contract
+[3]: #parameters
 
-[4]: #parameters-1
+[4]: #openwindow
 
-[5]: #information
+[5]: #contract
 
-[6]: #parameters-2
+[6]: #parameters-1
 
-[7]: #marketdetails
+[7]: #information
 
-[8]: #parameters-3
+[8]: #parameters-2
 
-[9]: #newmail
+[9]: #marketdetails
 
-[10]: #parameters-4
+[10]: #parameters-3
 
-[11]: #examples
+[11]: #newmail
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[12]: #parameters-4
 
-[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[13]: #examples
+
+[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

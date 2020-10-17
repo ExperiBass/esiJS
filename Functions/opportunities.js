@@ -4,7 +4,6 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * Return information of an opportunities group.
-
      * @param {number} groupID
      * @returns {object}
      */
@@ -21,7 +20,6 @@ module.exports = {
     },
     /**
      * Return a list of opportunities groups.
-
      * @returns {object}
      */
     groups() {

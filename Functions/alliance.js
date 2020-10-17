@@ -59,6 +59,9 @@ module.exports = {
             subUrl: `alliances/${allianceID}`
         })
     },
+    /**
+     *
+     */
     contacts: {
         /**
          * Get alliance contacts.

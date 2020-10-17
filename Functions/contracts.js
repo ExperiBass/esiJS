@@ -2,6 +2,9 @@ const request = require('./esiJS-Utils/request')
 const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
+    /**
+     *
+     */
     public: {
         /**
          * Lists bids on a public auction contract.

@@ -4,7 +4,6 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 module.exports = {
     /**
      * Get the systems between the origin and the destination.
-
      * @param {number} origin
      * @param {number} destination
      * @param {string} flag

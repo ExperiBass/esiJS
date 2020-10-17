@@ -2,32 +2,35 @@
 
 ### Table of Contents
 
--   [groupInfo][1]
-    -   [Parameters][2]
--   [groups][3]
--   [history][4]
-    -   [Parameters][5]
--   [orders][6]
-    -   [Parameters][7]
--   [prices][8]
--   [types][9]
-    -   [Parameters][10]
-
-## groupInfo
-
-Get information on an item group.
-
-### Parameters
-
--   `groupID` **[number][11]** 
-
-Returns **[object][12]** 
+-   [groups][1]
+    -   [groupInfo][2]
+        -   [Parameters][3]
+    -   [groups][4]
+-   [history][5]
+    -   [Parameters][6]
+-   [orders][7]
+    -   [Parameters][8]
+-   [prices][9]
+-   [types][10]
+    -   [Parameters][11]
 
 ## groups
 
+### groupInfo
+
+Get information on an item group.
+
+#### Parameters
+
+-   `groupID` **[number][12]** 
+
+Returns **[object][13]** 
+
+### groups
+
 Get a list of item groups.
 
-Returns **\[[number][11]]** 
+Returns **\[[number][12]]** 
 
 ## history
 
@@ -35,10 +38,10 @@ Return a list of historical market statistics for the specified type in a region
 
 ### Parameters
 
--   `regionID` **[number][11]** 
--   `typeID` **[number][11]** 
+-   `regionID` **[number][12]** 
+-   `typeID` **[number][12]** 
 
-Returns **[object][12]** 
+Returns **[object][13]** 
 
 ## orders
 
@@ -46,16 +49,16 @@ Return a list of orders in a region.
 
 ### Parameters
 
--   `regionID` **[number][11]** 
--   `typeID` **[number][11]** 
--   `bOs` **[string][13]**  (optional, default `'all'`)
--   `pageNumber` **[number][11]**  (optional, default `1`)
+-   `regionID` **[number][12]** 
+-   `typeID` **[number][12]** 
+-   `bOs` **[string][14]**  (optional, default `'all'`)
+-   `pageNumber` **[number][12]**  (optional, default `1`)
 
 ## prices
 
 Return a list of prices.
 
-Returns **[object][12]** 
+Returns **[object][13]** 
 
 ## types
 
@@ -63,33 +66,35 @@ Return a list of type IDs that have active orders in the region, for efficient m
 
 ### Parameters
 
--   `regionID` **[number][11]** 
--   `pageNumber` **[number][11]**  (optional, default `1`)
+-   `regionID` **[number][12]** 
+-   `pageNumber` **[number][12]**  (optional, default `1`)
 
-Returns **[object][12]** 
+Returns **[object][13]** 
 
-[1]: #groupinfo
+[1]: #groups
 
-[2]: #parameters
+[2]: #groupinfo
 
-[3]: #groups
+[3]: #parameters
 
-[4]: #history
+[4]: #groups-1
 
-[5]: #parameters-1
+[5]: #history
 
-[6]: #orders
+[6]: #parameters-1
 
-[7]: #parameters-2
+[7]: #orders
 
-[8]: #prices
+[8]: #parameters-2
 
-[9]: #types
+[9]: #prices
 
-[10]: #parameters-3
+[10]: #types
 
-[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[11]: #parameters-3
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

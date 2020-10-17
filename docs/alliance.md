@@ -10,15 +10,16 @@
 -   [info][6]
     -   [Parameters][7]
 -   [contacts][8]
-    -   [Parameters][9]
--   [labels][10]
-    -   [Parameters][11]
+    -   [contacts][9]
+        -   [Parameters][10]
+    -   [labels][11]
+        -   [Parameters][12]
 
 ## alliances
 
 List all active player alliances.
 
-Returns **[Array][12]&lt;[number][13]>** A array of all active player alliances.
+Returns **[Array][13]&lt;[number][14]>** A array of all active player alliances.
 
 ## corps
 
@@ -29,7 +30,7 @@ Get all current member alliances of an alliance.
 -   `allianceID`  
 -   `ID`  {number} The alliance ID to get the alliances from.
 
-Returns **[Array][12]&lt;[number][13]>** The alliances in the alliance.
+Returns **[Array][13]&lt;[number][14]>** The alliances in the alliance.
 
 ## icon
 
@@ -39,7 +40,7 @@ Get the icon urls for a alliance.
 
 -   `allianceID`  {number} The alliance ID to get the icon of.
 
-Returns **[object][14]** Links to the different sizes of the alliance icon.
+Returns **[object][15]** Links to the different sizes of the alliance icon.
 
 ## info
 
@@ -50,27 +51,29 @@ Get public information about an alliance.
 -   `allianceID`  
 -   `ID`  {number} The alliance ID to get info from.
 
-Returns **[object][14]** Public info on the alliance.
+Returns **[object][15]** Public info on the alliance.
 
 ## contacts
 
+### contacts
+
 Get alliance contacts.
 
-### Parameters
+#### Parameters
 
--   `allianceID` **[number][13]** 
+-   `allianceID` **[number][14]** 
 
-Returns **[JSON][15]** 
+Returns **[JSON][16]** 
 
-## labels
+### labels
 
 Get alliance contact labels
 
-### Parameters
+#### Parameters
 
--   `allianceID` **[number][13]** 
+-   `allianceID` **[number][14]** 
 
-Returns **[JSON][15]** 
+Returns **[JSON][16]** 
 
 [1]: #alliances
 
@@ -88,16 +91,18 @@ Returns **[JSON][15]**
 
 [8]: #contacts
 
-[9]: #parameters-3
+[9]: #contacts-1
 
-[10]: #labels
+[10]: #parameters-3
 
-[11]: #parameters-4
+[11]: #labels
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[12]: #parameters-4
 
-[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON
+[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON
