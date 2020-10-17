@@ -1,11 +1,15 @@
 const path = require('path')
 let log = require('./Functions/esiJS-Utils/log')
 const fs = require('fs')
-/**
- * 
- * @param {object} - The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
- */
+
 let esiJS = class {
+    /**
+     * The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
+     * @example
+     * let esiClient = new esiJS({
+     * logging: false,
+     * token: "THIS_IS_A_TOKEN"})
+     */
     constructor({
         logging = true,
         token = ''
