@@ -1,42 +1,132 @@
+const path = require('path')
+const fs = require('fs')
+const throwError = require('./esiJS-Utils/throwError')
+let log = require('./esiJS-Utils/log')
+const localConfig = path.join(__dirname, `../esi.json`)
+const projectConfig = path.join(__dirname, '../../../esi.json')
+const projectPath = path.join(__dirname, `../../../`)
+
+/**
+ * @private
+ * @param {boolean} logging
+ */
+function checkForConfig(logging) {
+    // Check for a ESI config file in the project directory
+    if (logging = true) {
+        log = () => {}
+    }
+    try {
+        log(`Checking for a config file in ${projectPath}...`, 'INFO')
+        let fileExists = fs.existsSync(projectConfig)
+
+        // If the file exists...
+        if (fileExists) {
+
+            // ...see if we can read it...
+            try {
+                log(`Config file exists! Checking if I can read it...`, 'INFO')
+                fs.accessSync(projectConfig, fs.constants.R_OK)
+
+                // ...then see if we can write into it
+                try {
+                    log(`I can read it! Checking if I can write into it...`, 'INFO')
+                    fs.accessSync(projectConfig, fs.constants.W_OK)
+                } catch (e) {
+                    log(`Couldn't write to 'esi.json', reverting to default configuration`, 'WARNING')
+                    return false
+                }
+            } catch (e) {
+                log(`Couldn't read config file, reverting to default configuration`, 'WARNING')
+                return false
+            }
+
+        } else {
+            // If the file doesn't exist...
+            log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}...`, 'INFO')
+            try {
+                // ...attempt to create it
+                fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
+                log(`Sucessfully created config file in ${projectPath}!`, 'INFO')
+            } catch (e) {
+                throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
+            }
+            return false
+        }
+
+    } catch (e) {
+        return false
+    }
+    log(`I can read the config file!`, 'INFO')
+    return true
+}
 module.exports = {
     /**
      * Gets the settings for esiJS.
-     * @returns {object} A JSON object with the settings.
+     * @returns {JSON} A JSON object with the settings.
      */
     getSettings() {
-        let path = require('path')
-        let join = path.join(__dirname, `../esi.json`)
-        const fs = require('fs')
-        let settings = fs.readFileSync(join,'Utf8')
+        let settings;
+
+        if (checkForConfig(true)) {
+            log(`Reading project config file in ${projectPath}...`, 'INFO')
+            settings = fs.readFileSync(projectConfig, 'utf8')
+            return JSON.parse(settings)
+        } else {
+            log(`No project config file! Attempting to revert to default configuration...`, 'WARN')
+            settings = fs.readFileSync(localConfig, 'utf8')
+        }
         return JSON.parse(settings)
     },
     /**
      * Sets the settings for esiJS.
-     * @param {string} link 
-     * @param {string} dataSource 
-     * @returns true
+     * @param {string} route Any of the valid routes through ESI.
+     * @param {string} authToken A valid auth token.
+     * @param {string} language A valid language code.
+     * @param {string} programName The name of your project, used by esiJS to pass in as a header.
+     * @returns {Boolean} True if it was able to sucessfully write. Otherwise, a error.
      */
-    setSettings(link = 'latest', dataSource = 'tranquility') {
-        const fs = require('fs')
-        let path = require('path')
-        let join = path.join(__dirname, '../../esi.json')
-        let server = 'https://esi.evetech.net/'
-        let paths = 'latest v1 legacy dev'.split(' ')
-        let DS = 'tranquility singularity'.split(' ')
-    
-        if (!link || !paths.includes(link) || !dataSource || !DS.includes(dataSource)) {
-            throw Error(`setSettings needs first arg to be one of these: ${paths}, and second arg to be one of these: ${DS}`)
+    setSettings({
+        route,
+        authToken,
+        language,
+        programName
+    }) {
+        if (checkForConfig()) {
+            let server = 'esi.evetech.net'
+            let routes = ['latest', 'v1', 'legacy', 'dev']
+            let currentSettings = this.getSettings()
+
+            // Check if settings are already set, and dont change if not neededx
+            route = route || currentSettings.route
+            authToken = authToken || currentSettings.authToken
+            language = language || currentSettings.language
+            programName = programName || currentSettings.programName
+
+
+            if (!route || !routes.includes(route)) {
+                throw throwError(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
+            }
+            route = `https://${server}/${route}/`
+            try {
+                fs.writeFileSync(projectConfig, JSON.stringify({
+                    programName,
+                    route,
+                    authToken,
+                    language
+                }, null, 2))
+                log(`Sucessfully updated config!`, 'INFO')
+            } catch (e) {
+                throw throwError(`Couldn't write config file! Error:\n${e}`)
+            }
+            return true
         }
-    
-        link = `${server}${link}/`
-        fs.writeFileSync(join, JSON.stringify( { link, dataSource }, null, 2) )
-        return true
+        throw throwError(`If you are seeing this error, 2 + 2 is not equal to 4 and your life is a lie.`, 'THIS_SHOULDNT_EVER_HAPPEN')
     },
     /**
      * Pause execution of code for a specified amount of time.
-     * @exports sleep
-     * @async
-     * @param millis {number} The time to delay (in milliseconds)
+
+     * @param {number} millis The time to delay (in milliseconds)
+     * @returns {Promise<function>}
      */
     async sleep(millis) {
         return new Promise(resolve => setTimeout(resolve, millis))

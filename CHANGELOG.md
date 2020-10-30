@@ -34,6 +34,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Removed
 - `addArrays`
 
+#### Removed
+- `CONTRIBUTING.md`
+
+### [v4.0.0] - 2020 10 30
+#### Added
+- Support for authenticated routes
+- Support for tokens
+- Support for getting requested data in a different language
+- Local configuration file
+- Methods return headers along with data
+#### Changed
+- Package is now a class
+#### Removed
+- Datasource modification (ESI has removed Singularity data)
+
 ## Minor Releases:
 ### [v1.0.1] - 2019 06 29
 #### Added
@@ -52,22 +67,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [v2.1.2] - 2019 07 12
 #### Changed
 - `Lodash` security fix
+
 ### [v3.0.2] - 2019 08 24
 #### Changed
 - Fixed some bugs with the refactoring
+
 ### [v3.0.4] - 2019 12 11
 - Added warning for next major release
 - Fixed issues with some endpoints
 - Fixed a issue with a variable already being declared
-### [v3.0.5] - 2019 12 16
-- Fixed a issue with the market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/GingkathFox/esiJS/pull/11))
 
+### [v3.0.5] - 2019 12 16
+- Fixed a issue with the `market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/GingkathFox/esiJS/pull/11))
 - Typos
-### [v3.0.6] - 2019 12 22
-- Fixed a issue where webpack cant import `killmails.js` becuase of camelcase ([@GeekyAubergine](https://github.com/GeekyAubergine), [#12](https://github.com/GingkathFox/esiJS/issues/12))
 
 <!-- LINKS -->
 <!-- RELEASES -->
-[Unreleased]: https://github.com/GingkathFox/EveJS/compare/v0.1.1...dev
-[v0.1.1]: https://github.com/GingkathFox/EveJS/compare/v0.1.0...v0.1.1
+[Unreleased]: https://github.com/GingkathFox/esiJS/compare/v0.1.1...dev
+[v0.1.1]: https://github.com/GingkathFox/esiJS/compare/v0.1.0...v0.1.1
+[v2.0.0]: https://github.com/GingkathFox/esiJS/compare/v0.1.1...v2.0.0
+[v2.1.2]: https://github.com/GingkathFox/esiJS/compare/v2.0.0...v2.1.2
+[v3.0.0]: https://github.com/GingkathFox/esiJS/compare/v2.1.2...v3.0.0
+[v3.0.2]: https://github.com/GingkathFox/esiJS/compare/v3.0.0...v3.0.2
+[v4.0.0]: https://github.com/GingkathFox/esiJS/compare/v3.0.2...v4.0.0
 <!-- ISSUES -->

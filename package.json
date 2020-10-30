@@ -1,36 +1,31 @@
 {
-  "name": "esijs",
-  "version": "3.0.6",
-  "description": "A simple library for EVE Online.",
-  "main": "endpoints.js",
-  "module": "endpoints.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "keywords": [
-    "eve-online",
-    "esi",
-    "eve"
-  ],
-  "author": "ExperiBass",
-  "license": "GPL-3.0",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "lodash": "^4.17.15"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.1.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GingkathFox/esiJS.git"
-  },
-  "bugs": {
-    "url": "https://github.com/GingkathFox/esiJS/issues"
-  },
-  "homepage": "https://github.com/GingkathFox/esiJS#readme",
-  "directories": {
-    "test": "test"
-  }
+    "name": "esijs",
+    "version": "4.0.0",
+    "description": "A simple module for ESI.",
+    "main": "class.js",
+    "scripts": {
+        "build-docs": "node buildDocs.js"
+    },
+    "keywords": [
+        "eve-online",
+        "esi",
+        "eve"
+    ],
+    "author": "ExperiBass",
+    "license": "GPL-3.0",
+    "dependencies": {
+        "axios": "^0.20.0",
+        "chalk": "^3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GingkathFox/esiJS.git"
+    },
+    "bugs": {
+        "url": "https://github.com/GingkathFox/esiJS/issues"
+    },
+    "homepage": "https://github.com/GingkathFox/esiJS#readme",
+    "devDependencies": {
+        "documentation": "~13.0.2"
+    }
 }
