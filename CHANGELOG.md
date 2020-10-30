@@ -37,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Removed
 - `CONTRIBUTING.md`
 
-### [v4.0.0] - 2020 10 30
+### [v4.0.1] - 2020 10 30
 #### Added
 - Support for authenticated routes
 - Support for tokens
@@ -48,6 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Package is now a class
 #### Removed
 - Datasource modification (ESI has removed Singularity data)
+#### Additional Info
+- Version is `4.0.1` because I (for some reason) can't publish it as `4.0.0`.
 
 ## Minor Releases:
 ### [v1.0.1] - 2019 06 29
@@ -89,5 +91,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v2.1.2]: https://github.com/GingkathFox/esiJS/compare/v2.0.0...v2.1.2
 [v3.0.0]: https://github.com/GingkathFox/esiJS/compare/v2.1.2...v3.0.0
 [v3.0.2]: https://github.com/GingkathFox/esiJS/compare/v3.0.0...v3.0.2
-[v4.0.0]: https://github.com/GingkathFox/esiJS/compare/v3.0.2...v4.0.0
+[v4.0.1]: https://github.com/GingkathFox/esiJS/compare/v3.0.2...v4.0.1
 <!-- ISSUES -->
