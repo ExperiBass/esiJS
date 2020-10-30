@@ -1,27 +1,32 @@
 const path = require('path')
-let log = require('./Functions/esiJS-Utils/log')
+let log = require('./Functions/esiJS-Utils/log') // is reassigned if logging is false
 const fs = require('fs')
 
+/**
+ * The esiClient class.
+ */
 let esiJS = class {
     /**
      * The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
+     * `logging` defaults to `true`.
      * @example
      * let esiClient = new esiJS({
-     * logging: false,
-     * token: "THIS_IS_A_TOKEN"})
+     *     logging: false, // Disables logging
+     *     token: "THIS_IS_A_TOKEN"
+     * })
      */
     constructor({
         logging = true,
         token = ''
     }) {
-        /**
-         * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
-         */
         if (!logging) {
             log = () => {}
         }
-        const projectConfig = path.join(__dirname, '../../esi.json')
-        const projectPath = path.join(__dirname, `../../`)
+        /**
+         * Checks for a config file in 'projectPath'. If it exists, it checks if it can read and write to the file. If not, it creates one.
+         */
+        const projectConfig = path.normalize(path.join(__dirname, '../../esi.json'))
+        const projectPath = path.normalize(path.join(__dirname, `../../`))
         // Check for a ESI config file in the project directory
         try {
             log(`Checking for a config file in ${projectPath}...`, 'INFO')

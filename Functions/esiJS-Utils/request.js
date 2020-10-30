@@ -91,7 +91,8 @@ function makeRequest ({ subUrl, body, query, requestType = 'GET', needsAuth = fa
             break;
         }
         default: {
-            throw throwError(`ESIJS ERROR: Endpoint function not configured properly. Please report this error on the GitHub repository. Error:\n${e.stack}`)
+            const url = fullURL.split('&token')[0]
+            throw throwError(`ESIJS ERROR: Endpoint function not configured properly. Please report this error on the GitHub repository. Error:\n${e.stack}`, 'ESIJS_ERROR', url)
         }
     }
 

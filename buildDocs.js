@@ -21,7 +21,7 @@ async function build() {
             console.log(Chalk.green(`Docs for ${file} built.`))
         }
     }
-    // now rebuild the util, except this time dont ignore the functions
+    // now rebuild the util, except this time dont ignore the util functions
     let file = `utility.js`
     console.log(Chalk.yellow(`Building docs for ${file}...`))
     let doc = await documentation.build([`${path.join(__dirname, `./Functions/${file}`)}`], {

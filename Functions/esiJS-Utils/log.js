@@ -9,7 +9,6 @@ let chalk = require('chalk')
  */
 function log(message, type = 'info') {
     if (message) {
-
         switch (type.toLowerCase()) {
             case 'info': {
                 console.log(`${chalk.green(`[esiJS:${type.toUpperCase()}]:`)} ${message}`)
@@ -19,6 +18,9 @@ function log(message, type = 'info') {
             case 'warning': {
                 console.log(`${chalk.yellow(`[esiJS:${type.toUpperCase()}]:`)} ${message}`)
                 break
+            }
+            default: {
+                return
             }
         }
     }
