@@ -223,12 +223,14 @@
 
 ## affiliation
 
-Bulk lookup of character IDs to fetch corporation, alliance, and faction affiliations for. All characters must exist, or none will be returned.
+Bulk lookup of character IDs to receive respective corporation, alliance, and faction IDs.
+All characters must exist, or none will be returned.
+
 ### Parameters
 
--   `characterIdArray` {Number[]} The array of character IDs to get affiliations for.
+-   `characterIdArray`  {Number\[]} The array of character IDs to get info from.
 
-Returns **[JSON][219]** Array of objects containing each character ID and its respective corporation ID, alliance ID (if any), and faction ID (if any).
+Returns **[Array][219]&lt;[JSON][220]>** Corporation, alliance, and faction IDs for each character ID.
 
 ## corpHistory
 
@@ -238,7 +240,7 @@ Get a list of all the corporations a character has been a member of.
 
 -   `characterID`  {number} The character to get the history of.
 
-Returns **[JSON][219]** The character's history.
+Returns **[JSON][220]** The character's history.
 
 ## portrait
 
@@ -248,7 +250,7 @@ Get portrait urls for a character.
 
 -   `characterID`  {number} The character to get the portrait of.
 
-Returns **[JSON][219]** Links to the different sizes of the character's portrait.
+Returns **[JSON][220]** Links to the different sizes of the character's portrait.
 
 ## info
 
@@ -258,7 +260,7 @@ Get public information about a character.
 
 -   `characterID`  {number} The character to get the public info of.
 
-Returns **[JSON][219]** Public info on a character.
+Returns **[JSON][220]** Public info on a character.
 
 ## agentsResearch
 
@@ -266,9 +268,9 @@ Gets agents research.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay \* days(currentTime - researchStartDate)
+Returns **[JSON][220]** A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay \* days(currentTime - researchStartDate)
 
 ## blueprints
 
@@ -276,9 +278,9 @@ Get blueprints.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A list of blueprints the character owns.
+Returns **[JSON][220]** A list of blueprints the character owns.
 
 ## cspa
 
@@ -286,10 +288,10 @@ Calculate a CSPA (CONCORD Spam Prevention Act) cost.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `characters` **\[numbers]** The target characters to calculate the charge for. (optional, default `[]`)
 
-Returns **[JSON][219]** A CSPA charge cost.
+Returns **[JSON][220]** A CSPA charge cost.
 
 ## fatigue
 
@@ -297,9 +299,9 @@ Get jump fatigue.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A character’s jump activation and fatigue information.
+Returns **[JSON][220]** A character’s jump activation and fatigue information.
 
 ## medals
 
@@ -307,9 +309,9 @@ Get medals.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A list of medals the character has.
+Returns **[JSON][220]** A list of medals the character has.
 
 ## roles
 
@@ -317,9 +319,9 @@ Get character corporation roles.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A character’s corporation roles.
+Returns **[JSON][220]** A character’s corporation roles.
 
 ## standings
 
@@ -327,9 +329,9 @@ Get standings.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** Character standings from agents, NPC corporations, and factions.
+Returns **[JSON][220]** Character standings from agents, NPC corporations, and factions.
 
 ## stats
 
@@ -337,9 +339,9 @@ Yearly aggregate stats.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** Aggregate yearly stats for a character.
+Returns **[JSON][220]** Aggregate yearly stats for a character.
 
 ## titles
 
@@ -347,9 +349,9 @@ Get character corporation titles.
 
 ### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A character’s titles.
+Returns **[JSON][220]** A character’s titles.
 
 ## bookmarks
 
@@ -359,9 +361,9 @@ List bookmarks
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A list of your character’s personal bookmarks.
+Returns **[JSON][220]** A list of your character’s personal bookmarks.
 
 ### folders
 
@@ -369,9 +371,9 @@ List bookmark folders
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A list of your character’s personal bookmark folders.
+Returns **[JSON][220]** A list of your character’s personal bookmark folders.
 
 ## calendar
 
@@ -381,10 +383,10 @@ List calendar event summaries.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `fromEvent` **[number][220]** OPTIONAL - The event ID to start retrieving events from.
+-   `characterID` **[number][221]** 
+-   `fromEvent` **[number][221]** OPTIONAL - The event ID to start retrieving events from.
 
-Returns **[JSON][219]** Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
+Returns **[JSON][220]** Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
 
 ### respond
 
@@ -392,32 +394,10 @@ Respond to a event.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `eventID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `eventID` **[number][221]** 
 
-Returns **[string][221]** Set your response status to a event.
-
-## clones
-
-### clones
-
-Get clones.
-
-#### Parameters
-
--   `characterID` **[number][220]** 
-
-Returns **[JSON][219]** A list of the character’s clones.
-
-### implants
-
-Get active implants.
-
-#### Parameters
-
--   `characterID` **[number][220]** 
-
-Returns **[JSON][219]** Implants on the active clone of a character.
+Returns **[string][222]** Set your response status to a event.
 
 ## clones
 
@@ -427,9 +407,9 @@ Get clones.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** A list of the character’s clones.
+Returns **[JSON][220]** A list of the character’s clones.
 
 ### implants
 
@@ -437,9 +417,31 @@ Get active implants.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** Implants on the active clone of a character.
+Returns **[JSON][220]** Implants on the active clone of a character.
+
+## clones
+
+### clones
+
+Get clones.
+
+#### Parameters
+
+-   `characterID` **[number][221]** 
+
+Returns **[JSON][220]** A list of the character’s clones.
+
+### implants
+
+Get active implants.
+
+#### Parameters
+
+-   `characterID` **[number][221]** 
+
+Returns **[JSON][220]** Implants on the active clone of a character.
 
 ## contacts
 
@@ -449,9 +451,9 @@ Get contacts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### addContacts
 
@@ -459,10 +461,10 @@ Bulk add contacts with same settings
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contacts` **[Array][222]&lt;[number][220]>** 
+-   `characterID` **[number][221]** 
+-   `contacts` **[Array][219]&lt;[number][221]>** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### deleteContacts
 
@@ -470,10 +472,10 @@ Bulk delete contacts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contacts` **[Array][222]&lt;[number][220]>** 
+-   `characterID` **[number][221]** 
+-   `contacts` **[Array][219]&lt;[number][221]>** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### editContacts
 
@@ -481,10 +483,10 @@ Bulk edit contacts with same settings
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contacts` **[Array][222]&lt;[number][220]>** 
+-   `characterID` **[number][221]** 
+-   `contacts` **[Array][219]&lt;[number][221]>** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ## contacts
 
@@ -494,9 +496,9 @@ Get contacts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### addContacts
 
@@ -504,10 +506,10 @@ Bulk add contacts with same settings
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contacts` **[Array][222]&lt;[number][220]>** 
+-   `characterID` **[number][221]** 
+-   `contacts` **[Array][219]&lt;[number][221]>** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### deleteContacts
 
@@ -515,10 +517,10 @@ Bulk delete contacts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contacts` **[Array][222]&lt;[number][220]>** 
+-   `characterID` **[number][221]** 
+-   `contacts` **[Array][219]&lt;[number][221]>** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### editContacts
 
@@ -526,10 +528,10 @@ Bulk edit contacts with same settings
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contacts` **[Array][222]&lt;[number][220]>** 
+-   `characterID` **[number][221]** 
+-   `contacts` **[Array][219]&lt;[number][221]>** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ## contracts
 
@@ -539,7 +541,7 @@ Get contracts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
@@ -549,8 +551,8 @@ Get contract bids
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contractID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `contractID` **[number][221]** 
 
 Returns **any** bids on a particular auction contract.
 
@@ -560,8 +562,8 @@ Get contract items
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contractID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `contractID` **[number][221]** 
 
 Returns **any** items of a particular contract.
 
@@ -573,7 +575,7 @@ Get contracts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
@@ -583,8 +585,8 @@ Get contract bids
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contractID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `contractID` **[number][221]** 
 
 Returns **any** bids on a particular auction contract.
 
@@ -594,8 +596,8 @@ Get contract items
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contractID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `contractID` **[number][221]** 
 
 Returns **any** items of a particular contract.
 
@@ -607,7 +609,7 @@ Get contracts
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
@@ -617,8 +619,8 @@ Get contract bids
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contractID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `contractID` **[number][221]** 
 
 Returns **any** bids on a particular auction contract.
 
@@ -628,8 +630,8 @@ Get contract items
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `contractID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `contractID` **[number][221]** 
 
 Returns **any** items of a particular contract.
 
@@ -641,9 +643,9 @@ List character industry jobs.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### ledger
 
@@ -651,7 +653,7 @@ Character mining ledger.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `page`   (optional, default `1`)
 
 Returns **any** Paginated record of all mining done by a character for the past 30 days
@@ -664,9 +666,9 @@ List character industry jobs.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### ledger
 
@@ -674,7 +676,7 @@ Character mining ledger.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `page`   (optional, default `1`)
 
 Returns **any** Paginated record of all mining done by a character for the past 30 days
@@ -687,9 +689,9 @@ List character industry jobs.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** 
+Returns **[JSON][220]** 
 
 ### ledger
 
@@ -697,7 +699,7 @@ Character mining ledger.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `page`   (optional, default `1`)
 
 Returns **any** Paginated record of all mining done by a character for the past 30 days
@@ -710,9 +712,9 @@ Get character notifications.
 
 #### Parameters
 
--   `characterID` **[number][220]** The character to get the notifications of.
+-   `characterID` **[number][221]** The character to get the notifications of.
 
-Returns **[JSON][219]** Character notifications.
+Returns **[JSON][220]** Character notifications.
 
 ### contacts
 
@@ -720,9 +722,9 @@ Get new contact notifications.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** Notifications about having been added to someone’s contact list.
+Returns **[JSON][220]** Notifications about having been added to someone’s contact list.
 
 ## notifications
 
@@ -732,9 +734,9 @@ Get character notifications.
 
 #### Parameters
 
--   `characterID` **[number][220]** The character to get the notifications of.
+-   `characterID` **[number][221]** The character to get the notifications of.
 
-Returns **[JSON][219]** Character notifications.
+Returns **[JSON][220]** Character notifications.
 
 ### contacts
 
@@ -742,9 +744,9 @@ Get new contact notifications.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** Notifications about having been added to someone’s contact list.
+Returns **[JSON][220]** Notifications about having been added to someone’s contact list.
 
 ## notifications
 
@@ -754,9 +756,9 @@ Get character notifications.
 
 #### Parameters
 
--   `characterID` **[number][220]** The character to get the notifications of.
+-   `characterID` **[number][221]** The character to get the notifications of.
 
-Returns **[JSON][219]** Character notifications.
+Returns **[JSON][220]** Character notifications.
 
 ### contacts
 
@@ -764,9 +766,9 @@ Get new contact notifications.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
-Returns **[JSON][219]** Notifications about having been added to someone’s contact list.
+Returns **[JSON][220]** Notifications about having been added to someone’s contact list.
 
 ## killmails
 
@@ -776,8 +778,8 @@ Get a character's recent kills and losses.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `page` **[number][220]** The page of results to return. (optional, default `1`)
+-   `characterID` **[number][221]** 
+-   `page` **[number][221]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a character’s kills and losses going back 90 days.
 
@@ -789,8 +791,8 @@ Get a character's recent kills and losses.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `page` **[number][220]** The page of results to return. (optional, default `1`)
+-   `characterID` **[number][221]** 
+-   `page` **[number][221]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a character’s kills and losses going back 90 days.
 
@@ -802,8 +804,8 @@ Get a character's recent kills and losses.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `page` **[number][220]** The page of results to return. (optional, default `1`)
+-   `characterID` **[number][221]** 
+-   `page` **[number][221]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a character’s kills and losses going back 90 days.
 
@@ -815,7 +817,7 @@ Send a new mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `mail` **[object][223]** The mail to send. Mail structure is below.
 
 #### Examples
@@ -840,8 +842,8 @@ Update metadata about a mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `mailID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `mailID` **[number][221]** 
 -   `contents` **[object][223]** Structure below.
 
 #### Examples
@@ -861,8 +863,8 @@ Delete a mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `mailID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `mailID` **[number][221]** 
 
 ### labels
 
@@ -870,7 +872,7 @@ Get mail labels and unread counts.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a list of the users mail labels, unread counts for each label and a total unread count.
 
@@ -880,7 +882,7 @@ Create a mail label.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `label` **[object][223]** Label example below.
 
 #### Examples
@@ -898,8 +900,8 @@ Delete a mail label.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `labelID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `labelID` **[number][221]** 
 
 ### mailingLists
 
@@ -907,7 +909,7 @@ Get mailing list subscriptions.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** all mailing lists that the character is subscribed to.
 
@@ -919,7 +921,7 @@ Send a new mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `mail` **[object][223]** The mail to send. Mail structure is below.
 
 #### Examples
@@ -944,8 +946,8 @@ Update metadata about a mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `mailID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `mailID` **[number][221]** 
 -   `contents` **[object][223]** Structure below.
 
 #### Examples
@@ -965,8 +967,8 @@ Delete a mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `mailID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `mailID` **[number][221]** 
 
 ### labels
 
@@ -974,7 +976,7 @@ Get mail labels and unread counts.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a list of the users mail labels, unread counts for each label and a total unread count.
 
@@ -984,7 +986,7 @@ Create a mail label.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `label` **[object][223]** Label example below.
 
 #### Examples
@@ -1002,8 +1004,8 @@ Delete a mail label.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `labelID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `labelID` **[number][221]** 
 
 ### mailingLists
 
@@ -1011,7 +1013,7 @@ Get mailing list subscriptions.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** all mailing lists that the character is subscribed to.
 
@@ -1023,7 +1025,7 @@ Send a new mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `mail` **[object][223]** The mail to send. Mail structure is below.
 
 #### Examples
@@ -1048,8 +1050,8 @@ Update metadata about a mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `mailID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `mailID` **[number][221]** 
 -   `contents` **[object][223]** Structure below.
 
 #### Examples
@@ -1069,8 +1071,8 @@ Delete a mail.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `mailID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `mailID` **[number][221]** 
 
 ### labels
 
@@ -1078,7 +1080,7 @@ Get mail labels and unread counts.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a list of the users mail labels, unread counts for each label and a total unread count.
 
@@ -1088,7 +1090,7 @@ Create a mail label.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 -   `label` **[object][223]** Label example below.
 
 #### Examples
@@ -1106,8 +1108,8 @@ Delete a mail label.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `labelID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `labelID` **[number][221]** 
 
 ### mailingLists
 
@@ -1115,7 +1117,7 @@ Get mailing list subscriptions.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** all mailing lists that the character is subscribed to.
 
@@ -1127,7 +1129,7 @@ List open orders from a character.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 ### orderHistory
 
@@ -1135,7 +1137,7 @@ List historical orders by a character.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 ## market
 
@@ -1145,7 +1147,7 @@ List open orders from a character.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 ### orderHistory
 
@@ -1153,7 +1155,7 @@ List historical orders by a character.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 ## market
 
@@ -1163,7 +1165,7 @@ List open orders from a character.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 ### orderHistory
 
@@ -1171,7 +1173,7 @@ List historical orders by a character.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 ## opportunities
 
@@ -1181,7 +1183,7 @@ Get a character's completed tasks
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a list of tasks finished by a character.
 
@@ -1193,7 +1195,7 @@ Get a character's completed tasks
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a list of tasks finished by a character.
 
@@ -1205,7 +1207,7 @@ Get colonies.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a list of all planetary colonies owned by a character.
 
@@ -1215,8 +1217,8 @@ Get colony layout.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
--   `planetID` **[number][220]** 
+-   `characterID` **[number][221]** 
+-   `planetID` **[number][221]** 
 
 Returns **any** full details on the layout of a single planetary colony, including links, pins and routes.
 Note: Planetary information is only recalculated when the colony is viewed through the client.
@@ -1230,7 +1232,7 @@ Get character attributes.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** attributes of a character.
 
@@ -1240,7 +1242,7 @@ Get character's skill queue.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** the configured skill queue for the given character
 
@@ -1250,7 +1252,7 @@ Get character skills.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** all trained skills for the given character.
 
@@ -1262,7 +1264,7 @@ Get a character's wallet balance.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** a character’s wallet balance.
 
@@ -1272,7 +1274,7 @@ Get character wallet journal.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** the given character’s wallet journal going 30 days back.
 
@@ -1282,7 +1284,7 @@ Get wallet transactions.
 
 #### Parameters
 
--   `characterID` **[number][220]** 
+-   `characterID` **[number][221]** 
 
 Returns **any** wallet transactions of a character.
 
@@ -1722,12 +1724,12 @@ Returns **any** wallet transactions of a character.
 
 [218]: #parameters-89
 
-[219]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON
+[219]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[220]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[220]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON
 
-[221]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[221]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[222]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[222]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
 [223]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

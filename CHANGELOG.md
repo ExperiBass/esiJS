@@ -83,6 +83,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed a issue with the `market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/GingkathFox/esiJS/pull/11))
 - Typos
 
+### [v4.0.2] - 2020 10 31
+- Fixed a issue where `character.affiliation`s parameter name was off ([@quantumferret](https://github.com/quantumferret), [#15](https://github.com/GingkathFox/esiJS/pull/15))
+
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/GingkathFox/esiJS/compare/v0.1.1...dev
