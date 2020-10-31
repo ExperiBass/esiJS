@@ -223,13 +223,12 @@
 
 ## affiliation
 
-Get public information about an alliance.
-
+Bulk lookup of character IDs to fetch corporation, alliance, and faction affiliations for. All characters must exist, or none will be returned.
 ### Parameters
 
--   `characterID`  {number} The alliance ID to get info from.
+-   `characterIdArray` {Number[]} The array of character IDs to get affiliations for.
 
-Returns **[JSON][219]** Public info on the alliance.
+Returns **[JSON][219]** Array of objects containing each character ID and its respective corporation ID, alliance ID (if any), and faction ID (if any).
 
 ## corpHistory
 
