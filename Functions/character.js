@@ -3,22 +3,23 @@ const inputValidation = require('./esiJS-Utils/inputValidation')
 
 module.exports = {
     /**
-     * Get public information about an alliance.
+     * Bulk lookup of character IDs to receive respective corporation, alliance, and faction IDs.
+     * All characters must exist, or none will be returned.
      * @exports info
-     * @param characterID {number} The alliance ID to get info from.
-     * @returns {JSON} Public info on the alliance.
+     * @param characterIdArray {Number[]} The array of character IDs to get info from.
+     * @returns {JSON[]} Corporation, alliance, and faction IDs for each character ID.
      */
-    affiliation(characterID) {
+    affiliation(characterIdArray) {
         inputValidation({
-            input: characterID,
+            input: characterIdArray,
             type: 'object',
-            message: `The function 'character.affiliation' requires a character id!`
+            message: `The function 'character.affiliation' requires an array of character IDs!`
         })
 
         return request({
             subUrl: 'characters/affiliation',
             requestType: 'post',
-            body: idArray
+            body: characterIdArray
         })
     },
     /**
