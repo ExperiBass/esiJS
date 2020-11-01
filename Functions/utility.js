@@ -79,38 +79,38 @@ module.exports = {
     },
     /**
      * Sets the settings for esiJS.
-     * @param {string} route Any of the valid routes through ESI.
+     * @param {string} route Any of the valid routes through ESI. Defaults to `latest`.
      * @param {string} authToken A valid auth token.
-     * @param {string} language A valid language code.
-     * @param {string} programName The name of your project, used by esiJS to pass in as a header.
-     * @returns {Boolean} True if it was able to sucessfully write. Otherwise, a error.
+     * @param {string} language A valid language code. Defaults to `en/us`.
+     * @param {string} projectName The name of your project, used by esiJS to pass in as a header. If not defined, defaults to `esiJS-v${version}`.
+     * @returns {Boolean} `true` if it was able to sucessfully write. Otherwise, a error.
      */
     setSettings({
-        route,
+        route = "latest",
         authToken,
-        language,
-        programName
+        language = "en/us",
+        projectName
     }) {
         if (checkForConfig()) {
-            let server = 'esi.evetech.net'
+            const server = 'esi.evetech.net'
             let routes = ['latest', 'v1', 'legacy', 'dev']
             let currentSettings = this.getSettings()
 
-            // Check if settings are already set, and dont change if not neededx
+            // Check if settings are already set, and dont change if not needed
             route = route || currentSettings.route
             authToken = authToken || currentSettings.authToken
             language = language || currentSettings.language
-            programName = programName || currentSettings.programName
+            projectName = projectName || currentSettings.projectName
 
 
             if (!route || !routes.includes(route)) {
-                throw throwError(`setSettings needs first arg to be one of these: ${routes}, and second arg to be one of these: ${dataSources}`)
+                throw throwError(`setSettings needs its "route" argument to be one of these: ${routes}`)
             }
             route = `https://${server}/${route}/`
             try {
                 fs.writeFileSync(projectConfig, JSON.stringify({
-                    programName,
-                    route,
+                    projectName: projectName,
+                    link: route,
                     authToken,
                     language
                 }, null, 2))
