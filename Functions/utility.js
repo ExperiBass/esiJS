@@ -12,7 +12,7 @@ const projectPath = path.join(__dirname, `../../../`)
  */
 function checkForConfig(logging) {
     // Check for a ESI config file in the project directory
-    if (logging = true) {
+    if (!logging) {
         log = () => {}
     }
     try {

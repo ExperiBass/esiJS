@@ -39,7 +39,13 @@ module.exports = {
      * @param {number} maxWarID Optional. Only return wars with ID smaller than this.
      * @returns {[number]}
      */
-    wars(maxWarID = ' ') { // this should work
+    wars(maxWarID) { // this should work
+        inputValidation({
+            input: maxWarID,
+            type: 'number',
+            message: `The parameter 'maxWarID' in the function 'wars.wars' must be a number!`,
+            optional: true
+        })
         return request({
             subUrl: `wars`,
             query: {
