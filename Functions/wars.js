@@ -39,7 +39,7 @@ module.exports = {
      * @param {number} maxWarID Optional. Only return wars with ID smaller than this.
      * @returns {[number]}
      */
-    wars(maxWarID) { // this should work
+    wars(maxWarID) {
         inputValidation({
             input: maxWarID,
             type: 'number',
