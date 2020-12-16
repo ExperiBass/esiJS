@@ -3,6 +3,7 @@ const { getSettings } = require('../utility')
 const throwError = require('./throwError')
 const path = require('path')
 const {version} = require('../../package.json')
+const DEFAULT = `esiJS-v${version}`
 
 /**
  * @private
@@ -48,9 +49,9 @@ function makeRequest ({ subUrl, body, query, requestType = 'GET', needsAuth = fa
     }
     // Add in the program name if specified, else default to 'esiJS-v{version}'
     if (programName && programName !== '') {
-        headers['x-user-agent'] = programName
+        headers['x-user-agent'] = `${programName} | ${DEFAULT}`
     } else {
-        headers['x-user-agent'] = `esiJS-v${version}`
+        headers['x-user-agent'] = DEFAULT
     }
     if (needsAuth && authToken !== '') {
         // Include both the headers and the query just in case one or the other fails
