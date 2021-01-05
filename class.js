@@ -5,7 +5,7 @@ const fs = require('fs')
 /**
  * The esiClient class.
  */
-let esiJS = class {
+const esiJS = class {
     /**
      * The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
      * `logging` defaults to `true`.

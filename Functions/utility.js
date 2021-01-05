@@ -1,64 +1,13 @@
-const path = require('path')
 const fs = require('fs')
 const throwError = require('./esiJS-Utils/throwError')
+const checkForConfig = require('./esiJS-Utils/checkForConfig')
 let log = require('./esiJS-Utils/log')
-const localConfig = path.join(__dirname, `../esi.json`)
-const projectConfig = path.join(__dirname, '../../../esi.json')
-const projectPath = path.join(__dirname, `../../../`)
+const {
+    projectConfig,
+    localConfig,
+    server
+} = require('./esiJS-Utils/constants')
 
-/**
- * @private
- * @param {boolean} logging
- */
-function checkForConfig(logging) {
-    // Check for a ESI config file in the project directory
-    if (!logging) {
-        log = () => {}
-    }
-    try {
-        log(`Checking for a config file in ${projectPath}...`, 'INFO')
-        let fileExists = fs.existsSync(projectConfig)
-
-        // If the file exists...
-        if (fileExists) {
-
-            // ...see if we can read it...
-            try {
-                log(`Config file exists! Checking if I can read it...`, 'INFO')
-                fs.accessSync(projectConfig, fs.constants.R_OK)
-
-                // ...then see if we can write into it
-                try {
-                    log(`I can read it! Checking if I can write into it...`, 'INFO')
-                    fs.accessSync(projectConfig, fs.constants.W_OK)
-                } catch (e) {
-                    log(`Couldn't write to 'esi.json', reverting to default configuration`, 'WARNING')
-                    return false
-                }
-            } catch (e) {
-                log(`Couldn't read config file, reverting to default configuration`, 'WARNING')
-                return false
-            }
-
-        } else {
-            // If the file doesn't exist...
-            log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}...`, 'INFO')
-            try {
-                // ...attempt to create it
-                fs.writeFileSync(projectConfig, JSON.stringify(require('../esi.json'), null, 2))
-                log(`Sucessfully created config file in ${projectPath}!`, 'INFO')
-            } catch (e) {
-                throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
-            }
-            return false
-        }
-
-    } catch (e) {
-        return false
-    }
-    log(`I can read the config file!`, 'INFO')
-    return true
-}
 module.exports = {
     /**
      * Gets the settings for esiJS.
@@ -66,9 +15,7 @@ module.exports = {
      */
     getSettings() {
         let settings;
-
-        if (checkForConfig(true)) {
-            log(`Reading project config file in ${projectPath}...`, 'INFO')
+        if (checkForConfig()) {
             settings = fs.readFileSync(projectConfig, 'utf8')
             return JSON.parse(settings)
         } else {
@@ -92,8 +39,6 @@ module.exports = {
         projectName
     }) {
         if (checkForConfig()) {
-            const server = 'esi.evetech.net'
-            let routes = ['latest', 'v1', 'legacy', 'dev']
             let currentSettings = this.getSettings()
 
             // Check if settings are already set, and dont change if not needed
@@ -108,13 +53,14 @@ module.exports = {
             }
             route = `https://${server}/${route}/`
             try {
-                fs.writeFileSync(projectConfig, JSON.stringify({
+                const newConfig = JSON.stringify({
                     projectName: projectName,
                     link: route,
                     authToken,
                     language
-                }, null, 2))
-                log(`Sucessfully updated config!`, 'INFO')
+                }, null, 2)
+                fs.writeFileSync(projectConfig, newConfig)
+                log(`Sucessfully updated config!\nNew config:\n${newConfig}`, 'INFO')
             } catch (e) {
                 throw throwError(`Couldn't write config file! Error:\n${e}`)
             }

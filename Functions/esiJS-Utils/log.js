@@ -19,6 +19,9 @@ function log(message, type = 'info') {
                 console.log(`${chalk.yellow(`[esiJS:${type.toUpperCase()}]:`)} ${message}`)
                 break
             }
+            case 'error': {
+                return `${chalk.red(`esiJS:${type.toUpperCase()}]:`)} ${message}`
+            }
             default: {
                 return
             }
