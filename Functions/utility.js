@@ -1,12 +1,12 @@
 const fs = require('fs')
-const throwError = require('./esiJS-Utils/throwError')
-const checkForConfig = require('./esiJS-Utils/checkForConfig')
-let log = require('./esiJS-Utils/log')
+const throwError = require('./util/throwError')
+const checkForConfig = require('./util/checkForConfig')
+let log = require('./util/log')
 const {
     projectConfig,
     localConfig,
     server
-} = require('./esiJS-Utils/constants')
+} = require('./util/constants')
 
 module.exports = {
     /**

@@ -1,5 +1,5 @@
-const request = require('./esiJS-Utils/request')
-const inputValidation = require('./esiJS-Utils/inputValidation')
+const request = require('./util/request')
+const inputValidation = require('./util/inputValidation')
 module.exports = {
     /**
      *

@@ -1,4 +1,4 @@
-const request = require('./esiJS-Utils/request')
+const request = require('./util/request')
 
 module.exports = {
     /**

@@ -1,5 +1,5 @@
-const request = require('./esiJS-Utils/request')
-const inputValidation = require('./esiJS-Utils/inputValidation')
+const request = require('./util/request')
+const inputValidation = require('./util/inputValidation')
 
 module.exports = {
     /**
@@ -12,7 +12,7 @@ module.exports = {
         })
     },
     /**
-     * Get all current member alliances of an alliance.
+     * Get all current member corporations of an alliance.
      * @param ID {number} The alliance ID to get the alliances from.
      * @returns {number[]} The alliances in the alliance.
      */

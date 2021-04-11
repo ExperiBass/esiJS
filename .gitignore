@@ -42,3 +42,5 @@ typings/
 # other
 test*
 .DS_Store
+._*
+# ^ fuck macOS dotfiles

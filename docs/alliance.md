@@ -23,7 +23,7 @@ Returns **[Array][13]&lt;[number][14]>** A array of all active player alliances.
 
 ## corps
 
-Get all current member alliances of an alliance.
+Get all current member corporations of an alliance.
 
 ### Parameters
 

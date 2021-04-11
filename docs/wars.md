@@ -35,7 +35,7 @@ Return a list of wars.
 
 ### Parameters
 
--   `maxWarID` **[number][7]** Optional. Only return wars with ID smaller than this. (optional, default `' '`)
+-   `maxWarID` **[number][7]** Optional. Only return wars with ID smaller than this.
 
 Returns **\[[number][7]]** 
 

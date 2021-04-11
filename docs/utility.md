@@ -21,16 +21,16 @@ Sets the settings for esiJS.
 ### Parameters
 
 -   `$0` **[Object][7]** 
-    -   `$0.route`  
+    -   `$0.route`   (optional, default `"latest"`)
     -   `$0.authToken`  
-    -   `$0.language`  
-    -   `$0.programName`  
--   `route` **[string][8]** Any of the valid routes through ESI.
+    -   `$0.language`   (optional, default `"en/us"`)
+    -   `$0.projectName`  
+-   `route` **[string][8]** Any of the valid routes through ESI. Defaults to `latest`.
 -   `authToken` **[string][8]** A valid auth token.
--   `language` **[string][8]** A valid language code.
--   `programName` **[string][8]** The name of your project, used by esiJS to pass in as a header.
+-   `language` **[string][8]** A valid language code. Defaults to `en/us`.
+-   `projectName` **[string][8]** The name of your project, used by esiJS to pass in as a header. If not defined, defaults to `esiJS-v${version}`.
 
-Returns **[Boolean][9]** True if it was able to sucessfully write. Otherwise, a error.
+Returns **[Boolean][9]** `true` if it was able to sucessfully write. Otherwise, a error.
 
 ## sleep
 
