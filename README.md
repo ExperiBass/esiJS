@@ -11,7 +11,7 @@ npm i --save esijs
 # USAGE:
 
 ```js
-const esiJS = require('esiJS')
+const esiJS = require('esijs')
 const esiClient = new esiJS()
 // Use all functions like this:
 esiClient.group.<subgroup>.function()
