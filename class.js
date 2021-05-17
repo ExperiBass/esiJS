@@ -9,8 +9,11 @@ const esiJS = class {
     /**
      * The Constructor. Valid arguments are `logging`, for enabling and disabling logging, and `token`, for passing in a token (which will be saved in the config).
      * `logging` defaults to `true`.
+     * @param {object} esiJSoptions esiJS options.
+     * @param {boolean} esiJSoptions.logging Enables or disables logging.
+     * @param {string} esiJSoptions.token Token to be saved in the config for authed routes.
      * @example
-     * let esiClient = new esiJS({
+     * const esiClient = new esiJS({
      *     logging: false, // Disables logging
      *     token: "THIS_IS_A_TOKEN"
      * })
