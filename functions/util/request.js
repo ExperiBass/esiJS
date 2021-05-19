@@ -107,9 +107,13 @@ function makeRequest ({ subUrl, body, query, requestType = 'GET', needsAuth = fa
 
             return data
         }).catch(error => {
-            const esiError = `${error.response.data.error}${error.response.data.error_description}`
-            const url = fullURL.split('&token')[0]
-            throw throwError(esiError, `ESI_ERROR`, url)
+            if (error.response) { // if its a error from ESI
+                const esiError = `${error.response.data.error}${error.response.data.error_description}`
+                const url = fullURL.split('&token')[0]
+                throw throwError(esiError, `ESI_ERROR`, url)
+            }
+            // if its another error, just send the full error
+            throw throwError(error, 'ESIJS_ERROR')
         })
 }
 
