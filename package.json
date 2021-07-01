@@ -15,7 +15,7 @@
     "license": "GPL-3.0",
     "dependencies": {
         "axios": "^0.21.1",
-        "chalk": "^4.1.0"
+        "chalk": "^4.1.1"
     },
     "repository": {
         "type": "git",
@@ -26,6 +26,6 @@
     },
     "homepage": "https://github.com/GingkathFox/esiJS#readme",
     "devDependencies": {
-        "documentation": "^13.1.0"
+        "documentation": "^13.2.5"
     }
 }
