@@ -92,6 +92,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [v4.0.6] - 2021 5 19
 - Changes error handling, updates docs
 
+### [v4.0.7] - 2021 8 12
+- Updates dependencies
+
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/GingkathFox/esiJS/compare/v0.1.1...dev
@@ -104,4 +107,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v4.0.2]: https://github.com/GingkathFox/esiJS/compare/v4.0.1...v4.0.2
 [v4.0.3]: https://github.com/GingkathFox/esiJS/compare/v4.0.2...v4.0.3
 [v4.0.6]: https://github.com/GingkathFox/esiJS/compare/v4.0.3...v4.0.6
+[v4.0.7]: https://github.com/GingkathFox/esiJS/compare/v4.0.6...v4.0.7
 <!-- ISSUES -->
