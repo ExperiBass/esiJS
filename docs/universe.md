@@ -2,71 +2,71 @@
 
 ### Table of Contents
 
--   [ancestries][1]
-    -   [ancestries][2]
--   [belts][3]
-    -   [beltInfo][4]
-        -   [Parameters][5]
--   [bloodlines][6]
-    -   [bloodlines][7]
--   [bulk][8]
-    -   [idsToNames][9]
-        -   [Parameters][10]
-    -   [namesToIDs][11]
-        -   [Parameters][12]
--   [categories][13]
-    -   [categories][14]
-    -   [categoryInfo][15]
-        -   [Parameters][16]
--   [constellations][17]
-    -   [constellationInfo][18]
-        -   [Parameters][19]
-    -   [constellations][20]
--   [factions][21]
-    -   [factions][22]
--   [graphics][23]
-    -   [graphicInfo][24]
-        -   [Parameters][25]
-    -   [graphics][26]
--   [groups][27]
-    -   [groupInfo][28]
-        -   [Parameters][29]
-    -   [groups][30]
--   [moons][31]
-    -   [moonsInfo][32]
-        -   [Parameters][33]
--   [planets][34]
-    -   [planetInfo][35]
-        -   [Parameters][36]
--   [races][37]
-    -   [races][38]
--   [regions][39]
-    -   [regionInfo][40]
-        -   [Parameters][41]
-    -   [regions][42]
--   [stargates][43]
-    -   [stargateInfo][44]
-        -   [Parameters][45]
--   [stars][46]
-    -   [starInfo][47]
-        -   [Parameters][48]
--   [stations][49]
-    -   [stationInfo][50]
-        -   [Parameters][51]
--   [structures][52]
-    -   [structures][53]
-    -   [structureInfo][54]
-        -   [Parameters][55]
--   [systems][56]
-    -   [systemInfo][57]
-        -   [Parameters][58]
-    -   [systemJumps][59]
-    -   [systemKills][60]
-    -   [systems][61]
--   [types][62]
-    -   [typeInfo][63]
-        -   [Parameters][64]
-    -   [types][65]
+*   [ancestries][1]
+    *   [ancestries][2]
+*   [belts][3]
+    *   [beltInfo][4]
+        *   [Parameters][5]
+*   [bloodlines][6]
+    *   [bloodlines][7]
+*   [bulk][8]
+    *   [idsToNames][9]
+        *   [Parameters][10]
+    *   [namesToIDs][11]
+        *   [Parameters][12]
+*   [categories][13]
+    *   [categories][14]
+    *   [categoryInfo][15]
+        *   [Parameters][16]
+*   [constellations][17]
+    *   [constellationInfo][18]
+        *   [Parameters][19]
+    *   [constellations][20]
+*   [factions][21]
+    *   [factions][22]
+*   [graphics][23]
+    *   [graphicInfo][24]
+        *   [Parameters][25]
+    *   [graphics][26]
+*   [groups][27]
+    *   [groupInfo][28]
+        *   [Parameters][29]
+    *   [groups][30]
+*   [moons][31]
+    *   [moonsInfo][32]
+        *   [Parameters][33]
+*   [planets][34]
+    *   [planetInfo][35]
+        *   [Parameters][36]
+*   [races][37]
+    *   [races][38]
+*   [regions][39]
+    *   [regionInfo][40]
+        *   [Parameters][41]
+    *   [regions][42]
+*   [stargates][43]
+    *   [stargateInfo][44]
+        *   [Parameters][45]
+*   [stars][46]
+    *   [starInfo][47]
+        *   [Parameters][48]
+*   [stations][49]
+    *   [stationInfo][50]
+        *   [Parameters][51]
+*   [structures][52]
+    *   [structures][53]
+    *   [structureInfo][54]
+        *   [Parameters][55]
+*   [systems][56]
+    *   [systemInfo][57]
+        *   [Parameters][58]
+    *   [systemJumps][59]
+    *   [systemKills][60]
+    *   [systems][61]
+*   [types][62]
+    *   [typeInfo][63]
+        *   [Parameters][64]
+    *   [types][65]
 
 ## ancestries
 
@@ -84,7 +84,7 @@ Get information on an asteroid belt.
 
 #### Parameters
 
--   `beltID` **[number][67]** 
+*   `beltID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -106,7 +106,7 @@ Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Re
 
 #### Parameters
 
--   `IDs` **\[[number][67]]** 
+*   `IDs` **\[[number][67]]** 
 
 Returns **[array][66]** 
 
@@ -118,7 +118,7 @@ Only exact matches will be returned. All names searched for are cached for 12 ho
 
 #### Parameters
 
--   `names` **\[[string][69]]** 
+*   `names` **\[[string][69]]** 
 
 Returns **[array][66]** 
 
@@ -136,7 +136,7 @@ Get information on an item category.
 
 #### Parameters
 
--   `categoryID` **[number][67]** 
+*   `categoryID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -148,7 +148,7 @@ Get information on a constellation.
 
 #### Parameters
 
--   `constellationID` **[number][67]** 
+*   `constellationID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -174,7 +174,7 @@ Get information on a graphic.
 
 #### Parameters
 
--   `graphicID` **[number][67]** 
+*   `graphicID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -192,7 +192,7 @@ Get information on an item group.
 
 #### Parameters
 
--   `groupID` **[number][67]** 
+*   `groupID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -210,7 +210,7 @@ Get information on a moon.
 
 #### Parameters
 
--   `moonID` **[number][67]** 
+*   `moonID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -222,7 +222,7 @@ Get information on a planet.
 
 #### Parameters
 
--   `planetID` **[number][67]** 
+*   `planetID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -242,7 +242,7 @@ Get information on a region.
 
 #### Parameters
 
--   `regionID` **[number][67]** 
+*   `regionID` **[number][67]** 
 
 Returns **objectt** 
 
@@ -260,7 +260,7 @@ Get information on a stargate.
 
 #### Parameters
 
--   `stargateID` **[number][67]** 
+*   `stargateID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -272,7 +272,7 @@ Get information on a star.
 
 #### Parameters
 
--   `starID` **[number][67]** 
+*   `starID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -284,7 +284,7 @@ Get information on a station.
 
 #### Parameters
 
--   `stationID` **[number][67]** 
+*   `stationID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -302,7 +302,7 @@ Get structure information.
 
 #### Parameters
 
--   `structureID` **[number][67]** 
+*   `structureID` **[number][67]** 
 
 Returns **any** information on requested structure if you are on the ACL. Otherwise, returns “Forbidden” for all inputs.
 
@@ -314,7 +314,7 @@ Get information on a solar system.
 
 #### Parameters
 
--   `systemID` **[number][67]** 
+*   `systemID` **[number][67]** 
 
 Returns **[object][68]** 
 
@@ -346,7 +346,7 @@ Get information on a type.
 
 #### Parameters
 
--   `typeID` **[number][67]** 
+*   `typeID` **[number][67]** 
 
 Returns **[object][68]** 
 

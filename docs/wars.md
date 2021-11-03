@@ -2,12 +2,12 @@
 
 ### Table of Contents
 
--   [warInfo][1]
-    -   [Parameters][2]
--   [warKills][3]
-    -   [Parameters][4]
--   [wars][5]
-    -   [Parameters][6]
+*   [warInfo][1]
+    *   [Parameters][2]
+*   [warKills][3]
+    *   [Parameters][4]
+*   [wars][5]
+    *   [Parameters][6]
 
 ## warInfo
 
@@ -15,7 +15,7 @@ Return details about a war.
 
 ### Parameters
 
--   `warID` **[number][7]** 
+*   `warID` **[number][7]** 
 
 Returns **[object][8]** 
 
@@ -25,7 +25,7 @@ Return a list of kills related to a war.
 
 ### Parameters
 
--   `warID` **[number][7]** 
+*   `warID` **[number][7]** 
 
 Returns **[object][8]** 
 
@@ -35,7 +35,7 @@ Return a list of wars.
 
 ### Parameters
 
--   `maxWarID` **[number][7]** Optional. Only return wars with ID smaller than this.
+*   `maxWarID` **[number][7]** Optional. Only return wars with ID smaller than this.
 
 Returns **\[[number][7]]** 
 

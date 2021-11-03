@@ -1,6 +1,6 @@
 {
     "name": "esijs",
-    "version": "4.0.7",
+    "version": "4.1.0",
     "description": "A simple module for ESI.",
     "main": "class.js",
     "scripts": {
@@ -14,17 +14,17 @@
     "author": "ExperiBass",
     "license": "GPL-3.0",
     "dependencies": {
-        "axios": "^0.21.1",
+        "axios": "0.24.0",
         "chalk": "^4.1.2"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/GingkathFox/esiJS.git"
+        "url": "git+https://github.com/ExperiBass/esiJS.git"
     },
     "bugs": {
-        "url": "https://github.com/GingkathFox/esiJS/issues"
+        "url": "https://github.com/ExperiBass/esiJS/issues"
     },
-    "homepage": "https://github.com/GingkathFox/esiJS#readme",
+    "homepage": "https://github.com/ExperiBass/esiJS#readme",
     "devDependencies": {
         "documentation": "^13.2.5"
     }

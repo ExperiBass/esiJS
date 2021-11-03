@@ -2,11 +2,11 @@
 
 ### Table of Contents
 
--   [getSettings][1]
--   [setSettings][2]
-    -   [Parameters][3]
--   [sleep][4]
-    -   [Parameters][5]
+*   [getSettings][1]
+*   [setSettings][2]
+    *   [Parameters][3]
+*   [sleep][4]
+    *   [Parameters][5]
 
 ## getSettings
 
@@ -20,15 +20,16 @@ Sets the settings for esiJS.
 
 ### Parameters
 
--   `$0` **[Object][7]** 
-    -   `$0.route`   (optional, default `"latest"`)
-    -   `$0.authToken`  
-    -   `$0.language`   (optional, default `"en/us"`)
-    -   `$0.projectName`  
--   `route` **[string][8]** Any of the valid routes through ESI. Defaults to `latest`.
--   `authToken` **[string][8]** A valid auth token.
--   `language` **[string][8]** A valid language code. Defaults to `en/us`.
--   `projectName` **[string][8]** The name of your project, used by esiJS to pass in as a header. If not defined, defaults to `esiJS-v${version}`.
+*   `$0` **[Object][7]** 
+
+    *   `$0.route`   (optional, default `"latest"`)
+    *   `$0.authToken`  
+    *   `$0.language`   (optional, default `"en/us"`)
+    *   `$0.projectName`  
+*   `route` **[string][8]** Any of the valid routes through ESI. Defaults to `latest`.
+*   `authToken` **[string][8]** A valid auth token.
+*   `language` **[string][8]** A valid language code. Defaults to `en/us`.
+*   `projectName` **[string][8]** The name of your project, used by esiJS to pass in as a header. If not defined, defaults to `esiJS-v${version}`.
 
 Returns **[Boolean][9]** `true` if it was able to sucessfully write. Otherwise, a error.
 
@@ -38,9 +39,9 @@ Pause execution of code for a specified amount of time.
 
 ### Parameters
 
--   `millis` **[number][10]** The time to delay (in milliseconds)
+*   `millis` **[number][10]** The time to delay (in milliseconds)
 
-Returns **[Promise][11]&lt;[function][12]>** 
+Returns **[Promise][11]<[function][12]>** 
 
 [1]: #getsettings
 

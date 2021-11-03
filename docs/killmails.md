@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
--   [killmailInfo][1]
-    -   [Parameters][2]
+*   [killmailInfo][1]
+    *   [Parameters][2]
 
 ## killmailInfo
 
@@ -11,8 +11,8 @@ Return a single killmail from its ID and hash.
 
 ### Parameters
 
--   `killID` **[number][3]** 
--   `killHash` **[string][4]** 
+*   `killID` **[number][3]** 
+*   `killHash` **[string][4]** 
 
 Returns **[object][5]** 
 

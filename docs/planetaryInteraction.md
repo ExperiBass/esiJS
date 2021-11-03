@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
--   [schematicInfo][1]
-    -   [Parameters][2]
+*   [schematicInfo][1]
+    *   [Parameters][2]
 
 ## schematicInfo
 
@@ -11,7 +11,7 @@ Get information on a planetary factory schematic.
 
 ### Parameters
 
--   `schematicID` **[number][3]** 
+*   `schematicID` **[number][3]** 
 
 Returns **[object][4]** 
 

@@ -2,12 +2,12 @@
 
 ### Table of Contents
 
--   [groupInfo][1]
-    -   [Parameters][2]
--   [groups][3]
--   [taskInfo][4]
-    -   [Parameters][5]
--   [tasks][6]
+*   [groupInfo][1]
+    *   [Parameters][2]
+*   [groups][3]
+*   [taskInfo][4]
+    *   [Parameters][5]
+*   [tasks][6]
 
 ## groupInfo
 
@@ -15,7 +15,7 @@ Return information of an opportunities group.
 
 ### Parameters
 
--   `groupID` **[number][7]** 
+*   `groupID` **[number][7]** 
 
 Returns **[object][8]** 
 
@@ -31,8 +31,8 @@ Return information of an opportunities task.
 
 ### Parameters
 
--   `taskID`  
--   `groupID` **[number][7]** 
+*   `taskID`  
+*   `groupID` **[number][7]** 
 
 Returns **[object][8]** 
 

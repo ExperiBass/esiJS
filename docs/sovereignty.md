@@ -2,9 +2,9 @@
 
 ### Table of Contents
 
--   [campaigns][1]
--   [map][2]
--   [structures][3]
+*   [campaigns][1]
+*   [map][2]
+*   [structures][3]
 
 ## campaigns
 

@@ -80,11 +80,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed a issue with a variable already being declared
 
 ### [v3.0.5] - 2019 12 16
-- Fixed a issue with the `market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/GingkathFox/esiJS/pull/11))
+- Fixed a issue with the `market.orders` endpoint where the validation will fail no matter what ([@GeekyAubergine](https://github.com/GeekyAubergine), [#11](https://github.com/ExperiBass/esiJS/pull/11))
 - Typos
 
 ### [v4.0.2] - 2020 10 31
-- Fixed a issue where `character.affiliation`s parameter name was off ([@quantumferret](https://github.com/quantumferret), [#15](https://github.com/GingkathFox/esiJS/pull/15))
+- Fixed a issue where `character.affiliation`s parameter name was off ([@quantumferret](https://github.com/quantumferret), [#15](https://github.com/ExperiBass/esiJS/pull/15))
 
 ### [v4.0.3] - 2020 11 01
 - Fixed a issue with `setSettings` where the given values weren't saved with the right names, and some input was ignored
@@ -95,17 +95,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [v4.0.7] - 2021 8 12
 - Updates dependencies
 
+### [v4.1.0] - 2021 11 3
+#### Added
+- Caching (Requests are cached for 5 minutes)
+#### Changed
+- The requests function now checks if a request has
+  been cached before firing off a new one
+#### Other
+- Update Axios
+
 <!-- LINKS -->
 <!-- RELEASES -->
-[Unreleased]: https://github.com/GingkathFox/esiJS/compare/v0.1.1...dev
-[v0.1.1]: https://github.com/GingkathFox/esiJS/compare/v0.1.0...v0.1.1
-[v2.0.0]: https://github.com/GingkathFox/esiJS/compare/v0.1.1...v2.0.0
-[v2.1.2]: https://github.com/GingkathFox/esiJS/compare/v2.0.0...v2.1.2
-[v3.0.0]: https://github.com/GingkathFox/esiJS/compare/v2.1.2...v3.0.0
-[v3.0.2]: https://github.com/GingkathFox/esiJS/compare/v3.0.0...v3.0.2
-[v4.0.1]: https://github.com/GingkathFox/esiJS/compare/v3.0.2...v4.0.1
-[v4.0.2]: https://github.com/GingkathFox/esiJS/compare/v4.0.1...v4.0.2
-[v4.0.3]: https://github.com/GingkathFox/esiJS/compare/v4.0.2...v4.0.3
-[v4.0.6]: https://github.com/GingkathFox/esiJS/compare/v4.0.3...v4.0.6
-[v4.0.7]: https://github.com/GingkathFox/esiJS/compare/v4.0.6...v4.0.7
+[Unreleased]: https://github.com/ExperiBass/esiJS/compare/v0.1.1...dev
+[v0.1.1]: https://github.com/ExperiBass/esiJS/compare/v0.1.0...v0.1.1
+[v2.0.0]: https://github.com/ExperiBass/esiJS/compare/v0.1.1...v2.0.0
+[v2.1.2]: https://github.com/ExperiBass/esiJS/compare/v2.0.0...v2.1.2
+[v3.0.0]: https://github.com/ExperiBass/esiJS/compare/v2.1.2...v3.0.0
+[v3.0.2]: https://github.com/ExperiBass/esiJS/compare/v3.0.0...v3.0.2
+[v4.0.1]: https://github.com/ExperiBass/esiJS/compare/v3.0.2...v4.0.1
+[v4.0.2]: https://github.com/ExperiBass/esiJS/compare/v4.0.1...v4.0.2
+[v4.0.3]: https://github.com/ExperiBass/esiJS/compare/v4.0.2...v4.0.3
+[v4.0.6]: https://github.com/ExperiBass/esiJS/compare/v4.0.3...v4.0.6
+[v4.0.7]: https://github.com/ExperiBass/esiJS/compare/v4.0.6...v4.0.7
+[v4.1.0]: https://github.com/ExperiBass/esiJS/compare/v4.0.7...v4.1.0
 <!-- ISSUES -->

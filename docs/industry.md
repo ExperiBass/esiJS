@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
--   [facilities][1]
--   [systems][2]
+*   [facilities][1]
+*   [systems][2]
 
 ## facilities
 

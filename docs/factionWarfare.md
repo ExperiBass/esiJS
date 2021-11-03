@@ -2,18 +2,18 @@
 
 ### Table of Contents
 
--   [leaderboards][1]
-    -   [characters][2]
-    -   [corps][3]
-    -   [leaderboard][4]
--   [stats][5]
-    -   [stats][6]
-    -   [characterStats][7]
-        -   [Parameters][8]
-    -   [corporationStats][9]
-        -   [Parameters][10]
--   [systems][11]
--   [wars][12]
+*   [leaderboards][1]
+    *   [characters][2]
+    *   [corps][3]
+    *   [leaderboard][4]
+*   [stats][5]
+    *   [stats][6]
+    *   [characterStats][7]
+        *   [Parameters][8]
+    *   [corporationStats][9]
+        *   [Parameters][10]
+*   [systems][11]
+*   [wars][12]
 
 ## leaderboards
 
@@ -47,7 +47,7 @@ Overview of a character involved in faction warfare.
 
 #### Parameters
 
--   `characterID` **[number][14]** 
+*   `characterID` **[number][14]** 
 
 Returns **any** Statistical overview of a character involved in faction warfare.
 
@@ -57,7 +57,7 @@ Overview of a corporation involved in faction warfare.
 
 #### Parameters
 
--   `corporationID` **[number][14]** 
+*   `corporationID` **[number][14]** 
 
 Returns **any** Statistics about a corporation involved in faction warfare.
 

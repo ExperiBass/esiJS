@@ -2,17 +2,17 @@
 
 ### Table of Contents
 
--   [groups][1]
-    -   [groupInfo][2]
-        -   [Parameters][3]
-    -   [groups][4]
--   [history][5]
-    -   [Parameters][6]
--   [orders][7]
-    -   [Parameters][8]
--   [prices][9]
--   [types][10]
-    -   [Parameters][11]
+*   [groups][1]
+    *   [groupInfo][2]
+        *   [Parameters][3]
+    *   [groups][4]
+*   [history][5]
+    *   [Parameters][6]
+*   [orders][7]
+    *   [Parameters][8]
+*   [prices][9]
+*   [types][10]
+    *   [Parameters][11]
 
 ## groups
 
@@ -22,7 +22,7 @@ Get information on an item group.
 
 #### Parameters
 
--   `groupID` **[number][12]** 
+*   `groupID` **[number][12]** 
 
 Returns **[object][13]** 
 
@@ -38,8 +38,8 @@ Return a list of historical market statistics for the specified type in a region
 
 ### Parameters
 
--   `regionID` **[number][12]** 
--   `typeID` **[number][12]** 
+*   `regionID` **[number][12]** 
+*   `typeID` **[number][12]** 
 
 Returns **[object][13]** 
 
@@ -49,10 +49,10 @@ Return a list of orders in a region.
 
 ### Parameters
 
--   `regionID` **[number][12]** 
--   `typeID` **[number][12]** 
--   `bOs` **[string][14]**  (optional, default `'all'`)
--   `pageNumber` **[number][12]**  (optional, default `1`)
+*   `regionID` **[number][12]** 
+*   `typeID` **[number][12]** 
+*   `bOs` **[string][14]**  (optional, default `'all'`)
+*   `pageNumber` **[number][12]**  (optional, default `1`)
 
 ## prices
 
@@ -66,8 +66,8 @@ Return a list of type IDs that have active orders in the region, for efficient m
 
 ### Parameters
 
--   `regionID` **[number][12]** 
--   `pageNumber` **[number][12]**  (optional, default `1`)
+*   `regionID` **[number][12]** 
+*   `pageNumber` **[number][12]**  (optional, default `1`)
 
 Returns **[object][13]** 
 

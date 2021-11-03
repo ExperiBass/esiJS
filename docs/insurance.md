@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
--   [prices][1]
+*   [prices][1]
 
 ## prices
 
