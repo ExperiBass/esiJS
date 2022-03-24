@@ -1,4 +1,5 @@
 const axios = require('axios')
+const {URLSearchParams} = require('node:url')
 const {
     getSettings
 } = require('../utility')
@@ -20,7 +21,7 @@ const DEFAULT = `esiJS-v${version}`
  *  body -> data to pass to the request body for requests of type post
  *
  *  query -> aditional query parameters
- * 
+ *
  * needsAuth -> flag a endpoint as authed
  */
 function makeRequest({
@@ -45,21 +46,11 @@ function makeRequest({
     let request
     let fullURL = `${link}${subUrl}/?datasource=tranquility`
 
-    // If query params are defined, add them to the end of the full url
-    if (query) {
-        // Cicle each query entry and add to the full url in the form '&key=value'
-        // Because all request already have '?datasource' no need to manage the ? on the first query param
-        Object.keys(query).forEach(queryKey => {
-            // query params undefined or empty, or array of length 0
-            if (query[queryKey] === undefined || query[queryKey] === '') {
-                return
-            }
-            if (query[queryKey].length && query[queryKey].length === 0) {
-                return
-            }
-            fullURL += `&${queryKey}=${query[queryKey]}`
-        })
+     // If query params are defined, add them to the end of the full url
+     if (query) {
+        fullURL += `?${new URLSearchParams(query).toString()}` // URLSearchParams doesn't add the beginning "?"
     }
+
     // Add in the language
     if (language !== '') {
         fullURL += `&language=${language.split('/').join('-')}`
