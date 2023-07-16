@@ -5,7 +5,8 @@ let log = require('./util/log')
 const {
     projectConfig,
     localConfig,
-    server
+    server,
+    routes
 } = require('./util/constants')
 
 module.exports = {

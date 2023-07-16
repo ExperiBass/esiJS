@@ -58,7 +58,7 @@ function makeRequest({
     // and the auth token if needed
     if (needsAuth && authToken !== '') {
         // Include both the headers and the query just in case one or the other fails
-        headers['authorization'] = `Bearer: ${authToken}`
+        headers['authorization'] = `Bearer ${authToken}`
         fullURL += `&token=${authToken}`
     } else if (needsAuth && authToken === '') {
         throw throwError(`You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../../../')}.`, `NO_AUTH_TOKEN`)
