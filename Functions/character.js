@@ -1330,5 +1330,65 @@ module.exports = {
                 needsAuth: true
             })
         }
+    },
+    /**
+     *
+     */
+    location: {
+        /**
+         * Information about the character's current location.  Returns the current solar system id and 
+         * also the current station or structure ID if applicable.
+         * @param {number} characterID 
+         * @requires esi-location.read_location.v1
+         * @returns character's current solar system and structure (if applicable)
+         */
+        location(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.location.location' needs a character ID!`
+            });
+
+            return request({
+                subUrl: `characters/${characterID}/location`,
+                needsAuth: true
+            });
+        },
+        /**
+         * Checks if the character is currently online.
+         * @param {number} characterID 
+         * @requires esi-location.read_online.v1
+         * @returns character's online status, last session times, and number of logins
+         */
+        online(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.location.online' needs a character ID!`
+            });
+
+            return request({
+                subUrl: `characters/${characterID}/online`,
+                needsAuth: true
+            });
+        },
+        /**
+         * Get the character's current ship type, name, and ID.
+         * @param {number} characterID 
+         * @requires esi-location.read_ship_type.v1
+         * @returns character's current ship type, name, and ID
+         */
+        ship(characterID) {
+            inputValidation({
+                input: characterID,
+                type: 'number',
+                message: `The function 'character.location.ship' needs a character ID!`
+            });
+
+            return request({
+                subUrl: `characters/${characterID}/ship`,
+                needsAuth: true
+            });
+        }
     }
 }
