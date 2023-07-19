@@ -1,6 +1,6 @@
 const path = require('path')
-let log = require('./src/util/log') // is reassigned if logging is false
 const fs = require('fs')
+let {log} = require('./src/util/util') // is reassigned if logging is disabled
 
 /**
  * The esiClient class.

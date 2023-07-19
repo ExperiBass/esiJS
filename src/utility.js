@@ -1,7 +1,5 @@
 const fs = require('fs')
-const buildError = require('./util/buildError')
-const checkForConfig = require('./util/checkForConfig')
-let log = require('./util/log')
+const { buildError, checkForConfig, log } = require('./util/util')
 const {
     projectConfig,
     localConfig,

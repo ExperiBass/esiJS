@@ -1,5 +1,4 @@
-const request = require('./util/request')
-const inputValidation = require('./util/inputValidation')
+const { request, inputValidation } = require('./util/util.js')
 module.exports = {
     /**
      *

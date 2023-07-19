@@ -5,7 +5,7 @@ const { URLSearchParams } = require('node:url')
 const { getSettings } = require('../utility')
 const { projectPath, projectConfig, localConfig } = require('./constants')
 const { version } = require('../../package.json')
-const DEFAULT = `esiJS-v${version}`
+const DEFAULT_USER_AGENT = `esiJS-v${version}`
 /**
  * @private
  */
@@ -136,7 +136,7 @@ function makeRequest({
         language,
         programName
     } = getSettings()
-    const test = /\/(?=\/)(?<!https:\/)/g
+    const urlTest = /\/(?=\/)(?<!https:\/)/g
     let headers = {
         'accept': 'application/json',
         'Accept-Language': `${language}`,
@@ -166,13 +166,13 @@ function makeRequest({
     if (!cache.has(fullURL)) {
         // Add in the program name if specified, else default to 'esiJS-v{version}'
         if (programName && programName !== '') {
-            headers['x-user-agent'] = `${programName} | ${DEFAULT}`
+            headers['x-user-agent'] = `${programName} | ${DEFAULT_USER_AGENT}`
         } else {
-            headers['x-user-agent'] = DEFAULT
+            headers['x-user-agent'] = DEFAULT_USER_AGENT
         }
 
         // Check the URL for extra forward slashes and delete them
-        fullURL = fullURL.replace(test, '')
+        fullURL = fullURL.replace(urlTest, '')
 
         // Check for request type
         switch (requestType.toUpperCase()) {
@@ -274,4 +274,13 @@ function checkForConfig(logging) {
     }
     localLog(`I can read the config file!`, 'INFO')
     return true
+}
+
+module.exports = {
+    log,
+    request: makeRequest,
+    inputValidation,
+    buildError,
+    checkForConfig,
+    cache
 }

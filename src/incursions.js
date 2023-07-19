@@ -1,4 +1,4 @@
-const request = require('./util/request')
+const { request } = require('./util/util.js')
 
 module.exports = {
     /**
