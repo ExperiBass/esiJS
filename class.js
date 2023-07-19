@@ -1,5 +1,5 @@
 const path = require('path')
-let log = require('./Functions/util/log') // is reassigned if logging is false
+let log = require('./src/util/log') // is reassigned if logging is false
 const fs = require('fs')
 
 /**
@@ -64,7 +64,7 @@ const esiJS = class {
                     fs.writeFileSync(projectConfig, JSON.stringify(require('./esi.json'), null, 2))
                     log(`Sucessfully created config file in ${projectPath}!`, 'INFO')
                 } catch (e) {
-                    throw throwError(`There was a error while attempting to create the config file! Error: \n${e}`)
+                    throw buildError(`There was a error while attempting to create the config file! Error: \n${e}`)
                 }
                 return false
             }
@@ -79,27 +79,27 @@ const esiJS = class {
             })
         }
     }
-    alliance = require('./Functions/alliance')
-    character = require('./Functions/character')
-    contracts = require('./Functions/contracts')
-    corporation = require('./Functions/corporation')
-    dogma = require('./Functions/dogma')
-    fw = require('./Functions/factionWarfare')
-    incursions = require('./Functions/incursions')
-    industry = require('./Functions/industry')
-    insurance = require('./Functions/insurance')
-    killmails = require('./Functions/killmails')
-    loyalty = require('./Functions/loyalty')
-    market = require('./Functions/market')
-    opportunities = require('./Functions/opportunities')
-    pi = require('./Functions/planetaryInteraction')
-    routes = require('./Functions/routes')
-    search = require('./Functions/search')
-    sov = require('./Functions/sovereignty')
-    status = require('./Functions/status')
-    universe = require('./Functions/universe')
-    ui = require('./Functions/userinterface')
-    util = require('./Functions/utility')
-    wars = require('./Functions/wars')
+    alliance = require('./src/alliance')
+    character = require('./src/character')
+    contracts = require('./src/contracts')
+    corporation = require('./src/corporation')
+    dogma = require('./src/dogma')
+    fw = require('./src/factionWarfare')
+    incursions = require('./src/incursions')
+    industry = require('./src/industry')
+    insurance = require('./src/insurance')
+    killmails = require('./src/killmails')
+    loyalty = require('./src/loyalty')
+    market = require('./src/market')
+    opportunities = require('./src/opportunities')
+    pi = require('./src/planetaryInteraction')
+    routes = require('./src/routes')
+    search = require('./src/search')
+    sov = require('./src/sovereignty')
+    status = require('./src/status')
+    universe = require('./src/universe')
+    ui = require('./src/userinterface')
+    util = require('./src/utility')
+    wars = require('./src/wars')
 }
 module.exports = esiJS

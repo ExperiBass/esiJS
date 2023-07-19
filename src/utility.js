@@ -1,5 +1,5 @@
 const fs = require('fs')
-const throwError = require('./util/throwError')
+const buildError = require('./util/buildError')
 const checkForConfig = require('./util/checkForConfig')
 let log = require('./util/log')
 const {
@@ -50,7 +50,7 @@ module.exports = {
 
 
             if (!route || !routes.includes(route)) {
-                throw throwError(`setSettings needs its "route" argument to be one of these: ${routes}`)
+                throw buildError(`setSettings needs its "route" argument to be one of these: ${routes}`)
             }
             route = `https://${server}/${route}/`
             try {
@@ -63,11 +63,11 @@ module.exports = {
                 fs.writeFileSync(projectConfig, newConfig)
                 log(`Sucessfully updated config!\nNew config:\n${newConfig}`, 'INFO')
             } catch (e) {
-                throw throwError(`Couldn't write config file! Error:\n${e}`)
+                throw buildError(`Couldn't write config file! Error:\n${e}`)
             }
             return true
         }
-        throw throwError(`If you are seeing this error, 2 + 2 is not equal to 4 and your life is a lie.`, 'THIS_SHOULDNT_EVER_HAPPEN')
+        throw buildError(`If you are seeing this error, 2 + 2 is not equal to 4 and your life is a lie.`, 'THIS_SHOULDNT_EVER_HAPPEN')
     },
     /**
      * Pause execution of code for a specified amount of time.
