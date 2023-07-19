@@ -104,6 +104,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Other
 - Update Axios
 
+### [v4.1.1] - 2023 7 18
+#### Changed
+- Bugfix missing routes const, request auth header (#21)
+- Added character location endpoints (#22)
+#### Other
+- Update Axios
+
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/ExperiBass/esiJS/compare/v0.1.1...dev
@@ -118,4 +125,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v4.0.6]: https://github.com/ExperiBass/esiJS/compare/v4.0.3...v4.0.6
 [v4.0.7]: https://github.com/ExperiBass/esiJS/compare/v4.0.6...v4.0.7
 [v4.1.0]: https://github.com/ExperiBass/esiJS/compare/v4.0.7...v4.1.0
+[v4.1.1]: https://github.com/ExperiBass/esiJS/compare/v4.1.0...v4.1.1
 <!-- ISSUES -->
