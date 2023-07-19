@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
-*   [offers][1]
-    *   [Parameters][2]
+-   [offers][1]
+    -   [Parameters][2]
 
 ## offers
 
@@ -11,7 +11,7 @@ Return a list of offers from a specific corporation’s loyalty store.
 
 ### Parameters
 
-*   `corporationID` **[number][3]** 
+-   `corporationID` **[number][3]** 
 
 Returns **[object][4]** 
 

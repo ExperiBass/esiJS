@@ -1,5 +1,5 @@
 let esiJS = require('./class')
-const cache = require('./Functions/util/cache')
+const {cache} = require('./src/util/util')
 
 async function myFunc() {
     let client = new esiJS({})

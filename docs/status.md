@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
-*   [status][1]
+-   [status][1]
 
 ## status
 

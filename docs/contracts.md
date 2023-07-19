@@ -2,13 +2,13 @@
 
 ### Table of Contents
 
-*   [public][1]
-    *   [bids][2]
-        *   [Parameters][3]
-    *   [contracts][4]
-        *   [Parameters][5]
-    *   [items][6]
-        *   [Parameters][7]
+-   [public][1]
+    -   [bids][2]
+        -   [Parameters][3]
+    -   [contracts][4]
+        -   [Parameters][5]
+    -   [items][6]
+        -   [Parameters][7]
 
 ## public
 
@@ -18,9 +18,9 @@ Lists bids on a public auction contract.
 
 #### Parameters
 
-*   `contractID`  {number} The auction contract to get the bids of.
-*   `pageNumber`   (optional, default `1`)
-*   `pageNum`  {number} The page of bids to get. Defaults to `1`.
+-   `contractID`  {number} The auction contract to get the bids of.
+-   `pageNumber`   (optional, default `1`)
+-   `pageNum`  {number} The page of bids to get. Defaults to `1`.
 
 Returns **[object][8]** The bids on the auction.
 
@@ -30,9 +30,9 @@ Returns a paginated list of all public contracts in the given region.
 
 #### Parameters
 
-*   `regionID`  {number} The region to get the contracts from.
-*   `pageNumber`   (optional, default `1`)
-*   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
+-   `regionID`  {number} The region to get the contracts from.
+-   `pageNumber`   (optional, default `1`)
+-   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
 
 Returns **[object][8]** A paginated list of all public contracts in the given region.
 
@@ -42,9 +42,9 @@ Lists items of a public contract.
 
 #### Parameters
 
-*   `contractID`  {number} The contract to get items from.
-*   `pageNumber`   (optional, default `1`)
-*   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
+-   `contractID`  {number} The contract to get items from.
+-   `pageNumber`   (optional, default `1`)
+-   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
 
 Returns **\[[number][9]]** A array of items.
 

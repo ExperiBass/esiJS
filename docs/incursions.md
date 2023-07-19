@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
-*   [incursions][1]
+-   [incursions][1]
 
 ## incursions
 

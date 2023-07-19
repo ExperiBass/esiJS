@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
-*   [planRoute][1]
-    *   [Parameters][2]
+-   [planRoute][1]
+    -   [Parameters][2]
 
 ## planRoute
 
@@ -11,10 +11,10 @@ Get the systems between the origin and the destination.
 
 ### Parameters
 
-*   `origin` **[number][3]** 
-*   `destination` **[number][3]** 
-*   `flag` **[string][4]**  (optional, default `'secure'`)
-*   `avoid` **\[[number][3]]**  (optional, default `[]`)
+-   `origin` **[number][3]** 
+-   `destination` **[number][3]** 
+-   `flag` **[string][4]**  (optional, default `'secure'`)
+-   `avoid` **\[[number][3]]**  (optional, default `[]`)
 
 Returns **\[[number][3]]** 
 

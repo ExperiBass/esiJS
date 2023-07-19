@@ -2,14 +2,14 @@
 
 ### Table of Contents
 
-*   [attrInfo][1]
-    *   [Parameters][2]
-*   [attrs][3]
-*   [dynamicItemInfo][4]
-    *   [Parameters][5]
-*   [effectInfo][6]
-    *   [Parameters][7]
-*   [effects][8]
+-   [attrInfo][1]
+    -   [Parameters][2]
+-   [attrs][3]
+-   [dynamicItemInfo][4]
+    -   [Parameters][5]
+-   [effectInfo][6]
+    -   [Parameters][7]
+-   [effects][8]
 
 ## attrInfo
 
@@ -17,8 +17,8 @@ Get information on a dogma attribute.
 
 ### Parameters
 
-*   `attribute`  
-*   `attr` **[number][9]** 
+-   `attribute`  
+-   `attr` **[number][9]** 
 
 Returns **[object][10]** Info on the attribute.
 
@@ -34,8 +34,8 @@ Returns info about a dynamic item resulting from mutation with a mutaplasmid.
 
 ### Parameters
 
-*   `itemID` **[number][9]** 
-*   `typeID` **[number][9]** 
+-   `itemID` **[number][9]** 
+-   `typeID` **[number][9]** 
 
 Returns **[object][10]** Info on the mutation.
 
@@ -45,7 +45,7 @@ Get information on a dogma effect.
 
 ### Parameters
 
-*   `effect` **[number][9]** 
+-   `effect` **[number][9]** 
 
 Returns **[object][10]** Info on the effect.
 

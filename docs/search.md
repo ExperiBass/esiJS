@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
-*   [search][1]
-    *   [Parameters][2]
+-   [search][1]
+    -   [Parameters][2]
 
 ## search
 
@@ -11,9 +11,9 @@ Search for entities that match a given sub-string.
 
 ### Parameters
 
-*   `search` **[string][3]** 
-*   `category` **[string][3]** 
-*   `strict` **[boolean][4]**  (optional, default `false`)
+-   `search` **[string][3]** 
+-   `category` **[string][3]** 
+-   `strict` **[boolean][4]**  (optional, default `false`)
 
 Returns **[object][5]** 
 
