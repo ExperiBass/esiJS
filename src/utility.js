@@ -1,28 +1,18 @@
 const fs = require('fs')
-const { buildError, checkForConfig, log } = require('./util/util')
+const { buildError, checkForConfig, log, getSettings } = require('./util/util.js')
 const {
     projectConfig,
     localConfig,
     server,
     routes
-} = require('./util/constants')
+} = require('./util/constants.js')
 
 module.exports = {
     /**
      * Gets the settings for esiJS.
      * @returns {JSON} A JSON object with the settings.
      */
-    getSettings() {
-        let settings;
-        if (checkForConfig()) {
-            settings = fs.readFileSync(projectConfig, 'utf8')
-            return JSON.parse(settings)
-        } else {
-            log(`No project config file! Attempting to revert to default configuration...`, 'WARN')
-            settings = fs.readFileSync(localConfig, 'utf8')
-        }
-        return JSON.parse(settings)
-    },
+    getSettings,
     /**
      * Sets the settings for esiJS.
      * @param {string} route Any of the valid routes through ESI. Defaults to `latest`.

@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- #### Added -->
 <!-- #### Changed -->
 <!-- #### Removed -->
+### [v4.1.1] - ???? ?? ??
+#### Changed
+- Bugfix missing routes const, request auth header (#21)
+- Added character location endpoints (#22)
+#### Other
+- Update Axios
 
 ## Major Releases:
 ### v0.1.0 - 2019 06 29
@@ -101,13 +107,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Changed
 - The requests function now checks if a request has
   been cached before firing off a new one
-#### Other
-- Update Axios
-
-### [v4.1.1] - 2023 7 18
-#### Changed
-- Bugfix missing routes const, request auth header (#21)
-- Added character location endpoints (#22)
 #### Other
 - Update Axios
 
