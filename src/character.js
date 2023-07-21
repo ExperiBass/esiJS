@@ -6,7 +6,7 @@ module.exports = {
      * All characters must exist, or none will be returned.
      * @exports info
      * @param characterIdArray {Number[]} The array of character IDs to get info from.
-     * @returns {JSON[]} Corporation, alliance, and faction IDs for each character ID.
+     * @returns {Promise<JSON[]>} Corporation, alliance, and faction IDs for each character ID.
      */
     affiliation(characterIdArray) {
         inputValidation({
@@ -25,7 +25,7 @@ module.exports = {
      * Get a list of all the corporations a character has been a member of.
      * @exports corpHistory
      * @param characterID {number} The character to get the history of.
-     * @returns {JSON} The character's history.
+     * @returns {Promise<object>} The character's history.
      */
     corpHistory(characterID) {
         inputValidation({
@@ -42,7 +42,7 @@ module.exports = {
      * Get portrait urls for a character.
      * @exports portrait
      * @param characterID {number} The character to get the portrait of.
-     * @returns {JSON} Links to the different sizes of the character's portrait.
+     * @returns {Promise<object>} Links to the different sizes of the character's portrait.
      */
     portrait(characterID) {
         inputValidation({
@@ -59,7 +59,7 @@ module.exports = {
      * Get public information about a character.
      * @exports info
      * @param characterID {number} The character to get the public info of.
-     * @returns {JSON} Public info on a character.
+     * @returns {Promise<object>} Public info on a character.
      */
     info(characterID) {
         inputValidation({
@@ -76,7 +76,7 @@ module.exports = {
      * Gets agents research.
      * @requires esi-characters.read_agents_research.v1
      * @param {number} characterID
-     * @returns {JSON} A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
+     * @returns {Promise<object>} A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
      */
     agentsResearch(characterID) {
         inputValidation({
@@ -94,7 +94,7 @@ module.exports = {
      * Get blueprints.
      * @param {number} characterID
      * @requires esi-characters.read_blueprints.v1
-     * @returns {JSON} A list of blueprints the character owns.
+     * @returns {Promise<object>} A list of blueprints the character owns.
      */
     blueprints(characterID) {
         inputValidation({
@@ -113,7 +113,7 @@ module.exports = {
      * @param {number} characterID
      * @param {[numbers]} characters The target characters to calculate the charge for.
      * @requires esi-characters.read_contacts.v1
-     * @returns {JSON} A CSPA charge cost.
+     * @returns {Promise<object>} A CSPA charge cost.
      */
     cspa(characterID, characters = []) {
         inputValidation({
@@ -140,7 +140,7 @@ module.exports = {
      * Get jump fatigue.
      * @param {number} characterID
      * @requires esi-characters.read_fatigue.v1
-     * @returns {JSON} A character’s jump activation and fatigue information.
+     * @returns {Promise<object>} A character’s jump activation and fatigue information.
      */
     fatigue(characterID) {
         inputValidation({
@@ -158,7 +158,7 @@ module.exports = {
      * Get medals.
      * @param {number} characterID
      * @requires esi-characters.read_medals.v1
-     * @returns {JSON} A list of medals the character has.
+     * @returns {Promise<object>} A list of medals the character has.
      */
     medals(characterID) {
         inputValidation({
@@ -176,7 +176,7 @@ module.exports = {
      * Get character corporation roles.
      * @param {number} characterID
      * @requires esi-characters.read_corporation_roles.v1
-     * @returns {JSON} A character’s corporation roles.
+     * @returns {Promise<object>} A character’s corporation roles.
      */
     roles(characterID) {
         inputValidation({
@@ -194,7 +194,7 @@ module.exports = {
      * Get standings.
      * @param {number} characterID
      * @requires esi-characters.read_standings.v1
-     * @returns {JSON} Character standings from agents, NPC corporations, and factions.
+     * @returns {Promise<object>} Character standings from agents, NPC corporations, and factions.
      */
     standings(characterID) {
         inputValidation({
@@ -212,7 +212,7 @@ module.exports = {
      * Yearly aggregate stats.
      * @param {number} characterID
      * @requires esi-characterstats.read.v1
-     * @returns {JSON} Aggregate yearly stats for a character.
+     * @returns {Promise<object>} Aggregate yearly stats for a character.
      */
     stats(characterID) {
         inputValidation({
@@ -230,7 +230,7 @@ module.exports = {
      * Get character corporation titles.
      * @param {number} characterID
      * @requires esi-characters.read_titles.v1
-     * @returns {JSON} A character’s titles.
+     * @returns {Promise<object>} A character’s titles.
      */
     titles(characterID) {
         inputValidation({
@@ -252,7 +252,7 @@ module.exports = {
          * Get character assets.
          * @param {number} characterID
          * @requires esi-assets.read_assets.v1
-         * @returns {JSON} A list of the characters assets.
+         * @returns {Promise<object>} A list of the characters assets.
          */
         assets(characterID) {
             inputValidation({
@@ -271,7 +271,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} itemIDs
          * @requires esi-assets.read_assets.v1
-         * @returns {JSON} Locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
+         * @returns {Promise<object>} Locations for a set of item ids, which you can get from character assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
          */
         locations(characterID, itemIDs = []) {
             inputValidation({
@@ -299,7 +299,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} itemIDs
          * @requires esi-assets.read_assets.v1
-         * @returns {JSON} Names for a set of item ids, which you can get from character assets endpoint. Typically used for items that can customize names, like containers or ships.
+         * @returns {Promise<object>} Names for a set of item ids, which you can get from character assets endpoint. Typically used for items that can customize names, like containers or ships.
          */
         names(characterID, itemIDs) {
             inputValidation({
@@ -331,7 +331,7 @@ module.exports = {
          * List bookmarks
          * @param {number} characterID
          * @requires esi-bookmarks.read_character_bookmarks.v1
-         * @returns {JSON} A list of your character’s personal bookmarks.
+         * @returns {Promise<object>} A list of your character’s personal bookmarks.
          */
         bookmarks(characterID) {
             inputValidation({
@@ -349,7 +349,7 @@ module.exports = {
          * List bookmark folders
          * @param {number} characterID
          * @requires esi-bookmarks.read_character_bookmarks.v1
-         * @returns {JSON} A list of your character’s personal bookmark folders.
+         * @returns {Promise<object>} A list of your character’s personal bookmark folders.
          */
         folders(characterID) {
             inputValidation({
@@ -374,7 +374,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number} fromEvent OPTIONAL - The event ID to start retrieving events from.
          * @requires esi-calendar.read_calendar_events.v1
-         * @returns {JSON} Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
+         * @returns {Promise<object>} Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
          */
         calendar(characterID, fromEvent) {
             inputValidation({
@@ -402,7 +402,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number} eventID
          * @requires esi-calendar.read_calendar_events.v1
-         * @returns {JSON} Get all the information for a specific event
+         * @returns {Promise<object>} Get all the information for a specific event
          */
         getEvent(characterID, eventID) {
             inputValidation({
@@ -426,7 +426,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number} eventID
          * @requires esi-calendar.respond_calendar_events.v1
-         * @returns {string} Set your response status to a event.
+         * @returns {Promise<string>} Set your response status to a event.
          */
         respond(characterID, eventID) {
             inputValidation({
@@ -451,7 +451,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number} eventID
          * @requires esi-calendar.respond_calendar_events.v1
-         * @returns {JSON} Get all invited attendees for a given event
+         * @returns {Promise<object>} Get all invited attendees for a given event
          */
         getAttendees(characterID, eventID) {
             inputValidation({
@@ -482,7 +482,7 @@ module.exports = {
          * Get clones.
          * @param {number} characterID
          * @requires esi-clones.read_clones.v1
-         * @returns {JSON} A list of the character’s clones.
+         * @returns {Promise<object>} A list of the character’s clones.
          */
         clones(characterID) {
             inputValidation({
@@ -500,7 +500,7 @@ module.exports = {
          * Get active implants.
          * @param {number} characterID
          * @requires esi-clones.read_implants.v1
-         * @returns {JSON} Implants on the active clone of a character.
+         * @returns {Promise<object>} Implants on the active clone of a character.
          */
         implants(characterID) {
             inputValidation({
@@ -526,7 +526,7 @@ module.exports = {
          * Get contacts
          * @param {number} characterID
          * @requires esi-characters.read_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         contacts(characterID) {
             inputValidation({
@@ -545,7 +545,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} contacts
          * @requires esi-characters.write_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         addContacts(characterID, contacts) {
             inputValidation({
@@ -570,7 +570,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} contacts
          * @requires esi-characters.write_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         deleteContacts(characterID, contacts) {
             inputValidation({
@@ -595,7 +595,7 @@ module.exports = {
          * @param {number} characterID
          * @param {number[]} contacts
          * @requires esi-characters.write_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         editContacts(characterID, contacts) {
             inputValidation({
@@ -704,7 +704,7 @@ module.exports = {
          * List character industry jobs.
          * @param {number} characterID
          * @requires esi-industry.read_character_jobs.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         jobs(characterID) {
             inputValidation({
@@ -756,7 +756,7 @@ module.exports = {
          * Get character notifications.
          * @param {number} characterID The character to get the notifications of.
          * @requires esi-characters.read_notifications.v1
-         * @returns {JSON} Character notifications.
+         * @returns {Promise<object>} Character notifications.
          */
         notifications(characterID) {
             inputValidation({
@@ -774,7 +774,7 @@ module.exports = {
          * Get new contact notifications.
          * @param {number} characterID
          * @requires esi-characters.read_notifications.v1
-         * @returns {JSON} Notifications about having been added to someone’s contact list.
+         * @returns {Promise<object>} Notifications about having been added to someone’s contact list.
          */
         contacts(characterID) {
             inputValidation({

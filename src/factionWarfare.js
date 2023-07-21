@@ -6,7 +6,7 @@ module.exports = {
     leaderboards: {
         /**
          * Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday
-         * @returns {object} Character leaderboard of kills and victory points within faction warfare.
+         * @returns {Promise<object>} Character leaderboard of kills and victory points within faction warfare.
          */
         characters() {
             return request({
@@ -15,7 +15,7 @@ module.exports = {
         },
         /**
          *
-         * @returns {object} Corporation leaderboard of kills and victory points within faction warfare.
+         * @returns {Promise<object>} Corporation leaderboard of kills and victory points within faction warfare.
          */
         corps() {
             return request({
@@ -24,7 +24,7 @@ module.exports = {
         },
         /**
          * Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday.
-         * @returns {object} All-time leaderboard of kills and victory points within faction warfare.
+         * @returns {Promise<object>} All-time leaderboard of kills and victory points within faction warfare.
          */
         leaderboard() {
             return request({
@@ -38,7 +38,7 @@ module.exports = {
     stats: {
         /**
          * Statistical overviews of factions involved in faction warfare
-         * @returns {object} Per faction breakdown of faction warfare statistics.
+         * @returns {Promise<object>} Per faction breakdown of faction warfare statistics.
          */
         stats() {
             return request({
@@ -82,7 +82,7 @@ module.exports = {
     },
     /**
      * An overview of the current ownership of faction warfare solar systems.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     systems() {
         return request({
@@ -91,7 +91,7 @@ module.exports = {
     },
     /**
      * Data about which NPC factions are at war.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     wars() {
         return request({

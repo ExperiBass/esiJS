@@ -6,7 +6,7 @@ module.exports = {
 
      * @param {number} killID
      * @param {string} killHash
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     killmailInfo(killID, killHash) {
         inputValidation({

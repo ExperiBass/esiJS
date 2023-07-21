@@ -3,7 +3,7 @@ const { request, inputValidation } = require('./util/util.js')
 module.exports = {
     /**
      * Return a list of industry facilities.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     facilities() {
         return request({
@@ -12,7 +12,7 @@ module.exports = {
     },
     /**
      * Return cost indices for solar systems.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     systems() {
         return request({

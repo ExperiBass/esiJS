@@ -10,7 +10,7 @@ module.exports = {
          * Get information on an item group.
 
          * @param {number} groupID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         groupInfo(groupID) {
             inputValidation({
@@ -27,7 +27,7 @@ module.exports = {
         /**
          * Get a list of item groups.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         groups() {
             return request({
@@ -40,7 +40,7 @@ module.exports = {
 
      * @param {number} regionID
      * @param {number} typeID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     history(regionID, typeID) {
         inputValidation({
@@ -106,7 +106,7 @@ module.exports = {
     /**
      * Return a list of prices.
 
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     prices() {
         return request({
@@ -118,7 +118,7 @@ module.exports = {
 
      * @param {number} regionID
      * @param {number} pageNumber
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     types(regionID, pageNumber = 1) {
         inputValidation({

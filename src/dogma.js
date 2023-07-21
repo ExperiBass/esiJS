@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Get information on a dogma attribute.
      * @param {number} attr
-     * @returns {object} Info on the attribute.
+     * @returns {Promise<object>} Info on the attribute.
      */
     attrInfo(attribute) {
         inputValidation({
@@ -19,7 +19,7 @@ module.exports = {
     },
     /**
      * Get a list of dogma attribute ids.
-     * @returns {[number]} A array of all attributes.
+     * @returns {Promise<[number]>} A array of all attributes.
      */
     attrs() {
         return request({
@@ -30,7 +30,7 @@ module.exports = {
      * Returns info about a dynamic item resulting from mutation with a mutaplasmid.
      * @param {number} itemID
      * @param {number} typeID
-     * @returns {object} Info on the mutation.
+     * @returns {Promise<object>} Info on the mutation.
      */
     dynamicItemInfo(itemID, typeID) {
         inputValidation({
@@ -51,7 +51,7 @@ module.exports = {
     /**
      * Get information on a dogma effect.
      * @param {number} effect
-     * @returns {object} Info on the effect.
+     * @returns {Promise<object>} Info on the effect.
      */
     effectInfo(effect) {
         inputValidation({
@@ -66,7 +66,7 @@ module.exports = {
     },
     /**
      * Get a list of dogma effect ids.
-     * @returns {[number]} A array of dogma effects.
+     * @returns {Promise<[number]>} A array of dogma effects.
      */
     effects() {
         return request({

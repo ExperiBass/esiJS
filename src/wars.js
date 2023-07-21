@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Return details about a war.
      * @param {number} warID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     warInfo(warID) {
         inputValidation({
@@ -20,7 +20,7 @@ module.exports = {
     /**
      * Return a list of kills related to a war.
      * @param {number} warID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     warKills(warID) {
         inputValidation({
@@ -36,7 +36,7 @@ module.exports = {
     /**
      * Return a list of wars.
      * @param {number} maxWarID Optional. Only return wars with ID smaller than this.
-     * @returns {[number]}
+     * @returns {Promise<[number]>}
      */
     wars(maxWarID) {
         inputValidation({

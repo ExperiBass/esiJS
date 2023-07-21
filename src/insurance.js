@@ -3,7 +3,7 @@ const { request } = require('./util/util.js')
 module.exports = {
     /**
      * Return available insurance levels for all ship types.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     prices() {
         return request({

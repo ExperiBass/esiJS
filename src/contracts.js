@@ -10,7 +10,7 @@ module.exports = {
          * @exports bids
          * @param contractID {number} The auction contract to get the bids of.
          * @param pageNum {number} The page of bids to get. Defaults to `1`.
-         * @returns {object} The bids on the auction.
+         * @returns {Promise<object>} The bids on the auction.
          */
         bids (contractID, pageNumber = 1) {
             inputValidation({ input: contractID, type: 'number', message: `The function 'contracts.public.bids' requires a contract ID!` })
@@ -23,7 +23,7 @@ module.exports = {
          * @exports contracts
          * @param regionID {number} The region to get the contracts from.
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
-         * @returns {object} A paginated list of all public contracts in the given region.
+         * @returns {Promise<object>} A paginated list of all public contracts in the given region.
         */
         contracts (regionID, pageNumber = 1) {
             inputValidation({ input: regionID, type: 'number', message: `The function 'contracts.public.contracts' requires a region ID!` })
@@ -39,7 +39,7 @@ module.exports = {
          * @exports items
          * @param contractID {number} The contract to get items from.
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
-         * @returns {[number]} A array of items.
+         * @returns {Promise<[number]>} A array of items.
          */
         items (contractID, pageNumber = 1) {
             inputValidation({ input: contractID, type: 'number', message: `The function 'contracts.public.items' requires a contract ID!` })

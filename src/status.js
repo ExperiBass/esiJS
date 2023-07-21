@@ -3,7 +3,7 @@ const { request } = require('./util/util.js')
 module.exports = {
     /**
      * EVE Server status.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     status() {
         return request({

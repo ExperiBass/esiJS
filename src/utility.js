@@ -10,7 +10,7 @@ const {
 module.exports = {
     /**
      * Gets the settings for esiJS.
-     * @returns {JSON} A JSON object with the settings.
+     * @returns {object} A JSON object with the settings.
      */
     getSettings,
     /**

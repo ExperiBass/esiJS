@@ -8,7 +8,7 @@ module.exports = {
         /**
          * Get all character ancestries.
 
-         * @returns {array}
+         * @returns {Promise<array>}
          */
         ancestries() {
             return request({
@@ -24,7 +24,7 @@ module.exports = {
          * Get information on an asteroid belt.
 
          * @param {number} beltID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         beltInfo(beltID) {
             inputValidation({
@@ -45,7 +45,7 @@ module.exports = {
         /**
          * Get a list of bloodlines.
 
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         bloodlines() {
             return request({
@@ -63,7 +63,7 @@ module.exports = {
          * Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions
 
          * @param {[number]} IDs
-         * @returns {array}
+         * @returns {Promise<array>}
          */
         idsToNames(IDs) {
             inputValidation({
@@ -84,7 +84,7 @@ module.exports = {
          * Only exact matches will be returned. All names searched for are cached for 12 hours.
 
          * @param {[string]} names
-         * @returns {array}
+         * @returns {Promise<array>}
          */
         namesToIDs(names) {
             inputValidation({
@@ -107,7 +107,7 @@ module.exports = {
         /**
          * Get a list of item categories.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         categories() {
             return request({
@@ -118,7 +118,7 @@ module.exports = {
          * Get information on an item category.
 
          * @param {number} categoryID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         categoryInfo(categoryID) {
             inputValidation({
@@ -141,7 +141,7 @@ module.exports = {
 
 
          * @param {number} constellationID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         constellationInfo(constellationID) {
             inputValidation({
@@ -157,7 +157,7 @@ module.exports = {
         /**
          * Get a list of constellations.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         constellations() {
             return request({
@@ -172,7 +172,7 @@ module.exports = {
         /**
          * Get a list of factions.
 
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         factions() {
             return request({
@@ -188,7 +188,7 @@ module.exports = {
          * Get information on a graphic.
 
          * @param {number} graphicID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         graphicInfo(graphicID) {
             inputValidation({
@@ -204,7 +204,7 @@ module.exports = {
         /**
          * Get a list of graphics.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         graphics() {
             return request({
@@ -220,7 +220,7 @@ module.exports = {
          * Get information on an item group.
 
          * @param {number} groupID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         groupInfo(groupID) {
             inputValidation({
@@ -236,7 +236,7 @@ module.exports = {
         /**
          * Get a list of item groups.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         groups() {
             return request({
@@ -253,7 +253,7 @@ module.exports = {
 
 
          * @param {number} moonID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         moonsInfo(moonID) {
             inputValidation({
@@ -275,7 +275,7 @@ module.exports = {
          * Get information on a planet.
 
          * @param {number} planetID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         planetInfo(planetID) {
             inputValidation({
@@ -296,7 +296,7 @@ module.exports = {
         /**
          * Get a list of character races.
 
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         races() {
             return request({
@@ -313,7 +313,7 @@ module.exports = {
 
 
          * @param {number} regionID
-         * @returns {objectt}
+         * @returns {Promise<object>}
          */
         regionInfo(regionID) {
             inputValidation({
@@ -328,8 +328,7 @@ module.exports = {
         },
         /**
          * Get a list of regions.
-
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         regions() {
             return request({
@@ -345,7 +344,7 @@ module.exports = {
          * Get information on a stargate.
 
          * @param {number} stargateID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         stargateInfo(stargateID) {
             inputValidation({
@@ -367,7 +366,7 @@ module.exports = {
          * Get information on a star.
 
          * @param {number} starID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         starInfo(starID) {
             inputValidation({
@@ -390,7 +389,7 @@ module.exports = {
 
 
          * @param {number} stationID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         stationInfo(stationID) {
             inputValidation({
@@ -411,7 +410,7 @@ module.exports = {
         /**
          * List all public structures.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         structures() {
             return request({
@@ -445,7 +444,7 @@ module.exports = {
          * Get information on a solar system.
 
          * @param {number} systemID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         systemInfo(systemID) {
             inputValidation({
@@ -462,7 +461,7 @@ module.exports = {
          * Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header,
          * excluding wormhole space. Only systems with jumps will be listed.
 
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         systemJumps() {
             return request({
@@ -473,7 +472,7 @@ module.exports = {
          * Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header,
          * excluding wormhole space. Only systems with kills will be listed.
 
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         systemKills() {
             return request({
@@ -483,7 +482,7 @@ module.exports = {
         /**
          * Get a list of solar systems.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         systems() {
             return request({
@@ -499,7 +498,7 @@ module.exports = {
          * Get information on a type.
 
          * @param {number} typeID
-         * @returns {object}
+         * @returns {Promise<object>}
          */
         typeInfo(typeID) {
             inputValidation({
@@ -515,7 +514,7 @@ module.exports = {
         /**
          * Get a list of type ids.
 
-         * @returns {[number]}
+         * @returns {Promise<[number]>}
          */
         types() {
             return request({

@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Shows sovereignty data for campaigns.
 
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     campaigns() {
         return request({ subUrl: `sovereignty/campaigns` })
@@ -12,7 +12,7 @@ module.exports = {
     /**
      * Shows sovereignty information for solar systems.
 
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     map() {
         return request({ subUrl: `sovereignty/map` })
@@ -20,7 +20,7 @@ module.exports = {
     /**
      * Shows sovereignty data for structures.
 
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     structures() {
         return request({ subUrl: `sovereignty/structures` })

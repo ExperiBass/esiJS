@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Get information on a planetary factory schematic.
      * @param {number} schematicID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     schematicInfo(schematicID) {
         inputValidation({

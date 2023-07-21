@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Get a list of all the aliances a corporation has been a member of.
      * @param corporationID {number} The corporation to get the corporation history of.
-     * @returns {number[]} A array of corporation IDs.
+     * @returns {Promise<number[]>} A array of corporation IDs.
      */
     corporationHistory(corporationID) {
         inputValidation({
@@ -20,7 +20,7 @@ module.exports = {
     /**
      * Get the icon urls for a corporation.
      * @param corporationID {number} The corporation ID to get the icon of.
-     * @returns {object} Links to the different sizes of the corporation icon.
+     * @returns {Promise<object>} Links to the different sizes of the corporation icon.
      */
     icons(corporationID) {
         inputValidation({
@@ -36,7 +36,7 @@ module.exports = {
     /**
      * Get public information about a corporation.
      * @param corporationID {number} The corporation ID to get info from.
-     * @returns {object} Public info on the corporation.
+     * @returns {Promise<object>} Public info on the corporation.
      */
     info(corporationID) {
         inputValidation({
@@ -51,7 +51,7 @@ module.exports = {
     },
     /**
      * Get a list of NPC corporations.
-     * @returns {number[]} A array of all NPC corporations.
+     * @returns {Promise<number[]>} A array of all NPC corporations.
      */
     npcCorps() {
         return request({
@@ -470,7 +470,7 @@ module.exports = {
          * Get corporation assets.
          * @param {number} corporationID
          * @requires esi-assets.read_corporation_assets.v1
-         * @returns {JSON} A list of the corporations assets.
+         * @returns {Promise<object>} A list of the corporations assets.
          */
         assets(corporationID) {
             inputValidation({
@@ -489,7 +489,7 @@ module.exports = {
          * @param {number} corporationID
          * @param {number[]} itemIDs
          * @requires esi-assets.read_corporation_assets.v1
-         * @returns {JSON} Locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
+         * @returns {Promise<object>} Locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
          */
         locations(corporationID, itemIDs = []) {
             inputValidation({
@@ -517,7 +517,7 @@ module.exports = {
          * @param {number} corporationID
          * @param {number[]} itemIDs
          * @requires esi-assets.read_corporation_assets.v1
-         * @returns {JSON} Names for a set of item ids, which you can get from corporation assets endpoint. Typically used for items that can customize names, like containers or ships.
+         * @returns {Promise<object>} Names for a set of item ids, which you can get from corporation assets endpoint. Typically used for items that can customize names, like containers or ships.
          */
         names(corporationID, itemIDs) {
             inputValidation({
@@ -549,7 +549,7 @@ module.exports = {
          * List corporation bookmarks
          * @param {number} corporationID
          * @requires esi-bookmarks.read_corporation_bookmarks.v1
-         * @returns {JSON} A list of your corporation’s personal bookmarks.
+         * @returns {Promise<object>} A list of your corporation’s personal bookmarks.
          */
         bookmarks(corporationID) {
             inputValidation({
@@ -568,7 +568,7 @@ module.exports = {
          * @requires esi-bookmarks.read_corporation_bookmarks.v1
 
 
-        * @returns {JSON} A list of your corporation’s personal bookmark folders.
+        * @returns {Promise<object>} A list of your corporation’s personal bookmark folders.
         */
         folders(corporationID) {
             inputValidation({
@@ -591,7 +591,7 @@ module.exports = {
          * Get corporation contacts.
          * @param {number} corporationID
          * @requires esi-corporations.read_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         contacts(corporationID) {
             inputValidation({

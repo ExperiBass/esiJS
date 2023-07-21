@@ -7,7 +7,7 @@ module.exports = {
      * @param {number} destination
      * @param {string} flag
      * @param {[number]} avoid
-     * @returns {[number]}
+     * @returns {Promise<[number]>}
      */
     planRoute(origin, destination, flag = 'secure', avoid = []) {
         const flagOptions = ['shortest', 'secure', 'insecure']

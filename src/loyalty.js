@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Return a list of offers from a specific corporation’s loyalty store.
      * @param {number} corporationID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     offers(corporationID) {
         inputValidation({

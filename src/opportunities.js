@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Return information of an opportunities group.
      * @param {number} groupID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     groupInfo(groupID) {
         inputValidation({
@@ -19,7 +19,7 @@ module.exports = {
     },
     /**
      * Return a list of opportunities groups.
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     groups() {
         return request({
@@ -30,7 +30,7 @@ module.exports = {
      * Return information of an opportunities task.
 
      * @param {number} groupID
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     taskInfo(taskID) {
         inputValidation({
@@ -46,7 +46,7 @@ module.exports = {
     /**
      * Return a list of opportunities tasks.
 
-     * @returns {object}
+     * @returns {Promise<object>}
      */
     tasks() {
         return request({

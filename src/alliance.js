@@ -3,7 +3,7 @@ const { request, inputValidation } = require('./util/util.js')
 module.exports = {
     /**
      * List all active player alliances.
-     * @returns {number[]} A array of all active player alliances.
+     * @returns {Promise<[number]>} A array of all active player alliances.
      */
     alliances() {
         return request({
@@ -13,7 +13,7 @@ module.exports = {
     /**
      * Get all current member corporations of an alliance.
      * @param ID {number} The alliance ID to get the alliances from.
-     * @returns {number[]} The alliances in the alliance.
+     * @returns {Promise<[number]>} The alliances in the alliance.
      */
     corps(allianceID) {
         inputValidation({
@@ -29,7 +29,7 @@ module.exports = {
     /**
      * Get the icon urls for a alliance.
      * @param allianceID {number} The alliance ID to get the icon of.
-     * @returns {object} Links to the different sizes of the alliance icon.
+     * @returns {Promise<object>} Links to the different sizes of the alliance icon.
      */
     icon(allianceID) {
         inputValidation({
@@ -45,7 +45,7 @@ module.exports = {
     /**
      * Get public information about an alliance.
      * @param ID {number} The alliance ID to get info from.
-     * @returns {object} Public info on the alliance.
+     * @returns {Promise<object>} Public info on the alliance.
      */
     info(allianceID) {
         inputValidation({
@@ -66,7 +66,7 @@ module.exports = {
          * Get alliance contacts.
          * @param {number} allianceID
          * @requires esi-alliances.read_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         contacts(allianceID) {
             inputValidation({
@@ -84,7 +84,7 @@ module.exports = {
          * Get alliance contact labels
          * @param {number} allianceID
          * @requires esi-alliances.read_contacts.v1
-         * @returns {JSON}
+         * @returns {Promise<object>}
          */
         labels(allianceID) {
             inputValidation({
