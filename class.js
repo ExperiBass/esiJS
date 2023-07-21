@@ -94,7 +94,6 @@ const esiJS = class {
     opportunities = require('./src/opportunities')
     pi = require('./src/planetaryInteraction')
     routes = require('./src/routes')
-    search = require('./src/search')
     sov = require('./src/sovereignty')
     status = require('./src/status')
     universe = require('./src/universe')
