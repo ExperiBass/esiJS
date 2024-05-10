@@ -178,7 +178,7 @@ function makeRequest({
     if (!cache.has(fullURL)) {
         // Add in the program name if specified, else default to 'esiJS-v{version}'
         if (programName && programName !== '') {
-            headers['x-user-agent'] = `${programName} | ${DEFAULT_USER_AGENT}`
+            headers['x-user-agent'] = `${programName}:${DEFAULT_USER_AGENT}`
         } else {
             headers['x-user-agent'] = DEFAULT_USER_AGENT
         }

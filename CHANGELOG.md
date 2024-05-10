@@ -8,12 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- #### Added -->
 <!-- #### Changed -->
 <!-- #### Removed -->
-### [v4.1.1] - ???? ?? ??
-#### Changed
-- Bugfix missing routes const, request auth header (#21)
-- Added character location endpoints (#22)
-#### Other
-- Update Axios
 
 ## Major Releases:
 ### v0.1.0 - 2019 06 29
@@ -110,6 +104,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Other
 - Update Axios
 
+### [v4.1.2] - 2024 05 29
+#### Changed
+- Bugfix missing routes const, request auth header (#21)
+- Added character location endpoints (#22)
+- Fix wrong route in corporation.allianceHistory (#26)
+#### Other
+- Update Dependencies
+
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/ExperiBass/esiJS/compare/v0.1.1...dev
@@ -124,5 +126,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v4.0.6]: https://github.com/ExperiBass/esiJS/compare/v4.0.3...v4.0.6
 [v4.0.7]: https://github.com/ExperiBass/esiJS/compare/v4.0.6...v4.0.7
 [v4.1.0]: https://github.com/ExperiBass/esiJS/compare/v4.0.7...v4.1.0
-[v4.1.1]: https://github.com/ExperiBass/esiJS/compare/v4.1.0...v4.1.1
+[v4.1.2]: https://github.com/ExperiBass/esiJS/compare/v4.1.0...v4.1.2
 <!-- ISSUES -->

@@ -2,10 +2,12 @@
 
 esiJS is a updated module for the EVE Online ESI. It makes getting data from the ESI much easier, avoids cluttering your code with HTTP requests, and is small and powerful.
 
+## i dont play eve anymore, this is up for adoption, poke me at my email
+
 # INSTALLING:
 
 ```bash
-npm i --save esijs
+npm i esijs
 ```
 
 # USAGE:
@@ -35,5 +37,5 @@ try {
 Please view the `docs/` directory for the documentation on each group.
 
 # TODO
-
-buff the "cache"
+find maintainers that play the game lol, my email is on my site  
+buff the "cache"  
