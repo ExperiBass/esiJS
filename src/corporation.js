@@ -14,7 +14,7 @@ module.exports = {
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/corporationhistory`
+            subUrl: `corporations/${corporationID}/alliancehistory`
         })
     },
     /**
