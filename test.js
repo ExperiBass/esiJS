@@ -3,8 +3,10 @@ const {cache} = require('./src/util/util')
 
 async function myFunc() {
     let client = new esiJS({})
-    let regions = await client.universe.regions.regions()
+    let alliance = await client.alliance.alliances()
+    //console.log(alliance)
+    let history = await client.alliance.corps(alliance.data[0])
 
-    console.log(regions)
+    console.log(history.data)
 }
 myFunc().catch(e => console.error(e))
