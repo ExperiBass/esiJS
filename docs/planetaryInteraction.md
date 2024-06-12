@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
--   [schematicInfo][1]
-    -   [Parameters][2]
+*   [schematicInfo][1]
+    *   [Parameters][2]
 
 ## schematicInfo
 
@@ -11,9 +11,9 @@ Get information on a planetary factory schematic.
 
 ### Parameters
 
--   `schematicID` **[number][3]** 
+*   `schematicID` **[number][3]**&#x20;
 
-Returns **[object][4]** 
+Returns **[Promise][4]<[object][5]>**&#x20;
 
 [1]: #schematicinfo
 
@@ -21,4 +21,6 @@ Returns **[object][4]**
 
 [3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
--   [killmailInfo][1]
-    -   [Parameters][2]
+*   [killmailInfo][1]
+    *   [Parameters][2]
 
 ## killmailInfo
 
@@ -11,10 +11,10 @@ Return a single killmail from its ID and hash.
 
 ### Parameters
 
--   `killID` **[number][3]** 
--   `killHash` **[string][4]** 
+*   `killID` **[number][3]**&#x20;
+*   `killHash` **[string][4]**&#x20;
 
-Returns **[object][5]** 
+Returns **[Promise][5]<[object][6]>**&#x20;
 
 [1]: #killmailinfo
 
@@ -24,4 +24,6 @@ Returns **[object][5]**
 
 [4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

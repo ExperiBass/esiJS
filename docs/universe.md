@@ -2,71 +2,71 @@
 
 ### Table of Contents
 
--   [ancestries][1]
-    -   [ancestries][2]
--   [belts][3]
-    -   [beltInfo][4]
-        -   [Parameters][5]
--   [bloodlines][6]
-    -   [bloodlines][7]
--   [bulk][8]
-    -   [idsToNames][9]
-        -   [Parameters][10]
-    -   [namesToIDs][11]
-        -   [Parameters][12]
--   [categories][13]
-    -   [categories][14]
-    -   [categoryInfo][15]
-        -   [Parameters][16]
--   [constellations][17]
-    -   [constellationInfo][18]
-        -   [Parameters][19]
-    -   [constellations][20]
--   [factions][21]
-    -   [factions][22]
--   [graphics][23]
-    -   [graphicInfo][24]
-        -   [Parameters][25]
-    -   [graphics][26]
--   [groups][27]
-    -   [groupInfo][28]
-        -   [Parameters][29]
-    -   [groups][30]
--   [moons][31]
-    -   [moonsInfo][32]
-        -   [Parameters][33]
--   [planets][34]
-    -   [planetInfo][35]
-        -   [Parameters][36]
--   [races][37]
-    -   [races][38]
--   [regions][39]
-    -   [regionInfo][40]
-        -   [Parameters][41]
-    -   [regions][42]
--   [stargates][43]
-    -   [stargateInfo][44]
-        -   [Parameters][45]
--   [stars][46]
-    -   [starInfo][47]
-        -   [Parameters][48]
--   [stations][49]
-    -   [stationInfo][50]
-        -   [Parameters][51]
--   [structures][52]
-    -   [structures][53]
-    -   [structureInfo][54]
-        -   [Parameters][55]
--   [systems][56]
-    -   [systemInfo][57]
-        -   [Parameters][58]
-    -   [systemJumps][59]
-    -   [systemKills][60]
-    -   [systems][61]
--   [types][62]
-    -   [typeInfo][63]
-        -   [Parameters][64]
-    -   [types][65]
+*   [ancestries][1]
+    *   [ancestries][2]
+*   [belts][3]
+    *   [beltInfo][4]
+        *   [Parameters][5]
+*   [bloodlines][6]
+    *   [bloodlines][7]
+*   [bulk][8]
+    *   [idsToNames][9]
+        *   [Parameters][10]
+    *   [namesToIDs][11]
+        *   [Parameters][12]
+*   [categories][13]
+    *   [categories][14]
+    *   [categoryInfo][15]
+        *   [Parameters][16]
+*   [constellations][17]
+    *   [constellationInfo][18]
+        *   [Parameters][19]
+    *   [constellations][20]
+*   [factions][21]
+    *   [factions][22]
+*   [graphics][23]
+    *   [graphicInfo][24]
+        *   [Parameters][25]
+    *   [graphics][26]
+*   [groups][27]
+    *   [groupInfo][28]
+        *   [Parameters][29]
+    *   [groups][30]
+*   [moons][31]
+    *   [moonsInfo][32]
+        *   [Parameters][33]
+*   [planets][34]
+    *   [planetInfo][35]
+        *   [Parameters][36]
+*   [races][37]
+    *   [races][38]
+*   [regions][39]
+    *   [regionInfo][40]
+        *   [Parameters][41]
+    *   [regions][42]
+*   [stargates][43]
+    *   [stargateInfo][44]
+        *   [Parameters][45]
+*   [stars][46]
+    *   [starInfo][47]
+        *   [Parameters][48]
+*   [stations][49]
+    *   [stationInfo][50]
+        *   [Parameters][51]
+*   [structures][52]
+    *   [structures][53]
+    *   [structureInfo][54]
+        *   [Parameters][55]
+*   [systems][56]
+    *   [systemInfo][57]
+        *   [Parameters][58]
+    *   [systemJumps][59]
+    *   [systemKills][60]
+    *   [systems][61]
+*   [types][62]
+    *   [typeInfo][63]
+        *   [Parameters][64]
+    *   [types][65]
 
 ## ancestries
 
@@ -74,7 +74,7 @@
 
 Get all character ancestries.
 
-Returns **[array][66]** 
+Returns **[Promise][66]<[array][67]>**&#x20;
 
 ## belts
 
@@ -84,9 +84,9 @@ Get information on an asteroid belt.
 
 #### Parameters
 
--   `beltID` **[number][67]** 
+*   `beltID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## bloodlines
 
@@ -94,7 +94,7 @@ Returns **[object][68]**
 
 Get a list of bloodlines.
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## bulk
 
@@ -106,21 +106,21 @@ Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Re
 
 #### Parameters
 
--   `IDs` **\[[number][67]]** 
+*   `IDs` **\[[number][68]]**&#x20;
 
-Returns **[array][66]** 
+Returns **[Promise][66]<[array][67]>**&#x20;
 
 ### namesToIDs
 
 Resolve a set of names to IDs in the following categories:
-agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems.
+agents, alliances, characters, constellations, corporations factions, inventory\_types, regions, stations, and systems.
 Only exact matches will be returned. All names searched for are cached for 12 hours.
 
 #### Parameters
 
--   `names` **\[[string][69]]** 
+*   `names` **\[[string][70]]**&#x20;
 
-Returns **[array][66]** 
+Returns **[Promise][66]<[array][67]>**&#x20;
 
 ## categories
 
@@ -128,7 +128,7 @@ Returns **[array][66]**
 
 Get a list of item categories.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ### categoryInfo
 
@@ -136,9 +136,9 @@ Get information on an item category.
 
 #### Parameters
 
--   `categoryID` **[number][67]** 
+*   `categoryID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## constellations
 
@@ -148,15 +148,15 @@ Get information on a constellation.
 
 #### Parameters
 
--   `constellationID` **[number][67]** 
+*   `constellationID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### constellations
 
 Get a list of constellations.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ## factions
 
@@ -164,7 +164,7 @@ Returns **\[[number][67]]**
 
 Get a list of factions.
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## graphics
 
@@ -174,15 +174,15 @@ Get information on a graphic.
 
 #### Parameters
 
--   `graphicID` **[number][67]** 
+*   `graphicID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### graphics
 
 Get a list of graphics.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ## groups
 
@@ -192,15 +192,15 @@ Get information on an item group.
 
 #### Parameters
 
--   `groupID` **[number][67]** 
+*   `groupID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### groups
 
 Get a list of item groups.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ## moons
 
@@ -210,9 +210,9 @@ Get information on a moon.
 
 #### Parameters
 
--   `moonID` **[number][67]** 
+*   `moonID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## planets
 
@@ -222,9 +222,9 @@ Get information on a planet.
 
 #### Parameters
 
--   `planetID` **[number][67]** 
+*   `planetID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## races
 
@@ -232,7 +232,7 @@ Returns **[object][68]**
 
 Get a list of character races.
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## regions
 
@@ -242,15 +242,15 @@ Get information on a region.
 
 #### Parameters
 
--   `regionID` **[number][67]** 
+*   `regionID` **[number][68]**&#x20;
 
-Returns **objectt** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### regions
 
 Get a list of regions.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ## stargates
 
@@ -260,9 +260,9 @@ Get information on a stargate.
 
 #### Parameters
 
--   `stargateID` **[number][67]** 
+*   `stargateID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## stars
 
@@ -272,9 +272,9 @@ Get information on a star.
 
 #### Parameters
 
--   `starID` **[number][67]** 
+*   `starID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## stations
 
@@ -284,9 +284,9 @@ Get information on a station.
 
 #### Parameters
 
--   `stationID` **[number][67]** 
+*   `stationID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ## structures
 
@@ -294,7 +294,7 @@ Returns **[object][68]**
 
 List all public structures.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ### structureInfo
 
@@ -302,7 +302,7 @@ Get structure information.
 
 #### Parameters
 
--   `structureID` **[number][67]** 
+*   `structureID` **[number][68]**&#x20;
 
 Returns **any** information on requested structure if you are on the ACL. Otherwise, returns “Forbidden” for all inputs.
 
@@ -314,29 +314,29 @@ Get information on a solar system.
 
 #### Parameters
 
--   `systemID` **[number][67]** 
+*   `systemID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### systemJumps
 
 Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header,
 excluding wormhole space. Only systems with jumps will be listed.
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### systemKills
 
 Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header,
 excluding wormhole space. Only systems with kills will be listed.
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### systems
 
 Get a list of solar systems.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 ## types
 
@@ -346,15 +346,15 @@ Get information on a type.
 
 #### Parameters
 
--   `typeID` **[number][67]** 
+*   `typeID` **[number][68]**&#x20;
 
-Returns **[object][68]** 
+Returns **[Promise][66]<[object][69]>**&#x20;
 
 ### types
 
 Get a list of type ids.
 
-Returns **\[[number][67]]** 
+Returns **[Promise][66]<\[[number][68]]>**&#x20;
 
 [1]: #ancestries
 
@@ -486,10 +486,12 @@ Returns **\[[number][67]]**
 
 [65]: #types-1
 
-[66]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[66]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[68]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[68]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[70]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

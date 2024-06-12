@@ -2,23 +2,25 @@
 
 ### Table of Contents
 
--   [facilities][1]
--   [systems][2]
+*   [facilities][1]
+*   [systems][2]
 
 ## facilities
 
 Return a list of industry facilities.
 
-Returns **[object][3]** 
+Returns **[Promise][3]<[object][4]>**&#x20;
 
 ## systems
 
 Return cost indices for solar systems.
 
-Returns **[object][3]** 
+Returns **[Promise][3]<[object][4]>**&#x20;
 
 [1]: #facilities
 
 [2]: #systems
 
-[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

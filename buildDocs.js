@@ -4,9 +4,9 @@ const path = require('path')
 const Chalk = require('chalk')
 
 async function build() {
-    let files = await fs.readdirSync(path.join(__dirname, './src'))
+    let files = fs.readdirSync(path.join(__dirname, './src'))
     for (let file of files) {
-        if (file !== `utility.js` && file !== `esiJS-Utils`) {
+        if (file !== `util.js` && file !== `util`) {
             console.log(Chalk.yellow(`Building docs for ${file}...`))
             let doc = await documentation.build([`${path.join(__dirname, `./src/${file}`)}`], {
                 extension: 'js',
@@ -17,7 +17,7 @@ async function build() {
                 markdownToc: true
             })
 
-            await fs.writeFileSync(`./docs/${file.replace('.js', '')}.md`, doc)
+            await fs.writeFileSync(`./docs/${file.replace('.js', '.md')}`, doc)
             console.log(Chalk.green(`Docs for ${file} built.`))
         }
     }

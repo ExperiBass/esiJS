@@ -2,14 +2,14 @@
 
 ### Table of Contents
 
--   [attrInfo][1]
-    -   [Parameters][2]
--   [attrs][3]
--   [dynamicItemInfo][4]
-    -   [Parameters][5]
--   [effectInfo][6]
-    -   [Parameters][7]
--   [effects][8]
+*   [attrInfo][1]
+    *   [Parameters][2]
+*   [attrs][3]
+*   [dynamicItemInfo][4]
+    *   [Parameters][5]
+*   [effectInfo][6]
+    *   [Parameters][7]
+*   [effects][8]
 
 ## attrInfo
 
@@ -17,16 +17,16 @@ Get information on a dogma attribute.
 
 ### Parameters
 
--   `attribute`  
--   `attr` **[number][9]** 
+*   `attribute` &#x20;
+*   `attr` **[number][9]**&#x20;
 
-Returns **[object][10]** Info on the attribute.
+Returns **[Promise][10]<[object][11]>** Info on the attribute.
 
 ## attrs
 
 Get a list of dogma attribute ids.
 
-Returns **\[[number][9]]** A array of all attributes.
+Returns **[Promise][10]<\[[number][9]]>** A array of all attributes.
 
 ## dynamicItemInfo
 
@@ -34,10 +34,10 @@ Returns info about a dynamic item resulting from mutation with a mutaplasmid.
 
 ### Parameters
 
--   `itemID` **[number][9]** 
--   `typeID` **[number][9]** 
+*   `itemID` **[number][9]**&#x20;
+*   `typeID` **[number][9]**&#x20;
 
-Returns **[object][10]** Info on the mutation.
+Returns **[Promise][10]<[object][11]>** Info on the mutation.
 
 ## effectInfo
 
@@ -45,15 +45,15 @@ Get information on a dogma effect.
 
 ### Parameters
 
--   `effect` **[number][9]** 
+*   `effect` **[number][9]**&#x20;
 
-Returns **[object][10]** Info on the effect.
+Returns **[Promise][10]<[object][11]>** Info on the effect.
 
 ## effects
 
 Get a list of dogma effect ids.
 
-Returns **\[[number][9]]** A array of dogma effects.
+Returns **[Promise][10]<\[[number][9]]>** A array of dogma effects.
 
 [1]: #attrinfo
 
@@ -73,4 +73,6 @@ Returns **\[[number][9]]** A array of dogma effects.
 
 [9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

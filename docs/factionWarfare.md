@@ -2,18 +2,18 @@
 
 ### Table of Contents
 
--   [leaderboards][1]
-    -   [characters][2]
-    -   [corps][3]
-    -   [leaderboard][4]
--   [stats][5]
-    -   [stats][6]
-    -   [characterStats][7]
-        -   [Parameters][8]
-    -   [corporationStats][9]
-        -   [Parameters][10]
--   [systems][11]
--   [wars][12]
+*   [leaderboards][1]
+    *   [characters][2]
+    *   [corps][3]
+    *   [leaderboard][4]
+*   [stats][5]
+    *   [stats][6]
+    *   [characterStats][7]
+        *   [Parameters][8]
+    *   [corporationStats][9]
+        *   [Parameters][10]
+*   [systems][11]
+*   [wars][12]
 
 ## leaderboards
 
@@ -21,17 +21,17 @@
 
 Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday
 
-Returns **[object][13]** Character leaderboard of kills and victory points within faction warfare.
+Returns **[Promise][13]<[object][14]>** Character leaderboard of kills and victory points within faction warfare.
 
 ### corps
 
-Returns **[object][13]** Corporation leaderboard of kills and victory points within faction warfare.
+Returns **[Promise][13]<[object][14]>** Corporation leaderboard of kills and victory points within faction warfare.
 
 ### leaderboard
 
 Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday.
 
-Returns **[object][13]** All-time leaderboard of kills and victory points within faction warfare.
+Returns **[Promise][13]<[object][14]>** All-time leaderboard of kills and victory points within faction warfare.
 
 ## stats
 
@@ -39,7 +39,7 @@ Returns **[object][13]** All-time leaderboard of kills and victory points within
 
 Statistical overviews of factions involved in faction warfare
 
-Returns **[object][13]** Per faction breakdown of faction warfare statistics.
+Returns **[Promise][13]<[object][14]>** Per faction breakdown of faction warfare statistics.
 
 ### characterStats
 
@@ -47,7 +47,7 @@ Overview of a character involved in faction warfare.
 
 #### Parameters
 
--   `characterID` **[number][14]** 
+*   `characterID` **[number][15]**&#x20;
 
 Returns **any** Statistical overview of a character involved in faction warfare.
 
@@ -57,7 +57,7 @@ Overview of a corporation involved in faction warfare.
 
 #### Parameters
 
--   `corporationID` **[number][14]** 
+*   `corporationID` **[number][15]**&#x20;
 
 Returns **any** Statistics about a corporation involved in faction warfare.
 
@@ -65,13 +65,13 @@ Returns **any** Statistics about a corporation involved in faction warfare.
 
 An overview of the current ownership of faction warfare solar systems.
 
-Returns **[object][13]** 
+Returns **[Promise][13]<[object][14]>**&#x20;
 
 ## wars
 
 Data about which NPC factions are at war.
 
-Returns **[object][13]** 
+Returns **[Promise][13]<[object][14]>**&#x20;
 
 [1]: #leaderboards
 
@@ -97,6 +97,8 @@ Returns **[object][13]**
 
 [12]: #wars
 
-[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

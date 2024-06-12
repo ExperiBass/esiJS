@@ -2,14 +2,16 @@
 
 ### Table of Contents
 
--   [status][1]
+*   [status][1]
 
 ## status
 
 EVE Server status.
 
-Returns **[object][2]** 
+Returns **[Promise][2]<[object][3]>**&#x20;
 
 [1]: #status
 
-[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
--   [offers][1]
-    -   [Parameters][2]
+*   [offers][1]
+    *   [Parameters][2]
 
 ## offers
 
@@ -11,9 +11,9 @@ Return a list of offers from a specific corporation’s loyalty store.
 
 ### Parameters
 
--   `corporationID` **[number][3]** 
+*   `corporationID` **[number][3]**&#x20;
 
-Returns **[object][4]** 
+Returns **[Promise][4]<[object][5]>**&#x20;
 
 [1]: #offers
 
@@ -21,4 +21,6 @@ Returns **[object][4]**
 
 [3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
