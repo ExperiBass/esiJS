@@ -112,6 +112,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Other
 - Update Dependencies
 
+### [v4.1.3] - 2024 06 12
+#### Changed
+- Update docs
+- Fix wrong route in alliance.corps (#27)
+#### Other
+- Update Dependencies
+
 <!-- LINKS -->
 <!-- RELEASES -->
 [Unreleased]: https://github.com/ExperiBass/esiJS/compare/v0.1.1...dev
