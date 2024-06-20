@@ -11,18 +11,14 @@ Search for entities that match a given sub-string.
 
 ### Parameters
 
--   `search` **[string][3]** 
--   `category` **[string][3]** 
--   `strict` **[boolean][4]**  (optional, default `false`)
+-   `search` **[string][3]**
+-   `category` **[string][3]**
+-   `strict` **[boolean][4]** (optional, default `false`)
 
-Returns **[object][5]** 
+Returns **[object][5]**
 
 [1]: #search
-
 [2]: #parameters
-
 [3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
 [4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-
 [5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

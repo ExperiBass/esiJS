@@ -10,7 +10,7 @@ module.exports = {
          */
         characters() {
             return request({
-                subUrl: `fw/leaderboards/characters`
+                subUrl: `fw/leaderboards/characters`,
             })
         },
         /**
@@ -19,7 +19,7 @@ module.exports = {
          */
         corps() {
             return request({
-                subUrl: `fw/leaderboards/corporations`
+                subUrl: `fw/leaderboards/corporations`,
             })
         },
         /**
@@ -28,9 +28,9 @@ module.exports = {
          */
         leaderboard() {
             return request({
-                subUrl: `fw/leaderboards`
+                subUrl: `fw/leaderboards`,
             })
-        }
+        },
     },
     /**
      *
@@ -42,7 +42,7 @@ module.exports = {
          */
         stats() {
             return request({
-                subUrl: `fw/stats`
+                subUrl: `fw/stats`,
             })
         },
         /**
@@ -55,11 +55,11 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'fw.stats.characterStats' requires a character ID!`
+                message: `The function 'fw.stats.characterStats' requires a character ID!`,
             })
             return request({
                 subUrl: `characters/${characterID}/fw/stats`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -72,13 +72,13 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'fw.stats.corporationStats' requires a corporation ID!`
+                message: `The function 'fw.stats.corporationStats' requires a corporation ID!`,
             })
             return request({
                 subUrl: `corporations/${corporationID}/fw/stats`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      * An overview of the current ownership of faction warfare solar systems.
@@ -86,7 +86,7 @@ module.exports = {
      */
     systems() {
         return request({
-            subUrl: `fw/systems`
+            subUrl: `fw/systems`,
         })
     },
     /**
@@ -95,7 +95,7 @@ module.exports = {
      */
     wars() {
         return request({
-            subUrl: `fw/wars`
+            subUrl: `fw/wars`,
         })
-    }
+    },
 }

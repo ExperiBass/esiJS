@@ -2,13 +2,13 @@
 
 ### Table of Contents
 
-*   [public][1]
-    *   [bids][2]
-        *   [Parameters][3]
-    *   [contracts][4]
-        *   [Parameters][5]
-    *   [items][6]
-        *   [Parameters][7]
+-   [public][1]
+    -   [bids][2]
+        -   [Parameters][3]
+    -   [contracts][4]
+        -   [Parameters][5]
+    -   [items][6]
+        -   [Parameters][7]
 
 ## public
 
@@ -18,9 +18,9 @@ Lists bids on a public auction contract.
 
 #### Parameters
 
-*   `contractID`  {number} The auction contract to get the bids of.
-*   `pageNumber`   (optional, default `1`)
-*   `pageNum`  {number} The page of bids to get. Defaults to `1`.
+-   `contractID` {number} The auction contract to get the bids of.
+-   `pageNumber` (optional, default `1`)
+-   `pageNum` {number} The page of bids to get. Defaults to `1`.
 
 Returns **[Promise][8]<[object][9]>** The bids on the auction.
 
@@ -30,9 +30,9 @@ Returns a paginated list of all public contracts in the given region.
 
 #### Parameters
 
-*   `regionID`  {number} The region to get the contracts from.
-*   `pageNumber`   (optional, default `1`)
-*   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
+-   `regionID` {number} The region to get the contracts from.
+-   `pageNumber` (optional, default `1`)
+-   `pageNum` {number} The page of contracts to get. Defaults to `1`.
 
 Returns **[Promise][8]<[object][9]>** A paginated list of all public contracts in the given region.
 
@@ -42,28 +42,19 @@ Lists items of a public contract.
 
 #### Parameters
 
-*   `contractID`  {number} The contract to get items from.
-*   `pageNumber`   (optional, default `1`)
-*   `pageNum`  {number} The page of contracts to get. Defaults to `1`.
+-   `contractID` {number} The contract to get items from.
+-   `pageNumber` (optional, default `1`)
+-   `pageNum` {number} The page of contracts to get. Defaults to `1`.
 
 Returns **[Promise][8]<\[[number][10]]>** A array of items.
 
 [1]: #public
-
 [2]: #bids
-
 [3]: #parameters
-
 [4]: #contracts
-
 [5]: #parameters-1
-
 [6]: #items
-
 [7]: #parameters-2
-
 [8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
 [10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

@@ -2,18 +2,18 @@
 
 ### Table of Contents
 
-*   [leaderboards][1]
-    *   [characters][2]
-    *   [corps][3]
-    *   [leaderboard][4]
-*   [stats][5]
-    *   [stats][6]
-    *   [characterStats][7]
-        *   [Parameters][8]
-    *   [corporationStats][9]
-        *   [Parameters][10]
-*   [systems][11]
-*   [wars][12]
+-   [leaderboards][1]
+    -   [characters][2]
+    -   [corps][3]
+    -   [leaderboard][4]
+-   [stats][5]
+    -   [stats][6]
+    -   [characterStats][7]
+        -   [Parameters][8]
+    -   [corporationStats][9]
+        -   [Parameters][10]
+-   [systems][11]
+-   [wars][12]
 
 ## leaderboards
 
@@ -47,7 +47,7 @@ Overview of a character involved in faction warfare.
 
 #### Parameters
 
-*   `characterID` **[number][15]**&#x20;
+-   `characterID` **[number][15]**&#x20;
 
 Returns **any** Statistical overview of a character involved in faction warfare.
 
@@ -57,7 +57,7 @@ Overview of a corporation involved in faction warfare.
 
 #### Parameters
 
-*   `corporationID` **[number][15]**&#x20;
+-   `corporationID` **[number][15]**&#x20;
 
 Returns **any** Statistics about a corporation involved in faction warfare.
 
@@ -74,31 +74,17 @@ Data about which NPC factions are at war.
 Returns **[Promise][13]<[object][14]>**&#x20;
 
 [1]: #leaderboards
-
 [2]: #characters
-
 [3]: #corps
-
 [4]: #leaderboard
-
 [5]: #stats
-
 [6]: #stats-1
-
 [7]: #characterstats
-
 [8]: #parameters
-
 [9]: #corporationstats
-
 [10]: #parameters-1
-
 [11]: #systems
-
 [12]: #wars
-
 [13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
 [15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

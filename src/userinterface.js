@@ -16,17 +16,17 @@ module.exports = {
             inputValidation({
                 input: destinationID,
                 type: 'number',
-                message: `The function 'ui.autopilot.waypoint' needs a destination ID!`
+                message: `The function 'ui.autopilot.waypoint' needs a destination ID!`,
             })
             inputValidation({
                 input: addToBeginning,
                 type: 'boolean',
-                message: `The parameter "addToBeginning" in the function 'ui.autopilot.waypoint' must be a boolean!`
+                message: `The parameter "addToBeginning" in the function 'ui.autopilot.waypoint' must be a boolean!`,
             })
             inputValidation({
                 input: clearOtherWaypoints,
                 type: 'boolean',
-                message: `The parameter "clearOtherWaypoints" in the function 'ui.autopilot.waypoint' must be a boolean!`
+                message: `The parameter "clearOtherWaypoints" in the function 'ui.autopilot.waypoint' must be a boolean!`,
             })
 
             return request({
@@ -35,11 +35,11 @@ module.exports = {
                 query: {
                     add_to_beginning: addToBeginning,
                     clear_other_waypoints: clearOtherWaypoints,
-                    destination_id: destinationID
+                    destination_id: destinationID,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -54,16 +54,16 @@ module.exports = {
             inputValidation({
                 input: contractID,
                 type: 'number',
-                message: `The function 'ui.openwindow.contract' requires a contract ID!`
+                message: `The function 'ui.openwindow.contract' requires a contract ID!`,
             })
 
             return request({
                 subUrl: `ui/openwindow/contract`,
                 requestType: 'POST',
                 query: {
-                    contract_id: contractID
+                    contract_id: contractID,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -75,16 +75,16 @@ module.exports = {
             inputValidation({
                 input: targetID,
                 type: 'number',
-                message: `The function 'ui.openwindow.information' requires a target ID!`
+                message: `The function 'ui.openwindow.information' requires a target ID!`,
             })
 
             return request({
                 subUrl: `ui/openwindow/information`,
                 requestType: 'POST',
                 query: {
-                    target_id: targetID
+                    target_id: targetID,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -96,16 +96,16 @@ module.exports = {
             inputValidation({
                 input: itemID,
                 type: 'number',
-                message: `The function 'ui.openwindow.marketDetails' requires a item ID!`
+                message: `The function 'ui.openwindow.marketDetails' requires a item ID!`,
             })
 
             return request({
                 subUrl: `ui/openwindow/marketdetails`,
                 requestType: 'POST',
                 query: {
-                    type_id: itemID
+                    type_id: itemID,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -126,17 +126,17 @@ module.exports = {
             inputValidation({
                 input: mail,
                 type: 'object',
-                message: `The function 'ui.openwindow.newMail' requires a mail object!`
+                message: `The function 'ui.openwindow.newMail' requires a mail object!`,
             })
 
             return request({
                 subUrl: `ui/openwindow/newmail`,
                 requestType: 'POST',
                 query: {
-                    new_mail: mail
+                    new_mail: mail,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
-    }
+        },
+    },
 }

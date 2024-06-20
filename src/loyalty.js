@@ -10,11 +10,11 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'loyalty.offers' requires a corporation ID!`
+            message: `The function 'loyalty.offers' requires a corporation ID!`,
         })
 
         return request({
-            subUrl: `loyalty/stores/${corporationID}/offers`
+            subUrl: `loyalty/stores/${corporationID}/offers`,
         })
-    }
+    },
 }

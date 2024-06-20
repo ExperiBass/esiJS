@@ -2,231 +2,231 @@
 
 ### Table of Contents
 
-*   [affiliation][1]
-    *   [Parameters][2]
-*   [corpHistory][3]
-    *   [Parameters][4]
-*   [portrait][5]
-    *   [Parameters][6]
-*   [info][7]
-    *   [Parameters][8]
-*   [agentsResearch][9]
-    *   [Parameters][10]
-*   [blueprints][11]
-    *   [Parameters][12]
-*   [cspa][13]
-    *   [Parameters][14]
-*   [fatigue][15]
-    *   [Parameters][16]
-*   [medals][17]
-    *   [Parameters][18]
-*   [roles][19]
-    *   [Parameters][20]
-*   [standings][21]
-    *   [Parameters][22]
-*   [stats][23]
-    *   [Parameters][24]
-*   [titles][25]
-    *   [Parameters][26]
-*   [bookmarks][27]
-    *   [bookmarks][28]
-        *   [Parameters][29]
-    *   [folders][30]
-        *   [Parameters][31]
-*   [calendar][32]
-    *   [calendar][33]
-        *   [Parameters][34]
-    *   [respond][35]
-        *   [Parameters][36]
-*   [clones][37]
-    *   [clones][38]
-        *   [Parameters][39]
-    *   [implants][40]
-        *   [Parameters][41]
-*   [clones][42]
-    *   [clones][43]
-        *   [Parameters][44]
-    *   [implants][45]
-        *   [Parameters][46]
-*   [contacts][47]
-    *   [contacts][48]
-        *   [Parameters][49]
-    *   [addContacts][50]
-        *   [Parameters][51]
-    *   [deleteContacts][52]
-        *   [Parameters][53]
-    *   [editContacts][54]
-        *   [Parameters][55]
-*   [contacts][56]
-    *   [contacts][57]
-        *   [Parameters][58]
-    *   [addContacts][59]
-        *   [Parameters][60]
-    *   [deleteContacts][61]
-        *   [Parameters][62]
-    *   [editContacts][63]
-        *   [Parameters][64]
-*   [contracts][65]
-    *   [contracts][66]
-        *   [Parameters][67]
-    *   [bids][68]
-        *   [Parameters][69]
-    *   [items][70]
-        *   [Parameters][71]
-*   [contracts][72]
-    *   [contracts][73]
-        *   [Parameters][74]
-    *   [bids][75]
-        *   [Parameters][76]
-    *   [items][77]
-        *   [Parameters][78]
-*   [contracts][79]
-    *   [contracts][80]
-        *   [Parameters][81]
-    *   [bids][82]
-        *   [Parameters][83]
-    *   [items][84]
-        *   [Parameters][85]
-*   [industry][86]
-    *   [jobs][87]
-        *   [Parameters][88]
-    *   [ledger][89]
-        *   [Parameters][90]
-*   [industry][91]
-    *   [jobs][92]
-        *   [Parameters][93]
-    *   [ledger][94]
-        *   [Parameters][95]
-*   [industry][96]
-    *   [jobs][97]
-        *   [Parameters][98]
-    *   [ledger][99]
-        *   [Parameters][100]
-*   [notifications][101]
-    *   [notifications][102]
-        *   [Parameters][103]
-    *   [contacts][104]
-        *   [Parameters][105]
-*   [notifications][106]
-    *   [notifications][107]
-        *   [Parameters][108]
-    *   [contacts][109]
-        *   [Parameters][110]
-*   [notifications][111]
-    *   [notifications][112]
-        *   [Parameters][113]
-    *   [contacts][114]
-        *   [Parameters][115]
-*   [killmails][116]
-    *   [recent][117]
-        *   [Parameters][118]
-*   [killmails][119]
-    *   [recent][120]
-        *   [Parameters][121]
-*   [killmails][122]
-    *   [recent][123]
-        *   [Parameters][124]
-*   [mail][125]
-    *   [send][126]
-        *   [Parameters][127]
-        *   [Examples][128]
-    *   [update][129]
-        *   [Parameters][130]
-        *   [Examples][131]
-    *   [delete][132]
-        *   [Parameters][133]
-    *   [labels][134]
-        *   [Parameters][135]
-    *   [createLabel][136]
-        *   [Parameters][137]
-        *   [Examples][138]
-    *   [deleteLabel][139]
-        *   [Parameters][140]
-    *   [mailingLists][141]
-        *   [Parameters][142]
-*   [mail][143]
-    *   [send][144]
-        *   [Parameters][145]
-        *   [Examples][146]
-    *   [update][147]
-        *   [Parameters][148]
-        *   [Examples][149]
-    *   [delete][150]
-        *   [Parameters][151]
-    *   [labels][152]
-        *   [Parameters][153]
-    *   [createLabel][154]
-        *   [Parameters][155]
-        *   [Examples][156]
-    *   [deleteLabel][157]
-        *   [Parameters][158]
-    *   [mailingLists][159]
-        *   [Parameters][160]
-*   [mail][161]
-    *   [send][162]
-        *   [Parameters][163]
-        *   [Examples][164]
-    *   [update][165]
-        *   [Parameters][166]
-        *   [Examples][167]
-    *   [delete][168]
-        *   [Parameters][169]
-    *   [labels][170]
-        *   [Parameters][171]
-    *   [createLabel][172]
-        *   [Parameters][173]
-        *   [Examples][174]
-    *   [deleteLabel][175]
-        *   [Parameters][176]
-    *   [mailingLists][177]
-        *   [Parameters][178]
-*   [market][179]
-    *   [orders][180]
-        *   [Parameters][181]
-    *   [orderHistory][182]
-        *   [Parameters][183]
-*   [market][184]
-    *   [orders][185]
-        *   [Parameters][186]
-    *   [orderHistory][187]
-        *   [Parameters][188]
-*   [market][189]
-    *   [orders][190]
-        *   [Parameters][191]
-    *   [orderHistory][192]
-        *   [Parameters][193]
-*   [opportunities][194]
-    *   [completedTasks][195]
-        *   [Parameters][196]
-*   [opportunities][197]
-    *   [completedTasks][198]
-        *   [Parameters][199]
-*   [pi][200]
-    *   [colonies][201]
-        *   [Parameters][202]
-    *   [colonyInfo][203]
-        *   [Parameters][204]
-*   [skills][205]
-    *   [attributes][206]
-        *   [Parameters][207]
-    *   [queue][208]
-        *   [Parameters][209]
-    *   [skills][210]
-        *   [Parameters][211]
-*   [wallet][212]
-    *   [balance][213]
-        *   [Parameters][214]
-    *   [journal][215]
-        *   [Parameters][216]
-    *   [transactions][217]
-        *   [Parameters][218]
-*   [location][219]
-    *   [location][220]
-        *   [Parameters][221]
-    *   [online][222]
-        *   [Parameters][223]
-    *   [ship][224]
-        *   [Parameters][225]
+-   [affiliation][1]
+    -   [Parameters][2]
+-   [corpHistory][3]
+    -   [Parameters][4]
+-   [portrait][5]
+    -   [Parameters][6]
+-   [info][7]
+    -   [Parameters][8]
+-   [agentsResearch][9]
+    -   [Parameters][10]
+-   [blueprints][11]
+    -   [Parameters][12]
+-   [cspa][13]
+    -   [Parameters][14]
+-   [fatigue][15]
+    -   [Parameters][16]
+-   [medals][17]
+    -   [Parameters][18]
+-   [roles][19]
+    -   [Parameters][20]
+-   [standings][21]
+    -   [Parameters][22]
+-   [stats][23]
+    -   [Parameters][24]
+-   [titles][25]
+    -   [Parameters][26]
+-   [bookmarks][27]
+    -   [bookmarks][28]
+        -   [Parameters][29]
+    -   [folders][30]
+        -   [Parameters][31]
+-   [calendar][32]
+    -   [calendar][33]
+        -   [Parameters][34]
+    -   [respond][35]
+        -   [Parameters][36]
+-   [clones][37]
+    -   [clones][38]
+        -   [Parameters][39]
+    -   [implants][40]
+        -   [Parameters][41]
+-   [clones][42]
+    -   [clones][43]
+        -   [Parameters][44]
+    -   [implants][45]
+        -   [Parameters][46]
+-   [contacts][47]
+    -   [contacts][48]
+        -   [Parameters][49]
+    -   [addContacts][50]
+        -   [Parameters][51]
+    -   [deleteContacts][52]
+        -   [Parameters][53]
+    -   [editContacts][54]
+        -   [Parameters][55]
+-   [contacts][56]
+    -   [contacts][57]
+        -   [Parameters][58]
+    -   [addContacts][59]
+        -   [Parameters][60]
+    -   [deleteContacts][61]
+        -   [Parameters][62]
+    -   [editContacts][63]
+        -   [Parameters][64]
+-   [contracts][65]
+    -   [contracts][66]
+        -   [Parameters][67]
+    -   [bids][68]
+        -   [Parameters][69]
+    -   [items][70]
+        -   [Parameters][71]
+-   [contracts][72]
+    -   [contracts][73]
+        -   [Parameters][74]
+    -   [bids][75]
+        -   [Parameters][76]
+    -   [items][77]
+        -   [Parameters][78]
+-   [contracts][79]
+    -   [contracts][80]
+        -   [Parameters][81]
+    -   [bids][82]
+        -   [Parameters][83]
+    -   [items][84]
+        -   [Parameters][85]
+-   [industry][86]
+    -   [jobs][87]
+        -   [Parameters][88]
+    -   [ledger][89]
+        -   [Parameters][90]
+-   [industry][91]
+    -   [jobs][92]
+        -   [Parameters][93]
+    -   [ledger][94]
+        -   [Parameters][95]
+-   [industry][96]
+    -   [jobs][97]
+        -   [Parameters][98]
+    -   [ledger][99]
+        -   [Parameters][100]
+-   [notifications][101]
+    -   [notifications][102]
+        -   [Parameters][103]
+    -   [contacts][104]
+        -   [Parameters][105]
+-   [notifications][106]
+    -   [notifications][107]
+        -   [Parameters][108]
+    -   [contacts][109]
+        -   [Parameters][110]
+-   [notifications][111]
+    -   [notifications][112]
+        -   [Parameters][113]
+    -   [contacts][114]
+        -   [Parameters][115]
+-   [killmails][116]
+    -   [recent][117]
+        -   [Parameters][118]
+-   [killmails][119]
+    -   [recent][120]
+        -   [Parameters][121]
+-   [killmails][122]
+    -   [recent][123]
+        -   [Parameters][124]
+-   [mail][125]
+    -   [send][126]
+        -   [Parameters][127]
+        -   [Examples][128]
+    -   [update][129]
+        -   [Parameters][130]
+        -   [Examples][131]
+    -   [delete][132]
+        -   [Parameters][133]
+    -   [labels][134]
+        -   [Parameters][135]
+    -   [createLabel][136]
+        -   [Parameters][137]
+        -   [Examples][138]
+    -   [deleteLabel][139]
+        -   [Parameters][140]
+    -   [mailingLists][141]
+        -   [Parameters][142]
+-   [mail][143]
+    -   [send][144]
+        -   [Parameters][145]
+        -   [Examples][146]
+    -   [update][147]
+        -   [Parameters][148]
+        -   [Examples][149]
+    -   [delete][150]
+        -   [Parameters][151]
+    -   [labels][152]
+        -   [Parameters][153]
+    -   [createLabel][154]
+        -   [Parameters][155]
+        -   [Examples][156]
+    -   [deleteLabel][157]
+        -   [Parameters][158]
+    -   [mailingLists][159]
+        -   [Parameters][160]
+-   [mail][161]
+    -   [send][162]
+        -   [Parameters][163]
+        -   [Examples][164]
+    -   [update][165]
+        -   [Parameters][166]
+        -   [Examples][167]
+    -   [delete][168]
+        -   [Parameters][169]
+    -   [labels][170]
+        -   [Parameters][171]
+    -   [createLabel][172]
+        -   [Parameters][173]
+        -   [Examples][174]
+    -   [deleteLabel][175]
+        -   [Parameters][176]
+    -   [mailingLists][177]
+        -   [Parameters][178]
+-   [market][179]
+    -   [orders][180]
+        -   [Parameters][181]
+    -   [orderHistory][182]
+        -   [Parameters][183]
+-   [market][184]
+    -   [orders][185]
+        -   [Parameters][186]
+    -   [orderHistory][187]
+        -   [Parameters][188]
+-   [market][189]
+    -   [orders][190]
+        -   [Parameters][191]
+    -   [orderHistory][192]
+        -   [Parameters][193]
+-   [opportunities][194]
+    -   [completedTasks][195]
+        -   [Parameters][196]
+-   [opportunities][197]
+    -   [completedTasks][198]
+        -   [Parameters][199]
+-   [pi][200]
+    -   [colonies][201]
+        -   [Parameters][202]
+    -   [colonyInfo][203]
+        -   [Parameters][204]
+-   [skills][205]
+    -   [attributes][206]
+        -   [Parameters][207]
+    -   [queue][208]
+        -   [Parameters][209]
+    -   [skills][210]
+        -   [Parameters][211]
+-   [wallet][212]
+    -   [balance][213]
+        -   [Parameters][214]
+    -   [journal][215]
+        -   [Parameters][216]
+    -   [transactions][217]
+        -   [Parameters][218]
+-   [location][219]
+    -   [location][220]
+        -   [Parameters][221]
+    -   [online][222]
+        -   [Parameters][223]
+    -   [ship][224]
+        -   [Parameters][225]
 
 ## affiliation
 
@@ -235,7 +235,7 @@ All characters must exist, or none will be returned.
 
 ### Parameters
 
-*   `characterIdArray`  {Number\[]} The array of character IDs to get info from.
+-   `characterIdArray` {Number\[]} The array of character IDs to get info from.
 
 Returns **[Promise][226]<[Array][227]<[JSON][228]>>** Corporation, alliance, and faction IDs for each character ID.
 
@@ -245,7 +245,7 @@ Get a list of all the corporations a character has been a member of.
 
 ### Parameters
 
-*   `characterID`  {number} The character to get the history of.
+-   `characterID` {number} The character to get the history of.
 
 Returns **[Promise][226]<[object][229]>** The character's history.
 
@@ -255,7 +255,7 @@ Get portrait urls for a character.
 
 ### Parameters
 
-*   `characterID`  {number} The character to get the portrait of.
+-   `characterID` {number} The character to get the portrait of.
 
 Returns **[Promise][226]<[object][229]>** Links to the different sizes of the character's portrait.
 
@@ -265,7 +265,7 @@ Get public information about a character.
 
 ### Parameters
 
-*   `characterID`  {number} The character to get the public info of.
+-   `characterID` {number} The character to get the public info of.
 
 Returns **[Promise][226]<[object][229]>** Public info on a character.
 
@@ -275,7 +275,7 @@ Gets agents research.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay \* days(currentTime - researchStartDate)
 
@@ -285,7 +285,7 @@ Get blueprints.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of blueprints the character owns.
 
@@ -295,8 +295,8 @@ Calculate a CSPA (CONCORD Spam Prevention Act) cost.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `characters` **\[numbers]** The target characters to calculate the charge for. (optional, default `[]`)
+-   `characterID` **[number][230]**&#x20;
+-   `characters` **\[numbers]** The target characters to calculate the charge for. (optional, default `[]`)
 
 Returns **[Promise][226]<[object][229]>** A CSPA charge cost.
 
@@ -306,7 +306,7 @@ Get jump fatigue.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A character’s jump activation and fatigue information.
 
@@ -316,7 +316,7 @@ Get medals.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of medals the character has.
 
@@ -326,7 +326,7 @@ Get character corporation roles.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A character’s corporation roles.
 
@@ -336,7 +336,7 @@ Get standings.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Character standings from agents, NPC corporations, and factions.
 
@@ -346,7 +346,7 @@ Yearly aggregate stats.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Aggregate yearly stats for a character.
 
@@ -356,7 +356,7 @@ Get character corporation titles.
 
 ### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A character’s titles.
 
@@ -368,7 +368,7 @@ List bookmarks
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of your character’s personal bookmarks.
 
@@ -378,7 +378,7 @@ List bookmark folders
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of your character’s personal bookmark folders.
 
@@ -390,10 +390,10 @@ List calendar event summaries.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `fromEvent` **[number][230]** OPTIONAL - The event ID to start retrieving events from.
+-   `characterID` **[number][230]**&#x20;
+-   `fromEvent` **[number][230]** OPTIONAL - The event ID to start retrieving events from.
 
-Returns **[Promise][226]<[object][229]>** Get 50 event summaries from the calendar. If no from\_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from\_event ID is specified, it will return the next 50 chronological event summaries from after that event
+Returns **[Promise][226]<[object][229]>** Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
 
 ### respond
 
@@ -401,8 +401,8 @@ Respond to a event.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `eventID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `eventID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[string][231]>** Set your response status to a event.
 
@@ -414,7 +414,7 @@ Get clones.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of the character’s clones.
 
@@ -424,7 +424,7 @@ Get active implants.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Implants on the active clone of a character.
 
@@ -436,7 +436,7 @@ Get clones.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** A list of the character’s clones.
 
@@ -446,7 +446,7 @@ Get active implants.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Implants on the active clone of a character.
 
@@ -458,7 +458,7 @@ Get contacts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -468,8 +468,8 @@ Bulk add contacts with same settings
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contacts` **[Array][227]<[number][230]>**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contacts` **[Array][227]<[number][230]>**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -479,8 +479,8 @@ Bulk delete contacts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contacts` **[Array][227]<[number][230]>**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contacts` **[Array][227]<[number][230]>**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -490,8 +490,8 @@ Bulk edit contacts with same settings
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contacts` **[Array][227]<[number][230]>**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contacts` **[Array][227]<[number][230]>**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -503,7 +503,7 @@ Get contacts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -513,8 +513,8 @@ Bulk add contacts with same settings
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contacts` **[Array][227]<[number][230]>**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contacts` **[Array][227]<[number][230]>**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -524,8 +524,8 @@ Bulk delete contacts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contacts` **[Array][227]<[number][230]>**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contacts` **[Array][227]<[number][230]>**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -535,8 +535,8 @@ Bulk edit contacts with same settings
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contacts` **[Array][227]<[number][230]>**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contacts` **[Array][227]<[number][230]>**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -548,9 +548,9 @@ Get contracts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
-Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in\_progress".
+Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
 ### bids
 
@@ -558,8 +558,8 @@ Get contract bids
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contractID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contractID` **[number][230]**&#x20;
 
 Returns **any** bids on a particular auction contract.
 
@@ -569,8 +569,8 @@ Get contract items
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contractID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contractID` **[number][230]**&#x20;
 
 Returns **any** items of a particular contract.
 
@@ -582,9 +582,9 @@ Get contracts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
-Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in\_progress".
+Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
 ### bids
 
@@ -592,8 +592,8 @@ Get contract bids
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contractID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contractID` **[number][230]**&#x20;
 
 Returns **any** bids on a particular auction contract.
 
@@ -603,8 +603,8 @@ Get contract items
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contractID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contractID` **[number][230]**&#x20;
 
 Returns **any** items of a particular contract.
 
@@ -616,9 +616,9 @@ Get contracts
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
-Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in\_progress".
+Returns **any** contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
 
 ### bids
 
@@ -626,8 +626,8 @@ Get contract bids
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contractID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contractID` **[number][230]**&#x20;
 
 Returns **any** bids on a particular auction contract.
 
@@ -637,8 +637,8 @@ Get contract items
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `contractID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `contractID` **[number][230]**&#x20;
 
 Returns **any** items of a particular contract.
 
@@ -650,7 +650,7 @@ List character industry jobs.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -660,8 +660,8 @@ Character mining ledger.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `page`   (optional, default `1`)
+-   `characterID` **[number][230]**&#x20;
+-   `page` (optional, default `1`)
 
 Returns **any** Paginated record of all mining done by a character for the past 30 days
 
@@ -673,7 +673,7 @@ List character industry jobs.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -683,8 +683,8 @@ Character mining ledger.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `page`   (optional, default `1`)
+-   `characterID` **[number][230]**&#x20;
+-   `page` (optional, default `1`)
 
 Returns **any** Paginated record of all mining done by a character for the past 30 days
 
@@ -696,7 +696,7 @@ List character industry jobs.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>**&#x20;
 
@@ -706,8 +706,8 @@ Character mining ledger.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `page`   (optional, default `1`)
+-   `characterID` **[number][230]**&#x20;
+-   `page` (optional, default `1`)
 
 Returns **any** Paginated record of all mining done by a character for the past 30 days
 
@@ -719,7 +719,7 @@ Get character notifications.
 
 #### Parameters
 
-*   `characterID` **[number][230]** The character to get the notifications of.
+-   `characterID` **[number][230]** The character to get the notifications of.
 
 Returns **[Promise][226]<[object][229]>** Character notifications.
 
@@ -729,7 +729,7 @@ Get new contact notifications.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Notifications about having been added to someone’s contact list.
 
@@ -741,7 +741,7 @@ Get character notifications.
 
 #### Parameters
 
-*   `characterID` **[number][230]** The character to get the notifications of.
+-   `characterID` **[number][230]** The character to get the notifications of.
 
 Returns **[Promise][226]<[object][229]>** Character notifications.
 
@@ -751,7 +751,7 @@ Get new contact notifications.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Notifications about having been added to someone’s contact list.
 
@@ -763,7 +763,7 @@ Get character notifications.
 
 #### Parameters
 
-*   `characterID` **[number][230]** The character to get the notifications of.
+-   `characterID` **[number][230]** The character to get the notifications of.
 
 Returns **[Promise][226]<[object][229]>** Character notifications.
 
@@ -773,7 +773,7 @@ Get new contact notifications.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **[Promise][226]<[object][229]>** Notifications about having been added to someone’s contact list.
 
@@ -785,8 +785,8 @@ Get a character's recent kills and losses.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `page` **[number][230]** The page of results to return. (optional, default `1`)
+-   `characterID` **[number][230]**&#x20;
+-   `page` **[number][230]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a character’s kills and losses going back 90 days.
 
@@ -798,8 +798,8 @@ Get a character's recent kills and losses.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `page` **[number][230]** The page of results to return. (optional, default `1`)
+-   `characterID` **[number][230]**&#x20;
+-   `page` **[number][230]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a character’s kills and losses going back 90 days.
 
@@ -811,8 +811,8 @@ Get a character's recent kills and losses.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `page` **[number][230]** The page of results to return. (optional, default `1`)
+-   `characterID` **[number][230]**&#x20;
+-   `page` **[number][230]** The page of results to return. (optional, default `1`)
 
 Returns **any** a list of a character’s kills and losses going back 90 days.
 
@@ -824,8 +824,8 @@ Send a new mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mail` **[object][229]** The mail to send. Mail structure is below.
+-   `characterID` **[number][230]**&#x20;
+-   `mail` **[object][229]** The mail to send. Mail structure is below.
 
 #### Examples
 
@@ -849,9 +849,9 @@ Update metadata about a mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mailID` **[number][230]**&#x20;
-*   `contents` **[object][229]** Structure below.
+-   `characterID` **[number][230]**&#x20;
+-   `mailID` **[number][230]**&#x20;
+-   `contents` **[object][229]** Structure below.
 
 #### Examples
 
@@ -870,8 +870,8 @@ Delete a mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mailID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `mailID` **[number][230]**&#x20;
 
 ### labels
 
@@ -879,7 +879,7 @@ Get mail labels and unread counts.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a list of the users mail labels, unread counts for each label and a total unread count.
 
@@ -889,8 +889,8 @@ Create a mail label.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `label` **[object][229]** Label example below.
+-   `characterID` **[number][230]**&#x20;
+-   `label` **[object][229]** Label example below.
 
 #### Examples
 
@@ -907,8 +907,8 @@ Delete a mail label.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `labelID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `labelID` **[number][230]**&#x20;
 
 ### mailingLists
 
@@ -916,7 +916,7 @@ Get mailing list subscriptions.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** all mailing lists that the character is subscribed to.
 
@@ -928,8 +928,8 @@ Send a new mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mail` **[object][229]** The mail to send. Mail structure is below.
+-   `characterID` **[number][230]**&#x20;
+-   `mail` **[object][229]** The mail to send. Mail structure is below.
 
 #### Examples
 
@@ -953,9 +953,9 @@ Update metadata about a mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mailID` **[number][230]**&#x20;
-*   `contents` **[object][229]** Structure below.
+-   `characterID` **[number][230]**&#x20;
+-   `mailID` **[number][230]**&#x20;
+-   `contents` **[object][229]** Structure below.
 
 #### Examples
 
@@ -974,8 +974,8 @@ Delete a mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mailID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `mailID` **[number][230]**&#x20;
 
 ### labels
 
@@ -983,7 +983,7 @@ Get mail labels and unread counts.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a list of the users mail labels, unread counts for each label and a total unread count.
 
@@ -993,8 +993,8 @@ Create a mail label.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `label` **[object][229]** Label example below.
+-   `characterID` **[number][230]**&#x20;
+-   `label` **[object][229]** Label example below.
 
 #### Examples
 
@@ -1011,8 +1011,8 @@ Delete a mail label.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `labelID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `labelID` **[number][230]**&#x20;
 
 ### mailingLists
 
@@ -1020,7 +1020,7 @@ Get mailing list subscriptions.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** all mailing lists that the character is subscribed to.
 
@@ -1032,8 +1032,8 @@ Send a new mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mail` **[object][229]** The mail to send. Mail structure is below.
+-   `characterID` **[number][230]**&#x20;
+-   `mail` **[object][229]** The mail to send. Mail structure is below.
 
 #### Examples
 
@@ -1057,9 +1057,9 @@ Update metadata about a mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mailID` **[number][230]**&#x20;
-*   `contents` **[object][229]** Structure below.
+-   `characterID` **[number][230]**&#x20;
+-   `mailID` **[number][230]**&#x20;
+-   `contents` **[object][229]** Structure below.
 
 #### Examples
 
@@ -1078,8 +1078,8 @@ Delete a mail.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `mailID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `mailID` **[number][230]**&#x20;
 
 ### labels
 
@@ -1087,7 +1087,7 @@ Get mail labels and unread counts.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a list of the users mail labels, unread counts for each label and a total unread count.
 
@@ -1097,8 +1097,8 @@ Create a mail label.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `label` **[object][229]** Label example below.
+-   `characterID` **[number][230]**&#x20;
+-   `label` **[object][229]** Label example below.
 
 #### Examples
 
@@ -1115,8 +1115,8 @@ Delete a mail label.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `labelID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `labelID` **[number][230]**&#x20;
 
 ### mailingLists
 
@@ -1124,7 +1124,7 @@ Get mailing list subscriptions.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** all mailing lists that the character is subscribed to.
 
@@ -1136,7 +1136,7 @@ List open orders from a character.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 ### orderHistory
 
@@ -1144,7 +1144,7 @@ List historical orders by a character.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 ## market
 
@@ -1154,7 +1154,7 @@ List open orders from a character.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 ### orderHistory
 
@@ -1162,7 +1162,7 @@ List historical orders by a character.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 ## market
 
@@ -1172,7 +1172,7 @@ List open orders from a character.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 ### orderHistory
 
@@ -1180,7 +1180,7 @@ List historical orders by a character.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 ## opportunities
 
@@ -1190,7 +1190,7 @@ Get a character's completed tasks
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a list of tasks finished by a character.
 
@@ -1202,7 +1202,7 @@ Get a character's completed tasks
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a list of tasks finished by a character.
 
@@ -1214,7 +1214,7 @@ Get colonies.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a list of all planetary colonies owned by a character.
 
@@ -1224,8 +1224,8 @@ Get colony layout.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
-*   `planetID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
+-   `planetID` **[number][230]**&#x20;
 
 Returns **any** full details on the layout of a single planetary colony, including links, pins and routes.
 Note: Planetary information is only recalculated when the colony is viewed through the client.
@@ -1239,7 +1239,7 @@ Get character attributes.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** attributes of a character.
 
@@ -1249,7 +1249,7 @@ Get character's skill queue.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** the configured skill queue for the given character
 
@@ -1259,7 +1259,7 @@ Get character skills.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** all trained skills for the given character.
 
@@ -1271,7 +1271,7 @@ Get a character's wallet balance.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** a character’s wallet balance.
 
@@ -1281,7 +1281,7 @@ Get character wallet journal.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** the given character’s wallet journal going 30 days back.
 
@@ -1291,7 +1291,7 @@ Get wallet transactions.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** wallet transactions of a character.
 
@@ -1299,12 +1299,12 @@ Returns **any** wallet transactions of a character.
 
 ### location
 
-Information about the character's current location.  Returns the current solar system id and
+Information about the character's current location. Returns the current solar system id and
 also the current station or structure ID if applicable.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** character's current solar system and structure (if applicable)
 
@@ -1314,7 +1314,7 @@ Checks if the character is currently online.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** character's online status, last session times, and number of logins
 
@@ -1324,468 +1324,238 @@ Get the character's current ship type, name, and ID.
 
 #### Parameters
 
-*   `characterID` **[number][230]**&#x20;
+-   `characterID` **[number][230]**&#x20;
 
 Returns **any** character's current ship type, name, and ID
 
 [1]: #affiliation
-
 [2]: #parameters
-
 [3]: #corphistory
-
 [4]: #parameters-1
-
 [5]: #portrait
-
 [6]: #parameters-2
-
 [7]: #info
-
 [8]: #parameters-3
-
 [9]: #agentsresearch
-
 [10]: #parameters-4
-
 [11]: #blueprints
-
 [12]: #parameters-5
-
 [13]: #cspa
-
 [14]: #parameters-6
-
 [15]: #fatigue
-
 [16]: #parameters-7
-
 [17]: #medals
-
 [18]: #parameters-8
-
 [19]: #roles
-
 [20]: #parameters-9
-
 [21]: #standings
-
 [22]: #parameters-10
-
 [23]: #stats
-
 [24]: #parameters-11
-
 [25]: #titles
-
 [26]: #parameters-12
-
 [27]: #bookmarks
-
 [28]: #bookmarks-1
-
 [29]: #parameters-13
-
 [30]: #folders
-
 [31]: #parameters-14
-
 [32]: #calendar
-
 [33]: #calendar-1
-
 [34]: #parameters-15
-
 [35]: #respond
-
 [36]: #parameters-16
-
 [37]: #clones
-
 [38]: #clones-1
-
 [39]: #parameters-17
-
 [40]: #implants
-
 [41]: #parameters-18
-
 [42]: #clones-2
-
 [43]: #clones-3
-
 [44]: #parameters-19
-
 [45]: #implants-1
-
 [46]: #parameters-20
-
 [47]: #contacts
-
 [48]: #contacts-1
-
 [49]: #parameters-21
-
 [50]: #addcontacts
-
 [51]: #parameters-22
-
 [52]: #deletecontacts
-
 [53]: #parameters-23
-
 [54]: #editcontacts
-
 [55]: #parameters-24
-
 [56]: #contacts-2
-
 [57]: #contacts-3
-
 [58]: #parameters-25
-
 [59]: #addcontacts-1
-
 [60]: #parameters-26
-
 [61]: #deletecontacts-1
-
 [62]: #parameters-27
-
 [63]: #editcontacts-1
-
 [64]: #parameters-28
-
 [65]: #contracts
-
 [66]: #contracts-1
-
 [67]: #parameters-29
-
 [68]: #bids
-
 [69]: #parameters-30
-
 [70]: #items
-
 [71]: #parameters-31
-
 [72]: #contracts-2
-
 [73]: #contracts-3
-
 [74]: #parameters-32
-
 [75]: #bids-1
-
 [76]: #parameters-33
-
 [77]: #items-1
-
 [78]: #parameters-34
-
 [79]: #contracts-4
-
 [80]: #contracts-5
-
 [81]: #parameters-35
-
 [82]: #bids-2
-
 [83]: #parameters-36
-
 [84]: #items-2
-
 [85]: #parameters-37
-
 [86]: #industry
-
 [87]: #jobs
-
 [88]: #parameters-38
-
 [89]: #ledger
-
 [90]: #parameters-39
-
 [91]: #industry-1
-
 [92]: #jobs-1
-
 [93]: #parameters-40
-
 [94]: #ledger-1
-
 [95]: #parameters-41
-
 [96]: #industry-2
-
 [97]: #jobs-2
-
 [98]: #parameters-42
-
 [99]: #ledger-2
-
 [100]: #parameters-43
-
 [101]: #notifications
-
 [102]: #notifications-1
-
 [103]: #parameters-44
-
 [104]: #contacts-4
-
 [105]: #parameters-45
-
 [106]: #notifications-2
-
 [107]: #notifications-3
-
 [108]: #parameters-46
-
 [109]: #contacts-5
-
 [110]: #parameters-47
-
 [111]: #notifications-4
-
 [112]: #notifications-5
-
 [113]: #parameters-48
-
 [114]: #contacts-6
-
 [115]: #parameters-49
-
 [116]: #killmails
-
 [117]: #recent
-
 [118]: #parameters-50
-
 [119]: #killmails-1
-
 [120]: #recent-1
-
 [121]: #parameters-51
-
 [122]: #killmails-2
-
 [123]: #recent-2
-
 [124]: #parameters-52
-
 [125]: #mail
-
 [126]: #send
-
 [127]: #parameters-53
-
 [128]: #examples
-
 [129]: #update
-
 [130]: #parameters-54
-
 [131]: #examples-1
-
 [132]: #delete
-
 [133]: #parameters-55
-
 [134]: #labels
-
 [135]: #parameters-56
-
 [136]: #createlabel
-
 [137]: #parameters-57
-
 [138]: #examples-2
-
 [139]: #deletelabel
-
 [140]: #parameters-58
-
 [141]: #mailinglists
-
 [142]: #parameters-59
-
 [143]: #mail-1
-
 [144]: #send-1
-
 [145]: #parameters-60
-
 [146]: #examples-3
-
 [147]: #update-1
-
 [148]: #parameters-61
-
 [149]: #examples-4
-
 [150]: #delete-1
-
 [151]: #parameters-62
-
 [152]: #labels-1
-
 [153]: #parameters-63
-
 [154]: #createlabel-1
-
 [155]: #parameters-64
-
 [156]: #examples-5
-
 [157]: #deletelabel-1
-
 [158]: #parameters-65
-
 [159]: #mailinglists-1
-
 [160]: #parameters-66
-
 [161]: #mail-2
-
 [162]: #send-2
-
 [163]: #parameters-67
-
 [164]: #examples-6
-
 [165]: #update-2
-
 [166]: #parameters-68
-
 [167]: #examples-7
-
 [168]: #delete-2
-
 [169]: #parameters-69
-
 [170]: #labels-2
-
 [171]: #parameters-70
-
 [172]: #createlabel-2
-
 [173]: #parameters-71
-
 [174]: #examples-8
-
 [175]: #deletelabel-2
-
 [176]: #parameters-72
-
 [177]: #mailinglists-2
-
 [178]: #parameters-73
-
 [179]: #market
-
 [180]: #orders
-
 [181]: #parameters-74
-
 [182]: #orderhistory
-
 [183]: #parameters-75
-
 [184]: #market-1
-
 [185]: #orders-1
-
 [186]: #parameters-76
-
 [187]: #orderhistory-1
-
 [188]: #parameters-77
-
 [189]: #market-2
-
 [190]: #orders-2
-
 [191]: #parameters-78
-
 [192]: #orderhistory-2
-
 [193]: #parameters-79
-
 [194]: #opportunities
-
 [195]: #completedtasks
-
 [196]: #parameters-80
-
 [197]: #opportunities-1
-
 [198]: #completedtasks-1
-
 [199]: #parameters-81
-
 [200]: #pi
-
 [201]: #colonies
-
 [202]: #parameters-82
-
 [203]: #colonyinfo
-
 [204]: #parameters-83
-
 [205]: #skills
-
 [206]: #attributes
-
 [207]: #parameters-84
-
 [208]: #queue
-
 [209]: #parameters-85
-
 [210]: #skills-1
-
 [211]: #parameters-86
-
 [212]: #wallet
-
 [213]: #balance
-
 [214]: #parameters-87
-
 [215]: #journal
-
 [216]: #parameters-88
-
 [217]: #transactions
-
 [218]: #parameters-89
-
 [219]: #location
-
 [220]: #location-1
-
 [221]: #parameters-90
-
 [222]: #online
-
 [223]: #parameters-91
-
 [224]: #ship
-
 [225]: #parameters-92
-
 [226]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [227]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
-
 [228]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON
-
 [229]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
 [230]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
 [231]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

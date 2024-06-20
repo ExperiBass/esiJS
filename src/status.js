@@ -7,7 +7,7 @@ module.exports = {
      */
     status() {
         return request({
-            subUrl: `status`
+            subUrl: `status`,
         })
-    }
+    },
 }

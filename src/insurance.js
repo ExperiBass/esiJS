@@ -7,7 +7,7 @@ module.exports = {
      */
     prices() {
         return request({
-            subUrl: `insurance/prices`
+            subUrl: `insurance/prices`,
         })
-    }
+    },
 }

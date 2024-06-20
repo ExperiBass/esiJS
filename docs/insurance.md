@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
-*   [prices][1]
+-   [prices][1]
 
 ## prices
 
@@ -11,7 +11,5 @@ Return available insurance levels for all ship types.
 Returns **[Promise][2]<[object][3]>**&#x20;
 
 [1]: #prices
-
 [2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

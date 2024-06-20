@@ -12,9 +12,17 @@ module.exports = {
          * @param pageNum {number} The page of bids to get. Defaults to `1`.
          * @returns {Promise<object>} The bids on the auction.
          */
-        bids (contractID, pageNumber = 1) {
-            inputValidation({ input: contractID, type: 'number', message: `The function 'contracts.public.bids' requires a contract ID!` })
-            inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'contracts.public.bids' needs to be a number` })
+        bids(contractID, pageNumber = 1) {
+            inputValidation({
+                input: contractID,
+                type: 'number',
+                message: `The function 'contracts.public.bids' requires a contract ID!`,
+            })
+            inputValidation({
+                input: pageNumber,
+                type: 'number',
+                message: `The input pageNumber for 'contracts.public.bids' needs to be a number`,
+            })
 
             return request({ subUrl: `contracts/public/bids/${contractID}`, query: { page: pageNumber } })
         },
@@ -24,14 +32,22 @@ module.exports = {
          * @param regionID {number} The region to get the contracts from.
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
          * @returns {Promise<object>} A paginated list of all public contracts in the given region.
-        */
-        contracts (regionID, pageNumber = 1) {
-            inputValidation({ input: regionID, type: 'number', message: `The function 'contracts.public.contracts' requires a region ID!` })
-            inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'contracts.public.contracts' needs to be a number!` })
+         */
+        contracts(regionID, pageNumber = 1) {
+            inputValidation({
+                input: regionID,
+                type: 'number',
+                message: `The function 'contracts.public.contracts' requires a region ID!`,
+            })
+            inputValidation({
+                input: pageNumber,
+                type: 'number',
+                message: `The input pageNumber for 'contracts.public.contracts' needs to be a number!`,
+            })
 
             return request({
                 subUrl: `contracts/public/${regionID}`,
-                query: { page: pageNumber }
+                query: { page: pageNumber },
             })
         },
         /**
@@ -41,14 +57,22 @@ module.exports = {
          * @param pageNum {number} The page of contracts to get. Defaults to `1`.
          * @returns {Promise<[number]>} A array of items.
          */
-        items (contractID, pageNumber = 1) {
-            inputValidation({ input: contractID, type: 'number', message: `The function 'contracts.public.items' requires a contract ID!` })
-            inputValidation({ input: pageNumber, type: 'number', message: `The input pageNumber for 'contracts.public.items' needs to be a number!` })
+        items(contractID, pageNumber = 1) {
+            inputValidation({
+                input: contractID,
+                type: 'number',
+                message: `The function 'contracts.public.items' requires a contract ID!`,
+            })
+            inputValidation({
+                input: pageNumber,
+                type: 'number',
+                message: `The input pageNumber for 'contracts.public.items' needs to be a number!`,
+            })
 
             return request({
                 subUrl: `contracts/public/items/${contractID}`,
-                query: { page: pageNumber }
+                query: { page: pageNumber },
             })
         },
-    }
+    },
 }

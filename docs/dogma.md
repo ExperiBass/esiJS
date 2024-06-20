@@ -2,14 +2,14 @@
 
 ### Table of Contents
 
-*   [attrInfo][1]
-    *   [Parameters][2]
-*   [attrs][3]
-*   [dynamicItemInfo][4]
-    *   [Parameters][5]
-*   [effectInfo][6]
-    *   [Parameters][7]
-*   [effects][8]
+-   [attrInfo][1]
+    -   [Parameters][2]
+-   [attrs][3]
+-   [dynamicItemInfo][4]
+    -   [Parameters][5]
+-   [effectInfo][6]
+    -   [Parameters][7]
+-   [effects][8]
 
 ## attrInfo
 
@@ -17,8 +17,8 @@ Get information on a dogma attribute.
 
 ### Parameters
 
-*   `attribute` &#x20;
-*   `attr` **[number][9]**&#x20;
+-   `attribute` &#x20;
+-   `attr` **[number][9]**&#x20;
 
 Returns **[Promise][10]<[object][11]>** Info on the attribute.
 
@@ -34,8 +34,8 @@ Returns info about a dynamic item resulting from mutation with a mutaplasmid.
 
 ### Parameters
 
-*   `itemID` **[number][9]**&#x20;
-*   `typeID` **[number][9]**&#x20;
+-   `itemID` **[number][9]**&#x20;
+-   `typeID` **[number][9]**&#x20;
 
 Returns **[Promise][10]<[object][11]>** Info on the mutation.
 
@@ -45,7 +45,7 @@ Get information on a dogma effect.
 
 ### Parameters
 
-*   `effect` **[number][9]**&#x20;
+-   `effect` **[number][9]**&#x20;
 
 Returns **[Promise][10]<[object][11]>** Info on the effect.
 
@@ -56,23 +56,13 @@ Get a list of dogma effect ids.
 Returns **[Promise][10]<\[[number][9]]>** A array of dogma effects.
 
 [1]: #attrinfo
-
 [2]: #parameters
-
 [3]: #attrs
-
 [4]: #dynamiciteminfo
-
 [5]: #parameters-1
-
 [6]: #effectinfo
-
 [7]: #parameters-2
-
 [8]: #effects
-
 [9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
 [10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

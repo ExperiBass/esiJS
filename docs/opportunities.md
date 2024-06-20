@@ -2,12 +2,12 @@
 
 ### Table of Contents
 
-*   [groupInfo][1]
-    *   [Parameters][2]
-*   [groups][3]
-*   [taskInfo][4]
-    *   [Parameters][5]
-*   [tasks][6]
+-   [groupInfo][1]
+    -   [Parameters][2]
+-   [groups][3]
+-   [taskInfo][4]
+    -   [Parameters][5]
+-   [tasks][6]
 
 ## groupInfo
 
@@ -15,7 +15,7 @@ Return information of an opportunities group.
 
 ### Parameters
 
-*   `groupID` **[number][7]**&#x20;
+-   `groupID` **[number][7]**&#x20;
 
 Returns **[Promise][8]<[object][9]>**&#x20;
 
@@ -31,8 +31,8 @@ Return information of an opportunities task.
 
 ### Parameters
 
-*   `taskID` &#x20;
-*   `groupID` **[number][7]**&#x20;
+-   `taskID` &#x20;
+-   `groupID` **[number][7]**&#x20;
 
 Returns **[Promise][8]<[object][9]>**&#x20;
 
@@ -43,19 +43,11 @@ Return a list of opportunities tasks.
 Returns **[Promise][8]<[object][9]>**&#x20;
 
 [1]: #groupinfo
-
 [2]: #parameters
-
 [3]: #groups
-
 [4]: #taskinfo
-
 [5]: #parameters-1
-
 [6]: #tasks
-
 [7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
 [8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

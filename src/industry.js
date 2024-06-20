@@ -7,7 +7,7 @@ module.exports = {
      */
     facilities() {
         return request({
-            subUrl: `industry/facilities`
+            subUrl: `industry/facilities`,
         })
     },
     /**
@@ -16,7 +16,7 @@ module.exports = {
      */
     systems() {
         return request({
-            subUrl: `industry/systems`
+            subUrl: `industry/systems`,
         })
-    }
+    },
 }

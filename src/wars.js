@@ -10,11 +10,11 @@ module.exports = {
         inputValidation({
             input: warID,
             type: 'number',
-            message: `The function 'wars.warInfo' requires a war ID!`
+            message: `The function 'wars.warInfo' requires a war ID!`,
         })
 
         return request({
-            subUrl: `wars/${warID}`
+            subUrl: `wars/${warID}`,
         })
     },
     /**
@@ -26,11 +26,11 @@ module.exports = {
         inputValidation({
             input: warID,
             type: 'number',
-            message: `The function 'wars.warkills' requires a war ID!`
+            message: `The function 'wars.warkills' requires a war ID!`,
         })
 
         return request({
-            subUrl: `wars/${warID}/killmails`
+            subUrl: `wars/${warID}/killmails`,
         })
     },
     /**
@@ -43,13 +43,13 @@ module.exports = {
             input: maxWarID,
             type: 'number',
             message: `The parameter 'maxWarID' in the function 'wars.wars' must be a number!`,
-            optional: true
+            optional: true,
         })
         return request({
             subUrl: `wars`,
             query: {
-                max_war_id: maxWarID
-            }
+                max_war_id: maxWarID,
+            },
         })
-    }
+    },
 }

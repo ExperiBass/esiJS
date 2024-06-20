@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
-*   [incursions][1]
+-   [incursions][1]
 
 ## incursions
 
@@ -11,7 +11,5 @@ Return a list of current incursions.
 Returns **[Promise][2]<[object][3]>**&#x20;
 
 [1]: #incursions
-
 [2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
 [3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

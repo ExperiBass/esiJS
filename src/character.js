@@ -12,13 +12,13 @@ module.exports = {
         inputValidation({
             input: characterIdArray,
             type: 'object',
-            message: `The function 'character.affiliation' requires an array of character IDs!`
+            message: `The function 'character.affiliation' requires an array of character IDs!`,
         })
 
         return request({
             subUrl: 'characters/affiliation',
             requestType: 'post',
-            body: characterIdArray
+            body: characterIdArray,
         })
     },
     /**
@@ -31,11 +31,11 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.corpHistory' needs a character ID!`
+            message: `The function 'character.corpHistory' needs a character ID!`,
         })
 
         return request({
-            subUrl: `characters/${characterID}/corporationhistory`
+            subUrl: `characters/${characterID}/corporationhistory`,
         })
     },
     /**
@@ -48,11 +48,11 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.portrait' needs a character ID!`
+            message: `The function 'character.portrait' needs a character ID!`,
         })
 
         return request({
-            subUrl: `characters/${characterID}/portrait`
+            subUrl: `characters/${characterID}/portrait`,
         })
     },
     /**
@@ -65,11 +65,11 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.info' needs a character ID!`
+            message: `The function 'character.info' needs a character ID!`,
         })
 
         return request({
-            subUrl: `characters/${characterID}`
+            subUrl: `characters/${characterID}`,
         })
     },
     /**
@@ -82,12 +82,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.agentsResearch' requires a character ID!`
+            message: `The function 'character.agentsResearch' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/agents_research`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -100,12 +100,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.agentsResearch' requires a character ID!`
+            message: `The function 'character.agentsResearch' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/blueprints`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -119,21 +119,21 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.cspa' requires a character ID!`
+            message: `The function 'character.cspa' requires a character ID!`,
         })
         inputValidation({
             input: characters,
             type: 'object',
-            message: `The function 'character.cspa' requires a array of character IDs!`
+            message: `The function 'character.cspa' requires a array of character IDs!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/cspa`,
             requestType: 'post',
             body: {
-                characters
+                characters,
             },
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -146,12 +146,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.fatigue' requires a character ID!`
+            message: `The function 'character.fatigue' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/fatigue`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -164,12 +164,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.medals' requires a character ID!`
+            message: `The function 'character.medals' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/medals`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -182,12 +182,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.roles' requires a character ID!`
+            message: `The function 'character.roles' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/roles`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -200,12 +200,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.standings' requires a character ID!`
+            message: `The function 'character.standings' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/standings`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -218,12 +218,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.stats' requires a character ID!`
+            message: `The function 'character.stats' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/stats`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -236,12 +236,12 @@ module.exports = {
         inputValidation({
             input: characterID,
             type: 'number',
-            message: `The function 'character.titles' requires a character ID!`
+            message: `The function 'character.titles' requires a character ID!`,
         })
 
         return request({
             subUrl: `characters/${characterID}/titles`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -258,12 +258,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.assets.assets' requires a character ID!`
+                message: `The function 'character.assets.assets' requires a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/assets`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -277,21 +277,21 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.assets.assetLocations' requires a character ID!`
+                message: `The function 'character.assets.assetLocations' requires a character ID!`,
             })
             inputValidation({
                 input: itemIDs,
                 type: 'object',
-                message: `The function 'character.assets.assetLocations' requires a array of item IDs!`
+                message: `The function 'character.assets.assetLocations' requires a array of item IDs!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/assets/locations`,
                 requestType: 'post',
                 body: {
-                    item_ids: itemIDs
+                    item_ids: itemIDs,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -305,23 +305,23 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.assets.assetNames' requires a character ID!`
+                message: `The function 'character.assets.assetNames' requires a character ID!`,
             })
             inputValidation({
                 input: itemIDs,
                 type: 'object',
-                message: `The function 'character.assets.assetNames' requires a array of item IDs!`
+                message: `The function 'character.assets.assetNames' requires a array of item IDs!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/assets/names`,
                 requestType: 'post',
                 query: {
-                    item_ids: itemIDs
+                    item_ids: itemIDs,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -337,12 +337,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.bookmarks.bookmarks' requires a character ID!`
+                message: `The function 'character.bookmarks.bookmarks' requires a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/bookmarks`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -355,15 +355,14 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.bookmarks.bookmarkFolders' requires a character ID!`
+                message: `The function 'character.bookmarks.bookmarkFolders' requires a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/bookmarks/folders`,
-                needsAuth: true
+                needsAuth: true,
             })
-
-        }
+        },
     },
     /**
      *
@@ -380,21 +379,21 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.calendar.calendar' requires a character ID!`
+                message: `The function 'character.calendar.calendar' requires a character ID!`,
             })
             inputValidation({
                 input: fromEvent,
                 type: 'number',
                 message: `The parameter 'fromEvent'  in the function 'character.calendar.calendar' must be a valid event ID!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `characters/${characterID}/calendar`,
                 query: {
-                    from_event: fromEvent
+                    from_event: fromEvent,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -408,17 +407,17 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.calendar.getCalendarEvent' requires a character ID!`
+                message: `The function 'character.calendar.getCalendarEvent' requires a character ID!`,
             })
             inputValidation({
                 input: eventID,
                 type: 'number',
-                message: `The function 'character.calendar.getCalendarEvent' requires a event ID!`
+                message: `The function 'character.calendar.getCalendarEvent' requires a event ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/calendar/${eventID}`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -432,18 +431,18 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.calendar.respondCalendarEvent' requires a character ID!`
+                message: `The function 'character.calendar.respondCalendarEvent' requires a character ID!`,
             })
             inputValidation({
                 input: eventID,
                 type: 'number',
-                message: `The function 'character.calendar.respondCalendarEvent' requires a event ID!`
+                message: `The function 'character.calendar.respondCalendarEvent' requires a event ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/calendar/${eventID}`,
                 requestType: 'post',
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -457,19 +456,19 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.calendar.getCalendarEventAttendees' requires a character ID!`
+                message: `The function 'character.calendar.getCalendarEventAttendees' requires a character ID!`,
             })
             inputValidation({
                 input: eventID,
                 type: 'number',
-                message: `The function 'character.calendar.getCalendarEventAttendees' requires a event ID!`
+                message: `The function 'character.calendar.getCalendarEventAttendees' requires a event ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/calendar/${eventID}/attendees`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -488,12 +487,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.clones.clones' requires a character ID!`
+                message: `The function 'character.clones.clones' requires a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/clones`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -506,14 +505,14 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.clones.implants' requires a character ID!`
+                message: `The function 'character.clones.implants' requires a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/implants`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -532,12 +531,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contacts.contacts' requires a character ID!`
+                message: `The function 'character.contacts.contacts' requires a character ID!`,
             })
 
             request({
                 subUrl: `characters/${characterID}/contacts`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -551,18 +550,18 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contacts.addContacts' requires a character ID!`
+                message: `The function 'character.contacts.addContacts' requires a character ID!`,
             })
             inputValidation({
                 input: contacts,
                 type: 'object',
-                message: `The function 'character.contacts.addContacts' requires a array of one or more contact IDs!`
+                message: `The function 'character.contacts.addContacts' requires a array of one or more contact IDs!`,
             })
 
             request({
                 subUrl: `characters/${characterID}/contacts`,
                 needsAuth: true,
-                requestType: 'post'
+                requestType: 'post',
             })
         },
         /**
@@ -576,18 +575,18 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contacts.deleteContacts' requires a character ID!`
+                message: `The function 'character.contacts.deleteContacts' requires a character ID!`,
             })
             inputValidation({
                 input: contacts,
                 type: 'object',
-                message: `The function 'character.contacts.deleteContacts' requires a array of one or more contact IDs!`
+                message: `The function 'character.contacts.deleteContacts' requires a array of one or more contact IDs!`,
             })
 
             request({
                 subUrl: `characters/${characterID}/contacts`,
                 needsAuth: true,
-                requestType: 'delete'
+                requestType: 'delete',
             })
         },
         /**
@@ -601,20 +600,20 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contacts.editContacts' requires a character ID!`
+                message: `The function 'character.contacts.editContacts' requires a character ID!`,
             })
             inputValidation({
                 input: contacts,
                 type: 'object',
-                message: `The function 'character.contacts.editContacts' requires a array of one or more contact IDs!`
+                message: `The function 'character.contacts.editContacts' requires a array of one or more contact IDs!`,
             })
 
             request({
                 subUrl: `characters/${characterID}/contacts`,
                 needsAuth: true,
-                requestType: 'put'
+                requestType: 'put',
             })
-        }
+        },
     },
     /**
      *
@@ -636,11 +635,11 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contracts.contracts' requires a character ID!`
+                message: `The function 'character.contracts.contracts' requires a character ID!`,
             })
             request({
                 subUrl: `/characters/${characterID}/contracts/`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -654,16 +653,16 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contracts.bids' requires a character ID!`
+                message: `The function 'character.contracts.bids' requires a character ID!`,
             })
             inputValidation({
                 input: contractID,
                 type: 'number',
-                message: `The function 'character.contracts.bids' requires a contract ID!`
+                message: `The function 'character.contracts.bids' requires a contract ID!`,
             })
             request({
                 subUrl: `/characters/${characterID}/contracts/${contractID}/bids`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -677,18 +676,18 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.contracts.items' requires a character ID!`
+                message: `The function 'character.contracts.items' requires a character ID!`,
             })
             inputValidation({
                 input: contractID,
                 type: 'number',
-                message: `The function 'character.contracts.items' requires a contract ID!`
+                message: `The function 'character.contracts.items' requires a contract ID!`,
             })
             request({
                 subUrl: `/characters/${characterID}/contracts/${contractID}/items`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -710,12 +709,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.industry.jobs' requires a character ID!`
+                message: `The function 'character.industry.jobs' requires a character ID!`,
             })
 
             request({
                 subUrl: `characters/${characterID}/industry/jobs`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -728,19 +727,19 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.industry.ledger' requires a character ID!`
+                message: `The function 'character.industry.ledger' requires a character ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
-                message: `The function 'character.industry.ledger' requires a character ID!`
+                message: `The function 'character.industry.ledger' requires a character ID!`,
             })
 
             request({
                 subUrl: `characters/${characterID}/mining`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -762,12 +761,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.corpHistory' needs a character ID!`
+                message: `The function 'character.corpHistory' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/notifications`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -780,14 +779,14 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.notificationContacts' requires a character ID!`
+                message: `The function 'character.notificationContacts' requires a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/notification/contacts`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -810,23 +809,23 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.killmails.recent' requires a corporation ID!`
+                message: `The function 'character.killmails.recent' requires a corporation ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'character.killmails.recent' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `characters/${characterID}/killmails/recent`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -851,21 +850,21 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.getAll' needs a character ID!`
+                message: `The function 'character.mail.getAll' needs a character ID!`,
             })
             inputValidation({
                 input: labels,
                 type: 'object',
-                message: `The parameter "labels" in the function 'character.mail.getAll' must be a array!`
+                message: `The parameter "labels" in the function 'character.mail.getAll' must be a array!`,
             })
             inputValidation({
                 input: lastMailID,
                 type: 'number',
                 message: `The parameter "lastMailID" in the function 'character.mail.getAll' must be a mail ID!`,
-                optional: true
+                optional: true,
             })
             let query = {
-                labels: labels
+                labels: labels,
             }
             if (lastMailID) {
                 query.last_mail_id = lastMailID
@@ -874,7 +873,7 @@ module.exports = {
             return request({
                 subUrl: `characters/${characterID}/mail/`,
                 query: query,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -888,18 +887,18 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.get' needs a character ID!`
+                message: `The function 'character.mail.get' needs a character ID!`,
             })
             inputValidation({
                 input: mailID,
                 type: 'number',
                 message: `The function 'character.mail.get' needs a mail ID!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/${mailID}`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -922,19 +921,19 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.send' needs a character ID!`
+                message: `The function 'character.mail.send' needs a character ID!`,
             })
             inputValidation({
                 input: mail,
                 type: 'object',
-                message: `The function 'character.mail.send' needs a mail!`
+                message: `The function 'character.mail.send' needs a mail!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/`,
                 requestType: 'POST',
                 body: mail,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -953,7 +952,7 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.delete' needs a character ID!`
+                message: `The function 'character.mail.delete' needs a character ID!`,
             })
             inputValidation({
                 input: mailID,
@@ -963,14 +962,14 @@ module.exports = {
             inputValidation({
                 input: contents,
                 type: 'object',
-                message: `The function 'character.mail.delete' needs the contents!`
+                message: `The function 'character.mail.delete' needs the contents!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/${mailID}`,
                 requestType: 'PUT',
                 body: contents,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -983,18 +982,18 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.delete' needs a character ID!`
+                message: `The function 'character.mail.delete' needs a character ID!`,
             })
             inputValidation({
                 input: mailID,
                 type: 'number',
-                message: `The function 'character.mail.delete' needs a mail ID!`
+                message: `The function 'character.mail.delete' needs a mail ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/${mailID}`,
                 requestType: 'DELETE',
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1007,13 +1006,13 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.labels' needs a character ID!`
+                message: `The function 'character.mail.labels' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/labels/`,
                 requestType: 'GET',
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1030,19 +1029,19 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.createLabel' needs a character ID!`
+                message: `The function 'character.mail.createLabel' needs a character ID!`,
             })
             inputValidation({
                 input: label,
                 type: 'object',
-                message: `The function 'character.mail.createLabel' needs a label object!`
+                message: `The function 'character.mail.createLabel' needs a label object!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/labels/`,
                 requestType: 'POST',
                 body: label,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1055,7 +1054,7 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.deleteLabel' needs a character ID!`
+                message: `The function 'character.mail.deleteLabel' needs a character ID!`,
             })
             inputValidation({
                 input: labelID,
@@ -1066,7 +1065,7 @@ module.exports = {
             return request({
                 subUrl: `characters/${characterID}/mail/labels/${labelID}`,
                 requestType: 'DELETE',
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1079,16 +1078,15 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.mail.mailingLists' needs a character ID!`
+                message: `The function 'character.mail.mailingLists' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/mail/lists`,
                 requestType: 'GET',
-                needsAuth: true
+                needsAuth: true,
             })
         },
-
     },
     /**
      *
@@ -1109,13 +1107,13 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.market.orders' needs a character ID!`
+                message: `The function 'character.market.orders' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/orders`,
                 requestType: 'GET',
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1127,13 +1125,13 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.market.orderHistory' needs a character ID!`
+                message: `The function 'character.market.orderHistory' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/orders/history`,
                 requestType: 'GET',
-                needsAuth: true
+                needsAuth: true,
             })
         },
     },
@@ -1154,14 +1152,14 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.opportunities.completedTasks' needs a character ID!`
+                message: `The function 'character.opportunities.completedTasks' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/opportunities`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -1177,12 +1175,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.pi.colonies' needs a character ID!`
+                message: `The function 'character.pi.colonies' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/planets`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1198,17 +1196,17 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.pi.colonyInfo' needs a character ID!`
+                message: `The function 'character.pi.colonyInfo' needs a character ID!`,
             })
             inputValidation({
                 input: planetID,
                 type: 'number',
-                message: `The function 'character.pi.colonyInfo' needs a planet ID!`
+                message: `The function 'character.pi.colonyInfo' needs a planet ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/planets/${planetID}`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
     },
@@ -1226,12 +1224,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.skills.attributes' needs a character ID!`
+                message: `The function 'character.skills.attributes' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/attributes`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1244,12 +1242,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.skills.queue' needs a character ID!`
+                message: `The function 'character.skills.queue' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/skillqueue`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1262,14 +1260,14 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.skills.skills' needs a character ID!`
+                message: `The function 'character.skills.skills' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/skills`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -1285,12 +1283,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.wallet.balance' needs a character ID!`
+                message: `The function 'character.wallet.balance' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/wallet`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1303,12 +1301,12 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.wallet.journal' needs a character ID!`
+                message: `The function 'character.wallet.journal' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/wallet/journal`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -1321,23 +1319,23 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.wallet.transactions' needs a character ID!`
+                message: `The function 'character.wallet.transactions' needs a character ID!`,
             })
 
             return request({
                 subUrl: `characters/${characterID}/wallet/transactions`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
      */
     location: {
         /**
-         * Information about the character's current location.  Returns the current solar system id and 
+         * Information about the character's current location.  Returns the current solar system id and
          * also the current station or structure ID if applicable.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-location.read_location.v1
          * @returns character's current solar system and structure (if applicable)
          */
@@ -1345,17 +1343,17 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.location.location' needs a character ID!`
-            });
+                message: `The function 'character.location.location' needs a character ID!`,
+            })
 
             return request({
                 subUrl: `characters/${characterID}/location`,
-                needsAuth: true
-            });
+                needsAuth: true,
+            })
         },
         /**
          * Checks if the character is currently online.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-location.read_online.v1
          * @returns character's online status, last session times, and number of logins
          */
@@ -1363,17 +1361,17 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.location.online' needs a character ID!`
-            });
+                message: `The function 'character.location.online' needs a character ID!`,
+            })
 
             return request({
                 subUrl: `characters/${characterID}/online`,
-                needsAuth: true
-            });
+                needsAuth: true,
+            })
         },
         /**
          * Get the character's current ship type, name, and ID.
-         * @param {number} characterID 
+         * @param {number} characterID
          * @requires esi-location.read_ship_type.v1
          * @returns character's current ship type, name, and ID
          */
@@ -1381,13 +1379,13 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'character.location.ship' needs a character ID!`
-            });
+                message: `The function 'character.location.ship' needs a character ID!`,
+            })
 
             return request({
                 subUrl: `characters/${characterID}/ship`,
-                needsAuth: true
-            });
-        }
-    }
+                needsAuth: true,
+            })
+        },
+    },
 }

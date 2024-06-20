@@ -10,11 +10,11 @@ module.exports = {
         inputValidation({
             input: attribute,
             type: 'number',
-            message: `The function 'dogma.attrInfo' requires an attribute!`
+            message: `The function 'dogma.attrInfo' requires an attribute!`,
         })
 
         return request({
-            subUrl: `dogma/attributes/${attribute}`
+            subUrl: `dogma/attributes/${attribute}`,
         })
     },
     /**
@@ -23,7 +23,7 @@ module.exports = {
      */
     attrs() {
         return request({
-            subUrl: `dogma/attributes`
+            subUrl: `dogma/attributes`,
         })
     },
     /**
@@ -36,16 +36,16 @@ module.exports = {
         inputValidation({
             input: itemID,
             type: 'number',
-            message: `The function 'dogma.attrs' requires an attribute!`
+            message: `The function 'dogma.attrs' requires an attribute!`,
         })
         inputValidation({
             input: typeID,
             type: 'number',
-            message: `The function 'dogma.attrs' requires an typeID!`
+            message: `The function 'dogma.attrs' requires an typeID!`,
         })
 
         return request({
-            subUrl: `dogma/dynamic/items/${typeID}/${itemID}`
+            subUrl: `dogma/dynamic/items/${typeID}/${itemID}`,
         })
     },
     /**
@@ -57,11 +57,11 @@ module.exports = {
         inputValidation({
             input: effect,
             type: 'number',
-            message: `The function 'dogma.effectInfo' requires a effect ID!`
+            message: `The function 'dogma.effectInfo' requires a effect ID!`,
         })
 
         return request({
-            subUrl: `dogma/effects/${effect}`
+            subUrl: `dogma/effects/${effect}`,
         })
     },
     /**
@@ -70,7 +70,7 @@ module.exports = {
      */
     effects() {
         return request({
-            subUrl: `dogma/effects`
+            subUrl: `dogma/effects`,
         })
-    }
+    },
 }

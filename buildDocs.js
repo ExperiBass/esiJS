@@ -11,10 +11,10 @@ async function build() {
             let doc = await documentation.build([`${path.join(__dirname, `./src/${file}`)}`], {
                 extension: 'js',
                 // gotta remove the util cause those somehow end up in every fucking md
-                inferPrivate: '^get|set|sleep|log'
+                inferPrivate: '^get|set|sleep|log',
             })
             doc = await documentation.formats.md(doc, {
-                markdownToc: true
+                markdownToc: true,
             })
 
             await fs.writeFileSync(`./docs/${file.replace('.js', '.md')}`, doc)
@@ -28,12 +28,12 @@ async function build() {
         extension: 'js',
     })
     doc = await documentation.formats.md(doc, {
-        markdownToc: true
+        markdownToc: true,
     })
 
     await fs.writeFileSync(`./docs/${file.replace('.js', '')}.md`, doc)
     console.log(Chalk.green(`Docs for ${file} built.`))
 }
-build().catch(e => {
+build().catch((e) => {
     console.error(e.stack)
 })

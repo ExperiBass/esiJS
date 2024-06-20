@@ -1,6 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-let {log} = require('./src/util/util') // is reassigned if logging is disabled
+let { log } = require('./src/util/util') // is reassigned if logging is disabled
 
 /**
  * The esiClient class.
@@ -18,10 +18,7 @@ const esiJS = class {
      *     token: "THIS_IS_A_TOKEN"
      * })
      */
-    constructor({
-        logging = true,
-        token = ''
-    }) {
+    constructor({ logging = true, token = '' }) {
         if (!logging) {
             log = () => {}
         }
@@ -37,7 +34,6 @@ const esiJS = class {
 
             // If the file exists...
             if (fileExists) {
-
                 // ...see if we can read it...
                 try {
                     log(`Config file exists! Checking if I can read it...`, 'INFO')
@@ -55,10 +51,12 @@ const esiJS = class {
                     log(`Couldn't read config file, reverting to default configuration`, 'WARNING')
                     return false
                 }
-
             } else {
                 // If the file doesn't exist...
-                log(`The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}...`, 'INFO')
+                log(
+                    `The config file doesn't exist! Reverting to default configuration and attempting to write to ${projectConfig}...`,
+                    'INFO'
+                )
                 try {
                     // ...attempt to create it
                     fs.writeFileSync(projectConfig, JSON.stringify(require('./esi.json'), null, 2))
@@ -68,14 +66,13 @@ const esiJS = class {
                 }
                 return false
             }
-
         } catch (e) {
             return
         }
         log(`I can read and write to the config file!`, 'INFO')
         if (token) {
             this.util.setSettings({
-                authToken: token
+                authToken: token,
             })
         }
     }

@@ -2,8 +2,8 @@
 
 ### Table of Contents
 
-*   [planRoute][1]
-    *   [Parameters][2]
+-   [planRoute][1]
+    -   [Parameters][2]
 
 ## planRoute
 
@@ -11,19 +11,15 @@ Get the systems between the origin and the destination.
 
 ### Parameters
 
-*   `origin` **[number][3]**&#x20;
-*   `destination` **[number][3]**&#x20;
-*   `flag` **[string][4]**  (optional, default `'secure'`)
-*   `avoid` **\[[number][3]]**  (optional, default `[]`)
+-   `origin` **[number][3]**&#x20;
+-   `destination` **[number][3]**&#x20;
+-   `flag` **[string][4]** (optional, default `'secure'`)
+-   `avoid` **\[[number][3]]** (optional, default `[]`)
 
 Returns **[Promise][5]<\[[number][3]]>**&#x20;
 
 [1]: #planroute
-
 [2]: #parameters
-
 [3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
 [4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
 [5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

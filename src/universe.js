@@ -12,9 +12,9 @@ module.exports = {
          */
         ancestries() {
             return request({
-                subUrl: `universe/ancestries`
+                subUrl: `universe/ancestries`,
             })
-        }
+        },
     },
     /**
      *
@@ -30,13 +30,13 @@ module.exports = {
             inputValidation({
                 input: beltID,
                 type: 'number',
-                message: `The function 'universe.belts.beltInfo requires a belt ID!`
+                message: `The function 'universe.belts.beltInfo requires a belt ID!`,
             })
 
             return request({
-                subUrl: `universe/asteroid_belts/${beltID}`
+                subUrl: `universe/asteroid_belts/${beltID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -49,7 +49,7 @@ module.exports = {
          */
         bloodlines() {
             return request({
-                subUrl: `universe/bloodlines`
+                subUrl: `universe/bloodlines`,
             })
         },
     },
@@ -69,13 +69,13 @@ module.exports = {
             inputValidation({
                 input: IDs,
                 type: 'object',
-                message: `The function 'universe.bulk.idsToNames requires IDs to be an array!`
+                message: `The function 'universe.bulk.idsToNames requires IDs to be an array!`,
             })
 
             return request({
                 subUrl: `universe/names`,
                 requestType: 'post',
-                body: IDs
+                body: IDs,
             })
         },
         /**
@@ -90,15 +90,15 @@ module.exports = {
             inputValidation({
                 input: names,
                 type: 'object',
-                message: `The function 'universe.bulk.namesToIDs requires names to be an array!`
+                message: `The function 'universe.bulk.namesToIDs requires names to be an array!`,
             })
 
             return request({
                 subUrl: `universe/ids`,
                 requestType: 'post',
-                body: names
+                body: names,
             })
-        }
+        },
     },
     /**
      *
@@ -111,7 +111,7 @@ module.exports = {
          */
         categories() {
             return request({
-                subUrl: `universe/categories`
+                subUrl: `universe/categories`,
             })
         },
         /**
@@ -124,13 +124,13 @@ module.exports = {
             inputValidation({
                 input: categoryID,
                 type: 'number',
-                message: `The function 'universe.categories.categoryInfo requires a category ID!`
+                message: `The function 'universe.categories.categoryInfo requires a category ID!`,
             })
 
             return request({
-                subUrl: `universe/categories/${categoryID}`
+                subUrl: `universe/categories/${categoryID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -147,11 +147,11 @@ module.exports = {
             inputValidation({
                 input: constellationID,
                 type: 'number',
-                message: `The function 'universe.constellations.constellationInfo requires a constellation ID!`
+                message: `The function 'universe.constellations.constellationInfo requires a constellation ID!`,
             })
 
             return request({
-                subUrl: `universe/constellations/${constellationID}`
+                subUrl: `universe/constellations/${constellationID}`,
             })
         },
         /**
@@ -161,9 +161,9 @@ module.exports = {
          */
         constellations() {
             return request({
-                subUrl: `universe/constellations`
+                subUrl: `universe/constellations`,
             })
-        }
+        },
     },
     /**
      *
@@ -176,9 +176,9 @@ module.exports = {
          */
         factions() {
             return request({
-                subUrl: `universe/factions`
+                subUrl: `universe/factions`,
             })
-        }
+        },
     },
     /**
      *
@@ -194,11 +194,11 @@ module.exports = {
             inputValidation({
                 input: graphicID,
                 type: 'number',
-                message: `The function 'universe.graphics.graphicInfo requires a graphic ID!`
+                message: `The function 'universe.graphics.graphicInfo requires a graphic ID!`,
             })
 
             return request({
-                subUrl: `universe/graphics/${graphicID}`
+                subUrl: `universe/graphics/${graphicID}`,
             })
         },
         /**
@@ -208,9 +208,9 @@ module.exports = {
          */
         graphics() {
             return request({
-                subUrl: `universe/graphics`
+                subUrl: `universe/graphics`,
             })
-        }
+        },
     },
     /**
      *
@@ -226,11 +226,11 @@ module.exports = {
             inputValidation({
                 input: groupID,
                 type: 'number',
-                message: `The function 'universe.graphics.graphicInfo requires a group ID!`
+                message: `The function 'universe.graphics.graphicInfo requires a group ID!`,
             })
 
             return request({
-                subUrl: `universe/groups/${groupID}`
+                subUrl: `universe/groups/${groupID}`,
             })
         },
         /**
@@ -240,9 +240,9 @@ module.exports = {
          */
         groups() {
             return request({
-                subUrl: `universe/groups`
+                subUrl: `universe/groups`,
             })
-        }
+        },
     },
     /**
      *
@@ -259,13 +259,13 @@ module.exports = {
             inputValidation({
                 input: moonID,
                 type: 'number',
-                message: `The function 'universe.moons.moonsInfo requires a moon ID!`
+                message: `The function 'universe.moons.moonsInfo requires a moon ID!`,
             })
 
             return request({
-                subUrl: `universe/moons/${moonID}`
+                subUrl: `universe/moons/${moonID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -281,13 +281,13 @@ module.exports = {
             inputValidation({
                 input: planetID,
                 type: 'number',
-                message: `The function 'universe.planets.planetInfo requires a planet ID!`
+                message: `The function 'universe.planets.planetInfo requires a planet ID!`,
             })
 
             return request({
-                subUrl: `universe/planets/${planetID}`
+                subUrl: `universe/planets/${planetID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -300,9 +300,9 @@ module.exports = {
          */
         races() {
             return request({
-                subUrl: `universe/races`
+                subUrl: `universe/races`,
             })
-        }
+        },
     },
     /**
      *
@@ -319,11 +319,11 @@ module.exports = {
             inputValidation({
                 input: regionID,
                 type: 'number',
-                message: `The function 'universe.regions.regionInfo requires a region ID!`
+                message: `The function 'universe.regions.regionInfo requires a region ID!`,
             })
 
             return request({
-                subUrl: `universe/regions/${regionID}`
+                subUrl: `universe/regions/${regionID}`,
             })
         },
         /**
@@ -332,9 +332,9 @@ module.exports = {
          */
         regions() {
             return request({
-                subUrl: `universe/regions`
+                subUrl: `universe/regions`,
             })
-        }
+        },
     },
     /**
      *
@@ -350,13 +350,13 @@ module.exports = {
             inputValidation({
                 input: stargateID,
                 type: 'number',
-                message: `The function 'universe.stargates.stargateInfo requires a stargate ID!`
+                message: `The function 'universe.stargates.stargateInfo requires a stargate ID!`,
             })
 
             return request({
-                subUrl: `universe/stargates/${stargateID}`
+                subUrl: `universe/stargates/${stargateID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -372,13 +372,13 @@ module.exports = {
             inputValidation({
                 input: starID,
                 type: 'number',
-                message: `The function 'universe.stars.starInfo requires a star ID!`
+                message: `The function 'universe.stars.starInfo requires a star ID!`,
             })
 
             return request({
-                subUrl: `universe/stars/${starID}`
+                subUrl: `universe/stars/${starID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -395,13 +395,13 @@ module.exports = {
             inputValidation({
                 input: stationID,
                 type: 'number',
-                message: `The function 'universe.stations.stationInfo requires a station ID!`
+                message: `The function 'universe.stations.stationInfo requires a station ID!`,
             })
 
             return request({
-                subUrl: `universe/stations/${stationID}`
+                subUrl: `universe/stations/${stationID}`,
             })
-        }
+        },
     },
     /**
      *
@@ -414,7 +414,7 @@ module.exports = {
          */
         structures() {
             return request({
-                subUrl: `universe/structures`
+                subUrl: `universe/structures`,
             })
         },
         /**
@@ -427,14 +427,14 @@ module.exports = {
             inputValidation({
                 input: structureID,
                 type: 'number',
-                message: `The function 'universe.structures.structureInfo' needs a structure ID!`
+                message: `The function 'universe.structures.structureInfo' needs a structure ID!`,
             })
 
             return request({
                 subUrl: `universe/structures/${structureID}`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -450,11 +450,11 @@ module.exports = {
             inputValidation({
                 input: systemID,
                 type: 'number',
-                message: `The function 'universe.systems.systemInfo' requires a system ID!`
+                message: `The function 'universe.systems.systemInfo' requires a system ID!`,
             })
 
             return request({
-                subUrl: `universe/systems/${systemID}`
+                subUrl: `universe/systems/${systemID}`,
             })
         },
         /**
@@ -465,7 +465,7 @@ module.exports = {
          */
         systemJumps() {
             return request({
-                subUrl: `universe/system_jumps`
+                subUrl: `universe/system_jumps`,
             })
         },
         /**
@@ -476,7 +476,7 @@ module.exports = {
          */
         systemKills() {
             return request({
-                subUrl: `universe/system_kills`
+                subUrl: `universe/system_kills`,
             })
         },
         /**
@@ -486,9 +486,9 @@ module.exports = {
          */
         systems() {
             return request({
-                subUrl: `universe/systems`
+                subUrl: `universe/systems`,
             })
-        }
+        },
     },
     /**
      *
@@ -504,11 +504,11 @@ module.exports = {
             inputValidation({
                 input: typeID,
                 type: 'number',
-                message: `The function 'universe.types.typeInfo requires a type ID!`
+                message: `The function 'universe.types.typeInfo requires a type ID!`,
             })
 
             return request({
-                subUrl: `universe/types/${typeID}`
+                subUrl: `universe/types/${typeID}`,
             })
         },
         /**
@@ -518,8 +518,8 @@ module.exports = {
          */
         types() {
             return request({
-                subUrl: `universe/types`
+                subUrl: `universe/types`,
             })
-        }
+        },
     },
 }

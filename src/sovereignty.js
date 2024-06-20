@@ -24,5 +24,5 @@ module.exports = {
      */
     structures() {
         return request({ subUrl: `sovereignty/structures` })
-    }
+    },
 }

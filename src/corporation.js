@@ -10,11 +10,11 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.corporationHistory' requires a corporation ID!`
+            message: `The function 'corporation.corporationHistory' requires a corporation ID!`,
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/alliancehistory`
+            subUrl: `corporations/${corporationID}/alliancehistory`,
         })
     },
     /**
@@ -26,11 +26,11 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.icon' requires a corporation ID!`
+            message: `The function 'corporation.icon' requires a corporation ID!`,
         })
 
         return request({
-            subUrl: `corporations/${corporationID}/icons`
+            subUrl: `corporations/${corporationID}/icons`,
         })
     },
     /**
@@ -42,11 +42,11 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.info' requires a corporation ID!`
+            message: `The function 'corporation.info' requires a corporation ID!`,
         })
 
         return request({
-            subUrl: `corporations/${corporationID}`
+            subUrl: `corporations/${corporationID}`,
         })
     },
     /**
@@ -55,7 +55,7 @@ module.exports = {
      */
     npcCorps() {
         return request({
-            subUrl: `corporations/npccorps`
+            subUrl: `corporations/npccorps`,
         })
     },
     /**
@@ -70,20 +70,20 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.blueprints' requires a corporation ID!`
+            message: `The function 'corporation.blueprints' requires a corporation ID!`,
         })
         inputValidation({
             input: page,
             type: 'number',
-            message: `The function 'corporation.blueprints' requires a page number, not a ${typeof page}!`
+            message: `The function 'corporation.blueprints' requires a page number, not a ${typeof page}!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/blueprints`,
             query: {
-                page: page
+                page: page,
             },
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -98,20 +98,20 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.secureContainerLogs' requires a corporation ID!`
+            message: `The function 'corporation.secureContainerLogs' requires a corporation ID!`,
         })
         inputValidation({
             input: page,
             type: 'number',
-            message: `The function 'corporation.secureContainerLogs' requires a page number, not a ${typeof page}!`
+            message: `The function 'corporation.secureContainerLogs' requires a page number, not a ${typeof page}!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/containers/logs`,
             query: {
-                page: page
+                page: page,
             },
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -125,12 +125,12 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.divisions' requires a corporation ID!`
+            message: `The function 'corporation.divisions' requires a corporation ID!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/divisions`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -144,12 +144,12 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.facilities' requires a corporation ID!`
+            message: `The function 'corporation.facilities' requires a corporation ID!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/facilities`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -166,12 +166,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.medals.medals' requires a corporation ID!`
+                message: `The function 'corporation.medals.medals' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/medals`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -184,12 +184,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.medals.issued' requires a corporation ID!`
+                message: `The function 'corporation.medals.issued' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/medals/issued`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
     },
@@ -207,12 +207,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.members.members' requires a corporation ID!`
+                message: `The function 'corporation.members.members' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/members`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -226,12 +226,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.members.limit' requires a corporation ID!`
+                message: `The function 'corporation.members.limit' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/members/limit`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -245,12 +245,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.members.titles' requires a corporation ID!`
+                message: `The function 'corporation.members.titles' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/members/titles`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -264,12 +264,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.members.tracking' requires a corporation ID!`
+                message: `The function 'corporation.members.tracking' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/membertracking`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
     },
@@ -287,12 +287,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.roles.roles' requires a corporation ID!`
+                message: `The function 'corporation.roles.roles' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/roles`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -305,12 +305,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.roles.history' requires a corporation ID!`
+                message: `The function 'corporation.roles.history' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/roles/history`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
     },
@@ -325,12 +325,12 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.shareholders' requires a corporation ID!`
+            message: `The function 'corporation.shareholders' requires a corporation ID!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/shareholders`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -343,12 +343,12 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.standings' requires a corporation ID!`
+            message: `The function 'corporation.standings' requires a corporation ID!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/standings`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -366,21 +366,21 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.starbases.starbases' requires a corporation ID!`
+                message: `The function 'corporation.starbases.starbases' requires a corporation ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'corporation.starbases.starbases' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/starbases`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -395,25 +395,25 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.starbases.info' requires a corporation ID!`
+                message: `The function 'corporation.starbases.info' requires a corporation ID!`,
             })
             inputValidation({
                 input: starbaseID,
                 type: 'number',
-                message: `The function 'corporation.starbases.info' requires a starbase ID!`
+                message: `The function 'corporation.starbases.info' requires a starbase ID!`,
             })
             inputValidation({
                 input: systemID,
                 type: 'number',
-                message: `The function 'corporation.starbases.info' requires a system ID!`
+                message: `The function 'corporation.starbases.info' requires a system ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/starbases/${starbaseID}`,
                 query: {
-                    system_id: systemID
+                    system_id: systemID,
                 },
-                needsAuth: trueq
+                needsAuth: trueq,
             })
         },
     },
@@ -428,12 +428,12 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.titles' requires a corporation ID!`
+            message: `The function 'corporation.titles' requires a corporation ID!`,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/titles`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -448,18 +448,18 @@ module.exports = {
         inputValidation({
             input: corporationID,
             type: 'number',
-            message: `The function 'corporation.structures' requires a corporation ID!`
+            message: `The function 'corporation.structures' requires a corporation ID!`,
         })
         inputValidation({
             input: page,
             type: 'number',
             message: `The function 'corporation.structures' requires a page number!`,
-            optional: true
+            optional: true,
         })
 
         return request({
             subUrl: `corporations/${corporationID}/structures`,
-            needsAuth: true
+            needsAuth: true,
         })
     },
     /**
@@ -476,12 +476,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.assets.assets' requires a corporation ID!`
+                message: `The function 'corporation.assets.assets' requires a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/assets`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -495,21 +495,21 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.assets.locations' requires a corporation ID!`
+                message: `The function 'corporation.assets.locations' requires a corporation ID!`,
             })
             inputValidation({
                 input: itemIDs,
                 type: 'object',
-                message: `The function 'corporation.assets.locations' requires a array of item IDs!`
+                message: `The function 'corporation.assets.locations' requires a array of item IDs!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/assets/locations`,
                 requestType: 'post',
                 body: {
-                    item_ids: itemIDs
+                    item_ids: itemIDs,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -523,23 +523,23 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.assets.names' requires a corporation ID!`
+                message: `The function 'corporation.assets.names' requires a corporation ID!`,
             })
             inputValidation({
                 input: itemIDs,
                 type: 'object',
-                message: `The function 'corporation.assets.names' requires a array of item IDs!`
+                message: `The function 'corporation.assets.names' requires a array of item IDs!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/assets/names`,
                 requestType: 'post',
                 query: {
-                    item_ids: itemIDs
+                    item_ids: itemIDs,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -555,12 +555,15 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.bookmarks' requires a corporation ID!`
+                message: `The function 'corporation.bookmarks' requires a corporation ID!`,
             })
 
-            return request({
-                subUrl: `corporations/${corporationID}/bookmarks`
-            }, true)
+            return request(
+                {
+                    subUrl: `corporations/${corporationID}/bookmarks`,
+                },
+                true
+            )
         },
         /**
          * List corporation bookmark folders
@@ -574,14 +577,16 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.bookmarkFolders' requires a corporation ID!`
+                message: `The function 'corporation.bookmarkFolders' requires a corporation ID!`,
             })
 
-            return request({
-                subUrl: `corporations/${corporationID}/bookmarks/folders`
-            }, true)
-
-        }
+            return request(
+                {
+                    subUrl: `corporations/${corporationID}/bookmarks/folders`,
+                },
+                true
+            )
+        },
     },
     /**
      *
@@ -597,12 +602,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.contacts.contacts' requires a corporation ID!`
+                message: `The function 'corporation.contacts.contacts' requires a corporation ID!`,
             })
 
             request({
                 subUrl: `corporations/${corporationID}/contacts`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -614,14 +619,14 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.contacts.labels' requires a corporation ID!`
+                message: `The function 'corporation.contacts.labels' requires a corporation ID!`,
             })
 
             request({
                 subUrl: `corporations/${corporationID}/contacts/labels`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -637,11 +642,11 @@ module.exports = {
             inputValidation({
                 input: characterID,
                 type: 'number',
-                message: `The function 'corporation.contracts.contracts' requires a corporation ID!`
+                message: `The function 'corporation.contracts.contracts' requires a corporation ID!`,
             })
             request({
                 subUrl: `/corporations/${corporationID}/contracts/`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -655,16 +660,16 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.contracts.bids' requires a corporation ID!`
+                message: `The function 'corporation.contracts.bids' requires a corporation ID!`,
             })
             inputValidation({
                 input: contractID,
                 type: 'number',
-                message: `The function 'corporation.contracts.bids' requires a contract ID!`
+                message: `The function 'corporation.contracts.bids' requires a contract ID!`,
             })
             request({
                 subUrl: `/corporations/${corporationID}/contracts/${contractID}/bids`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -678,18 +683,18 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.contracts.items' requires a corporation ID!`
+                message: `The function 'corporation.contracts.items' requires a corporation ID!`,
             })
             inputValidation({
                 input: contractID,
                 type: 'number',
-                message: `The function 'corporation.contracts.items' requires a contract ID!`
+                message: `The function 'corporation.contracts.items' requires a contract ID!`,
             })
             request({
                 subUrl: `/corporations/${corporationID}/contracts/${contractID}/items`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -707,21 +712,21 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.industry.extractions' requires a corporation ID!`
+                message: `The function 'corporation.industry.extractions' requires a corporation ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'corporation.industry.extractions' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/mining/extractions`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -736,21 +741,21 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.industry.observers' requires a corporation ID!`
+                message: `The function 'corporation.industry.observers' requires a corporation ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'corporation.industry.observers' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/mining/observers`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -766,26 +771,26 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.industry.observerInfo' requires a corporation ID!`
+                message: `The function 'corporation.industry.observerInfo' requires a corporation ID!`,
             })
             inputValidation({
                 input: observerID,
                 type: 'number',
-                message: `The function 'corporation.industry.observerInfo' requires a observer ID!`
+                message: `The function 'corporation.industry.observerInfo' requires a observer ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'corporation.industry.observerInfo' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/mining/observers/${observerID}`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -800,23 +805,23 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.industry.jobs' requires a corporation ID!`
+                message: `The function 'corporation.industry.jobs' requires a corporation ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'corporation.industry.jobs' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/industry/jobs`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -834,23 +839,23 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.killmails.recent' requires a corporation ID!`
+                message: `The function 'corporation.killmails.recent' requires a corporation ID!`,
             })
             inputValidation({
                 input: page,
                 type: 'number',
                 message: `The function 'corporation.killmails.recent' requires a page number!`,
-                optional: true
+                optional: true,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/killmails/recent`,
                 query: {
-                    page: page
+                    page: page,
                 },
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -865,13 +870,13 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.market.orders' needs a corporation ID!`
+                message: `The function 'corporation.market.orders' needs a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporation/${corporationID}/orders`,
                 requestType: 'GET',
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -883,13 +888,13 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.market.orderHistory' needs a corporation ID!`
+                message: `The function 'corporation.market.orderHistory' needs a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporation/${corporationID}/orders/history`,
                 requestType: 'GET',
-                needsAuth: true
+                needsAuth: true,
             })
         },
     },
@@ -908,14 +913,14 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.pi.customsOffices' needs a corporation ID!`
+                message: `The function 'corporation.pi.customsOffices' needs a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporation/${corporationID}/customs_offices`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
+        },
     },
     /**
      *
@@ -932,12 +937,12 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.wallets.balance' needs a corporation ID!`
+                message: `The function 'corporation.wallets.balance' needs a corporation ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/wallets`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -952,17 +957,17 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.wallets.journal' needs a corporation ID!`
+                message: `The function 'corporation.wallets.journal' needs a corporation ID!`,
             })
             inputValidation({
                 input: divisionID,
                 type: 'number',
-                message: `The function 'corporation.wallets.journal' needs a division ID!`
+                message: `The function 'corporation.wallets.journal' needs a division ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/wallets/${divisionID}/journal`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -977,18 +982,18 @@ module.exports = {
             inputValidation({
                 input: corporationID,
                 type: 'number',
-                message: `The function 'corporation.wallets.transactions' needs a corporation ID!`
+                message: `The function 'corporation.wallets.transactions' needs a corporation ID!`,
             })
             inputValidation({
                 input: divisionID,
                 type: 'number',
-                message: `The function 'corporation.wallets.journal' needs a division ID!`
+                message: `The function 'corporation.wallets.journal' needs a division ID!`,
             })
 
             return request({
                 subUrl: `corporations/${corporationID}/wallets/${divisionID}/transactions`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
-    }
+        },
+    },
 }

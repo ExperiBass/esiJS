@@ -7,7 +7,7 @@ module.exports = {
      */
     alliances() {
         return request({
-            subUrl: 'alliances'
+            subUrl: 'alliances',
         })
     },
     /**
@@ -19,11 +19,11 @@ module.exports = {
         inputValidation({
             input: allianceID,
             type: 'number',
-            message: `The function 'alliance.corps' requires an alliance ID!`
+            message: `The function 'alliance.corps' requires an alliance ID!`,
         })
 
         return request({
-            subUrl: `alliances/${allianceID}/corporations`
+            subUrl: `alliances/${allianceID}/corporations`,
         })
     },
     /**
@@ -35,11 +35,11 @@ module.exports = {
         inputValidation({
             input: allianceID,
             type: 'number',
-            message: `The function 'alliances.icon' requires an alliance ID!`
+            message: `The function 'alliances.icon' requires an alliance ID!`,
         })
 
         return request({
-            subUrl: `alliances/${allianceID}/icons`
+            subUrl: `alliances/${allianceID}/icons`,
         })
     },
     /**
@@ -51,11 +51,11 @@ module.exports = {
         inputValidation({
             input: allianceID,
             type: 'number',
-            message: `The function 'alliances.info' requires an alliance ID!`
+            message: `The function 'alliances.info' requires an alliance ID!`,
         })
 
         return request({
-            subUrl: `alliances/${allianceID}`
+            subUrl: `alliances/${allianceID}`,
         })
     },
     /**
@@ -72,12 +72,12 @@ module.exports = {
             inputValidation({
                 input: allianceID,
                 type: 'number',
-                message: `The function 'alliance.contacts.contacts' requires a alliance ID!`
+                message: `The function 'alliance.contacts.contacts' requires a alliance ID!`,
             })
 
             request({
                 subUrl: `alliances/${allianceID}/contacts`,
-                needsAuth: true
+                needsAuth: true,
             })
         },
         /**
@@ -90,13 +90,13 @@ module.exports = {
             inputValidation({
                 input: allianceID,
                 type: 'number',
-                message: `The function 'alliance.contacts.labels' requires a alliance ID!`
+                message: `The function 'alliance.contacts.labels' requires a alliance ID!`,
             })
 
             request({
                 subUrl: `alliances/${allianceID}/contacts/labels`,
-                needsAuth: true
+                needsAuth: true,
             })
-        }
-    }
+        },
+    },
 }

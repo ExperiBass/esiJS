@@ -14,26 +14,26 @@ module.exports = {
         inputValidation({
             input: origin,
             type: 'number',
-            message: `The function 'routes.planRoute' requires a origin!`
+            message: `The function 'routes.planRoute' requires a origin!`,
         })
         inputValidation({
             input: destination,
             type: 'number',
-            message: `The function 'routes.planRoute' requires a destination!`
+            message: `The function 'routes.planRoute' requires a destination!`,
         })
         inputValidation({
             input: flag,
             type: 'string',
             options: flagOptions,
-            message: `The input flag for 'routes.planRoute' must be 'shortest', 'secure' or 'insecure'!`
+            message: `The input flag for 'routes.planRoute' must be 'shortest', 'secure' or 'insecure'!`,
         })
 
         return request({
             subUrl: `route/${origin}/${destination}`,
             query: {
                 avoid,
-                flag
-            }
+                flag,
+            },
         })
-    }
+    },
 }

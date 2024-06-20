@@ -12,16 +12,16 @@ module.exports = {
         inputValidation({
             input: killID,
             type: 'number',
-            message: `The function 'killMail.killMailInfo' requires a kill ID!`
+            message: `The function 'killMail.killMailInfo' requires a kill ID!`,
         })
         inputValidation({
             input: killHash,
             type: 'string',
-            message: `The function 'killMail.killMailInfo' requires a kill hash!`
+            message: `The function 'killMail.killMailInfo' requires a kill hash!`,
         })
 
         return request({
-            subUrl: `killmails/${killID}/${killHash}`
+            subUrl: `killmails/${killID}/${killHash}`,
         })
-    }
+    },
 }

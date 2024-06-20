@@ -7,7 +7,7 @@ module.exports = {
      */
     incursions() {
         return request({
-            subUrl: `incursions`
+            subUrl: `incursions`,
         })
-    }
+    },
 }

@@ -10,11 +10,11 @@ module.exports = {
         inputValidation({
             input: groupID,
             type: 'number',
-            message: `The function 'opportunities.groupInfo' requires a group ID!`
+            message: `The function 'opportunities.groupInfo' requires a group ID!`,
         })
 
         return request({
-            subUrl: `opportunity/groups/${groupID}`
+            subUrl: `opportunity/groups/${groupID}`,
         })
     },
     /**
@@ -23,7 +23,7 @@ module.exports = {
      */
     groups() {
         return request({
-            subUrl: `opportunities/groups`
+            subUrl: `opportunities/groups`,
         })
     },
     /**
@@ -36,11 +36,11 @@ module.exports = {
         inputValidation({
             input: taskID,
             type: 'number',
-            message: `The function 'opportunities.taskInfo' requires a task ID!`
+            message: `The function 'opportunities.taskInfo' requires a task ID!`,
         })
 
         return request({
-            subUrl: `opportunity/tasks/${groupID}`
+            subUrl: `opportunity/tasks/${groupID}`,
         })
     },
     /**
@@ -50,7 +50,7 @@ module.exports = {
      */
     tasks() {
         return request({
-            subUrl: `opportunities/tasks`
+            subUrl: `opportunities/tasks`,
         })
-    }
+    },
 }
