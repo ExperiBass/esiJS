@@ -104,7 +104,8 @@ function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = fal
     let headers = {
         accept: 'gzip, deflate, br',
         'Accept-Language': `${language}`,
-       // 'Content-Type': 'application/json',
+        'User-Agent': DEFAULT_USER_AGENT,
+        // 'Content-Type': 'application/json',
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=tranquility`
@@ -131,9 +132,7 @@ function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = fal
     }
     // Add in the program name if specified, else default to 'esiJS-v{version}'
     if (programName && programName !== '') {
-        headers['User-Agent'] = `${programName}:${DEFAULT_USER_AGENT}`
-    } else {
-        headers['User-Agent'] = DEFAULT_USER_AGENT
+        headers['User-Agent'] += ` (for: ${programName})`
     }
 
     // Check the URL for extra forward slashes and delete them
@@ -194,7 +193,7 @@ function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = fal
             // if its another error, just send the full error
             throw buildError(error, 'ESIJS_ERROR')
         })
-        .finally(({headers}) => {
+        .finally(({ headers }) => {
             /// store the error limit and reset time
             const errorLimit = parseInt(headers['x-esi-error-limit-remain'])
             const resetInSeconds = parseInt(headers['x-esi-error-limit-reset'])
