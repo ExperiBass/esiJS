@@ -39,4 +39,5 @@ Please view the `docs/` directory for the documentation on each group.
 # TODO
 
 find maintainers that play the game lol, my email is on my site  
-buff the "cache"
+use etags for caching?  
+roll everything under the class so they can use `this`  

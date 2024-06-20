@@ -5,9 +5,7 @@ const fs = require('fs')
 const { URLSearchParams } = require('node:url')
 const { projectPath, projectConfig, localConfig } = require('./constants')
 const { version } = require('../../package.json')
-const DEFAULT_USER_AGENT = `esiJS-v${version}`
-
-const cache = new Cache()
+const DEFAULT_USER_AGENT = `esiJS/${version}`
 
 // documented in utility.js
 function getSettings() {
@@ -104,9 +102,9 @@ function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = fal
     const { link, authToken, language, programName } = getSettings()
     const urlTest = /\/(?=\/)(?<!https:\/)/g
     let headers = {
-        accept: 'application/json',
+        accept: 'gzip, deflate, br',
         'Accept-Language': `${language}`,
-        'Content-Type': 'application/json',
+       // 'Content-Type': 'application/json',
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=tranquility`
@@ -133,9 +131,9 @@ function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = fal
     }
     // Add in the program name if specified, else default to 'esiJS-v{version}'
     if (programName && programName !== '') {
-        headers['x-user-agent'] = `${programName}:${DEFAULT_USER_AGENT}`
+        headers['User-Agent'] = `${programName}:${DEFAULT_USER_AGENT}`
     } else {
-        headers['x-user-agent'] = DEFAULT_USER_AGENT
+        headers['User-Agent'] = DEFAULT_USER_AGENT
     }
 
     // Check the URL for extra forward slashes and delete them
@@ -196,6 +194,13 @@ function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = fal
             // if its another error, just send the full error
             throw buildError(error, 'ESIJS_ERROR')
         })
+        .finally(({headers}) => {
+            /// store the error limit and reset time
+            const errorLimit = parseInt(headers['x-esi-error-limit-remain'])
+            const resetInSeconds = parseInt(headers['x-esi-error-limit-reset'])
+            /// TODO: should esiJS handle etag caching or the client?
+            const etag = headers.etag
+        })
 }
 function checkForConfig(logging) {
     let localLog = log
@@ -252,5 +257,4 @@ module.exports = {
     buildError,
     checkForConfig,
     getSettings,
-    cache,
 }
