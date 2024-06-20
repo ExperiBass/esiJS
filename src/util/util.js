@@ -6,46 +6,12 @@ const { URLSearchParams } = require('node:url')
 const { projectPath, projectConfig, localConfig } = require('./constants')
 const { version } = require('../../package.json')
 const DEFAULT_USER_AGENT = `esiJS-v${version}`
-/**
- * @private
- */
-class Cache {
-    cache = {}
-    constructor() {
-    }
-    /**
-     * @param {String} identifier The identifier assigned to the object.
-     * @param {Object} item The item to cache.
-     * @param {Number} timeout The time to cache for, in seconds.
-     */
-    add(identifier, item, timeout) {
-        this.cache[identifier] = item
-        setTimeout(() => {
-            if (this.cache[identifier]) {
-                delete this.cache[identifier]
-            }
-        }, timeout * 1000)
-    }
-    /**
-     * Force-delete a cached request.
-     * @param {String} identifier
-     */
-    delete(identifier) {
-        delete this.cache[identifier]
-    }
-    has(identifier) {
-        return this.cache[identifier] ? true : false
-    }
-    get(identifier) {
-        return this.cache[identifier]
-    }
-}
 
 const cache = new Cache()
 
 // documented in utility.js
 function getSettings() {
-    let settings;
+    let settings
     if (checkForConfig()) {
         settings = fs.readFileSync(projectConfig, 'utf8')
         return JSON.parse(settings)
@@ -63,7 +29,7 @@ function getSettings() {
  */
 function buildError(msg, code, url) {
     let error = new Error(msg)
-    url ? error.url = url : false
+    url ? (error.url = url) : false
     error.code = code ? code : 'NO_CODE_DEFINED'
     return error
 }
@@ -102,10 +68,9 @@ function log(message, type = 'info') {
  * @param {array} args.options If `args.input` has set options, pass them as an array here.
  * @param {boolean} args.optional Marks this input as optional so we don't throw an error
  * if `args.input` is undefined.
- * @returns 
+ * @returns
  */
 function inputValidation({ input, type, message, options, optional = false }) {
-
     // If is optional and input is undefined, no need to validate
     if (optional && input === undefined) {
         return
@@ -135,24 +100,13 @@ function inputValidation({ input, type, message, options, optional = false }) {
  *
  * needsAuth -> flag a endpoint as authed
  */
-function makeRequest({
-    subUrl,
-    body,
-    query,
-    requestType = 'GET',
-    needsAuth = false
-}) {
-    const {
-        link,
-        authToken,
-        language,
-        programName
-    } = getSettings()
+function makeRequest({ subUrl, body, query, requestType = 'GET', needsAuth = false }) {
+    const { link, authToken, language, programName } = getSettings()
     const urlTest = /\/(?=\/)(?<!https:\/)/g
     let headers = {
-        'accept': 'application/json',
+        accept: 'application/json',
         'Accept-Language': `${language}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     }
     let request
     let fullURL = `${link}${subUrl}/?datasource=tranquility`
@@ -172,68 +126,70 @@ function makeRequest({
         headers['authorization'] = `Bearer ${authToken}`
         fullURL += `&token=${authToken}`
     } else if (needsAuth && authToken === '') {
-        throw buildError(`You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../../../')}.`, `NO_AUTH_TOKEN`)
+        throw buildError(
+            `You used a authenicated function without a token. Please set a token in the 'esi.json' file in ${path.join(__dirname, '../../../')}.`,
+            `NO_AUTH_TOKEN`
+        )
     }
-    // if the request isnt cached, send a request
-    if (!cache.has(fullURL)) {
-        // Add in the program name if specified, else default to 'esiJS-v{version}'
-        if (programName && programName !== '') {
-            headers['x-user-agent'] = `${programName}:${DEFAULT_USER_AGENT}`
-        } else {
-            headers['x-user-agent'] = DEFAULT_USER_AGENT
-        }
-
-        // Check the URL for extra forward slashes and delete them
-        fullURL = fullURL.replace(urlTest, '')
-
-        // Check for request type
-        switch (requestType.toUpperCase()) {
-            case 'GET': {
-                request = axios.get(fullURL, {
-                    headers
-                })
-                break;
-            }
-            case 'POST': {
-                request = axios.post(fullURL, body, {
-                    headers
-                })
-                break;
-            }
-            case 'PUT': {
-                request = axios.put(fullURL, body, {
-                    headers
-                })
-                break;
-            }
-            case 'DELETE': {
-                request = axios.delete(fullURL, body, {
-                    headers
-                })
-                break;
-            }
-            default: {
-                const url = fullURL.split('&token')[0]
-                throw buildError(`ESIJS ERROR: Endpoint function not configured properly. Please report this error on the GitHub repository. Error:\n${e.stack}`, 'ESIJS_ERROR', url)
-            }
-        }
-        // add the request to the cache
-        cache.add(`${fullURL}`, request, 300)
+    // Add in the program name if specified, else default to 'esiJS-v{version}'
+    if (programName && programName !== '') {
+        headers['x-user-agent'] = `${programName}:${DEFAULT_USER_AGENT}`
     } else {
-        request = cache.get(fullURL)
+        headers['x-user-agent'] = DEFAULT_USER_AGENT
+    }
+
+    // Check the URL for extra forward slashes and delete them
+    fullURL = fullURL.replace(urlTest, '')
+
+    // Check for request type
+    switch (requestType.toUpperCase()) {
+        case 'GET': {
+            request = axios.get(fullURL, {
+                headers,
+            })
+            break
+        }
+        case 'POST': {
+            request = axios.post(fullURL, body, {
+                headers,
+            })
+            break
+        }
+        case 'PUT': {
+            request = axios.put(fullURL, body, {
+                headers,
+            })
+            break
+        }
+        case 'DELETE': {
+            request = axios.delete(fullURL, body, {
+                headers,
+            })
+            break
+        }
+        default: {
+            const url = fullURL.split('&token')[0]
+            throw buildError(
+                `ESIJS ERROR: Endpoint function not configured properly. Please report this error on the GitHub repository. Error:\n${e.stack}`,
+                'ESIJS_ERROR',
+                url
+            )
+        }
     }
     // Return the promise request, pre set the 'then' and 'catch' clauses
     return request
-        .then(response => {
+        .then((response) => {
             let data = {
                 headers: response.headers,
-                data: response.data
+                data: response.data,
             }
 
             return data
-        }).catch(error => {
-            if (error.response) { // if its a error from ESI
-                const esiError = `${error.response.data.error}${error.response.data.error_description}`
+        })
+        .catch((error) => {
+            if (error.response) {
+                // if its a error from ESI
+                const esiError = `${error.response.data.error}`
                 const url = fullURL.split('&token')[0]
                 throw buildError(esiError, `ESI_ERROR`, url)
             }
@@ -245,7 +201,7 @@ function checkForConfig(logging) {
     let localLog = log
     // Check for a ESI config file in the project directory
     if (!logging) {
-        localLog = () => { }
+        localLog = () => {}
     }
     try {
         let fileExists = fs.existsSync(projectConfig)
@@ -267,10 +223,12 @@ function checkForConfig(logging) {
                 localLog(`Couldn't read config file, reverting to default configuration`, 'WARNING')
                 return false
             }
-
         } else {
             // If the file doesn't exist...
-            localLog(`The config file doesn't exist! Reverting to default configuration and attempting to write to "${projectConfig}"...`, 'INFO')
+            localLog(
+                `The config file doesn't exist! Reverting to default configuration and attempting to write to "${projectConfig}"...`,
+                'INFO'
+            )
             try {
                 // ...attempt to create it
                 fs.writeFileSync(projectConfig, JSON.stringify(require(localConfig), null, 2))
@@ -280,7 +238,6 @@ function checkForConfig(logging) {
             }
             return false
         }
-
     } catch (e) {
         return false
     }
@@ -295,5 +252,5 @@ module.exports = {
     buildError,
     checkForConfig,
     getSettings,
-    cache
+    cache,
 }
